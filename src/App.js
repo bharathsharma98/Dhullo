@@ -9,7 +9,7 @@ import Home from './components/Pages/Home/Home'
 import Contact from './components/Pages/ContactUs/contact'
 import Services from './components/Pages/Services/services'
 import SignUp from './components/Pages/SignUp/SignUp'
-
+// import 'tachyons'
 class App extends Component {
 
     state = {

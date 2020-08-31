@@ -10,13 +10,13 @@ const Toolbar = props =>(
             <div className = "toolbar__toggle-button">
                 <DrawerToggleButton click={props.drawerClickHandler} />
             </div>
-            <div className = "toolbar__logo"><img src={logo} alt=""
+            <div className = "toolbar__logo  "><img src={logo} alt=""
 				style={{ width: 130, height: 62, marginHorizontal: 5 }}
 				resizeMode="contain" />
             </div> 
             <div className = "spacer" />
-            <div className = "toolbar__navigation-items">
-                <ul>
+            <div className = "toolbar__navigation-items grow">
+                <ul className="grow">
                     <li><Link path to = "/">Home</Link></li>
                     <li><Link path to = "/services">Services</Link></li>
                     <li><Link path to = "/about">About</Link></li>
