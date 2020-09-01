@@ -3,7 +3,7 @@ import Input from '../../UI/Input/Input'
 import Spinner from '../../UI/Spinner/Spinner'
 import Axios from "../../../../src/axios-orders"
 import classes from './SignUp.css'
-
+import '../SignUp/SignUp.css'
 export default class SignUp extends Component {
     state = {
         customerDetails: {
@@ -126,7 +126,7 @@ export default class SignUp extends Component {
             });
         }
         let form = (
-            <form onSubmit={this.onSubmitHandler}>
+            <form onSubmit={this.onSubmitHandler} className="SignUp">
                 {formElementsArray.map(formElement => (
                     <Input 
                         key={formElement.id}

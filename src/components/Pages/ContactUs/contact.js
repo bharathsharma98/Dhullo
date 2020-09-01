@@ -9,5 +9,4 @@ class contact extends Component {
     );
   }
 }
-
 export default contact;
