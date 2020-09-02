@@ -1,6 +1,7 @@
 import React from 'react';
 import TextComp from './TextComponent'
  import ImageContainer from './imagecontainer'
+ import './homepage.css'
 const Homepage =()=>{
     let containerStyle={
         display:'flex',
@@ -8,10 +9,11 @@ const Homepage =()=>{
     }
 return(
     <div>
-         <h1>We SWear By</h1>
+         <h1>We Swear By</h1>
         <div  className="container" style={containerStyle}>
-        <TextComp/>
         <ImageContainer/>
+        <TextComp/>
+        
        
 
         </div>
@@ -21,6 +23,7 @@ return(
         <TextComp/>
        
         </div>
+        
         <div  className="container" style={containerStyle}>
         
         <ImageContainer/>
