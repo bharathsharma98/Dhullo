@@ -4,10 +4,10 @@ import { Link } from 'react-router-dom';
 function ImgComponent(props){
 
     let imgStyles = {
-        width: "30%",
-        height: "30vh",
-        margin:'3rem'
-       
+        width: "100%",
+        height: "40vh",
+        borderRadius:'3.5rem',
+    
               
     }
     let CompStyles ={
@@ -28,8 +28,8 @@ function ImgComponent(props){
             <img src = {props.imgComponent.imgSrc} alt= "slide-img" style ={imgStyles}></img>
             </Link>
             
-            <h3>{props.imgComponent.description}</h3>
-            <p>{props.imgComponent.details}</p>
+            <h3 style={{fontSize:'280%',margin:'2rem'}}>{props.imgComponent.description}</h3>
+            {/* <p style={{fontSize:'1rem',marginTop:'15rem'}}>{props.imgComponent.details}</p> */}
             
         </div>
     );

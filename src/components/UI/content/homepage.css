@@ -4,8 +4,15 @@ h1{
     letter-spacing: 0px;
     color: #0F0101;
     opacity: 1;
+    margin-top: 5%;
 }
-.container{
-    padding-left: 25%;
+.mixcontainer{
+    padding : 5%;
     
+}
+.textcontainer{
+    padding : 1%;
+   border-radius: 9%;
+   border-style: dotted;
+  
 }
