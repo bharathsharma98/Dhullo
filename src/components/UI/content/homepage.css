@@ -6,13 +6,15 @@ h1{
     opacity: 1;
     margin-top: 5%;
 }
-.mixcontainer{
-    padding : 5%;
-    
+.mixcontainer1{
+    padding-left : 5%;
 }
-.textcontainer{
+/* .textcontainer{
     padding : 1%;
    border-radius: 9%;
    border-style: dotted;
   
+} */
+.mixcontainer2{
+    padding-right : 5%;
 }

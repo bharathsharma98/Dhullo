@@ -1,0 +1,11 @@
+.circularcomp{
+    
+    margin: 5rem;
+    font-size:2rem;
+    border: 6px solid #F25C05;
+    opacity: 1;
+    border-radius: 5rem;
+}
+h3,p{
+    margin: 4rem;
+}

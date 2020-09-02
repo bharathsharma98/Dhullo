@@ -4,6 +4,7 @@ let TextComp=()=>{
     let txtsyles={
         margin:'2rem',
         fontSize:'2rem',
+        
     
     }
     return(
