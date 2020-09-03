@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Axios from "../../../../src/axios-orders"
-
+import Servicepage from '../../UI/content/servicepage'
 class services extends Component {
 
   // state = {
@@ -57,12 +57,15 @@ class services extends Component {
 
   render() {
     return (
-      <div>
-        {/* <h1>Service Page</h1>
-        <button onClick ={this.clickWashHandler}>Add washing to cart</button>
-        <button onClick ={this.clickDetailHandler}>Add Detailing to cart</button>
-        <button onClick ={this.clickOrderHandler}>Order</button> */}
-    </div>
+      <div className="w4">
+        <Servicepage/>
+      </div>
+    //   <div>
+    //     {/* <h1>Service Page</h1>
+    //     <button onClick ={this.clickWashHandler}>Add washing to cart</button>
+    //     <button onClick ={this.clickDetailHandler}>Add Detailing to cart</button>
+    //     <button onClick ={this.clickOrderHandler}>Order</button> */}
+    // </div>
     );
   }
 }
