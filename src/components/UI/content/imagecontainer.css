@@ -1,6 +1,8 @@
 img{
-    height:20rem;
+    height: 20rem;
     width: 30rem;
-    /* margin:8rem; */
+    border-radius: 10px;
+    margin: 1rem;
+   
     /* padding-top: 15rem; */
 }

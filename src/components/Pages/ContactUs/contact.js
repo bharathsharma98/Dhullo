@@ -6,11 +6,16 @@ class contact extends Component {
       <div>
         <h1>We are here to Help</h1>
         <div className="iconcontainer">
-        <h2>telephone</h2>
-        <h2>email</h2>
+        <h2>+91XXXXXXXXXX</h2>
+        <h2>Customer.care@dhullo.com</h2>
         </div>
-        <h3>drop in a message</h3>
-        
+        <h3>Drop in a message</h3>
+        <form>
+          <input placeholder="Name"></input>
+          <input placeholder="Email Id"></input>
+          <input classname="msg" placeholder="leave a message"></input>
+         <button>Send</button>
+        </form>
     </div>
     );
   }

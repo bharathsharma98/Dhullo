@@ -1,14 +1,35 @@
-h1{
-
+h1 {
+   
 }
-.iconcontainer{
-    display: flex;
- 
-  justify-content:space-between;
-    margin:2%
+.iconcontainer {
+  display: flex;
+  justify-content: space-between;
+  margin: 2%;
 }
-h3{
-    
-  margin:2%;
+h3 {
+  margin: 2%;
   text-align: center;
+  font: normal normal 600 30px/37px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  min-width: 30%;
+  align-content: center;
+  margin: 1rem;
+  border: 2px solid #03588c;
+  height: 3rem;
+  border-radius: 5px;
+}
+button {
+  background: #03588c 0% 0% no-repeat padding-box;
+  border-radius: 4px;
+  height: 3rem;
+  width: 10rem;
+  opacity: 1;
+  color: white;
+  font-size: larger;
 }

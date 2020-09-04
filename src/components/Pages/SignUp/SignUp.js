@@ -126,6 +126,7 @@ export default class SignUp extends Component {
             });
         }
         let form = (
+          
             <form onSubmit={this.onSubmitHandler} className="SignUp">
                 {formElementsArray.map(formElement => (
                     <Input 

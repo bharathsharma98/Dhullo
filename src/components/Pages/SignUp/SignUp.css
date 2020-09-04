@@ -13,3 +13,10 @@
         width: 500px;
     }
 }
+h4{
+    text-align: center;
+    font-size:x-large
+}
+input{
+    min-width: 30%;
+}
