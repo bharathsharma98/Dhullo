@@ -6,7 +6,7 @@
     opacity: 1;
     border-radius: 100%;
     
-        max-height: 25rem;
+        max-height: auto;
         max-width: 25rem;
        background-color: #f6f7f5;
 }

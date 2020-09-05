@@ -7,7 +7,7 @@ p{
     font-size: 1.2rem;  
 }
 .textcontainer{
-    height: 20rem;
+    height: auto;
     width: 40rem;
     border: 0.5px green;
     background-color:#f6f7f5;

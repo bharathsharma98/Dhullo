@@ -4,7 +4,7 @@ class contact extends Component {
   render() {
     return (
       <div>
-        <h1>We are here to Help</h1>
+        <h1 style={{textAlign:'center'}}>We are here to Help</h1>
         <div className="iconcontainer">
         <h2>+91XXXXXXXXXX</h2>
         <h2>Customer.care@dhullo.com</h2>

@@ -26,7 +26,7 @@ function ImgComponent(props){
     
     return (
         <div className="imagecomp"  style={CompStyles}>
-            <Link>
+            <Link to="/services">
             <img src = {props.imgComponent.imgSrc} alt= "slide-img" style ={imgStyles}></img>
             </Link>
             

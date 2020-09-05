@@ -5,6 +5,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin: 2%;
+  flex-wrap: wrap;
 }
 h3 {
   margin: 2%;
