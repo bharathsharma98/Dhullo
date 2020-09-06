@@ -1,65 +1,67 @@
-.toolbar{
-    position: relative;
-    top:0;
-    left:0;
-    widows: 100%;
-    /* background: #173352; */
-    background: linear-gradient(to right , #042440,#007174);
-    height: 70px;
+.toolbar {
+  position: relative;
+  top: 0;
+  left: 0;
+  widows: 100%;
+  /* background: #173352; */
+  background: linear-gradient(to right, #042440, #007174);
+  height: 70px;
 }
-.toolbar__navigation{
-    display: flex;          /*to align Logo and navigation-items list next to each other*/
-    height:100%;            /*to utilize full height set in .toolbar*/
-    align-items: center;    /*to align Logo to center*/
-    padding: 0 1rem;        /*to set gap between Logo and list*/
+.toolbar__navigation {
+  display: flex; /*to align Logo and navigation-items list next to each other*/
+  height: 100%; /*to utilize full height set in .toolbar*/
+  align-items: center; /*to align Logo to center*/
+  padding: 0 1rem; /*to set gap between Logo and list*/
 }
-.spacer{
-    flex:1; /*spacer is kept between Logo and navigation list, given flex:1 so that it can take all space between them*/
-}
-
-.toolbar__logo{
-    margin-left: 1rem;        /*to set margin for Logo on left*/
+.spacer {
+  flex: 1; /*spacer is kept between Logo and navigation list, given flex:1 so that it can take all space between them*/
 }
 
-.toolbar__navigation-items ul{
-    display:flex;               /*to set remove bullets for menu item and add them in vertical list*/
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.toolbar__logo {
+  margin-left: 1rem; /*to set margin for Logo on left*/
 }
 
-.toolbar__navigation-items li{
-    padding: 0 0.5rem;          /*to set gap between 2 itmes in menu */
-}
-.toolbar__logo a {              /*to set properties of Logo on left*/
-    color: white;
-    text-decoration: none;
-    font-size: 2rem;
+.toolbar__navigation-items ul {
+  display: flex; /*to set remove bullets for menu item and add them in vertical list*/
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-.toolbar__navigation-items a{
-    color: white;
-    text-decoration: none;      /*to set properties of each menu items list*/
+.toolbar__navigation-items li {
+  padding: 0 0.5rem; /*to set gap between 2 itmes in menu */
+}
+.toolbar__logo a {
+  /*to set properties of Logo on left*/
+  color: white;
+  text-decoration: none;
+  font-size: 2rem;
+}
+
+.toolbar__navigation-items a {
+  color: white;
+  text-decoration: none; /*to set properties of each menu items list*/
 }
 
 .toolbar__navigation-items a:hover,
-.toolbar__navigation-items a:active{
-    color:#fa923f;                  /*so when there is cursor on that color changes*/
+.toolbar__navigation-items a:active {
+  color: #fa923f; /*so when there is cursor on that color changes*/
 }
 
-@media (max-width : 768px) {
-    .toolbar__navigation-items{     /*when device is of mobile dont display menu items on toolbar*/
-        display: none;
-    }
+@media (max-width: 768px) {
+  .toolbar__navigation-items {
+    /*when device is of mobile dont display menu items on toolbar*/
+    display: none;
+  }
 }
 
-@media (min-width : 769px){
-    .toolbar__toggle-button{        /*when device is of laptop dont display toggle button on toolbar*/
-        display:none;
-    }
+@media (min-width: 769px) {
+  .toolbar__toggle-button {
+    /*when device is of laptop dont display toggle button on toolbar*/
+    display: none;
+  }
 
-    .toolbar__logo{
-        margin-left: 0;             /*when device is of laptop move logo to left*/
-    }
-
+  .toolbar__logo {
+    margin-left: 0; /*when device is of laptop move logo to left*/
+  }
 }

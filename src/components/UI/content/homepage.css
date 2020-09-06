@@ -1,34 +1,26 @@
-.parent{
- 
+.parent {
   text-align: center;
-  
- 
 }
-.mixcontainer1{
-    display:flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    margin: 1rem;
-    
-  
-    
+.mixcontainer1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+  margin: 1rem;
 }
-.textcontainer1{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    justify-content: center;
-   
-  
+.textcontainer1 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
 }
-.mixcontainer2{
-    display:flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    margin-bottom: 1rem;
-    justify-content: center;
+.mixcontainer2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  margin-bottom: 1rem;
+  justify-content: center;
 }
- h1{
-   text-align: center;
- }
+h1 {
+  text-align: center;
+}

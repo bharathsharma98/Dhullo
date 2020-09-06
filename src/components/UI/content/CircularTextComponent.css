@@ -1,20 +1,19 @@
-.circularcomp{
-    
-    margin: 5rem;
-    font-size:2rem;
-    border: 6px solid #F25C05;
-    opacity: 1;
-    border-radius: 100%;
-    
-        max-height: auto;
-        max-width: 25rem;
-       background-color: #f6f7f5;
+.circularcomp {
+  margin: 5rem;
+  font-size: 2rem;
+  border: 6px solid #f25c05;
+  opacity: 1;
+  border-radius: 100%;
+
+  max-height: auto;
+  max-width: 25rem;
+  background-color: #f6f7f5;
 }
-.header{
-     margin:1rem;
-    font-size: 2rem;
+.header {
+  margin: 1rem;
+  font-size: 2rem;
 }
-.paragraph{
-    margin:2rem;
-    font-size: 1.5rem;  
+.paragraph {
+  margin: 2rem;
+  font-size: 1.5rem;
 }
