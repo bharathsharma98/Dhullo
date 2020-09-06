@@ -2,6 +2,7 @@ import React from "react";
 import TextComp from "./TextComponent";
 import ImageContainer from "./imagecontainer";
 import "./homepage.css";
+import HowItWorks from './howitworks';
 import CircularTextComp from "./CircularTextComponent";
 const Homepage = () => {
   
@@ -23,6 +24,10 @@ const Homepage = () => {
         </div>
       </div>
       <h1 style={{textAlign:'center'}}>HOW IT WORKS</h1>
+    <div>
+      <HowItWorks/>
+    </div>
+
     </div>
   );
 };

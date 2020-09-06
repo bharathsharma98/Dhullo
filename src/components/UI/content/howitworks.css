@@ -1,0 +1,24 @@
+p{
+    
+}
+.mixcontainer1{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+}
+.mixcontainer2{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+}
+.mixcontainer3{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+}
