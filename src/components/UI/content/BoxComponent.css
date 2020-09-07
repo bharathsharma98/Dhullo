@@ -3,10 +3,12 @@
     border-color: black;
     opacity: 1;
     margin: 5rem;
+    background: transparent linear-gradient(180deg, #95E0F1 0%, #ffffff 100%) 0% 0% no-repeat padding-box;
 }
 
 h3{
     text-align: center;
+    font-size: 5;
 }
 
 p{
