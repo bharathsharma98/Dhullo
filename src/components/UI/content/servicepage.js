@@ -1,14 +1,13 @@
-
-import React from 'react';
-import TextComp from './TextComponent';
-import BoxComponent from './BoxComponent';
-import ImageContainer from './imagecontainer';
-import './servicepage.css';
+import React from "react";
+import TextComp from "./TextComponent";
+import BoxComponent from "./BoxComponent";
+import ImageContainer from "./imagecontainer";
+import "./servicepage.css";
 
 const Servicepage = () => {
   const containerStyle = {
-    display: 'flex',
-    flexDirection: 'row',
+    display: "flex",
+    flexDirection: "row",
     // flexWrap: "wrap"
   };
   return (
@@ -19,7 +18,15 @@ const Servicepage = () => {
         <ImageContainer />
       </div>
       <br />
-      <div classname="boxcontainer" style={containerStyle}>
+      <div
+        classname="boxcontainer"
+        style={{
+          justifyContent: "center",
+          display: "flex",
+          flexDirection: "row",
+          flexWrap: "wrap",
+        }}
+      >
         <BoxComponent />
         <BoxComponent />
         <BoxComponent />
