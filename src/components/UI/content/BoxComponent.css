@@ -1,0 +1,14 @@
+.boxcontainer{
+    border: 1px solid;
+    border-color: black;
+    opacity: 1;
+    margin: 5rem;
+}
+
+h3{
+    text-align: center;
+}
+
+p{
+    text-align: center;
+}

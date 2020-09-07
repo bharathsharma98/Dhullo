@@ -1,6 +1,7 @@
 
 import React from 'react';
 import TextComp from './TextComponent';
+import BoxComponent from './BoxComponent';
 import ImageContainer from './imagecontainer';
 import './servicepage.css';
 
@@ -18,6 +19,12 @@ const Servicepage = () => {
         <ImageContainer />
       </div>
       <br />
+      <div classname="boxcontainer" style={containerStyle}>
+        <BoxComponent />
+        <BoxComponent />
+        <BoxComponent />
+        <BoxComponent />
+      </div>
       <h1>Sanitization</h1>
       <div className="mixcontainer2" style={containerStyle}>
         <ImageContainer />
