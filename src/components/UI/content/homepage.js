@@ -4,14 +4,18 @@ import ImageContainer from './imagecontainer';
 import './homepage.css';
 import HowItWorks from './howitworks';
 import CircularTextComp from './CircularTextComponent';
+import MainImage from './mainimage';
 
 const Homepage = () => {
+  const type= "carfoam";
   return (
+    
     <div className="main">
       <h1 style={{ textAlign: 'center' }}>WE SWEAR BY</h1>
       <div className="parent">
         <div className="mixcontainer1">
-          <ImageContainer />
+          
+          <MainImage type={type} />
           <TextComp />
         </div>
         <div className="textcontainer1">

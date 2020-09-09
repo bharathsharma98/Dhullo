@@ -2,6 +2,7 @@ import React from "react";
 import TextComp from "./TextComponent";
 import BoxComponent from "./BoxComponent";
 import ImageContainer from "./imagecontainer";
+import {MainImage} from './mainimage.js'
 import "./servicepage.css";
 
 const Servicepage = () => {
