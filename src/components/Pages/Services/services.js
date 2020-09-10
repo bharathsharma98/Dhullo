@@ -1,8 +1,7 @@
-import React, { Component } from 'react';
-import Axios from "../../../../src/axios-orders"
-import Servicepage from '../../UI/content/servicepage'
+import React, { Component } from "react";
+// import Axios from "../../../axios-orders"
+import Servicepage from "../../UI/PageComponents/ServicePageComp";
 class services extends Component {
-
   // state = {
   //     washing: 0,
   //     detailing : 0,
@@ -58,14 +57,14 @@ class services extends Component {
   render() {
     return (
       <div className="w4">
-        <Servicepage/>
+        <Servicepage />
       </div>
-    //   <div>
-    //     {/* <h1>Service Page</h1>
-    //     <button onClick ={this.clickWashHandler}>Add washing to cart</button>
-    //     <button onClick ={this.clickDetailHandler}>Add Detailing to cart</button>
-    //     <button onClick ={this.clickOrderHandler}>Order</button> */}
-    // </div>
+      //   <div>
+      //     {/* <h1>Service Page</h1>
+      //     <button onClick ={this.clickWashHandler}>Add washing to cart</button>
+      //     <button onClick ={this.clickDetailHandler}>Add Detailing to cart</button>
+      //     <button onClick ={this.clickOrderHandler}>Order</button> */}
+      // </div>
     );
   }
 }

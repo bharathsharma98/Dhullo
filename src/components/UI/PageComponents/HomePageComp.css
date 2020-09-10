@@ -1,20 +1,20 @@
 .parent {
   text-align: center;
 }
-.mixcontainer1 {
+.swearbycontainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   flex-direction: row;
   margin: 1rem;
 }
-.textcontainer1 {
+.circcontainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   justify-content: center;
 }
-.mixcontainer2 {
+.custsatcontainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
