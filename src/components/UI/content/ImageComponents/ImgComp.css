@@ -1,3 +1,8 @@
- /* .imgcontainer{
+ .imgcontainer{
      align-content: center;
- } */
+     height: 20rem;
+     maxwidth: fit-content;
+     margin:2rem;
+     display: flex;
+     border-radius:3rem;
+ }

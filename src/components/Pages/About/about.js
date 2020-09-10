@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import detailingimg from "../../../Image/detailing.png";
 import TextComp from "../../UI/content/TextComponents/TextComponent";
 import MainImage from "../../UI/content/ImageComponents/ImgComp";
+import './about.css';
 class about extends Component {
   render() {
     return (

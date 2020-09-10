@@ -24,7 +24,14 @@
 }
 
 .side-drawer li {
-  margin: 0.5rem 0; /* to set gap between list items */
+  margin: 0.5rem  ; 
+  border-radius: 2px;
+  text-align: center;
+  font-size :3rem;
+   height: 5rem;
+   
+   border-radius: 3%;
+  background-color: rgb(238, 243, 241);/* to set gap between list items */
 }
 .side-drawer a {
   font-size: 1.2rem;

@@ -1,0 +1,17 @@
+.imagecontainer{
+    width:90% ;
+    height: 45vh;
+    margin:2rem;
+    display: flex;
+    border:3px solid #026D70;
+    border-radius: 60px;
+   
+}
+.imagefield{
+width: 100%;
+height: 45vh;
+border-radius: 60px;
+margin:0px;
+}
+
+ 

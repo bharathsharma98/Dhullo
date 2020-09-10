@@ -1,0 +1,50 @@
+h1 {
+    text-align: left;
+    flex: auto;
+  }
+  
+  .serviceboxcontainer {
+    align-items: center;
+  }
+  
+  .mixcontainer1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    
+     
+  }
+  
+  .mixcontainer2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+  }
+  
+  .textcontainer1 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+  }
+  
+  .intdetailingcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+  }
+  
+  .extdetailingcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: row;
+    margin: 1rem;
+  }
+  
