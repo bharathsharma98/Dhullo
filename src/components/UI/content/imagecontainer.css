@@ -1,8 +1,9 @@
-img {
-  height: 20rem;
-  width: fit-content;
-  border-radius: 10px;
-  margin: auto;
-
-  /* padding-top: 15rem; */
+img{
+    height: 20rem;
+    width: fit-content;
+    border-radius: 10px;
+    margin:auto;
+    
+   
+    /* padding-top: 15rem; */
 }

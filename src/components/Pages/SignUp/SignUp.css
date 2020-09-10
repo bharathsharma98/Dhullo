@@ -1,22 +1,22 @@
 .SignUp {
-  margin: 50px auto;
-  width: 100%;
-  text-align: center;
-  box-shadow: 0 2px 3px #ccc;
-  border: 1px solid #eee;
-  padding: 10px;
-  box-sizing: border-box;
+    margin: 50px auto;
+    width: 100%;
+    text-align: center;
+    box-shadow: 0 2px 3px #ccc;
+    border: 1px solid #eee;
+    padding: 10px;
+    box-sizing: border-box;
 }
 
 @media (min-width: 600px) {
-  .SignUp {
-    width: 500px;
-  }
+    .SignUp {
+        width: 500px;
+    }
 }
-h4 {
-  text-align: center;
-  font-size: x-large;
+h4{
+    text-align: center;
+    font-size:x-large
 }
-input {
-  min-width: 30%;
+input{
+    min-width: 30%;
 }
