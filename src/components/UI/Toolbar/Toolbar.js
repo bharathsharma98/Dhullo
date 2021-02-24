@@ -23,7 +23,7 @@ const Toolbar = (props) => (
         <ul className="grow">
           <li>
             <Link path to="/">
-              Home
+              Home1
             </Link>
           </li>
           <li>
