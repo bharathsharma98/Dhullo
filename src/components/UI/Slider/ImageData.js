@@ -1,11 +1,11 @@
 // import i1 from '../../../Image/Car Sanitization Poster.png'
-import i1 from "../../../Image/sanitization.png";
+import i1 from "../../../Image/Group 93@2x.png";
 // import i2 from '../../../Image/car shine.jpg'
-import i2 from "../../../Image/detailing.png";
+import i2 from "../../../Image/Group 90@2x.png";
 //import i3 from '../../../Image/interior.jpg'
-import i3 from "../../../Image/washing.png";
+import i3 from "../../../Image/Group 92@2x.png";
 //import i4 from '../../../Image/water_waste.jpg'
-import i4 from "../../../Image/inspection.png";
+import i4 from "../../../Image/Group 91@2x.png";
 
 const sliderArr = [
   {

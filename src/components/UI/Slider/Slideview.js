@@ -18,11 +18,11 @@ export default class Slideview extends Component {
     };
 
     const imgData = ImageData.map((item) => {
-      return <ImgComponent key={item.id} imgComponent={item} />;
+      return <ImgComponent key={item.id} imgComponent={item}  />;
     });
     return (
-      <div>
-        <Slider {...settings}>{imgData}</Slider>
+      <div >
+        <Slider {...settings} styles={{Width:"100vw"}}>{imgData}</Slider>
       </div>
     );
   }

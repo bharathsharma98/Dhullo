@@ -3,7 +3,7 @@ import './contact.css'
 class contact extends Component {
   render() {
     return (
-      <div>
+      <div className="contactcontainer">
         <h1 style={{textAlign:'center'}}>We are here to Help</h1>
         <div className="iconcontainer">
         <h2>+91XXXXXXXXXX</h2>
@@ -13,7 +13,7 @@ class contact extends Component {
         <form>
           <input placeholder="Name"></input>
           <input placeholder="Email Id"></input>
-          <input classname="msg" placeholder="leave a message"></input>
+          <input className="msg" placeholder="leave a message"></input>
          <button>Send</button>
         </form>
     </div>

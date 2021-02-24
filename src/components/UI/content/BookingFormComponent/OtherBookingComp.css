@@ -1,0 +1,49 @@
+.otherselectvehicle{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.disabled{
+border:2px solid grey;
+opacity: 20%;
+}
+.bookingform{
+    height: auto;
+    justify-content:   space-between;
+    
+    border: 2px solid #013759;
+ background-color: #faf7f7;
+   display:flex ;
+ flex-wrap: wrap;
+ 
+  margin: auto;
+  width: 87%;
+  
+  padding: 10px;
+}
+ .carbox-container{
+     display: flex;
+     flex-wrap: wrap;
+     margin-bottom: 1rem;
+ }
+ .bookingform a{
+       font-size:clamp(0.5rem,1rem,2rem);
+  font-family: 'Josefin Sans', sans-serif;
+ }
+ .bookingform input{
+margin-left: 0%;
+ }
+ .bookingform h2{
+     font-family: 'Josefin Sans', sans-serif;
+ }
+ .bookingform-left{
+     display: flex;
+     flex-direction: column;
+   
+ }
+ .bookingform-right{
+  width: 100vh;
+  text-align: center;
+  margin: auto;
+ }

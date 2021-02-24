@@ -1,20 +1,15 @@
 import React from "react";
 import "./ImgComp.css";
-class MainImage extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      url: " ",
-    };
-  }
+const MainImage =(props)=> {
+ 
 
-  render(props) {
-    console.log(this.props.type);
+  
+    console.log(props.type);
     return (
       <div className="imgcontainer">
-        <img src={this.props.type} alt=""></img>
+        <img className="img" src={props.type} alt={props.type} height="100%" width="100%"  ></img>
       </div>
     );
-  }
+  
 }
 export default MainImage;

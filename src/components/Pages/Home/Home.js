@@ -3,6 +3,7 @@ import React, { Component } from "react";
 //import Slider from './Slider/Slider'
 import Slideview from "../../UI/Slider/Slideview";
 import Homepage from "../../UI/PageComponents/HomePageComp";
+
 class Home extends Component {
   render() {
     return (

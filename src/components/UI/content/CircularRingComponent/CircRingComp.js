@@ -1,13 +1,17 @@
 import React from "react";
 import "./CircRingComp.css";
-let CircularTextComp = () => {
+
+let CircularTextComp = (props) => {
   return (
-    <div className="circularcompwithtext">
+    <div className="circularcompwithtext" style={props.styles}>
+      <div className="homeimagecontainer" >
+        <img src={props.imgUrl} height='50%' width='50%' alt={props.imgUrl} ></img>
+      </div>
       <div className="header">
-        <h3>{`Car Care`}</h3>
+        <h1 style={props.styles}>{props.heading}</h1>
       </div>
       <div className="paragraph">
-        <p>{`It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. `}</p>
+        <p style={props.styles}>{props.paragraph}</p>
       </div>
     </div>
   );

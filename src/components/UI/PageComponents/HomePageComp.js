@@ -4,12 +4,24 @@ import MainImage from "../content/ImageComponents/ImgComp";
 import "./HomePageComp.css";
 import HowItWorks3 from "../content/HowItWorksComponent/HowItWorksComp";
 import CircularTextComp from "../content/CircularRingComponent/CircRingComp";
-import thumbsupimg from "../../../Image/thumbsup.png";
-import carinhandimage from "../../../Image/carinhand.png";
+import thumbsupimg from "../../../Image/customer_satisfaction.png";
+import carinhandimage from "../../../Image/Mask Group 1.png";
+import umbrella from "../../../Image/Group 103.svg";
+import water from '../../../Image/Group 102@2x.png';
+ 
 const Homepage = () => {
+  const redstyles = {
+    backgroundColor: "#F37A7D",
+    color:'white'
+  }
+  const bluestyles = {
+    backgroundColor: "#94D9EF",
+    color: "black",
+  };
   return (
     <div className="main">
-      <h1 style={{ textAlign: "center", marginTop: "3rem" }}>WE SWEAR BY</h1>
+   
+      <h1>WE SWEAR BY</h1>
 
       <div className="parent">
         <div className="swearbycontainer">
@@ -17,8 +29,22 @@ const Homepage = () => {
           <TextComp />
         </div>
         <div className="circcontainer">
-          <CircularTextComp />
-          <CircularTextComp />
+          <CircularTextComp
+            imgUrl={umbrella}
+            heading={"Reliability"}
+            paragraph={
+              "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that t has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors"
+            }
+            styles={redstyles}
+          />
+          <CircularTextComp
+            imgUrl={water}
+            heading={"Save Water"}
+            paragraph={
+              "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that t has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors"
+            }
+            styles={bluestyles}
+          />
         </div>
         <div className="custsatcontainer">
           <TextComp />

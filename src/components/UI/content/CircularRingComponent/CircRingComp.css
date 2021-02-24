@@ -1,19 +1,38 @@
-.circularcompwithtext {
-  margin: 5rem;
-  font-size: 2rem;
-  border: 6px solid #f25c05;
-  opacity: 1;
-  border-radius: 100%;
-
-  max-height: auto;
-  max-width: 25rem;
-  background-color: #f6f7f5;
+ .circularcompwithtext {
+  width: 30rem;
+  height: auto;
+  border: 1px solid rgb(218, 213, 213);
+  
+background-color: #faf5f5;
+  border-radius: 2rem;
+ margin: auto;
 }
 .header {
-  margin: 1rem;
-  font-size: 2rem;
+  margin-top: 3%;
+  text-align: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+letter-spacing: 0px;
+color: #0F0101;
+opacity: 1;
+margin-left: auto;
+margin-right: auto;
+  
 }
 .paragraph {
-  margin: 2rem;
-  font-size: 1.5rem;
+    text-align: left;
+}
+  
+ 
+.homeimagecontainer{
+   margin-top: 5%;
+}
+@media (max-width: 768px) {
+  .circularcompwithtext {
+    width: 100vw;
+    height: auto;
+   margin-top: 1rem;
+  
+    
+  }
 }

@@ -1,6 +1,6 @@
 .slider {
   position: relative;
-  width: 100%;
+  width: 100vw;
   height: 50vh;
   box-sizing: border-box;
   margin: 0;
@@ -8,11 +8,12 @@
   display: flex;
   overflow: hidden;
   background: black;
+ 
 }
 
 .slide {
   position: relative;
-  min-width: 100%;
+  width: 100vw;
   height: 80vh;
   transition: 0.5s;
   overflow: hidden;
@@ -48,7 +49,7 @@
 #goLeft :hover {
   background: rgba(0, 0, 0, 0.13);
   cursor: pointer;
-  color: whitesmoke;
+  color: black;
 }
 #goRight :hover {
   background: rgba(0, 0, 0, 0.13);

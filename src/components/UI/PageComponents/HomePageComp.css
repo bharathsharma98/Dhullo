@@ -4,23 +4,42 @@
 .swearbycontainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content:  space-evenly;
   flex-direction: row;
-  margin: 1rem;
+  margin: 2rem;
+ width: auto;
+  min-height: 25rem;
+  
 }
 .circcontainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  justify-content: center;
+  justify-content:p;
+  margin: 2rem;
+  
+      min-height: 40rem;
 }
 .custsatcontainer {
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  margin-bottom: 1rem;
-  justify-content: center;
+  margin-bottom: 2rem;
+  justify-content: space-around;
+ 
+      min-height: 25rem;
 }
-h1 {
+.main h1 {
   text-align: center;
+  font-size: clamp(2rem,3vw,4rem);
+  margin-top: 3rem;
+    font-family: 'Josefin Sans', sans-serif;
+}
+@media(max-width:769px){
+  .swearbycontainer{
+      height: fit-content;
+      margin: 0.5rem;
+  }
+  .circcontainer{height: fit-content;}
+  .custsatcontainer{height: fit-content;}
 }

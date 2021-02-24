@@ -1,0 +1,106 @@
+.signincontainer {
+  height: 100vh;
+  
+
+}
+.signinForm{
+  max-height: 85vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-left: 3%;
+  margin-right: 3%;
+  margin-top: 3%;
+  margin-bottom: 3%;
+  border-radius: 3px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.signupbutton {
+  background-color: white;
+  color: orange;
+  margin: 1rem;
+}
+.signupbutton:hover {
+  font-size: x-large;
+}
+.logo-Text{
+  display: flex;
+  flex-direction: row;
+ 
+  margin-top: 50%;
+ padding: 3%;
+}
+
+#left-side {
+  width: 40%;
+  background: transparent linear-gradient(154deg, #002651 0%, #366a9f 100%) 0%
+    0% no-repeat padding-box;
+  height:  85vh;
+  text-align: center;
+ 
+}
+.logo-Text img{
+  width: clamp(1vw,6vw,8vw);
+  height: auto;
+}
+.logo-Text h1{
+ 
+font-size: clamp(1vw,4vw,20vw);
+ color:white ;
+ letter-spacing: 2px;
+ margin-top: 2%;
+ margin-left: 5%;
+}
+#right-side {
+  width: 60%;
+  height: 85vh;
+  background-color: #eaedf1;
+  text-align: center;
+  align-content: center;
+}
+#right-side form {
+  margin-top: 20%;
+}
+.Login-login {
+  font-size: clamp(1rem, 2rem, 4rem);
+  text-align: left;
+}
+
+ #right-side small  { color: gray;
+}
+ #right-side strong{ color: green;}
+#right-side a{
+  text-decoration: none;
+}
+@media (max-width: 769px) {
+  .signincontainer {
+    display: flex;
+    flex-direction: column;
+  
+
+    margin-top: 23%;
+    margin-bottom: 50%;
+    border-radius: 3px;
+     
+    max-height: 100%;
+   
+  }
+  #left-side{
+   width: 0%;
+   visibility: hidden;
+  }
+.logo-Text {
+  transform-origin: 0 0;
+  transform: rotate(270deg);
+  position: relative;
+  top: 50%;
+  left: 30%;
+  letter-spacing: 2px;
+   
+  }
+ #right-side{
+     width: 100%;
+     
+ }
+
+}

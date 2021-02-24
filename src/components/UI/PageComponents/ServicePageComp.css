@@ -1,28 +1,54 @@
-h1 {
-  text-align: center;
-  flex: auto;
-}
 
-.serviceboxcontainer {
-  align-items: center;
-}
-
+  
 .washingcontainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: row;
-  margin: 1rem;
+  
 }
+
+.Servicepage-Container h1 {
+  font-family: 'Josefin Sans', sans-serif;
+   text-align: left;
+  font-size: clamp(2rem,3vw,4rem);
+ 
+  margin-left: 6%;
+   margin-top: 6%;
+}
+
+.washingcontainer h1,
+.sanitizationcontainer h1,
+.detailingcontainer h1{
+    text-align: center;
+  font-size: clamp(2rem,2.3vw,4rem);
+ 
+}
+ 
+.serviceboxcontainer {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+ 
+ justify-content: center;
+ margin-top: 3%;
+}
+ 
+ 
+
 
 .sanitizationcontainer {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   flex-direction: row;
-  margin: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
 }
-
+.sanitRow {
+  display: flex;
+  flex-direction: column;
+}
 .detailingcontainer {
   display: flex;
   flex-wrap: wrap;
@@ -30,7 +56,7 @@ h1 {
   flex-direction: row;
   margin: 1rem;
 }
-
+ 
 .intdetailingcontainer {
   display: flex;
   flex-wrap: wrap;
@@ -38,7 +64,39 @@ h1 {
   flex-direction: row;
   margin: 1rem;
 }
-
+.serviceHeader {
+  margin-top: 5%;
+  margin-bottom: 5%;
+ 
+    text-align: center;
+  font-size: clamp(2rem,3vw,4rem);
+ 
+ 
+  text-align: left;
+  font: normal normal bold 50px/72px Josefin Sans;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+@media (max-width: 769px) {
+  .Servicepage-Container  h1 {
+    font-size: clamp(1rem,10vw,3rem);
+    margin-top: 5%;
+    text-align: center;
+     
+  }
+ 
+  .washingcontainer h1,
+.sanitizationcontainer h1,
+.detailingcontainer h1{
+    text-align: center;
+  font-size: clamp(2rem,2.3vw,4rem);
+}
+ .washingcontainer ,
+.sanitizationcontainer ,
+.detailingcontainer {
+     margin: 0.5rem;
+}
+}
 .extdetailingcontainer {
   display: flex;
   flex-wrap: wrap;
@@ -46,3 +104,25 @@ h1 {
   flex-direction: row;
   margin: 1rem;
 }
+.sanitbtncontainer {
+  margin-bottom: 3rem;
+  display: flex;
+  justify-content: center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+.servicebookbutton {
+  background-color: white;
+  color: rgb(23, 24, 26);
+  border: 2px solid rgb(105, 105, 109);
+  border-radius: 5px;
+  margin-bottom: 5%;
+}
+.eachservicecontainer {
+  border-radius: 5px;
+  margin-top: 5%;
+  margin-bottom: 5%;
+
+  box-shadow: 0 0px 9px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
+}
+

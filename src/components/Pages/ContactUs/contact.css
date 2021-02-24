@@ -1,6 +1,4 @@
-h1 {
-   
-}
+ 
 .iconcontainer {
   display: flex;
   justify-content: space-between;
@@ -8,9 +6,9 @@ h1 {
   flex-wrap: wrap;
 }
 h3 {
-  margin: 2%;
+ 
   text-align: center;
-  font: normal normal 600 30px/37px;
+  
 }
 form {
   display: flex;
@@ -33,4 +31,7 @@ button {
   opacity: 1;
   color: white;
   font-size: larger;
+}
+.contactcontainer{
+  height: 100vh;
 }

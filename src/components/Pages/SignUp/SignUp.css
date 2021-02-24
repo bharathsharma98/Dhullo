@@ -1,22 +1,9 @@
-.SignUp {
-    margin: 50px auto;
-    width: 100%;
-    text-align: center;
-    box-shadow: 0 2px 3px #ccc;
-    border: 1px solid #eee;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-@media (min-width: 600px) {
-    .SignUp {
-        width: 500px;
-    }
-}
+.errorMessage{
+    background-color: white;
+     color: ORANGERED;
+     }
+      
 h4{
     text-align: center;
-    font-size:x-large
-}
-input{
-    min-width: 30%;
+     
 }

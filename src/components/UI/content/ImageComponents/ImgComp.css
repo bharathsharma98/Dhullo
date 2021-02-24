@@ -1,8 +1,31 @@
- .imgcontainer{
-     align-content: center;
-     height: 20rem;
-     maxwidth: fit-content;
-     margin:2rem;
-     display: flex;
-     border-radius:3rem;
- }
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@500;600;&display=swap");
+
+.img {
+  width: 33vw;
+  min-width: 30vw;
+  height: 40vh;
+  min-height: 41vh;
+  
+}
+.slidertext {
+  width: 40vw;
+
+  font-family: "Dancing Script", cursive;
+}
+@media (max-width: 769px) {
+  .img {
+    height: 17rem;
+    min-height: 15rem;
+    width: 100%;
+    
+ 
+ 
+  min-height: 5rem;
+  }
+  .slidertext {
+    width: 20vw;
+    padding-top: 7%;
+    font-family: "Dancing Script", cursive;
+  }
+}

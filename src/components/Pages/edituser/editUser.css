@@ -1,0 +1,13 @@
+.editpage-container{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+.edit-form{
+        display: flex;
+    flex-direction: column;
+}
+.edit-form button {
+    text-align: center;
+    margin-left: 10%;
+}

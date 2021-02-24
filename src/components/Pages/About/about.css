@@ -1,50 +1,84 @@
-h1 {
+ 
+.ourstorycomp {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: center;
+  margin: 0.5rem;
+}
+/* p{
+  font: normal normal normal 25px/40px Niconne;
+ } */
+.ourstoryparacomp  p{
+  font: normal normal normal 80px/30px Niconne;
+ 
+ font-size: clamp(1.4rem,2vw,4rem);
+  order: 0;
+  width: 50rem;
+  margin: 0.5rem;
+}
+.ourstoryimgcomp {
+  order: 1;
+ 
+}
+.aboutheader {
     text-align: left;
-    flex: auto;
-  }
-  
-  .serviceboxcontainer {
-    align-items: center;
-  }
-  
-  .mixcontainer1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    
-     
-  }
-  
-  .mixcontainer2 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    margin: 1rem;
-  }
-  
-  .textcontainer1 {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    margin: 1rem;
-  }
-  
-  .intdetailingcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    margin: 1rem;
-  }
-  
-  .extdetailingcontainer {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    flex-direction: row;
-    margin: 1rem;
-  }
-  
+  font-size: clamp(2rem,3vw,4rem);
+ 
+  margin-left: 6%;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+.mixcontainer1 h1,
+.mixcontainer2 h1,
+.ourstoryimgcomp h1{
+    text-align: center;
+  font-size: clamp(2rem,2.3vw,4rem);
+}
+
+.ourstoryhead {
+  font: normal normal normal 60px/73px Niconne;
+  font-size: 80px;
+}
+
+.serviceboxcontainer {
+  align-items: center;
+}
+
+.mixcontainer1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  flex-direction: row;
+    margin: 0.5rem;
+ 
+}
+
+ 
+.textcontainer1 {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  flex-direction: row;
+     margin: 0.5rem;
+}
+
+ 
+.aboutheader{
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  font-size: xxx-large;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+}
+ 
+@media(max-width:769px){
+  .ourstoryparacomp  p{
+  font: normal normal normal 80px/30px Niconne;
+ 
+ font-size: clamp(1.4rem,2vw,4rem);
+  order: 0;
+  width: 95%;
+  margin: 0.5rem;
+}
+}

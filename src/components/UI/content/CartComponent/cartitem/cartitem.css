@@ -1,0 +1,172 @@
+.cartbody {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  max-width: 100vw;
+  height: 100vh;
+  margin-left: 1rem;
+  align-content: space-between;
+}
+.emptycart{
+  height: 100vh;
+ margin-top: auto;
+}
+.cart1 {
+
+  margin-right: 3rem;
+  width: 50%;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+ 
+}
+.cart2 {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 30%;
+  
+  max-height: fit-content;
+  align-content:  center;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+   
+  
+}
+
+.cartcomponent {
+ 
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-width: 70vh;
+
+  margin-left: 0;
+  align-content: flex-start;
+  border-radius: 5px;
+}
+.cartheading{
+  text-align: left;
+  margin: 1rem;
+}
+
+@media (min-width: 769px) {
+  .placeorderbtn {
+    margin-left: 1%;
+    margin-top:2%;
+    margin-bottom:2%;
+    background-color: #fafdff;
+    color: rgb(18, 17, 19);
+    border: 2px solid #03588c;
+    border-radius: 5px;
+  }
+  .placeorderbtn:hover {
+    background-color: white;
+    color: #03588c;
+  }
+  .emptycartimg{
+    width: 30%;
+    height: 50%;
+   
+   
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+      
+    margin: auto;
+  }
+}
+
+.headingcart {
+  
+  font-size: 3rem;
+}
+
+.cartselect {
+  margin: 1rem;
+}
+.cartremovebtn {
+  background-color: whitesmoke;
+  color: red;
+  /* border: 2px solid black;
+  border-radius: 5px; */
+}
+.dateinput {
+  max-width: 85%;
+}
+.timeinput {
+  max-width: 85%;
+}
+.cartprice {
+  text-align: left;
+  margin: 1rem;
+}
+.cartcar {
+  text-align: left;
+  margin: 1rem;
+}
+.cartimagecomponent {
+  height: 50%;
+  width: 100%;
+  margin: 1rem;
+  border-radius: 7px;
+  
+}
+
+.totalpriceitems {
+  display: flex;
+  justify-content: left;
+  margin: 1rem;;
+}
+
+@media (max-width: 768px) {
+ 
+  .cart1 {
+
+    width: 100%;
+    
+      font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+     
+    }
+  .cart2 {
+    border: 2px solid #03588c;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+background-color: #dfe3e6;
+  margin-top: 20%;
+  width: 96%;
+  margin-left: 0%;
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+   
+  }
+  .placeorderbtn {
+    margin-bottom: 10%;
+    margin-top: 10%;
+    background-color: #fafdff;
+    color: rgb(18, 17, 19);
+    border: 2px solid #03588c;
+    border-radius: 5px;
+    margin-left: 10%;
+  }
+  .placeorderbtn:hover {
+    background-color: white;
+    color: #03588c;
+  }
+ 
+  .emptycartimg{
+    width: 50%;
+    height: 40%;
+   
+   
+    position: absolute;
+    top:0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+      
+    margin: auto;
+  }
+ }
+ 

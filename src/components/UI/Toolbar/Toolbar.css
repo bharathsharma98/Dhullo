@@ -2,10 +2,13 @@
   position: relative;
   top: 0;
   left: 0;
-  widows: 100%;
-  /* background: #173352; */
+  width: 100%;
+  height: 30%;
   background: linear-gradient(to right, #042440, #007174);
-  height: 70px;
+}
+.logoheader {
+  height: 2rem;
+ margin:0.3rem;
 }
 .toolbar__navigation {
   display: flex; /*to align Logo and navigation-items list next to each other*/
@@ -18,7 +21,7 @@
 }
 
 .toolbar__logo {
-  margin-left: 1rem; /*to set margin for Logo on left*/
+  margin-left: 1%; /*to set margin for Logo on left*/
 }
 
 .toolbar__navigation-items ul {
@@ -26,10 +29,15 @@
   list-style: none;
   padding: 0;
   margin: 0;
+  width: fit-content;
 }
-
+ 
 .toolbar__navigation-items li {
-  padding: 0 0.5rem; /*to set gap between 2 itmes in menu */
+  padding:  1rem; /*to set gap between 2 itmes in menu */
+  font-weight: 500;
+  font-size: clamp(1rem,1vw,2rem);
+  align-items: center;
+  padding-top: 5%;
 }
 .toolbar__logo a {
   /*to set properties of Logo on left*/
@@ -42,7 +50,7 @@
   color: white;
   text-decoration: none; /*to set properties of each menu items list*/
 }
-
+ 
 .toolbar__navigation-items a:hover,
 .toolbar__navigation-items a:active {
   color: #fa923f; /*so when there is cursor on that color changes*/
@@ -53,6 +61,18 @@
     /*when device is of mobile dont display menu items on toolbar*/
     display: none;
   }
+
+  .cart-contain img {
+    height: 100%;
+    width: 100%;
+  }
+  .logoimg img {
+    height: 50%;
+    width: 50%;
+  }
+ .main{
+    font-size:4vw ;
+  }
 }
 
 @media (min-width: 769px) {
@@ -61,7 +81,19 @@
     display: none;
   }
 
-  .toolbar__logo {
-    margin-left: 0; /*when device is of laptop move logo to left*/
+  .toolbar__logo img {
+ height: 22%;
+width: 22%;/*when device is of laptop move logo to left*/
   }
+}
+
+@media (min-width: 769px) {
+  .cart {
+    /*when device is of laptop dont display toggle button on toolbar*/
+    display: none;
+  }
+}
+.cart {
+  margin-left: 30%;
+  height: 2rem;
 }

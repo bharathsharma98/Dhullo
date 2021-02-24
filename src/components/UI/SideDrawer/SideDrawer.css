@@ -22,21 +22,51 @@
   flex-direction: column; /* so that list items are in vertical aligned below each other */
   justify-content: top; /* to align list items to center */
 }
+.userprofilecomp{
+  align-items: start;
+  height: 12rem;
+  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
+  
+}  
+.userimagecomp{
+ 
+}
+.usernametext{
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+text-align: left;
+margin-top:1rem ;
+margin-left: 2rem;
+}
+
+.userimage{
+  height:6rem;
+  width: 6rem;
+  border: 2px solid rgb(92, 90, 90);
+  border-radius: 4px;
+  margin-left: 2rem;
+  margin-top: 1rem;
+}
 
 .side-drawer li {
-  margin: 0.5rem  ; 
+  margin: .5rem  ; 
   border-radius: 2px;
-  text-align: center;
-  font-size :3rem;
-   height: 5rem;
+  text-align:  start;
+ font-size:small;
+ font-weight: 800;
+  height: 2rem;
    
-   border-radius: 3%;
-  background-color: rgb(238, 243, 241);/* to set gap between list items */
+   
+ 
+   
 }
 .side-drawer a {
-  font-size: 1.2rem;
+  font-weight:500;
+  color:rgb(54, 58, 58);
+  font-size: medium;
   text-decoration: none;
-  color: #521751;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+  "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
 .side-drawer a:hover,
 .side-drawer a:active {
@@ -48,4 +78,15 @@
     /*when device is of laptop dont display side drawer*/
     display: none;
   }
+}
+.sidehr{
+  border: 1 solid rgb(117, 114, 114);
+}
+.side-drawer button{
+  padding: 2%;
+  background: red;
+}
+.spacer1{
+  flex: 1;
+  background-color: #fa923f;
 }

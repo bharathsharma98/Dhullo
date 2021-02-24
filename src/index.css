@@ -1,3 +1,7 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap');
 html {
     height : 100%;
    
@@ -8,5 +12,20 @@ body {
     padding: 0;
     font-family: sans-serif;
     height: 100%;
-   
+     
+    
+    
 }
+body::-webkit-scrollbar {
+    display: none;
+  }
+  body,html{
+      width: 100vw;
+      overflow-x: hidden;
+  }
+
+  h1{
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+ 
