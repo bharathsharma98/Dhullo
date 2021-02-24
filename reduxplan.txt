@@ -1,0 +1,84 @@
+1 user 
+                                 //actions
+ - isLoggedIn 
+                                //reducer
+ - state = {
+     loggedIn:false             //change the state to true on login
+     } 
+
+2 booking
+                                 //actions -washing   
+    -toggleOneTime 
+    -toggleSilver
+    -toggleGold
+    -togglePlatinum 
+    -bookonetime
+    -booksilver
+    -bookgold
+    -bookplatinum
+
+                                            store
+                                 //reducer
+   state={
+       isOneTime:true,
+        isSilver:true,
+        isGold:true,
+        isPlatinum:true,
+        ...many fileds for state
+        } 
+
+    - toggleReducer & reducer for booking types and modifying states accordingly.       
+
+
+
+                                //actions -sanitization
+    -toggleSanitize                           
+                                //Reducer 
+    
+    state={toggleSantize:true}
+
+
+                                //actions -detailing
+    -toggleInteriorDet
+    -toggleIntDetBasic
+    -toggleIntDetAdv
+    -toggleExteriorDet
+    -toggleExtDetBasic
+    -toggleExtDetAdv
+
+                                //reducer
+    state{
+        isIntDet:true,
+        isIntDetBasic:true
+        isIntDetAdv:true
+        isExtDet:true
+        isExtDetBasic:true
+        isExtDetAdv:true
+        .....
+    }                                                        
+
+
+                               //CART
+    Actions - 
+    ToggleCart,
+    addToCart,
+    RemoverFromCart,
+    
+ 
+    reducers -
+    state={toggleCart:false,
+    ...cartItems[]}
+ *******************************************************NOTES*****************************************************************
+
+1.YOU CAN USE USEDISPATCH AND USESELCTOR TO DISPLAY AND MODIFY ITEMS TO CART FROM THE STORE.
+2.ON PLACE ORDER WE NEED TO CHECK FOR IS_LOGGEDIN TO BE TRUE AND THEN PROCEED ELSE REDIRECT TO LOGIN PAGE.
+3.IN BOOKING/SANTIZING/DETAILING SELECT CAR STAYS GREYED OUT UNTIL IS_LOGGEDIN IS TRUE. ELSE WE CAN ADD CAR BY LOGGIN IN.
+4.DETAILS LIKE CARS SELECTED,ADDRESS WILL BE PULLED FROM DATABASE
+  BUT USER CHOICES LIKE DURATION,PLAN SELECTED ETC WILL BE STORED IN LOCAL STORE UNTIL FURTHER BACKEN ACTION IS PROCESSED.
+5.ALL REDUCERS AND ALL INDIVIDUAL STATES ARE GROUPED INTO ROOTREDUCER AND 
+  CAN BE ACCES FROM THERE BY PASSING ROOTREDUCER IN STORE.
+6.ADDED TO CONFIRM BRANCH
+
+
+
+                                
