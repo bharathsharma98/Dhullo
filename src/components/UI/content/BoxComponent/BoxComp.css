@@ -1,51 +1,49 @@
 .boxwithbutton {
-  height: auto;
-  width: clamp(20rem,23rem,25rem);
+  height: clamp(30%, 40%, 50%);
+  width: clamp(18%, 20%, 25%);
   border: 1px solid;
   border-color: black;
   opacity: 1;
-  margin-left:2rem;
+  margin-left: 1rem;
   margin-right: 2rem;
   margin-bottom: 2rem;
 
   background: transparent linear-gradient(180deg, #95e0f1 0%, #ffffff 100%) 0%
     0% no-repeat padding-box;
   text-align: left;
-  
+
   box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 40px 0 rgba(0, 0, 0, 0.19);
- font-size: larger;
+  font-size: auto;
 }
-.btnContainer{
+.btnContainer {
   text-align: center;
 }
-.servicebookbutton{
+.servicebookbutton {
   background-color: white;
   color: rgb(23, 24, 26);
   border: 2px solid rgb(105, 105, 109);
- 
-  margin-bottom :5%;
 
+  margin-bottom: 5%;
 }
-@media(max-width:769px){
+@media (max-width: 769px) {
   .boxwithbutton {
     height: auto;
     width: 90%;
     border: 1px solid;
     border-color: black;
     opacity: 1;
-      margin-top: 7%;
+    margin-top: 7%;
     background: transparent linear-gradient(180deg, #95e0f1 0%, #ffffff 100%) 0%
       0% no-repeat padding-box;
     text-align: center;
-   
+
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 40px 0 rgba(0, 0, 0, 0.19);
-   
   }
-  .servicebookbutton{
+  .servicebookbutton {
     background-color: white;
     color: rgb(23, 24, 26);
     border: 2px solid rgb(105, 105, 109);
- 
-    margin-bottom :5%;
-  } 
+
+    margin-bottom: 5%;
+  }
 }

@@ -54,16 +54,17 @@ margin-right:1rem;
   }
 `
 export const CarBox = Styled.div`
- height:clamp(2rem,6rem,8rem);
-    width:  fit-content;
+ height:fit-content;
+    min-width: 15rem;
+    max-width:fit-content;
     padding-left:1%;
     padding-right:3%;
     border:2px solid #bab3b3;
       background-color:#ebe4e4;
-text - align: left;
-margin-bootom:1rem;
+text - align: center;
+// margin-bootom:1rem;
 display:flex;
-flex-direction:column;
+flex-direction:row;
 .checkBox{
      align-items:center;
      height:30px;
@@ -71,10 +72,9 @@ flex-direction:column;
     cursor:pointer;
  } 
  label{
-font-size:clamp(0.5rem,2rem,1.5rem);
+font-size:small;
   font-family: 'Josefin Sans', sans-serif;
   margin-left:10%;
- padding-left:2rem;
- padding-right:2rem;
+ 
  }
 `;

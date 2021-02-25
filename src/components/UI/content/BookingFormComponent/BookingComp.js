@@ -77,11 +77,9 @@ const BookingForm = (props) => {
                 onChange={handleChange}
               />
               <div>
-                <label>{onecar.details}</label>
+                <p>{onecar.details}</p>
               </div>
-              <div>
-                <label>{onecar.carType}</label>
-              </div>
+               
             </CarBox>
           </div>
         ))}
