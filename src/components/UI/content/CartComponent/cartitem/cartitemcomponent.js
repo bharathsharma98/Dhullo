@@ -17,7 +17,7 @@ function CartItem() {
     <div >
       {cart.length === 0 ? (
         <div
-          style={{ margin: "auto", textAlign: "center" ,height:'100%'}}
+          style={{ margin: "auto", textAlign: "center" ,height:'100vh'}}
           className="emptycart"
         >
           <h1>Cart Is Empty</h1>
