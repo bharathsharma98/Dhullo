@@ -1,6 +1,8 @@
 import React from "react";
 import useForm from "./useForm";
 import Validate from './validateSignup'
+import logo from "../../../Image/logo3.png";
+import '../signIn/signin.css'
 const SignUp = () => {
   const { Item, handleChange, handleSubmit,error } = useForm(submit,Validate);
 
@@ -9,57 +11,68 @@ const SignUp = () => {
   }
   return (
     <div className="signupcontainer">
-      <form noValidate onSubmit={handleSubmit}>
-      <div>
-          <label>FirstName</label>
-          <div>
-            <input
-              name="name"
-              type="text"
-              value={Item.name}
-              onChange={handleChange}
-            />
-            {error.name && <p>{error.name}</p>}
+      <div className="signinForm">
+        <div id="left-side" style={{ backgroundColor: "#5db519" }}>
+          <div className="logo-Text">
+            <img src={logo} alt={logo}></img>
+            <h1 style={{color:'black'}}>DHULLO</h1>
           </div>
         </div>
-        <div>
-          <label>email</label>
-          <div>
-            <input
-              name="email"
-              type="email"
-              value={Item.email}
-              onChange={handleChange}
-            />
-            {error.email && <p>{error.email}</p>}
-          </div>
+        <div id="right-side">
+          <form noValidate onSubmit={handleSubmit} id="signup">
+            <p className="Login-login">Sign-Up</p>
+            <div>
+              <label>FirstName</label>
+              <div>
+                <input
+                  name="name"
+                  type="text"
+                  value={Item.name}
+                  onChange={handleChange}
+                />
+                {error.name && <p>{error.name}</p>}
+              </div>
+            </div>
+            <div>
+              <label>email</label>
+              <div>
+                <input
+                  name="email"
+                  type="email"
+                  value={Item.email}
+                  onChange={handleChange}
+                />
+                {error.email && <p>{error.email}</p>}
+              </div>
+            </div>
+            <div>
+              <label>Phone.No</label>
+              <div>
+                <input
+                  name="phone"
+                  type="text"
+                  value={Item.phone}
+                  onChange={handleChange}
+                />
+                {error.phone && <p>{error.phone}</p>}
+              </div>
+            </div>
+            <div>
+              <label>password</label>
+              <div>
+                <input
+                  name="password"
+                  type="password"
+                  value={Item.password}
+                  onChange={handleChange}
+                />
+                {error.password && <p>{error.password}</p>}
+              </div>
+            </div>
+            <button type="submit">Signup</button>
+          </form>
         </div>
-        <div>
-          <label>Phone.No</label>
-          <div>
-            <input
-              name="phone"
-              type="text"
-              value={Item.phone}
-              onChange={handleChange}
-            />
-            {error.phone && <p>{error.phone}</p>}
-          </div>
-        </div>
-        <div>
-          <label>password</label>
-          <div>
-            <input
-              name="password"
-              type="password"
-              value={Item.password}
-              onChange={handleChange}
-            />
-            {error.password && <p>{error.password}</p>}
-          </div>
-        </div>
-        <button type="submit">Signup</button>
-      </form>
+      </div>
     </div>
   );
 };

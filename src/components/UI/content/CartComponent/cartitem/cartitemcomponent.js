@@ -14,14 +14,17 @@ function CartItem() {
   console.log(cart);
 
   return (
-    <div>
+    <div >
       {cart.length === 0 ? (
-        <div style={{ margin: "auto" }} className="emptycart">
+        <div
+          style={{ margin: "auto", textAlign: "center" ,height:'100%'}}
+          className="emptycart"
+        >
           <h1>Cart Is Empty</h1>
           <img src={emptycart} alt="emptycart" className="emptycartimg" />
         </div>
       ) : (
-        <div style={{ height: "100vh" }}>
+        <div className="fullcart" style={{height:'100%'}}>
           <h1 className="headingcart">MY CART</h1>
 
           <div className="cartbody">
@@ -85,11 +88,11 @@ function CartItem() {
               </h2>
             </div>
           </div>
+          <Link path to="/checkout">
+            <button className="placeorderbtn">PLACE ORDER</button>
+          </Link>
         </div>
       )}
-      <Link path to="/checkout">
-        <button className="placeorderbtn">PLACE ORDER</button>
-      </Link>
     </div>
   );
 }

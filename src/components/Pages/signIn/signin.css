@@ -1,9 +1,10 @@
-.signincontainer {
+.signincontainer,.signupcontainer {
   height: 100vh;
   
 
 }
 .signinForm{
+  height: fit-content;
   max-height: 85vh;
   display: flex;
   flex-direction: row;
@@ -27,14 +28,13 @@
   display: flex;
   flex-direction: row;
  
-  margin-top: 50%;
+  margin-top: 40%;
  padding: 3%;
 }
 
 #left-side {
   width: 40%;
-  background: transparent linear-gradient(154deg, #002651 0%, #366a9f 100%) 0%
-    0% no-repeat padding-box;
+   
   height:  85vh;
   text-align: center;
  
@@ -60,6 +60,9 @@ font-size: clamp(1vw,4vw,20vw);
 }
 #right-side form {
   margin-top: 20%;
+}
+#right-side #signup {
+  margin-top: 5%;
 }
 .Login-login {
   font-size: clamp(1rem, 2rem, 4rem);

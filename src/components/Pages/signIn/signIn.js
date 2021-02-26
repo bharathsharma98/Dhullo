@@ -15,7 +15,7 @@ const SignIn = () => {
   return (
     <div className="signincontainer">
       <div className="signinForm">
-        <div id="left-side">
+        <div id="left-side" style={{ backgroundColor: "#3074cf" }}>
           <div className="logo-Text">
             <img src={logo} alt={logo}></img>
             <h1>DHULLO</h1>
