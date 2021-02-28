@@ -13,6 +13,8 @@ var _storage = _interopRequireDefault(require("redux-persist/lib/storage"));
 
 var _UserReducer = _interopRequireDefault(require("./UserRedux/UserReducer"));
 
+var _errorReducer = _interopRequireDefault(require("./Error/errorReducer"));
+
 var _CartReducer = _interopRequireDefault(require("./cart/CartReducer"));
 
 var _calenderReducer = _interopRequireDefault(require("./calender/calenderReducer"));
@@ -23,11 +25,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 var persistConfig = {
   key: "root",
   storage: _storage["default"],
-  whitelist: ["cart", "user", "calender"] //remove from whitelist to remove persist
+  whitelist: ["cart", "user", "calender", "error"] //remove from whitelist to remove persist
 
 };
 var RootReducer = (0, _redux.combineReducers)({
   user: _UserReducer["default"],
+  error: _errorReducer["default"],
   cart: _CartReducer["default"],
   calender: _calenderReducer["default"]
 });

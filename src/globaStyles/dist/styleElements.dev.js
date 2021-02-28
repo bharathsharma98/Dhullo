@@ -14,7 +14,7 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _templateObject5() {
-  var data = _taggedTemplateLiteral(["\n height:fit-content;\n    min-width: 15rem;\n    max-width:fit-content;\n    padding-left:1%;\n    padding-right:3%;\n    border:2px solid #bab3b3;\n      background-color:#ebe4e4;\ntext - align: center;\n// margin-bootom:1rem;\ndisplay:flex;\nflex-direction:row;\n.checkBox{\n     align-items:center;\n     height:30px;\n   text-align:center;\n    cursor:pointer;\n } \n label{\nfont-size:small;\n  font-family: 'Josefin Sans', sans-serif;\n  margin-left:10%;\n \n }\n"]);
+  var data = _taggedTemplateLiteral(["\n height:clamp(4rem,5rem,10rem);\n margin-bottom:0.5rem;\n margin-right:0.5rem;\n    min-width: 15rem;\n    max-width:fit-content;\n   border-radius:5px;\n   \n    border:2px solid #bab3b3;\n      background-color:#ebe4e4;\ntext - align: center;\n// margin-bootom:1rem;\ndisplay:flex;\n \nflex-direction:row;\ninput{\n     align-items:center;\n     height:20px;\n     width:20px;\n   text-align:center;\n    cursor:pointer;\n  margin:1rem;\n    background-color:blue;\n } \n label{\nfont-size:small;\n  font-family: 'Josefin Sans', sans-serif;\n  margin-left:10%;\n\n \n }\n small{\n   font-size:medium;\n  font-family: 'Josefin Sans', sans-serif;\n \n    color:gray;\n    width:100%;\n }\n p{\n     font-size:large;\n }\n \n"]);
 
   _templateObject5 = function _templateObject5() {
     return data;
@@ -54,7 +54,7 @@ function _templateObject2() {
 }
 
 function _templateObject() {
-  var data = _taggedTemplateLiteral(["\nheight:fit-content;\nmax-width:fit-content;\npadding:0.1%;\nborder-radius:100px;\nopacity:80%;\nz-index:200;\n\n margin:3%;\n text-align:center;\n p {\n \n     color:black;\n     opacity:100%;\n }\n ", "\n   ", "\n"]);
+  var data = _taggedTemplateLiteral(["\nheight:2.5rem;\nmax-width:fit-content;\n \nborder-radius:100px;\nopacity:80%;\nz-index:200;\n\n margin:3%;\n text-align:center;\n p {\n font-size:small;\ntext-align:center;\n     color:black;\n     opacity:100%;\n }\n ", "\n   ", "\n"]);
 
   _templateObject = function _templateObject() {
     return data;

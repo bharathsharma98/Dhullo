@@ -2,11 +2,17 @@
     display: flex;
     flex-direction: column;
  height: 100%;
-   align-content:  center;
+   
    text-align: center;
-    justify-content: center;
+    
     margin: auto;
   width: 50%;
+}
+.addcarcontainer1  label{
+ 
+  font-weight: 400;
+  color: gray;
+  margin: auto;
 }
 .carname{
     display: flex;
@@ -14,7 +20,7 @@
     flex-wrap: wrap;
   
     align-items: center;
-    margin: 1rem;
+   
 }
 .carAddress {
   display: flex;

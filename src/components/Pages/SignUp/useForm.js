@@ -8,8 +8,7 @@ const useForm = (callback,Validate) => {
     name: '',
     phone:''
   });
-  const [error, setError] = useState({ 
-  });
+  const [error, setError] = useState(false);
 const [isSubmitting, SetisSubmitting] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target; //destructured here
@@ -45,6 +44,7 @@ const [isSubmitting, SetisSubmitting] = useState(false);
       //dispatch item and push to add car page
   } catch (err) {
       console.log(err);
+      setError(true)
   }
     };
     

@@ -3,6 +3,9 @@ import { useSelector, useDispatch } from "react-redux";
 import "../cartitem/cartitem.css";
 import DatePicker from "react-datepicker";
 import washing from "../../../../../Image/servicewashing.png";
+import ONETIME from "../../../../../Image/servicesanitization.png";
+// import INTERIOR from "../../../../../Image/interior.jpg";
+// import exterior from "../../../../../Image/car shine.jpg";
 import emptycart from "../../../../../Image/emptycart.png";
 import { RemoveFromCart } from "../../../../../Redux/cart/CartActions";
 // import CheckoutPage from '../../../../Pages/Checkout/Checkoutpage'
@@ -14,17 +17,17 @@ function CartItem() {
   console.log(cart);
 
   return (
-    <div >
+    <div>
       {cart.length === 0 ? (
         <div
-          style={{ margin: "auto", textAlign: "center" ,height:'100vh'}}
+          style={{ margin: "auto", textAlign: "center", height: "100vh" }}
           className="emptycart"
         >
           <h1>Cart Is Empty</h1>
           <img src={emptycart} alt="emptycart" className="emptycartimg" />
         </div>
       ) : (
-        <div className="fullcart" style={{height:'100%'}}>
+        <div className="fullcart" style={{ height: "100%" }}>
           <h1 className="headingcart">MY CART</h1>
 
           <div className="cartbody">
@@ -44,16 +47,16 @@ function CartItem() {
 
                   <DatePicker selected={Date.parse(item.date)} />
 
-                  <DatePicker
-                    selected={Date.parse(item.time)}
-                    dateFormat="  h:mm aa"
-                    timeInputLabel="Time:"
-                    showTimeSelectOnly
-                  />
-                  <select className="cartselect">
-                    <option value={item.duration}>{item.duration}</option>
-                  </select>
-                  <h3 className="cartprice">Price : Rs. {item.price}</h3>
+                  {item.time ? (
+                    <DatePicker
+                      selected={Date.parse(item.time)}
+                      dateFormat="  h:mm aa"
+                      timeInputLabel="Time:"
+                      showTimeSelectOnly
+                    />
+                  ) : null}
+                  {item.duration ? <p>{item.duration}</p> : null}
+                  <p className="cartprice">Price : Rs. {item.price}</p>
                   <button
                     className="cartremovebtn"
                     onClick={() => dispatch(RemoveFromCart(item))}
@@ -65,27 +68,33 @@ function CartItem() {
             </div>
 
             <div className="cart2">
-              <div className="totalheading">
-                <h2>TOTAL PRICE</h2>
-              </div>
               <div className="pricebox">
                 {cart.map((each) => (
                   <div key={each.mytime} className="totalpriceitems">
-                    <h2>{`${each.mycar}-`}</h2>
-                    <h2>{each.category}</h2>
-                    <h2 style={{ color: "orangered", paddingLeft: "1rem" }}>
-                      Rs.{each.price}
-                    </h2>
+                    <p>{`${each.mycar}-`}</p>
+                    <p>{each.category}:</p>
+                    <div style={{ marginLeft: "auto" }}>
+                      <p style={{ color: "orangered" }}>Rs.{each.price}/-</p>
+                    </div>
                   </div>
                 ))}
               </div>
               <hr></hr>
-              <h2>
-                Total : Rs.
-                {cart.reduce(function (tot, arr) {
-                  return tot + arr.price;
-                }, 0)}
-              </h2>
+
+              <div style={{ display:'flex',justifyContent:'space-between',padding:'2%' }}>
+                <div>
+                  <p>Total :</p>
+                </div>
+                <div>
+                  <p style={{ color: "#36adf7" }}>
+                    Rs.
+                    {cart.reduce(function (tot, arr) {
+                      return tot + arr.price;
+                    }, 0)}
+                    /-
+                  </p>
+                </div>
+              </div>
             </div>
           </div>
           <Link path to="/checkout">

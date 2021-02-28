@@ -136,16 +136,32 @@ const Servicepage = () => {
             togglePress={handleToggle}
           />
           {toggleState.platinumToggle ? (
-            <BookingForm category="PLATINUM" cars={user.cars} />
+            <BookingForm
+              category="PLATINUM"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
           {toggleState.onetimeToggle ? (
-            <BookingForm category="ONETIME" cars={user.cars} />
+            <BookingForm
+              category="ONETIME"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
           {toggleState.goldToggle ? (
-            <BookingForm category="GOLD" cars={user.cars} />
+            <BookingForm
+              category="GOLD"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
           {toggleState.silverToggle ? (
-            <BookingForm category="SILVER" cars={user.cars} />
+            <BookingForm
+              category="SILVER"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
         </div>
       ) : (
@@ -166,7 +182,11 @@ const Servicepage = () => {
             togglePress={handleToggle}
           />
           {toggleState.onetimeToggle ? (
-            <BookingForm category="ONETIME" cars={user.cars} />
+            <BookingForm
+              category="ONETIME"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
           <BoxComponent
             category={"SILVER"}
@@ -184,7 +204,11 @@ const Servicepage = () => {
             togglePress={handleToggle}
           />
           {toggleState.silverToggle ? (
-            <BookingForm category="SILVER" cars={user.cars} />
+            <BookingForm
+              category="SILVER"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
           <BoxComponent
             category={"GOLD"}
@@ -202,7 +226,11 @@ const Servicepage = () => {
             togglePress={handleToggle}
           />
           {toggleState.goldToggle ? (
-            <BookingForm category="GOLD" cars={user.cars} />
+            <BookingForm
+              category="GOLD"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
           <BoxComponent
             category={"PLATINUM"}
@@ -220,7 +248,11 @@ const Servicepage = () => {
             togglePress={handleToggle}
           />
           {toggleState.platinumToggle ? (
-            <BookingForm category="PLATINUM" cars={user.cars} />
+            <BookingForm
+              category="PLATINUM"
+              cars={user.cars}
+              togglePress={handleToggle}
+            />
           ) : null}
         </div>
       )}

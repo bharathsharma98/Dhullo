@@ -1,20 +1,21 @@
-import   { useState, useEffect } from "react";
-import { useDispatch } from "react-redux";
+import  React  ,{ useState, useEffect }from "react";
+import { useDispatch,useSelector } from "react-redux";
 import {
   isLogged,
   addCar,
   addOrder,
 } from "../../../Redux/UserRedux/UserActions";
+import { setMyError } from "../../../Redux/Error/errorActions";
 
 const useForm = (callback, Validate) => {
-  // const cars = useSelector((state) => state.user.cars);
+   
 
   const [Item, setItem] = useState({
     phone: "",
     password: "",
   });
 
-  const [error, setError] = useState({});
+  const [error, setError] = useState(false);
   const [isSubmitting, SetisSubmitting] = useState(false);
   const handleChange = (e) => {
     const { name, value } = e.target; //destructured here
@@ -67,9 +68,8 @@ const useForm = (callback, Validate) => {
         : console.log("not logged in");
     } catch (err) {
       console.log(err)
-      err 
-        ? alert("INVALID CREDENTIALS")
-        : alert("logged in");
+       dispatch(setMyError(err));
+       
  
     }
   }
@@ -88,6 +88,7 @@ const useForm = (callback, Validate) => {
     handleSubmit,
     Item,
     error,
-  };
+};
+  
 };
 export default useForm;

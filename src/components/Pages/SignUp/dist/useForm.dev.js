@@ -36,7 +36,7 @@ var useForm = function useForm(callback, Validate) {
       Item = _useState2[0],
       setItem = _useState2[1];
 
-  var _useState3 = (0, _react.useState)({}),
+  var _useState3 = (0, _react.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
       error = _useState4[0],
       setError = _useState4[1];
@@ -94,15 +94,16 @@ var useForm = function useForm(callback, Validate) {
           case 13:
             alert("Signed in"); //dispatch item and push to add car page
 
-            _context.next = 19;
+            _context.next = 20;
             break;
 
           case 16:
             _context.prev = 16;
             _context.t0 = _context["catch"](3);
             console.log(_context.t0);
+            setError(true);
 
-          case 19:
+          case 20:
           case "end":
             return _context.stop();
         }

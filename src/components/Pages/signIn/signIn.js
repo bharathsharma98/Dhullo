@@ -1,17 +1,20 @@
-import React from "react";
+import React,{useState} from "react";
 import './signin.css';
 import logo from '../../../Image/logo3.png'
 import {Link} from 'react-router-dom'
 import useForm from "./useForm";
 import Validate from './validateLogin';
- 
- 
+ import { SmallPopupRound } from "../../../globaStyles/styleElements";
+import { useSelector } from 'react-redux';
 const SignIn = () => {
+ 
+    const myerror = useSelector((state) => state.error.errorMessage);
   const { Item, handleChange, handleSubmit,error } = useForm(submit,Validate);
-   
+ 
   function submit() {
   
   }
+
   return (
     <div className="signincontainer">
       <div className="signinForm">
@@ -54,6 +57,13 @@ const SignIn = () => {
             >
               Login
             </button>
+             
+            {
+            error ? (
+              <SmallPopupRound message="error">
+                <p>{myerror}</p>
+              </SmallPopupRound>
+            ) : null}
             <div className="signupContainer">
               <Link path to="/signup">
                 <small>

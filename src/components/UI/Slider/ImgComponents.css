@@ -3,7 +3,7 @@
   height: 50vh;
   margin-top: 2%;
   margin-left: 2.5%;
-   border: 2px solid rgb(126, 123, 123);
+  
  margin-bottom: 2%;
  
  justify-content:baseline ;
@@ -14,7 +14,7 @@
 }
 .imagefield {
  
- width: 95vw;
+ width: 45vw;
 height: 100%;
  
    
@@ -44,7 +44,7 @@ font-family: 'Dancing Script', cursive;
         width: 95%;
         height: 30vh;
        
-         border: 2px solid #03588c;;
+         
    
        
        justify-content:baseline ;

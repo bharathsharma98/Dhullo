@@ -18,7 +18,7 @@ const Footer = () => {
                   <img
                     src={facebook}
                     height="20px"
-                    width="30px"
+                    width="20px"
                     alt="facebook logo"
                   ></img>
                 </div>
@@ -32,7 +32,7 @@ const Footer = () => {
                 <img
                   src={twitter}
                   height="20px"
-                  width="30px"
+                  width="20px"
                   alt="twitter logo"
                 ></img>
               </div>
@@ -54,11 +54,13 @@ const Footer = () => {
                 Terms and Conditions
               </Link>
             </li>
+            <li>
+              <Link path to="#" style={{fontSize:'smaller', position:'absolute',left:'80%'}}>
+                © Dhullo Carcare Private Ltd.
+              </Link>
+            </li>
           </div>
         </ul>
-        <div className="certification">
-          <label>Dhullo Carcare Private Ltd.</label>
-        </div>
       </div>
     </div>
   );

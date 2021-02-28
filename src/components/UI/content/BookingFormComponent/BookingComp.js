@@ -10,7 +10,8 @@ import {  CarBox } from '../../../../globaStyles/styleElements';
 import { useId } from "react-id-generator";
 
 const BookingForm = (props) => {
-    const [itemId] = useId();
+  const [itemId] = useId();
+ 
   let tempcars = [];
   let duration = ["MONTHLY", "QUARTERLY", "HALFYEARLY", "YEARLY"];
   const dispatch = useDispatch();
@@ -29,6 +30,7 @@ const BookingForm = (props) => {
     const { name, value, checked, type } = e.target;
     if (type === "checkbox") {
       if (checked === true) {
+        
         tempcars = item.mycars.concat(value);
         setItem({ ...item, mycars: tempcars });
       } else {
@@ -48,7 +50,7 @@ const BookingForm = (props) => {
     finaltempcars.push({});
   }
   for (let i = 0; i < item.mycars.length; i++) {
-    finaltempcars[i].id = item.id;
+    finaltempcars[i].id = item.id+i;
     finaltempcars[i].category = props.category;
     finaltempcars[i].date = item.cardate;
     finaltempcars[i].time = item.mytime;
@@ -66,23 +68,32 @@ const BookingForm = (props) => {
     <div className="bookingform">
       <div className="bookingform-left">
         <h2>{props.category}</h2>
-        {user.cars.map((onecar) => (
-          <div className="carbox-container" key={onecar.id}>
-            <CarBox>
-              <input
-                className="checkBox"
-                type="checkbox"
-                name={onecar.details}
-                value={onecar.details}
-                onChange={handleChange}
-              />
-              <div>
-                <p>{onecar.details}</p>
+        <div
+          className={
+            user.cars.length !== 0
+              ? "carbox-container"
+              : "carbox-container_null"
+          }
+        >
+          {user.cars.map((onecar) => (
+            <CarBox key={onecar.id} selected={item.mycars.length}>
+              <div className="checkBox">
+                <input
+                  type="checkbox"
+                  name={onecar.details}
+                  value={onecar.details}
+                  onChange={handleChange}
+                />
               </div>
-               
+
+              <div  >
+                <p>{onecar.details}</p>
+                <small>{onecar.streetName}</small>
+              </div>
+             
             </CarBox>
-          </div>
-        ))}
+          ))}
+        </div>
         <div>
           <Link path to="/addcar">
             ADD NEW CAR
@@ -141,6 +152,7 @@ const BookingForm = (props) => {
                     dispatch(AddToCart(onecar));
 
                     alert(onecar.category + " Added to " + onecar.mycar);
+                    props.togglePress(onecar.category);
                   });
             }}
           >
@@ -149,14 +161,7 @@ const BookingForm = (props) => {
         </div>
       </div>
 
-      <div className="bookingform-right">
-        <p>
-          "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
-          semper condimentum massa, in pretium nibh malesuada quis. Praesent
-          facilisis elit in augue ullamcorper lobortis. Donec condimentum lectus
-          "
-        </p>
-      </div>
+       
     </div>
   );
 };

@@ -36,9 +36,17 @@ const MyOrders = () => {
             activemerge.map((oneorder) => (
               <div className="oneOrderBox" key={oneorder.id}>
                 <div className="cardetailsinActive">
-                  <h4 className="h4">{oneorder.details}</h4>
-                  <h4 className="h4">{oneorder.order.service}</h4>
-                  <h4 className="h4">{oneorder.order.package}</h4>
+                  <div>
+                    <p className="h4">{oneorder.details}</p>
+                  </div>
+                  <div>
+ 
+                    <p className="h4">{oneorder.order.service}</p>
+                  </div>
+                  <div>
+                
+                    <p className="h4">{oneorder.order.package}</p>
+                  </div>
                 </div>
 
                 <section className="subbar">
@@ -53,20 +61,24 @@ const MyOrders = () => {
             ))
           )}
         </div>
-            <div className="PastOrderContainer">
-                <h1>Past Orders</h1>
-          {pastmerge.length===0?<h1 style={{textAlign:'center'}}>No orders yet</h1>:pastmerge.map((merge) => {
-            return (
-              <div className="onepastorderbox" key={merge.id}>
-                <h3 className="h3">{merge.details}</h3>
-                <h4 className="h4">{merge.order.service}</h4>
-                <h4 className="h4">{merge.order.package}</h4>
-                <section className="pastbuttoncontainer">
-                  <button className="addorderbutton">Add to Cart</button>
-                </section>
-              </div>
-            );
-          })}
+        <div className="PastOrderContainer">
+          <h1>Past Orders</h1>
+          {pastmerge.length === 0 ? (
+            <h1 style={{ textAlign: "center" }}>No orders yet</h1>
+          ) : (
+            pastmerge.map((merge) => {
+              return (
+                <div className="onepastorderbox" key={merge.id}>
+                  <h3 className="h3">{merge.details}</h3>
+                  <h4 className="h4">{merge.order.service}</h4>
+                  <h4 className="h4">{merge.order.package}</h4>
+                  <section className="pastbuttoncontainer">
+                    <button className="addorderbutton">Add to Cart</button>
+                  </section>
+                </div>
+              );
+            })
+          )}
         </div>
       </div>
     );

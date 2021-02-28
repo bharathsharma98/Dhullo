@@ -133,6 +133,12 @@ function SideDrawer(props) {
                 Sign In
               </Link>
             </li>
+            <li>
+              <Link to="/contact">Terms And Conditions</Link>
+            </li>
+            <li>
+              <Link to="/contact">Privacy policy</Link>
+            </li>
           </ul>
         </nav>
       )}

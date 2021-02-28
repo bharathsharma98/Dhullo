@@ -7,9 +7,9 @@
 import Styled, { css } from "styled-components";
 
 export const SmallPopupRound = Styled.div`
-height:fit-content;
+height:2.5rem;
 max-width:fit-content;
-padding:0.1%;
+ 
 border-radius:100px;
 opacity:80%;
 z-index:200;
@@ -17,7 +17,8 @@ z-index:200;
  margin:3%;
  text-align:center;
  p {
- 
+ font-size:small;
+text-align:center;
      color:black;
      opacity:100%;
  }
@@ -54,27 +55,45 @@ margin-right:1rem;
   }
 `
 export const CarBox = Styled.div`
- height:fit-content;
+ height:clamp(4rem,5rem,10rem);
+ margin-bottom:0.5rem;
+ margin-right:0.5rem;
     min-width: 15rem;
     max-width:fit-content;
-    padding-left:1%;
-    padding-right:3%;
+   border-radius:5px;
+   
     border:2px solid #bab3b3;
       background-color:#ebe4e4;
 text - align: center;
 // margin-bootom:1rem;
 display:flex;
+ 
 flex-direction:row;
-.checkBox{
+input{
      align-items:center;
-     height:30px;
+     height:20px;
+     width:20px;
    text-align:center;
     cursor:pointer;
+  margin:1rem;
+    background-color:blue;
  } 
  label{
 font-size:small;
   font-family: 'Josefin Sans', sans-serif;
   margin-left:10%;
+
  
  }
+ small{
+   font-size:medium;
+  font-family: 'Josefin Sans', sans-serif;
+ 
+    color:gray;
+    width:100%;
+ }
+ p{
+     font-size:large;
+ }
+ 
 `;

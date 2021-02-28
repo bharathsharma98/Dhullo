@@ -2,7 +2,8 @@ import React from "react";
 import useForm from "./useForm";
 import Validate from './validateSignup'
 import logo from "../../../Image/logo3.png";
-import '../signIn/signin.css'
+import '../signIn/signin.css';
+ import { SmallPopupRound } from "../../../globaStyles/styleElements";
 const SignUp = () => {
   const { Item, handleChange, handleSubmit,error } = useForm(submit,Validate);
 
@@ -12,13 +13,13 @@ const SignUp = () => {
   return (
     <div className="signupcontainer">
       <div className="signinForm">
-        <div id="left-side" style={{ backgroundColor: "#5db519" }}>
+        <div id="left-sideSp" style={{ backgroundColor: "#5db519" }}>
           <div className="logo-Text">
             <img src={logo} alt={logo}></img>
             <h1 style={{color:'black'}}>DHULLO</h1>
           </div>
         </div>
-        <div id="right-side">
+        <div id="right-sideSp">
           <form noValidate onSubmit={handleSubmit} id="signup">
             <p className="Login-login">Sign-Up</p>
             <div>
@@ -70,6 +71,9 @@ const SignUp = () => {
               </div>
             </div>
             <button type="submit">Signup</button>
+            {
+              error ? <SmallPopupRound message="error"><p>Unable to Signup</p></SmallPopupRound>:null
+            }
           </form>
         </div>
       </div>

@@ -62,7 +62,7 @@ export default function Toolbar(props) {
                     alt=""
                     style={{ width: 100, height: 38, marginHorizontal: 2 }}
                   />
-                 
+                 {cartItems.length}
                 </Link>
               </li>
               <li onClick={() => setToggle(!toggle)}>

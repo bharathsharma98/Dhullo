@@ -134,7 +134,7 @@ const AddCarComponent = (props) => {
       <h1>ADD CAR DETAILS</h1>
 
       <div className="selectrow1">
-        <label>Select vehicle type</label>
+        <label style={{ color: "black" }}>Select vehicle type</label>
         <select className="select" name="cartype" onChange={inputsHandler}>
           {CarDetails.cartypes.map((car) => (
             <option value={car.model} key={car}>
@@ -177,10 +177,10 @@ const AddCarComponent = (props) => {
           onChange={inputsHandler}
         ></input>
       </div>
-      <label>Address</label>
+      <label style={{ color: "black" }}>Address</label>
       <div className="carAddress">
         <br></br>
-
+        <label>House.No</label>
         <input
           placeholder="House.No"
           type="text"
@@ -188,7 +188,7 @@ const AddCarComponent = (props) => {
           name="house_no"
           onChange={inputsHandler}
         ></input>
-
+        <label>Street</label>
         <input
           required
           placeholder="Street"
@@ -197,7 +197,7 @@ const AddCarComponent = (props) => {
           name="street"
           onChange={inputsHandler}
         ></input>
-
+        <label>Pincode</label>
         <input
           placeholder="Pincode"
           type="tel"
@@ -207,7 +207,7 @@ const AddCarComponent = (props) => {
           name="pincode"
           onChange={inputsHandler}
         ></input>
-
+        <label>Landmark</label>
         <input
           placeholder="Landmark"
           type="text"

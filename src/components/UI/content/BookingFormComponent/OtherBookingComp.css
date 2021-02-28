@@ -24,9 +24,28 @@ opacity: 60%;
 }
  .carbox-container{
      display: flex;
-     flex-wrap: wrap;
-     margin-bottom: 1rem;
+     flex-direction: row;
+     
+  
+     width: auto;
+     height: 10rem;
+       
  }
+ @media(max-width:769px){
+      .carbox-container{
+     display: flex;
+     flex-direction: column;
+     
+    padding: 1rem;
+     width: auto;
+     height: auto;
+       
+ }
+ }
+  .carbox-container_null{
+      height: auto;
+      width: auto;
+  }
  .bookingform a{
        font-size:clamp(0.5rem,1rem,2rem);
   font-family: 'Josefin Sans', sans-serif;
@@ -40,10 +59,7 @@ margin-left: 0%;
  .bookingform-left{
      display: flex;
      flex-direction: column;
-   
+
  }
- .bookingform-right{
-  width: 100vh;
-  text-align: center;
-  margin: auto;
- }
+  
+ 
