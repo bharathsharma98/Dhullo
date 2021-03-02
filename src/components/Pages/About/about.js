@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import TextComp from "../../UI/content/TextComponents/TextComponent";
 import MainImage from "../../UI/content/ImageComponents/ImgComp";
 import MissionImage from "../../../Image/mission image.png";
@@ -6,10 +6,12 @@ import OurStoryImg from "../../../Image/our story image.png";
  
 import CircularTextComp from "../../../components/UI/content/CircularRingComponent/CircRingComp";
 import "./about.css";
-class about extends Component {
+const About  =()=> {
   
-  render() {
-    
+  
+     useEffect(() => {
+       document.body.scrollTop = 0;
+     }, []);
 
     const pinkStyle = {
       backgroundColor: "#e3bfdd",
@@ -108,6 +110,6 @@ class about extends Component {
       </div>
     );
   }
-}
+ 
 
-export default about;
+export default About;

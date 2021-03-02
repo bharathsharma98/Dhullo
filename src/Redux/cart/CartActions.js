@@ -18,3 +18,11 @@ export const RemoveFromCart = (item) => {
 
 
 };
+export const UpdateFromCart = (item) => {
+  return {
+    type: "UPDATE_FROM_CART",
+    payload: item,
+  };
+
+
+};

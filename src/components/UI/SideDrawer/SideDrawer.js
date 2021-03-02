@@ -36,6 +36,9 @@ function SideDrawer(props) {
             <li>
               <Link to="/">Home</Link>
             </li>
+            <li>
+              <Link to="/myorders">My Orders</Link>
+            </li>
             <hr className="sidehr"></hr>
             <li>
               <Link to="/services">Services</Link>
@@ -44,54 +47,57 @@ function SideDrawer(props) {
             <li>
               <Link to="/about">About</Link>
             </li>
-            <hr className="sidehr"></hr>
+            <hr></hr>
             <li>
               <Link to="/contact">Contact Us</Link>
             </li>
             <hr className="sidehr"></hr>
-            <li>
-              <Link to="/contact">Terms And Conditions</Link>
-            </li>
-            <li>
-              <Link to="/contact">Privacy policy</Link>
-            </li>
-            <hr className="sidehr"></hr>
-            <li>
-              <button
-                onClick={() =>
-                  confirmAlert({
-                    customUI: ({ onClose }) => {
-                      return (
-                        <div className="custom-ui">
-                          <h3 style={{ textAlign: "center", marginTop: "3%" }}>
-                            Are you sure to Logout?
-                          </h3>
-                          <div className="promptbuttoncontainer">
-                            <button
-                              className="promptbuttonNo"
-                              onClick={onClose}
+            <div className="tc-container">
+              <li>
+                <Link to="/contact">Terms And Conditions</Link>
+              </li>
+              <li>
+                <Link to="/contact">Privacy policy</Link>
+              </li>
+              <div className="logoutSidebar">
+                <button
+                  onClick={() =>
+                    confirmAlert({
+                      customUI: ({ onClose }) => {
+                        return (
+                          <div className="custom-ui">
+                            <h3
+                              style={{ textAlign: "center", marginTop: "3%" }}
                             >
-                              No
-                            </button>
-                            <button
-                              className="promptbuttonYes"
-                              onClick={() => {
-                                dispatch(isLoggedout());
-                                onClose();
-                              }}
-                            >
-                              Yes
-                            </button>
+                              Are you sure to Logout?
+                            </h3>
+                            <div className="promptbuttoncontainer">
+                              <button
+                                className="promptbuttonNo"
+                                onClick={onClose}
+                              >
+                                No
+                              </button>
+                              <button
+                                className="promptbuttonYes"
+                                onClick={() => {
+                                  dispatch(isLoggedout());
+                                  onClose();
+                                }}
+                              >
+                                Yes
+                              </button>
+                            </div>
                           </div>
-                        </div>
-                      );
-                    },
-                  })
-                }
-              >
-                Logout
-              </button>
-            </li>
+                        );
+                      },
+                    })
+                  }
+                >
+                  Logout
+                </button>
+              </div>
+            </div>
           </ul>
         </nav>
       ) : (
@@ -133,12 +139,14 @@ function SideDrawer(props) {
                 Sign In
               </Link>
             </li>
-            <li>
-              <Link to="/contact">Terms And Conditions</Link>
-            </li>
-            <li>
-              <Link to="/contact">Privacy policy</Link>
-            </li>
+            <div className="tc-container">
+              <li>
+                <Link to="/contact">Terms And Conditions</Link>
+              </li>
+              <li>
+                <Link to="/contact">Privacy policy</Link>
+              </li>
+            </div>
           </ul>
         </nav>
       )}

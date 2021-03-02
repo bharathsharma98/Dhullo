@@ -1,6 +1,6 @@
 .side-drawer {
   height: 100%;
-  background: white;
+  background: rgb(255, 255, 255);
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   position: fixed;
   top: 0;
@@ -21,12 +21,17 @@
   display: flex; /* so that list contants doesnt have any bullets */
   flex-direction: column; /* so that list items are in vertical aligned below each other */
   justify-content: top; /* to align list items to center */
+ 
 }
 .userprofilecomp{
   align-items: start;
   height: 12rem;
-  background-image: linear-gradient(to top, #fad0c4 0%, #ffd1ff 100%);
-  
+ background-color: #FFE53B;
+background-color: #FEE140;
+background-image: linear-gradient(90deg, #FEE140 0%, #FA709A 100%);
+background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+background-image: linear-gradient(to top, #ebbba7 0%, #cfc7f8 100%);
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
 }  
 .userimagecomp{
  
@@ -51,7 +56,7 @@ margin-left: 2rem;
 .side-drawer li {
   margin: .5rem  ; 
   border-radius: 2px;
-  text-align:  start;
+  text-align:  left;
  font-size:small;
  font-weight: 800;
   height: 2rem;
@@ -79,14 +84,21 @@ margin-left: 2rem;
     display: none;
   }
 }
-.sidehr{
-  border: 1 solid rgb(117, 114, 114);
-}
-.side-drawer button{
-  padding: 2%;
+ 
+.logoutSidebar button{
+ 
   background: red;
+ margin:  auto;
+ width: 50%;
+ border: none;
+ height: 2.5rem;
+ border-radius: 0px;
 }
 .spacer1{
   flex: 1;
   background-color: #fa923f;
+}
+.tc-container{
+  margin-top: clamp(10%,13%,15%);
+  
 }

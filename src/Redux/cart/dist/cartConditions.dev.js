@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.removeFromCart = exports.addItemsToCart = void 0;
+exports.updateFromCart = exports.removeFromCart = exports.addItemsToCart = void 0;
 
 function _toConsumableArray(arr) { return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _nonIterableSpread(); }
 
@@ -36,3 +36,19 @@ var removeFromCart = function removeFromCart(CartItems, RemoveItem) {
 };
 
 exports.removeFromCart = removeFromCart;
+
+var updateFromCart = function updateFromCart(CartItems, UpdateItem) {
+  var newCartItems = [];
+
+  for (var i = 0; i < CartItems.length; i++) {
+    if (CartItems[i].id == UpdateItem.id) {
+      newCartItems.push(UpdateItem);
+    } else {
+      newCartItems.push(CartItems[i]);
+    }
+  }
+
+  return newCartItems;
+};
+
+exports.updateFromCart = updateFromCart;

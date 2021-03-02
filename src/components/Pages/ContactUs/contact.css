@@ -10,11 +10,7 @@ h3 {
   text-align: center;
   
 }
-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
+ 
 input {
   min-width: 30%;
   align-content: center;
@@ -34,4 +30,60 @@ button {
 }
 .contactcontainer{
   height: 100vh;
+
+}
+.contactForm{
+ display: flex;
+ max-height: 100%;
+ margin: auto;
+ margin-top: 5%;
+ width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.contactcontainer h1{
+  text-align: center;
+  color: #03588c;
+}
+.TAREA{
+  height:5rem;
+   
+}
+.leftContact{
+ 
+ width: 50%;
+ 
+ 
+}
+.leftContact img{
+display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 7%;
+
+  width: 50%;
+}
+.rightContact  p{
+text-align: center;
+color: #03588c;
+ 
+}
+.rightContact{
+  background-color: #dce3e7;
+  width: 50%;
+  text-align: center;
+  padding-top: 2%;
+}
+.buttonContact{
+  margin: 10%;
+}
+@media(max-width:769px){
+  .leftContact{
+ width: 0%;
+visibility: hidden;
+ 
+ 
+}
+.rightContact{
+  width: 100%;
+}
 }

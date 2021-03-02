@@ -38,6 +38,11 @@ var CartReducer = function CartReducer() {
         CartItems: (0, _cartConditions.removeFromCart)(state.CartItems, action.payload)
       });
 
+    case "UPDATE_FROM_CART":
+      return _objectSpread({}, state, {
+        CartItems: (0, _cartConditions.updateFromCart)(state.CartItems, action.payload)
+      });
+
     case "LOGGED_OUT":
       return _objectSpread({}, state, {
         CartItems: []

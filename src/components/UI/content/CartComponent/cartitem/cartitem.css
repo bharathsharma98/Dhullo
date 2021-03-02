@@ -101,7 +101,8 @@ background-color: #f4f8fc;
   max-width: 85%;
 }
 .timeinput {
-  max-width: 85%;
+  max-width: fit-content;
+  height: fit-content;
 }
 .cartprice {
   text-align: left;

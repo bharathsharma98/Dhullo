@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../cartitem/cartitem.css";
 import DatePicker from "react-datepicker";
@@ -7,15 +7,20 @@ import ONETIME from "../../../../../Image/servicesanitization.png";
 // import INTERIOR from "../../../../../Image/interior.jpg";
 // import exterior from "../../../../../Image/car shine.jpg";
 import emptycart from "../../../../../Image/emptycart.png";
-import { RemoveFromCart } from "../../../../../Redux/cart/CartActions";
+import { RemoveFromCart,UpdateFromCart } from "../../../../../Redux/cart/CartActions";
 // import CheckoutPage from '../../../../Pages/Checkout/Checkoutpage'
 import { Link } from "react-router-dom";
 function CartItem() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.CartItems);
-
-  console.log(cart);
-
+  const [tempCart, updateTempCart] = useState({
+    newDate: '',
+    newTime: '',
+    newDuration:''
+})
+  console.log(tempCart);
+ 
+ 
   return (
     <div>
       {cart.length === 0 ? (
@@ -45,14 +50,45 @@ function CartItem() {
                   <h2 className="cartcar">{item.mycar}</h2>
                   <p className="caraddress">{item.housename}</p>
 
-                  <DatePicker selected={Date.parse(item.date)} />
+                  <DatePicker
+                    selected={Date.parse(item.date)}
+                    onChange={(cardate) =>
+                      dispatch(
+                        UpdateFromCart({
+                          id: item.id,
+                          date: cardate,
+                          mycar: item.mycar,
+                          price: item.price,
+                          serviceprice: item.serviceprice,
+                          time: item.time,
+                          category: item.category,
+                          categoryprice: item.categoryprice,
+                        })
+                      )
+                    }
+                  />
 
                   {item.time ? (
                     <DatePicker
                       selected={Date.parse(item.time)}
-                      dateFormat="  h:mm aa"
-                      timeInputLabel="Time:"
-                      showTimeSelectOnly
+                      showTimeSelect
+                      timeIntervals={60}
+                      onChange={(cartime) =>
+                        dispatch(
+                          UpdateFromCart({
+                            id: item.id,
+                            date: item.date,
+                            mycar: item.mycar,
+                            price: item.price,
+                            serviceprice: item.serviceprice,
+                            time: cartime,
+                            category: item.category,
+                            categoryprice: item.categoryprice,
+                          })
+                        )
+                      }
+                      dateFormat="h:mm aa"
+                      placeholderText="Select Time"
                     />
                   ) : null}
                   {item.duration ? <p>{item.duration}</p> : null}
@@ -81,7 +117,13 @@ function CartItem() {
               </div>
               <hr></hr>
 
-              <div style={{ display:'flex',justifyContent:'space-between',padding:'2%' }}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  padding: "2%",
+                }}
+              >
                 <div>
                   <p>Total :</p>
                 </div>

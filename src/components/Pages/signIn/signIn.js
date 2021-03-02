@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 import './signin.css';
 import logo from '../../../Image/logo3.png'
 import {Link} from 'react-router-dom'
@@ -6,7 +6,9 @@ import useForm from "./useForm";
 import Validate from './validateLogin';
  import { SmallPopupRound } from "../../../globaStyles/styleElements";
 import { useSelector } from 'react-redux';
+import emptycart from "../../../Image/emptycart.png";
 const SignIn = () => {
+  useEffect(()=>{document.body.scrollTop = 0; },[])
  
     const myerror = useSelector((state) => state.error.errorMessage);
   const { Item, handleChange, handleSubmit,error } = useForm(submit,Validate);
@@ -18,11 +20,11 @@ const SignIn = () => {
   return (
     <div className="signincontainer">
       <div className="signinForm">
-        <div id="left-side" style={{ backgroundColor: "#3074cf" }}>
-          <div className="logo-Text">
-            <img src={logo} alt={logo}></img>
-            <h1>DHULLO</h1>
-          </div>
+        <div id="left-side">
+           
+            <img src={emptycart} alt={logo} height="60%" width="60%"></img>
+            <h1>DHULLO CARCARE</h1>
+         
         </div>
         <div id="right-side">
           <form noValidate onSubmit={handleSubmit}>

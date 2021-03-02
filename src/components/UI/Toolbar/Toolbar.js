@@ -31,7 +31,6 @@ export default function Toolbar(props) {
           </div>
           <div className="cart">
             <Link path to="/cart">
-             
               <img className="cart-contain" src={cart} alt="" />
             </Link>
           </div>
@@ -62,7 +61,7 @@ export default function Toolbar(props) {
                     alt=""
                     style={{ width: 100, height: 38, marginHorizontal: 2 }}
                   />
-                 {cartItems.length}
+                 { cartItems.length ?<small>{cartItems.length}</small>:null}
                 </Link>
               </li>
               <li onClick={() => setToggle(!toggle)}>

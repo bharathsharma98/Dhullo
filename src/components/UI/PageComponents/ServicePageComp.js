@@ -275,7 +275,11 @@ const Servicepage = () => {
           </button>
         </div>
         {toggleState.sanitizationToggle ? (
-          <BookingForm category="SANITIZATION" cars={user.cars} />
+          <BookingForm
+            category="SANITIZATION"
+            cars={user.cars}
+            togglePress={handleToggle}
+          />
         ) : null}
       </div>
 
@@ -303,7 +307,11 @@ const Servicepage = () => {
           </button>
         </div>
         {toggleState.interiorToggle ? (
-          <BookingForm category="INTERIOR" cars={user.cars} />
+          <BookingForm
+            category="INTERIOR"
+            cars={user.cars}
+            togglePress={handleToggle}
+          />
         ) : null}
       </div>
       <div className="sanitRow">
@@ -324,7 +332,11 @@ const Servicepage = () => {
           </button>
         </div>
         {toggleState.exteriorToggle ? (
-          <BookingForm category="EXTERIOR" cars={user.cars} />
+          <BookingForm
+            category="EXTERIOR"
+            cars={user.cars}
+            togglePress={handleToggle}
+          />
         ) : null}
       </div>
     </div>

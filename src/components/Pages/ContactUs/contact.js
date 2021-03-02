@@ -1,22 +1,38 @@
 import React, { Component } from 'react';
-import './contact.css'
+import './contact.css';
+import emptycart from "../../../Image/emptycart.png";
 class contact extends Component {
   render() {
     return (
       <div className="contactcontainer">
-        <h1 style={{textAlign:'center'}}>We are here to Help</h1>
-        <div className="iconcontainer">
-        <h2>+91XXXXXXXXXX</h2>
-        <h2>Customer.care@dhullo.com</h2>
+        <div className="contactForm">
+          <div className="leftContact">
+            <img src={emptycart} alt={emptycart} height="60%" width="60%"></img>
+            <p>YOU CAN REACH US AT</p>
+            <p>+91 0000000000</p>
+            <p>customercare@dhullo.com</p>
+          </div>
+          <div className="rightContact">
+            <p>DROP US A MESSAGE</p>
+            <div>
+              <input type="text" placeholder="NAME"></input>
+            </div>
+            <div>
+              <input type="email" placeholder="EMAIL"></input>
+            </div>
+            <div>
+              <input
+                type=" textarea"
+                className="TAREA"
+                placeholder="MESSAGE"
+              ></input>
+            </div>
+            <div className="buttonContact">
+              <button>SEND</button>
+            </div>
+          </div>
         </div>
-        <h3>Drop in a message</h3>
-        <form>
-          <input placeholder="Name"></input>
-          <input placeholder="Email Id"></input>
-          <input className="msg" placeholder="leave a message"></input>
-         <button>Send</button>
-        </form>
-    </div>
+      </div>
     );
   }
 }

@@ -1,5 +1,8 @@
 import { addItemsToCart } from "./cartConditions";
 import { removeFromCart } from "./cartConditions";
+import { updateFromCart } from "./cartConditions";
+ 
+ 
 
 const INITIAL_STATE = {
   CartToggle: false,
@@ -21,6 +24,11 @@ const CartReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         CartItems: removeFromCart(state.CartItems, action.payload),
+      };
+    case "UPDATE_FROM_CART":
+      return {
+        ...state,
+        CartItems: updateFromCart(state.CartItems, action.payload),
       };
     case "LOGGED_OUT":
       return {
