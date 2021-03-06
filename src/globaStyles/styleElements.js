@@ -5,7 +5,9 @@
 //       border-radius: 3px;
 //     `}
 import Styled, { css } from "styled-components";
-
+import Washing from "../Image/washing.png";
+import sanitization from "../Image/sanitization.png";
+import detailing from "../Image/detailing.png";
 export const SmallPopupRound = Styled.div`
 height:2.5rem;
 max-width:fit-content;
@@ -100,7 +102,7 @@ font-size:small;
 
 export const ServiceCard = Styled.div`
 height:100PX;
-width:150PX;
+width:40%;
 margin:2%;
 display:flex;
 flex-direction:column;
@@ -109,14 +111,34 @@ align-items:center;
 background-color:${(props) => props.color};
 border-radius:5px;
 cursor:pointer;
-border:1px solid ${(props) => props.color};
+ position:relative;
+border:2px solid ${(props) => props.color};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 a{font-size:clamp(2vw,3.5vw,4vw);
+ 
+ 
 color:${(props) => props.fontColor};
 font-weight:bold;
 text-decoration:none;
   font-family: 'Josefin Sans', sans-serif;
-  
+ font-size:3.4vw;
+ 
+ 
+    position: relative;
+top:-40%;
+left:7%;
+   width: 100%;
+   margin: auto;
+   width: 100%;
+   height: 50px;
+ 
  }
-
+img{
+  bottom:-8px;
+  z-index:-1;
+  height:100%;
+  width:100%;
+  -webkit-filter: blur(2.5px);
+  position:relative;
+}
 `;

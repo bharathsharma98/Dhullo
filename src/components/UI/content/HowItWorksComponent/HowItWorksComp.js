@@ -4,7 +4,7 @@ import relax from "../../../../Image/relax.png";
 import agent from "../../../../Image/agent.png";
 import bookservice from "../../../../Image/bookservice.png";
 import selectservice from "../../../../Image/selectservice.png";
-
+ 
 const HowItWorks = () => {
   return (
     <div>

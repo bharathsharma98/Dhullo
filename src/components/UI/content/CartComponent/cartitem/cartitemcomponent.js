@@ -96,7 +96,7 @@ function CartItem() {
                   <p className="cartprice">Price : Rs. {item.price}</p>
                   <button
                     className="cartremovebtn"
-                    onClick={ confirmAlert({
+                    onClick={()=> confirmAlert({
       customUI: ({ onClose }) => {
         return (
           <div className="custom-ui">

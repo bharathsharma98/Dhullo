@@ -2,19 +2,21 @@ import React, { useState } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import TextComp from "../content/TextComponents/TextComponent";
 import BoxComponent from "../content/BoxComponent/BoxComp";
-import {  useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import "./ServicePageComp.css";
- import {ServiceCard} from '../../../globaStyles/styleElements'
-import BookingForm  from '../content/BookingFormComponent/BookingComp'
+import { ServiceCard } from "../../../globaStyles/styleElements";
+import BookingForm from "../content/BookingFormComponent/BookingComp";
 import ServiceDetailingImg from "../../../Image/servicedetailing.png";
 import ServiceSanitizationImg from "../../../Image/servicesanitization.png";
 import CarWashingImg from "../../../Image/servicewashing.png";
 import MainImage from "../content/ImageComponents/ImgComp";
-
+import Washing from "../../../Image/washing.png";
+import sanitization from "../../../Image/sanitization.png";
+import detailing from "../../../Image/detailing.png";
 const Servicepage = () => {
-  const  width = { matches: window.matchMedia("(min-width: 768px)").matches };
-  console.log(width)
-   const user = useSelector((state) => state.user);
+  const width = { matches: window.matchMedia("(min-width: 768px)").matches };
+  console.log(width);
+  const user = useSelector((state) => state.user);
   const [toggleState, setToggle] = useState({
     onetimeToggle: 0,
     silverToggle: 0,
@@ -25,10 +27,9 @@ const Servicepage = () => {
     interiorToggle: 0,
   });
   const [mobileToggle, setMobileToggle] = useState({
-   toggle:'ONETIME'
- })
+    toggle: "ONETIME",
+  });
   const handleToggle = (toggle) => {
-    
     switch (toggle) {
       case "ONETIME": {
         setToggle({ onetimeToggle: !toggleState.onetimeToggle });
@@ -61,12 +62,13 @@ const Servicepage = () => {
       default:
         return toggleState;
     }
-  }
+  };
 
- 
   return (
     <div className="Servicepage-Container">
+     
       {width.matches ? null : (
+    
         <div
           className="services-brief"
           style={{
@@ -76,17 +78,22 @@ const Servicepage = () => {
             marginTop: "2%",
           }}
         >
-          <ServiceCard color="limegreen" fontColor="white">
+          <ServiceCard fontColor="black">
+            <img src={Washing}></img>
             <a href="#washingcontainer">WASHING</a>
           </ServiceCard>
-          <ServiceCard color="cyan" fontColor="black">
+          <ServiceCard fontColor="black">
+            <img src={sanitization}></img>
             <a href="#sanitizationcontainer">SANITIZATION</a>
           </ServiceCard>
-          <ServiceCard color="orangered" fontColor="white">
+          <ServiceCard fontColor="black">
+            <img src={detailing}></img>
             <a href="#detailingcontainer">DETAILING</a>
           </ServiceCard>
         </div>
+         
       )}
+    
       <h1 className="serviceHeader" id="washingcontainer">
         WASHING
       </h1>

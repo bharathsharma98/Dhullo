@@ -1,89 +1,125 @@
+ .contactcontainer{
+   min-height: 100vh;
+   height: 100%;
  
-.iconcontainer {
-  display: flex;
-  justify-content: space-between;
-  margin: 2%;
-  flex-wrap: wrap;
-}
-h3 {
+   margin-left: 4%;
+   margin-right: 4%;
+   display: flex;
+   flex-direction: column;
+ }
+ .upperContact{
+display: flex;
+position: relative;
+ }
+ .upperContact p{
+ position: absolute;
+ top: 40%;
+ left: 45%;
+ font-size: clamp(1vw,3vw,4vw);
  
-  text-align: center;
-  
-}
- 
-input {
-  min-width: 30%;
-  align-content: center;
-  margin: 1rem;
-  border: 2px solid #03588c;
-  height: 3rem;
-  border-radius: 5px;
-}
-button {
-  background: #03588c 0% 0% no-repeat padding-box;
-  border-radius: 4px;
-  height: 3rem;
-  width: 10rem;
-  opacity: 1;
-  color: white;
-  font-size: larger;
-}
-.contactcontainer{
-  height: 100vh;
-
-}
-.contactForm{
- display: flex;
- max-height: 100%;
- margin: auto;
- margin-top: 5%;
- width: 80%;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-.contactcontainer h1{
-  text-align: center;
-  color: #03588c;
-}
-.TAREA{
-  height:5rem;
-   
-}
-.leftContact{
- 
- width: 50%;
- 
- 
-}
-.leftContact img{
-display: block;
-  margin-left: auto;
-  margin-right: auto;
-  margin-top: 7%;
-
-  width: 50%;
-}
-.rightContact  p{
-text-align: center;
-color: #03588c;
- 
-}
-.rightContact{
-  background-color: #dce3e7;
-  width: 50%;
-  text-align: center;
-  padding-top: 2%;
-}
-.buttonContact{
-  margin: 10%;
-}
-@media(max-width:769px){
-  .leftContact{
- width: 0%;
-visibility: hidden;
- 
- 
-}
-.rightContact{
+ }
+.upperContact img{
+  height: auto;
   width: 100%;
 }
+ .lowerContact{
+ 
+height: auto;
+width: 100%;
+ 
+display: flex;
+flex-direction: column;
+ }
+ .contactEmail{
+   display: flex;
+   flex-direction: column;
+justify-content: center;
+align-items: center;
+margin-top:2%;
+margin-bottom: 2%;
+ }
+ 
+ .contactPhone{
+   display: flex;
+   flex-direction: column;
+     justify-content: center;
+     align-items: center;
+ }
+ .contactField {
+  
+ margin-top: 3%;
+ display: flex;
+ flex-direction: column;
+ text-align: center;
+ }
+.messagenEmail{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ 
+ flex-wrap: wrap;
+ 
 }
+.messagenEmail input{
+width: 20vw;
+height: 6vh;
+ border:2px solid black;
+}
+.messagenMessage{
+  margin-bottom: 2%;
+}
+.messagenMessage  input{
+width: 66vw;
+height: 15vh;
+border:2px solid black;
+ 
+}
+.contactcontainer button{
+  margin: auto;
+width: 10vw;
+margin-bottom: 2%;
+height: 5vh;
+border: 2px solid #BF9503;
+background-color: #BF9503;
+font-size: large;
+
+}
+ @media(max-width:769px){
+   .contactcontainer{
+     width: 100vw;
+     margin: 0%;
+   }
+   .upperContact img{
+  height: 30vh;
+  width: 100%;
+}
+    .upperContact p{
+ position: absolute;
+ top: 20%;
+ left: 60%;
+ 
+ }
+ .messagenEmail{
+ display: flex;
+ 
+ 
+}
+.messagenEmail input{
+   
+width: 66vw;
+height: 6vh;
+border:2px solid black;
+}
+.contactcontainer button{
+  margin: auto;
+width: 40vw;
+margin-bottom: 2%;
+height: 5vh;
+}
+.contactEmail   img{
+  width: 15vw;
+}
+.contactPhone   img{
+  width: 15vw;
+}
+ }

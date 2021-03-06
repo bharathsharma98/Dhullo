@@ -9,12 +9,20 @@ exports.ServiceCard = exports.CarBox = exports.Userpopup = exports.SmallPopupRou
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
+var _washing = _interopRequireDefault(require("../Image/washing.png"));
+
+var _sanitization = _interopRequireDefault(require("../Image/sanitization.png"));
+
+var _detailing = _interopRequireDefault(require("../Image/detailing.png"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
 function _templateObject6() {
-  var data = _taggedTemplateLiteral(["\nheight:100PX;\nwidth:150PX;\nmargin:2%;\ndisplay:flex;\nflex-direction:column;\njustify-content:center;\nalign-items:center;\nbackground-color:", ";\nborder-radius:5px;\ncursor:pointer;\nborder:1px solid ", ";\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\na{font-size:clamp(2vw,3.5vw,4vw);\ncolor:", ";\nfont-weight:bold;\ntext-decoration:none;\n  font-family: 'Josefin Sans', sans-serif;\n  \n }\n\n"]);
+  var data = _taggedTemplateLiteral(["\nheight:100PX;\nwidth:40%;\nmargin:2%;\ndisplay:flex;\nflex-direction:column;\njustify-content:center;\nalign-items:center;\nbackground-color:", ";\nborder-radius:5px;\ncursor:pointer;\n position:relative;\nborder:2px solid ", ";\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\na{font-size:clamp(2vw,3.5vw,4vw);\n \n \ncolor:", ";\nfont-weight:bold;\ntext-decoration:none;\n  font-family: 'Josefin Sans', sans-serif;\n font-size:3.4vw;\n \n \n    position: relative;\ntop:-40%;\nleft:7%;\n   width: 100%;\n   margin: auto;\n   width: 100%;\n   height: 50px;\n \n }\nimg{\n  bottom:-8px;\n  z-index:-1;\n  height:100%;\n  width:100%;\n  -webkit-filter: blur(2.5px);\n  position:relative;\n}\n"]);
 
   _templateObject6 = function _templateObject6() {
     return data;
