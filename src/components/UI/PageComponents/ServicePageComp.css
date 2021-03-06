@@ -84,7 +84,22 @@
     text-align: center;
      
   }
- 
+ .mobileToggle-Buttons{
+   display: flex;
+   flex-direction: row;
+ width: 100vw;
+ justify-content: center;
+ }
+ .mobileToggle-Buttons button{
+   height: 2rem;
+   background-color: rgb(201, 190, 190);
+   color: black;
+   margin: 0.2rem;
+   border: none;
+   border-radius: 0%;
+   cursor: pointer;
+   width: auto;
+ }
   .washingcontainer h1,
 .sanitizationcontainer h1,
 .detailingcontainer h1{
@@ -126,3 +141,7 @@
   box-shadow: 0 0px 9px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
 }
 
+hr{
+  height: 1px;
+  width: 100%;
+}

@@ -5,13 +5,23 @@ function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterat
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.CarBox = exports.Userpopup = exports.SmallPopupRound = void 0;
+exports.ServiceCard = exports.CarBox = exports.Userpopup = exports.SmallPopupRound = void 0;
 
 var _styledComponents = _interopRequireWildcard(require("styled-components"));
 
 function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+
+function _templateObject6() {
+  var data = _taggedTemplateLiteral(["\nheight:100PX;\nwidth:150PX;\nmargin:2%;\ndisplay:flex;\nflex-direction:column;\njustify-content:center;\nalign-items:center;\nbackground-color:", ";\nborder-radius:5px;\ncursor:pointer;\nborder:1px solid ", ";\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\na{font-size:clamp(2vw,3.5vw,4vw);\ncolor:", ";\nfont-weight:bold;\ntext-decoration:none;\n  font-family: 'Josefin Sans', sans-serif;\n  \n }\n\n"]);
+
+  _templateObject6 = function _templateObject6() {
+    return data;
+  };
+
+  return data;
+}
 
 function _templateObject5() {
   var data = _taggedTemplateLiteral(["\n height:clamp(4rem,5rem,10rem);\n margin-bottom:0.5rem;\n margin-right:0.5rem;\n    min-width: 15rem;\n    max-width:fit-content;\n   border-radius:5px;\n   \n    border:2px solid #bab3b3;\n      background-color:#ebe4e4;\ntext - align: center;\n// margin-bootom:1rem;\ndisplay:flex;\n \nflex-direction:row;\ninput{\n     align-items:center;\n     height:20px;\n     width:20px;\n   text-align:center;\n    cursor:pointer;\n  margin:1rem;\n    background-color:blue;\n } \n label{\nfont-size:small;\n  font-family: 'Josefin Sans', sans-serif;\n  margin-left:10%;\n\n \n }\n small{\n   font-size:medium;\n  font-family: 'Josefin Sans', sans-serif;\n \n    color:gray;\n    width:100%;\n }\n p{\n     font-size:large;\n }\n \n"]);
@@ -80,3 +90,13 @@ exports.Userpopup = Userpopup;
 var CarBox = _styledComponents["default"].div(_templateObject5());
 
 exports.CarBox = CarBox;
+
+var ServiceCard = _styledComponents["default"].div(_templateObject6(), function (props) {
+  return props.color;
+}, function (props) {
+  return props.color;
+}, function (props) {
+  return props.fontColor;
+});
+
+exports.ServiceCard = ServiceCard;

@@ -9,7 +9,7 @@ export default class Slideview extends Component {
   render() {
     var settings = {
       dots: true,
-      infinite: true,
+    infinite: true,
       slidesToShow: 1,
       slidesToScroll: 1,
       autoplay: true,

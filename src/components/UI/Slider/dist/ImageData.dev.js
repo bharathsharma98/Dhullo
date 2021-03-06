@@ -5,7 +5,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 
-var _Group932x = _interopRequireDefault(require("../../../Image/Group 93@2x.png"));
+var _Group892x = _interopRequireDefault(require("../../../Image/Group 89@2x.png"));
 
 var _Group902x = _interopRequireDefault(require("../../../Image/Group 90@2x.png"));
 
@@ -21,8 +21,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "d
 //import i4 from '../../../Image/water_waste.jpg'
 var sliderArr = [{
   id: 1,
-  imgSrc: _Group932x["default"],
-  description: "Safeguard your car and your family.",
+  imgSrc: _Group892x["default"],
+  description: "Step towards protecting valuable resource",
   details: "Check our Car Sanitization Packages available at your service."
 }, {
   id: 2,

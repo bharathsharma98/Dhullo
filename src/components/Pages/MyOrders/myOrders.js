@@ -35,20 +35,6 @@ const MyOrders = () => {
           ) : (
             activemerge.map((oneorder) => (
               <div className="oneOrderBox" key={oneorder.id}>
-                <div className="cardetailsinActive">
-                  <div>
-                    <p className="h4">{oneorder.details}</p>
-                  </div>
-                  <div>
- 
-                    <p className="h4">{oneorder.order.service}</p>
-                  </div>
-                  <div>
-                
-                    <p className="h4">{oneorder.order.package}</p>
-                  </div>
-                </div>
-
                 <section className="subbar">
                   <AlternateSub
                     package={oneorder.order.package}
@@ -57,6 +43,17 @@ const MyOrders = () => {
                     events={oneorder.order.dailyStatus}
                   />
                 </section>
+                <div className="  rightOrder">
+                  <div>
+                    <p className="h4">{oneorder.details}</p>
+                  </div>
+                  <div>
+                    <p className="h4">{oneorder.order.service}</p>
+                  </div>
+                  <div>
+                    <p className="h4">{oneorder.order.package}</p>
+                  </div>
+                </div>
               </div>
             ))
           )}

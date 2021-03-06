@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import "../cartitem/cartitem.css";
 import DatePicker from "react-datepicker";
 import washing from "../../../../../Image/servicewashing.png";
+import { confirmAlert } from "react-confirm-alert"; // Import
 import ONETIME from "../../../../../Image/servicesanitization.png";
 // import INTERIOR from "../../../../../Image/interior.jpg";
 // import exterior from "../../../../../Image/car shine.jpg";
@@ -95,7 +96,32 @@ function CartItem() {
                   <p className="cartprice">Price : Rs. {item.price}</p>
                   <button
                     className="cartremovebtn"
-                    onClick={() => dispatch(RemoveFromCart(item))}
+                    onClick={ confirmAlert({
+      customUI: ({ onClose }) => {
+        return (
+          <div className="custom-ui">
+            <h3 style={{ textAlign: 'center',marginTop:'3%' }}>Delete this car?</h3>
+            <div className="promptbuttoncontainer">
+            <button className="promptbuttonNo" onClick={onClose}>
+            <h3>No</h3>
+            </button>
+            <button
+              className="promptbuttonYes"
+              onClick={() => {
+                 
+                dispatch(RemoveFromCart(item))
+                onClose();
+              }}
+            >
+              <h3>Yes</h3>
+              
+            </button>
+            </div>
+           
+          </div>
+        );
+      },
+    })}
                   >
                     REMOVE ITEM
                   </button>

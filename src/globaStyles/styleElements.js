@@ -97,3 +97,26 @@ font-size:small;
  }
  
 `;
+
+export const ServiceCard = Styled.div`
+height:100PX;
+width:150PX;
+margin:2%;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background-color:${(props) => props.color};
+border-radius:5px;
+cursor:pointer;
+border:1px solid ${(props) => props.color};
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+a{font-size:clamp(2vw,3.5vw,4vw);
+color:${(props) => props.fontColor};
+font-weight:bold;
+text-decoration:none;
+  font-family: 'Josefin Sans', sans-serif;
+  
+ }
+
+`;

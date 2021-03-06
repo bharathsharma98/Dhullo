@@ -4,7 +4,7 @@ import TextComp from "../content/TextComponents/TextComponent";
 import BoxComponent from "../content/BoxComponent/BoxComp";
 import {  useSelector } from "react-redux";
 import "./ServicePageComp.css";
- 
+ import {ServiceCard} from '../../../globaStyles/styleElements'
 import BookingForm  from '../content/BookingFormComponent/BookingComp'
 import ServiceDetailingImg from "../../../Image/servicedetailing.png";
 import ServiceSanitizationImg from "../../../Image/servicesanitization.png";
@@ -24,7 +24,9 @@ const Servicepage = () => {
     exteriorToggle: 0,
     interiorToggle: 0,
   });
- 
+  const [mobileToggle, setMobileToggle] = useState({
+   toggle:'ONETIME'
+ })
   const handleToggle = (toggle) => {
     
     switch (toggle) {
@@ -61,10 +63,33 @@ const Servicepage = () => {
     }
   }
 
-  console.log(toggleState)
+ 
   return (
     <div className="Servicepage-Container">
-      <h1 className="serviceHeader">WASHING</h1>
+      {width.matches ? null : (
+        <div
+          className="services-brief"
+          style={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "center",
+            marginTop: "2%",
+          }}
+        >
+          <ServiceCard color="limegreen" fontColor="white">
+            <a href="#washingcontainer">WASHING</a>
+          </ServiceCard>
+          <ServiceCard color="cyan" fontColor="black">
+            <a href="#sanitizationcontainer">SANITIZATION</a>
+          </ServiceCard>
+          <ServiceCard color="orangered" fontColor="white">
+            <a href="#detailingcontainer">DETAILING</a>
+          </ServiceCard>
+        </div>
+      )}
+      <h1 className="serviceHeader" id="washingcontainer">
+        WASHING
+      </h1>
 
       <div className="washingcontainer">
         <TextComp />
@@ -166,9 +191,27 @@ const Servicepage = () => {
         </div>
       ) : (
         <div className="serviceboxcontainer mobile">
-          <BoxComponent
-            category={"ONETIME"}
-            text="It is a long established
+          <hr></hr>
+          <div className="mobileToggle-Buttons">
+            <button onClick={() => setMobileToggle({ toggle: "ONETIME" })}>
+              ONETIME
+            </button>
+            <button onClick={() => setMobileToggle({ toggle: "SILVER" })}>
+              SILVER
+            </button>
+            <button onClick={() => setMobileToggle({ toggle: "GOLD" })}>
+              GOLD
+            </button>
+            <button onClick={() => setMobileToggle({ toggle: "PLATINUM" })}>
+              PLATINUM
+            </button>
+          </div>
+          <hr></hr>
+          {mobileToggle.toggle === "ONETIME" ? (
+            <div>
+              <BoxComponent
+                category={"ONETIME"}
+                text="It is a long established
          fact that a reader will be
          distracted by the readable 
          content of a page when looking
@@ -179,18 +222,22 @@ const Servicepage = () => {
          content here', making it look like readable 
          English. Many desktop publishing packages and
          web page editors"
-            togglePress={handleToggle}
-          />
-          {toggleState.onetimeToggle ? (
-            <BookingForm
-              category="ONETIME"
-              cars={user.cars}
-              togglePress={handleToggle}
-            />
+                togglePress={handleToggle}
+              />
+              {toggleState.onetimeToggle ? (
+                <BookingForm
+                  category="ONETIME"
+                  cars={user.cars}
+                  togglePress={handleToggle}
+                />
+              ) : null}
+            </div>
           ) : null}
-          <BoxComponent
-            category={"SILVER"}
-            text="It is a long established
+          {mobileToggle.toggle === "SILVER" ? (
+            <div>
+              <BoxComponent
+                category={"SILVER"}
+                text="It is a long established
          fact that a reader will be
          distracted by the readable 
          content of a page when looking
@@ -201,18 +248,22 @@ const Servicepage = () => {
          content here', making it look like readable 
          English. Many desktop publishing packages and
          web page editors"
-            togglePress={handleToggle}
-          />
-          {toggleState.silverToggle ? (
-            <BookingForm
-              category="SILVER"
-              cars={user.cars}
-              togglePress={handleToggle}
-            />
+                togglePress={handleToggle}
+              />
+              {toggleState.silverToggle ? (
+                <BookingForm
+                  category="SILVER"
+                  cars={user.cars}
+                  togglePress={handleToggle}
+                />
+              ) : null}
+            </div>
           ) : null}
-          <BoxComponent
-            category={"GOLD"}
-            text="It is a long established
+          {mobileToggle.toggle === "GOLD" ? (
+            <div>
+              <BoxComponent
+                category={"GOLD"}
+                text="It is a long established
          fact that a reader will be
          distracted by the readable 
          content of a page when looking
@@ -223,18 +274,22 @@ const Servicepage = () => {
          content here', making it look like readable 
          English. Many desktop publishing packages and
          web page editors"
-            togglePress={handleToggle}
-          />
-          {toggleState.goldToggle ? (
-            <BookingForm
-              category="GOLD"
-              cars={user.cars}
-              togglePress={handleToggle}
-            />
+                togglePress={handleToggle}
+              />
+              {toggleState.goldToggle ? (
+                <BookingForm
+                  category="GOLD"
+                  cars={user.cars}
+                  togglePress={handleToggle}
+                />
+              ) : null}
+            </div>
           ) : null}
-          <BoxComponent
-            category={"PLATINUM"}
-            text="It is a long established
+          {mobileToggle.toggle === "PLATINUM" ? (
+            <div>
+              <BoxComponent
+                category={"PLATINUM"}
+                text="It is a long established
          fact that a reader will be
          distracted by the readable 
          content of a page when looking
@@ -245,19 +300,21 @@ const Servicepage = () => {
          content here', making it look like readable 
          English. Many desktop publishing packages and
          web page editors"
-            togglePress={handleToggle}
-          />
-          {toggleState.platinumToggle ? (
-            <BookingForm
-              category="PLATINUM"
-              cars={user.cars}
-              togglePress={handleToggle}
-            />
+                togglePress={handleToggle}
+              />
+              {toggleState.platinumToggle ? (
+                <BookingForm
+                  category="PLATINUM"
+                  cars={user.cars}
+                  togglePress={handleToggle}
+                />
+              ) : null}
+            </div>
           ) : null}
         </div>
       )}
 
-      <div className="sanitRow">
+      <div className="sanitRow" id="sanitizationcontainer">
         <div>
           <h1 className="serviceHeader">SANITIZATION</h1>
         </div>
@@ -283,7 +340,9 @@ const Servicepage = () => {
         ) : null}
       </div>
 
-      <h1 className="serviceHeader">DETAILING</h1>
+      <h1 className="serviceHeader" id="detailingcontainer">
+        DETAILING
+      </h1>
 
       <div className="washingcontainer">
         <TextComp />

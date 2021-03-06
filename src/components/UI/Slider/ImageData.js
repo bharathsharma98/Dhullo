@@ -1,5 +1,5 @@
 // import i1 from '../../../Image/Car Sanitization Poster.png'
-import i1 from "../../../Image/Group 93@2x.png";
+import i1 from "../../../Image/Group 89@2x.png";
 // import i2 from '../../../Image/car shine.jpg'
 import i2 from "../../../Image/Group 90@2x.png";
 //import i3 from '../../../Image/interior.jpg'
@@ -11,7 +11,7 @@ const sliderArr = [
   {
     id: 1,
     imgSrc: i1,
-    description: "Safeguard your car and your family.",
+    description: "Step towards protecting valuable resource",
     details: "Check our Car Sanitization Packages available at your service.",
   },
   {

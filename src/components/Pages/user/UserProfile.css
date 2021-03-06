@@ -1,15 +1,20 @@
 .userprofilecomponent {
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  height: 100vh;
+  min-height: 100vh;
 }
 .cardetailsinActive{
   padding-top: 2%;
 }
 .profiledetailscontainer {
   text-align: center;
-  width: 100vw;
+  margin: auto;
+  width: 70%;
+  margin-top: 1%;
+  background: rgb(225,224,227);
+background: linear-gradient(90deg, rgba(225,224,227,1) 0%, rgba(248,248,255,1) 50%, rgba(152,160,161,1) 100%);
+ border-radius: 5px;
+  border : 2px solid rgb(182, 177, 177);
 }
 .profileimg {
   height: fit-content;
@@ -17,8 +22,7 @@ padding: 0.5rem;
 
   margin-top: 1rem;
   margin-bottom: 1rem;
-  border: 3px solid rgb(168, 161, 161);
-  border-radius: 5px;
+  
 }
 .addresscar{
   display: flex;
@@ -83,16 +87,53 @@ padding: 0.5rem;
 .cars {
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
+  justify-content:  space-evenly;
   flex-wrap: wrap;
-  margin-left: 1rem;
-  margin-top: 3%;
-  margin-bottom: 3%;
-  width: 70vw;
-
+ 
+ 
+  width: 100%;
+border-radius: 5px;
   height: auto;
 }
 .cars:nth-child(even) {
+  
+  border : 2px solid rgb(182, 177, 177);
+text-align: left;
+  width: 65%;
+  background-color: #c9cfd1;
+  padding: 2%;
+    margin: 1%;
+      
+}
+.cars:nth-child(odd) {
+ 
+  border : 2px solid rgb(182, 177, 177);
+text-align: left;
+  margin: 1%;
+  width: 65%;
+  background-color: #ecf0f1;
+  padding: 2%;
+   
+}
+.personaldeatils{
+display: flex;
+flex-direction: column;
+ 
+margin-bottom: 1%;
+ 
+align-items: center;
+text-align: left;
+height: auto;
+
+}
+.carImage{
+ 
+}
+.carImage img{
+  height: 100px;
+  width: 100px;
+  border: 2px solid #03588c;
+  border-radius: 100%;
 }
 @media (max-width: 768px) {
   .cars {
@@ -139,7 +180,9 @@ padding: 0.5rem;
 }
 
 .personaldeatils {
-  max-width: 100vw;
+  width: 100%;
+ 
+
 }
 .h3 {
   text-align: left;
@@ -239,14 +282,7 @@ span {
   display: flex;
   flex-direction: column;
 }
-.h4 {
-  text-align: left;
-
-  margin-left: 3%;
-  font-weight: 500;
-  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-}
+ 
 .sunscriptionliststatus {
   height: auto;
 }

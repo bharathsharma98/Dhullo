@@ -2,6 +2,7 @@ import React, {  useState } from "react";
 import profile from "../../../Image/profilepic.svg";
 import edit from "../../../Image/edit.svg";
 import Loader from "react-loader-spinner";
+import emptycart from "../../../Image/emptycart.png";
 import { useDispatch, useSelector } from "react-redux";
 import { isLoggedout } from "../../../Redux/UserRedux/UserActions";
 import { removeCar } from "../../../Redux/UserRedux/UserActions";
@@ -128,7 +129,7 @@ function UserProfile() {
         <section className="mobile">
           <h4>{`${user.mobileNo}`}</h4>
           <Link to="/edituser">
-            <img src={edit} alt="icon"></img>
+            <img style={{marginTop:'1rem'}} src={edit} alt="icon"></img>
           </Link>
 
           {/* <button
@@ -165,43 +166,51 @@ function UserProfile() {
           </button> */}
         </section>
       </div>
-      <hr className="line"></hr>
+ 
+      <h1  style={{textAlign:'center'}}>Car Details</h1>
       <div className="personaldeatils">
-        <h1 className="h3">Car Details</h1>
-        { cars.length === 0 ? <Link to ='/addcar'>Add A Car</Link>:
+        {cars.length === 0 ? (
+          <Link to="/addcar">Add A Car</Link>
+        ) : (
           cars.map((onecar) => (
-          <div key={onecar.details} className="cars">
-            <div className="carname">
-              <h2 className="h4"> {onecar.details}</h2>
-            </div>
+            <div key={onecar.details} className="cars">
+              <div className="carImage">
+                <img src={emptycart}></img>
+              </div>
+              <div className="carname" style={{ marginTop: "1rem" }}>
+                <h2> {onecar.details}</h2>
+              </div>
 
-            <div className="addresscar">
-              <label> {onecar.houseName}</label>
+              <div className="addresscar" style={{ marginTop: "2rem" }}>
+                <label> {onecar.houseName}</label>
 
-              <label> {onecar.streetName}</label>
-              <label> {onecar.pincode}</label>
-            </div>
+                <label> {onecar.streetName}</label>
+                <label> {onecar.pincode}</label>
+              </div>
 
-            <div className="editicon">
-              <Link path to="/addcar">
-                <img
-                  onClick={() => editCar(onecar)}
-                  src={edit}
-                  alt="icon"
-                ></img>
-              </Link>
-            </div>
+              <div className="editicon">
+                <Link path to="/addcar">
+                  <img
+                    style={{ marginTop: "2rem" }}
+                    onClick={() => editCar(onecar)}
+                    src={edit}
+                    alt="icon"
+                  ></img>
+                </Link>
+              </div>
 
-            <div className="carbuttoncontainer">
-              <button
-                className="carbuttonsremove"
-                onClick={() => deletecar(onecar.id)}
-              >
-                remove
-              </button>
+              <div className="carbuttoncontainer">
+                <button
+                  style={{ marginTop: "2rem" }}
+                  className="carbuttonsremove"
+                  onClick={() => deletecar(onecar.id)}
+                >
+                  remove
+                </button>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        )}
         <Loader
           type="Oval"
           color="#03588c"
@@ -218,7 +227,7 @@ function UserProfile() {
           }}
         />
       </div>
-      <hr className="line"></hr>
+      
       {/* <div className="activesub">
         <h1 className="h3">Active Subscription</h1>
         {/* {activemerge.map((merge) => (
@@ -241,8 +250,8 @@ function UserProfile() {
             </div>
           </div>
         ))} */}
-        {/* <hr className="line"></hr>
-      </div> */} 
+      {/* <hr className="line"></hr>
+      </div> */}
 
       {/* <div className="pastordercomponent">
         <div className="pastorderheader">

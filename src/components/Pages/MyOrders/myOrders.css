@@ -4,18 +4,25 @@
 }
 .ActiveOrdersContainer{
 height:auto;
-
+ 
  
  
 }
 .oneOrderBox{
-   
-     
+    width: 100%;
+  
+   box-shadow:  0 0px 9px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.19);;
+   display: flex;
+   flex-direction: row;
+   flex-wrap: wrap;
+ border: 2px solid rgb(145, 141, 141);
+   justify-content: space-around;
 }
 .cardetailsinActive{
 display: flex;
 justify-content:space-evenly;
-width: 75%;
+width: 100%;
+
  padding: auto;
 text-align: center;
 justify-items: center;
@@ -31,4 +38,36 @@ font-size:  large;
 }
 .PastOrderContainer{
  
+}
+.rightOrder{
+    width: 40%;
+    background-color: #e9e3e3;
+    text-align: center;
+display: flex;
+flex-direction: column;
+justify-content: center;
+left: auto;
+}
+.rightOrder p{
+    text-align: center;
+}
+.subbar{
+    width: 60%;
+ 
+}
+
+@media(max-width:769px){
+    .rightOrder{
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        background-color: rgb(177, 177, 236);
+  
+    }
+    .rightOrder p{
+        color: rgb(33, 34, 36);
+    }
+    .subbar{
+    width: 100%;
+}
 }

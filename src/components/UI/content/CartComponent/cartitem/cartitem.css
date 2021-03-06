@@ -23,7 +23,7 @@
 .cart2 {
   
   flex-wrap: wrap;
-  width: 40%;
+  min-width: 40%;
    border: 2px solid #03588c;
   
     box-shadow: 0 4px 8px 0 rgba(214, 205, 205, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
@@ -32,7 +32,7 @@ background-color: #f4f8fc;
   align-content:  left;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-   
+   font-size: clamp(1rem,3rem,4rem);
   
 }
  
