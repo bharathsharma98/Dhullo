@@ -1,9 +1,8 @@
  .contactcontainer{
    min-height: 100vh;
    height: 100%;
+   background-color:#071113;
  
-   margin-left: 4%;
-   margin-right: 4%;
    display: flex;
    flex-direction: column;
  }
@@ -12,6 +11,7 @@ display: flex;
 position: relative;
  }
  .upperContact p{
+   color: #BF9503;
  position: absolute;
  top: 40%;
  left: 45%;
@@ -61,6 +61,9 @@ margin-bottom: 2%;
  
 }
 .messagenEmail input{
+   font-size: clamp(0.5vw,1vw,4vw);
+  background-color: #071113;
+  color: #BF9503;
 width: 20vw;
 height: 6vh;
  border:2px solid black;
@@ -69,9 +72,12 @@ height: 6vh;
   margin-bottom: 2%;
 }
 .messagenMessage  input{
+     font-size: clamp(0.5vw,1vw,4vw);
 width: 66vw;
+ background-color: #071113;
 height: 15vh;
 border:2px solid black;
+color: #BF9503;
  
 }
 .contactcontainer button{
@@ -93,7 +99,7 @@ font-size: large;
   height: 30vh;
   width: 100%;
 }
-    .upperContact p{
+.upperContact p{
  position: absolute;
  top: 20%;
  left: 60%;
@@ -104,8 +110,11 @@ font-size: large;
  
  
 }
+.messagenMessage  input{
+    font-size: clamp(0.5vw,2.5vw,4vw);
+}
 .messagenEmail input{
-   
+     font-size: clamp(0.5vw,2.5vw,4vw);
 width: 66vw;
 height: 6vh;
 border:2px solid black;

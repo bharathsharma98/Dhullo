@@ -23,7 +23,7 @@ const HowItWorks = () => {
             <p>SELECT A SERVICE</p>
           </div>
         </div>
-  
+        <hr id="vertical horizontal"></hr>
         <div className="howItWorks2">
           <div className="top left">
             <img src={bookservice}></img>
@@ -36,7 +36,7 @@ const HowItWorks = () => {
             <p>BOOK A SERVICE</p>
           </div>
         </div>
- 
+        <hr id="vertical horizontal"></hr>
         <div className="howItWorks3">
           {" "}
           <div className="top left">
@@ -50,7 +50,7 @@ const HowItWorks = () => {
             <p>WAIT FOR AGENT</p>
           </div>
         </div>
- 
+        <hr id="vertical horizontal"></hr>
         <div className="howItWorks4">
           {" "}
           <div className="top left">

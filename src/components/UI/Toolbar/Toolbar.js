@@ -9,7 +9,9 @@ import { isLoggedout } from "../../../Redux/UserRedux/UserActions";
 import logo from "../../../Image/logo.png";
 import user from "../../../Image/user.svg";
 import cart from "../../../Image/shopping_cart.svg";
+
 export default function Toolbar(props) {
+  const [darkMode, setDarkMode] = useState(false);
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
   const customer = useSelector((state) => state.user.customer);
   const cartItems = useSelector((state) => state.cart.CartItems);
@@ -53,7 +55,7 @@ export default function Toolbar(props) {
                   CONTACT US
                 </Link>
               </li>
-
+               
               <li className="cart_list">
                 <Link path to="/cart">
                   <img

@@ -14,7 +14,7 @@ body {
     font-family: sans-serif;
     height: 100%;
      
-    
+ 
     
 }
 body {scroll-behavior: smooth;}
@@ -33,3 +33,27 @@ body::-webkit-scrollbar {
  label{
      font-family: 'Open Sans', sans-serif;
  }
+ form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+input {
+  min-width: 30%;
+  align-content: center;
+  margin: 1rem;
+  border: 2px solid #03588c;
+  height: 3rem;
+  border-radius: 5px;
+}
+button {
+  background: #03588c 0% 0% no-repeat padding-box;
+  border: none;
+  border-radius: 2px;
+  height: 3rem;
+  width: 10rem;
+  opacity: 1;
+  color: white;
+  font-size: larger;
+  cursor: pointer;
+}
