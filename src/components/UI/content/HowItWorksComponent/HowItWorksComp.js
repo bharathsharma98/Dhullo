@@ -1,14 +1,14 @@
 import React from "react";
 import "./HowItWorksComp.css";
 import relax from "../../../../Image/relax.png";
-import agent from "../../../../Image/agent.png";
+import agent from "../../../../Image/agent1.png";
 import bookservice from "../../../../Image/bookservice.png";
 import selectservice from "../../../../Image/selectservice.png";
  
 const HowItWorks = () => {
   return (
     <div>
-      <h1>HOW IT WORKS</h1>
+      <h1 style={{marginBottom:'5%'}}>HOW IT WORKS</h1>
       <div className="howitworks-container">
         <div className="howItWorks1">
           <div className="top left">

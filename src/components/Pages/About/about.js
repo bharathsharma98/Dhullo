@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import TextComp from "../../UI/content/TextComponents/TextComponent";
 import MainImage from "../../UI/content/ImageComponents/ImgComp";
-import MissionImage from "../../../Image/mission image.png";
-import OurStoryImg from "../../../Image/our story image.png";
+import MissionImage from "../../../Image/mission image@2x.png";
+import OurStoryImg from "../../../Image/our story image@2x.png";
  
 import CircularTextComp from "../../../components/UI/content/CircularRingComponent/CircRingComp";
 import "./about.css";

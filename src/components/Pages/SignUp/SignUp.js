@@ -1,7 +1,8 @@
 import React from "react";
 import useForm from "./useForm";
 import Validate from './validateSignup'
-import logo from "../../../Image/logo3.png";
+import carSignIn1 from "../../../Image/carSignIn1.png";
+import Logo from "../../../Image/logo.png";
 import '../signIn/signin.css';
  import { SmallPopupRound } from "../../../globaStyles/styleElements";
 const SignUp = () => {
@@ -13,10 +14,15 @@ const SignUp = () => {
   return (
     <div className="signupcontainer">
       <div className="signinForm">
-        <div id="left-sideSp" style={{ backgroundColor: "#5db519" }}>
-          <div className="logo-Text">
-            <img src={logo} alt={logo}></img>
-            <h1 style={{color:'black'}}>DHULLO</h1>
+        <div id="left-sideSp">
+          <div id="left-side">
+            <img src={Logo} alt={Logo} style={{ height: "10%",marginBottom:'5%' }}></img>
+            <img
+              src={carSignIn1}
+              alt={carSignIn1}
+              height="50%"
+              width="100%"
+            ></img>
           </div>
         </div>
         <div id="right-sideSp">
@@ -71,9 +77,11 @@ const SignUp = () => {
               </div>
             </div>
             <button type="submit">Signup</button>
-            {
-              error ? <SmallPopupRound message="error"><p>Unable to Signup</p></SmallPopupRound>:null
-            }
+            {error ? (
+              <SmallPopupRound message="error">
+                <p>Unable to Signup</p>
+              </SmallPopupRound>
+            ) : null}
           </form>
         </div>
       </div>

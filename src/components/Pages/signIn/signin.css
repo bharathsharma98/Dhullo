@@ -1,5 +1,5 @@
 .signincontainer,.signupcontainer {
-  height:fit-content;
+  min-height:100vh;
   
 
 }
@@ -37,17 +37,24 @@
    margin: auto;
   height:  85vh;
   text-align: center;
- 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
 }
 #left-sideSp {
-  width: 40%;
+  width: 50%;
  
   height: auto;
   text-align: center;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
  
+ align-items: center;
 }
 #right-sideSp {
-  width: 60%;
+  width: 50%;
    padding-bottom: 2%;
   height:  fit-content;
   text-align: center;

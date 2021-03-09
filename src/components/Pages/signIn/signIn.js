@@ -1,30 +1,32 @@
-import React,{useState,useEffect} from "react";
-import './signin.css';
-import logo from '../../../Image/logo3.png'
-import {Link} from 'react-router-dom'
+import React, { useState, useEffect } from "react";
+import "./signin.css";
+import { Link } from "react-router-dom";
 import useForm from "./useForm";
-import Validate from './validateLogin';
- import { SmallPopupRound } from "../../../globaStyles/styleElements";
-import { useSelector } from 'react-redux';
-import emptycart from "../../../Image/emptycart.png";
+import Validate from "./validateLogin";
+import { SmallPopupRound } from "../../../globaStyles/styleElements";
+import { useSelector } from "react-redux";
+import carSignIn1 from "../../../Image/carSignIn1.png";
+import Logo from "../../../Image/logo.png";
 const SignIn = () => {
-  useEffect(()=>{document.body.scrollTop = 0; },[])
- 
-    const myerror = useSelector((state) => state.error.errorMessage);
-  const { Item, handleChange, handleSubmit,error } = useForm(submit,Validate);
- 
-  function submit() {
-  
-  }
+  useEffect(() => {
+    document.body.scrollTop = 0;
+  }, []);
+
+  const myerror = useSelector((state) => state.error.errorMessage);
+  const { Item, handleChange, handleSubmit, error } = useForm(submit, Validate);
+
+  function submit() {}
 
   return (
     <div className="signincontainer">
       <div className="signinForm">
         <div id="left-side">
-           
-            <img src={emptycart} alt={logo} height="60%" width="60%"></img>
-            <h1>DHULLO CARCARE</h1>
-         
+          <img
+            src={Logo}
+            alt={Logo}
+            style={{ height: "10%", marginBottom: "5%" }}
+          ></img>
+          <img src={carSignIn1} alt={carSignIn1} height="60%" width="60%"></img>
         </div>
         <div id="right-side">
           <form noValidate onSubmit={handleSubmit}>
@@ -59,9 +61,8 @@ const SignIn = () => {
             >
               Login
             </button>
-             
-            {
-            error ? (
+
+            {error ? (
               <SmallPopupRound message="error">
                 <p>{myerror}</p>
               </SmallPopupRound>
