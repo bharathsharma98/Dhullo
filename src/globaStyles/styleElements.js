@@ -55,7 +55,7 @@ margin-right:1rem;
   font-family: 'Josefin Sans', sans-serif;
   
   }
-`
+`;
 export const CarBox = Styled.div`
  height:clamp(4rem,5rem,10rem);
  margin-bottom:0.5rem;
@@ -101,7 +101,7 @@ font-size:small;
 `;
 
 export const ServiceCard = Styled.div`
-height:100PX;
+height:90PX;
 width:40%;
 margin:2%;
 display:flex;
@@ -111,34 +111,37 @@ align-items:center;
 background-color:${(props) => props.color};
 border-radius:5px;
 cursor:pointer;
+margin-bottom:10%;
  position:relative;
 border:2px solid ${(props) => props.color};
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-a{font-size:clamp(2vw,3.5vw,4vw);
- 
- 
+a{
+font-size:clamp(2vw,3.5vw,4vw);
 color:${(props) => props.fontColor};
 font-weight:bold;
 text-decoration:none;
-  font-family: 'Josefin Sans', sans-serif;
- font-size:3.4vw;
+font-family: 'Josefin Sans', sans-serif;
+font-size:3.4vw;
+position: relative;
+top:30%;
+text-align:center;
+width: 100%;
+margin: auto;
+width: 100%;
+height: 50px;
+padding-top:5%;
+padding-bottom:3%;
+background:#C9BEBE;
  
- 
-    position: relative;
-top:-40%;
-left:7%;
-   width: 100%;
-   margin: auto;
-   width: 100%;
-   height: 50px;
- 
+border:none;
+ ;
  }
 img{
-  bottom:-8px;
+  bottom:-15%;
   z-index:-1;
   height:100%;
   width:100%;
-  -webkit-filter: blur(2.5px);
+ 
   position:relative;
 }
 `;

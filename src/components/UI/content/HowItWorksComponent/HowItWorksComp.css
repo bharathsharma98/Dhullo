@@ -94,7 +94,7 @@ margin-bottom: 5%;
   width: auto;
 }
 .howitworks-container hr {
-  border: 2px dashed rgb(35, 101, 224);
+  border: 2px solid rgb(35, 101, 224);
   height: clamp(1rem,23rem,32rem)  ;
  border-radius: 3px;
   transform: rotateZ(90deg);
@@ -167,14 +167,17 @@ margin-bottom: 5%;
     width: clamp(22rem, 24rem, 30rem);
 
     display: flex;
-
+margin-bottom: 2%;
+    
     flex-direction: row;
-    justify-content: ;
+    justify-content:center ;
+
   }
   .howItWorks3 img {
           margin-left: 15%;
     border-radius: 5px;
     margin-top: 10%;
+
     width: clamp(20vw, 38vw, 42vw);
   }
   .howItWorks3 p {
@@ -218,8 +221,8 @@ margin-bottom: 5%;
     width: 150px;
   }
   .howitworks-container hr {
-    border: 3px dashed rgb(35, 101, 224);
-    height: 6rem;
+    border: 3px solid rgb(35, 101, 224);
+    height: 8rem;
     margin-left: 51%;
     border-radius: 2px;
     transform: rotateZ(180deg);

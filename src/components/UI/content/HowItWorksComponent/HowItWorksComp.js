@@ -16,7 +16,7 @@ const HowItWorks = () => {
           </div>
 
           <div className="middle">
-            <p>1</p>
+        
           </div>
 
           <div className="bottom right">
@@ -29,7 +29,7 @@ const HowItWorks = () => {
             <img src={bookservice}></img>
           </div>
           <div className="middle">
-            <p>2</p>
+      
           </div>
           <div className="bottom right">
             {" "}
@@ -43,7 +43,7 @@ const HowItWorks = () => {
             <img src={agent}></img>
           </div>
           <div className="middle">
-            <p>3</p>
+        
           </div>
           <div className="bottom right">
             {" "}
@@ -58,7 +58,7 @@ const HowItWorks = () => {
             <img src={relax}></img>
           </div>
           <div className="middle">
-            <p>4</p>
+        
           </div>
           <div className="bottom right">
             {" "}

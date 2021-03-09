@@ -22,6 +22,10 @@ position: relative;
   height: auto;
   width: 100%;
 }
+.lowerContact img{
+  height: auto;
+  width: 5%;
+}
  .lowerContact{
  
 height: auto;
@@ -123,12 +127,11 @@ border:2px solid black;
   margin: auto;
 width: 40vw;
 margin-bottom: 2%;
-height: 5vh;
+padding: 2%;
+height: auto;
 }
-.contactEmail   img{
-  width: 15vw;
-}
-.contactPhone   img{
-  width: 15vw;
+.lowerContact  img{
+  width: 10%;
+  margin-top: 3%;
 }
  }
