@@ -119,10 +119,11 @@ margin-bottom: 5%;
     justify-content: space-between;
   }
   .howItWorks1 img {
+     
     width: clamp(20vw, 38vw, 42vw);
     height: auto;
     border-radius: 5px;
-      margin-left: 0%;
+      margin-left: 15%;
   }
   .howItWorks1 p {
     width: clamp(20vw, 30vw, 42vw);
@@ -135,7 +136,7 @@ margin-bottom: 5%;
  margin-left:0%;
   }
   .howItWorks1 .middle{
- margin-left:15%;
+ margin-left:10%;
   }
   .howItWorks2 {
     height: clamp(5rem, 7rem, 8rem);
@@ -171,6 +172,7 @@ margin-bottom: 5%;
     justify-content: ;
   }
   .howItWorks3 img {
+          margin-left: 15%;
     border-radius: 5px;
     margin-top: 10%;
     width: clamp(20vw, 38vw, 42vw);
