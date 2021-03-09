@@ -5,7 +5,7 @@ import "./HomePageComp.css";
 import HowItWorks3 from "../content/HowItWorksComponent/HowItWorksComp";
 import CircularTextComp from "../content/CircularRingComponent/CircRingComp";
 import thumbsupimg from "../../../Image/customer_satisfaction.png";
-import carinhandimage from "../../../Image/Mask Group 1.png";
+import carinhandimage from "../../../Image/carinhand.png";
 import umbrella from "../../../Image/Group 103.svg";
 import water from '../../../Image/Group 102@2x.png';
  

@@ -111,7 +111,7 @@ margin-bottom: 5%;
   }
   .howItWorks1 {
     height: clamp(5rem, 7rem, 8rem);
-    width: clamp(22rem, 28rem, 30rem);
+    width: clamp(22rem, 24rem, 30rem);
 
     display: flex;
 
@@ -163,7 +163,7 @@ margin-bottom: 5%;
   .howItWorks3 {
     height: 7rem;
     height: clamp(5rem, 7rem, 8rem);
-    width: clamp(22rem, 25rem, 30rem);
+    width: clamp(22rem, 24rem, 30rem);
 
     display: flex;
 
