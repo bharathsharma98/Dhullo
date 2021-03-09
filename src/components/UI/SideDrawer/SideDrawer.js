@@ -39,19 +39,19 @@ function SideDrawer(props) {
             <li>
               <Link to="/myorders">My Orders</Link>
             </li>
-            <hr className="sidehr"></hr>
+             
             <li>
               <Link to="/services">Services</Link>
             </li>
-            <hr className="sidehr"></hr>
+            
             <li>
               <Link to="/about">About</Link>
             </li>
-            <hr></hr>
+            
             <li>
               <Link to="/contact">Contact Us</Link>
             </li>
-            <hr className="sidehr"></hr>
+            
             <div className="tc-container">
               <li>
                 <Link to="/contact">Terms And Conditions</Link>
@@ -120,19 +120,19 @@ function SideDrawer(props) {
             <li>
               <Link to="/">Home</Link>
             </li>
-            <hr className="sidehr"></hr>
+            
             <li>
               <Link to="/services">Services</Link>
             </li>
-            <hr className="sidehr"></hr>
+            
             <li>
               <Link to="/about">About</Link>
             </li>
-            <hr className="sidehr"></hr>
+            
             <li>
               <Link to="/contact">Contact Us</Link>
             </li>
-            <hr className="sidehr"></hr>
+            
 
             <li>
               <Link path to="/signin">
