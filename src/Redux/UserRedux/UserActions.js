@@ -26,7 +26,14 @@ export const addOrder = (orderobj) => {
     type: "ADD_ORDER",
     payload: orderobj,
   };
+ 
 };
+ export const addSchedules = (eventobj) => {
+   return {
+     type: "ADD_SCHEDULE",
+     payload: eventobj,
+   };
+ };
 export const updateCar = (tempobj) => {
   return {
     type: "UPDATE_CAR",

@@ -131,7 +131,7 @@ const BookingForm = (props) => {
             style={{ marginBottom: "1rem" }}
             name="duration"
             onChange={handleChange}
-            disabled={item.mycars.length === 0 ? true : false}
+ 
             className={item.mycars.length === 0 ? "disabled" : "enabled"}
           >
             {duration.map((oneduration) => (

@@ -1,15 +1,15 @@
-import  React  ,{ useState, useEffect }from "react";
-import { useDispatch,useSelector } from "react-redux";
+import React, { useState, useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import {
   isLogged,
   addCar,
   addOrder,
+ addSchedules
 } from "../../../Redux/UserRedux/UserActions";
 import { setMyError } from "../../../Redux/Error/errorActions";
 
 const useForm = (callback, Validate) => {
-   
-
+    const orders = useSelector((state) => state.user.orders); 
   const [Item, setItem] = useState({
     phone: "",
     password: "",
@@ -50,16 +50,15 @@ const useForm = (callback, Validate) => {
             .then((response) => response.json())
             .then((onecar) => dispatch(addCar(onecar.car)))
             .then((onecar) => {
-              onecar.payload.orders.map((orderId) =>
-                fetch(`http://localhost:5000/api/orders/${orderId}`)
-                  .then((response) => response.json())
-                  .then((order) => {
-                    console.log(order);
-                    dispatch(addOrder(order));
-                  })
-              );
+              onecar.payload.orders
+                .map((oneOrder) => {
+                  console.log(oneOrder)
+                  dispatch(addOrder(oneOrder));
+                   
+                })
+                
             })
-            .then((onecar) => console.log(onecar))
+           
         );
       }
 
@@ -67,28 +66,26 @@ const useForm = (callback, Validate) => {
         ? dispatch(isLogged(responseData.customer))
         : console.log("not logged in");
     } catch (err) {
-      console.log(err)
-       dispatch(setMyError(err));
-       
- 
+      console.log(err);
+      dispatch(setMyError(err));
     }
   }
   //dispatch prevebent with recieved array from backend
 
   useEffect(() => {
     if (Object.keys(error).length === 0 && isSubmitting) {
+      
       callback();
+     
     }
+     
   }, [error, callback, isSubmitting]);
 
-
-  
   return {
     handleChange,
     handleSubmit,
     Item,
     error,
-};
-  
+  };
 };
 export default useForm;

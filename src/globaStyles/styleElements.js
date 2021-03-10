@@ -101,7 +101,7 @@ font-size:small;
 `;
 
 export const ServiceCard = Styled.div`
-height:90PX;
+height:120PX;
 width:40%;
 margin:2%;
 display:flex;
@@ -110,7 +110,7 @@ justify-content:center;
 align-items:center;
 background-color:${(props) => props.color};
 border-radius:5px;
-cursor:pointer;
+ 
 margin-bottom:10%;
  position:relative;
 border:2px solid ${(props) => props.color};
@@ -121,25 +121,18 @@ color:${(props) => props.fontColor};
 font-weight:bold;
 text-decoration:none;
 font-family: 'Josefin Sans', sans-serif;
-font-size:3.4vw;
+font-size:3vw;
 position: relative;
-top:30%;
-text-align:center;
-width: 100%;
-margin: auto;
-width: 100%;
-height: 50px;
-padding-top:5%;
-padding-bottom:3%;
-background:#C9BEBE;
- 
+top:20%;
+text-align:center; 
+height: 40px;
 border:none;
- ;
+ 
  }
 img{
   bottom:-15%;
-  z-index:-1;
-  height:100%;
+ 
+  height:60%;
   width:100%;
  
   position:relative;

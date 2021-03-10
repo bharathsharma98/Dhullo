@@ -5,7 +5,7 @@ let CircularTextComp = (props) => {
   return (
     <div className="circularcompwithtext" style={props.styles}>
       <div className="homeimagecontainer" >
-        <img src={props.imgUrl} height='50%' width='50%' alt={props.imgUrl} ></img>
+        <img src={props.imgUrl}   alt={props.imgUrl} ></img>
       </div>
       <div className="header">
         <h1 style={props.styles}>{props.heading}</h1>

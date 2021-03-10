@@ -1,12 +1,16 @@
-import { addcarfunc, removecarfunc,  } from "./userConditions.js";
+import {
+  addcarfunc,
+  removecarfunc,
+  addSchedulesFunc,
+} from "./userConditions.js";
 
 const INITIAL_STATE = {
   UserSignedIn: false,
   customer: [],
   cars: [],
-  orders:[],
+  orders: [],
+  schedules: [],
   temp: "",
- 
 };
 
 const userReducer = (state = INITIAL_STATE, action) => {
@@ -23,15 +27,15 @@ const userReducer = (state = INITIAL_STATE, action) => {
         UserSignedIn: false,
         customer: [],
         cars: [],
-        orders:[],
+        orders: [],
+        schedules: [],
         temp: "",
       };
     case "ADD_CAR":
       return {
         ...state,
-        
+
         cars: addcarfunc(state.cars, action.payload),
-         
       };
 
     case "RETAIN":
@@ -49,13 +53,16 @@ const userReducer = (state = INITIAL_STATE, action) => {
         ...state,
         temp: action.payload,
       };
-      case "ADD_ORDER":
-        return {
-          ...state,
-          orders: [...state.orders, action.payload],
-          
-          
-        };
+    case "ADD_ORDER":
+      return {
+        ...state,
+        orders: [...state.orders, action.payload],
+      };
+    case "ADD_SCHEDULE":
+      return {
+        ...state,
+        schedules: addSchedulesFunc(state.orders, action.payload),
+      };
     default:
       return state;
   }

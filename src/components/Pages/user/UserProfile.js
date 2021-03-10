@@ -31,47 +31,7 @@ function UserProfile() {
 
  
   const [Loading, setLoading] = useState(false);
-  // let recievedStatus = {
-  //   id: itemId,
-  //   title: "Washing",
-  //   start: tommorow,
-  //   end: tommorow,
-  //   status: "active",
-  // };
 
-//   useEffect(() => {
-//     fetch('http://localhost:5000/api/orders/dailyStatus/5fc54a72337bab26f4bc0da5')
-//       .then((response) => response.json())
-//     .then((events)=>dispatch(addEvent(events))
-//     ).catch((err)=>
-//       console.log(err)
-//     )
-//   });
-// console.log(orders)
-  // let activemerge = [];
-  // let pastmerge = [];
-  // if (orders.length !== 0) {
-  //   let carStart = 0;
-  //   let orderStart = 0;
-  //   for (carStart = 0; carStart < cars.length; carStart = carStart + 1) {
-  //     for (
-  //       orderStart = 0;
-  //       orderStart < orders.length;
-  //       orderStart = orderStart + 1
-  //     ) {
-  //       if (cars[carStart].id === orders[orderStart].order.carId) {
-  //         if (orders[orderStart].order.status === "Active")
-  //           activemerge.push({ ...cars[carStart], ...orders[orderStart] });
-  //         else
-  //             pastmerge.push({ ...cars[carStart], ...orders[orderStart] });
-  //         }
-           
-  //         //dailystatus update here
-           
-  //     }
-  //   }
-  // }
- 
 
   function deletecar(carId) {
     console.log(carId, "should be deleted");

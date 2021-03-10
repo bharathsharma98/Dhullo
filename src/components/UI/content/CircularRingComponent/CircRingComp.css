@@ -19,20 +19,34 @@ margin-left: auto;
 margin-right: auto;
   
 }
-.paragraph {
+.paragraph p {
     text-align: left;
+    font-size: 2.4vh;
 }
   
  
 .homeimagecontainer{
    margin-top: 5%;
 }
+  .homeimagecontainer img{
+ height: 50%;
+ width: 50%;
+}
 @media (max-width: 768px) {
+  .homeimagecontainer{
+   margin-top: 2%;
+}
+  .homeimagecontainer img{
+    margin-top: 5%;
+ height: 35%;
+ width: 35%;
+}
   .circularcompwithtext {
     width: 100vw;
-    height: auto;
+    height: fit-content;
    margin-top: 1rem;
   
     
   }
+ 
 }
