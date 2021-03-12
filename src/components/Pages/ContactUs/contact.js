@@ -10,15 +10,15 @@ class contact extends Component {
       <div className="contactcontainer">
         <div className="upperContact">
           <p>WE ARE HERE TO HELP YOU</p>
-          <img src={contactTop}></img>
+          <img src={contactTop} alt={contactTop}></img>
         </div>
         <div className="lowerContact">
           <div className="contactEmail">
-            <img src={mailbox}></img>
+            <img src={mailbox} alt={mailbox}></img>
             <p>customer.care@dhullo.com</p>
           </div>
           <div className="contactPhone">
-            <img src={call}></img>
+            <img src={call} alt={call}></img>
             <p>9900712207</p>
           </div>
           <div className="contactField">

@@ -4,7 +4,7 @@ import edit from "../../../Image/edit.svg";
 import Loader from "react-loader-spinner";
 import emptycart from "../../../Image/emptycart.png";
 import { useDispatch, useSelector } from "react-redux";
-import { isLoggedout } from "../../../Redux/UserRedux/UserActions";
+ 
 import { removeCar } from "../../../Redux/UserRedux/UserActions";
 import "./UserProfile.css";
 import history from '../../../history/history'
@@ -12,7 +12,7 @@ import { Link } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
  
-import AlternateSub from "../../UI/content/ActiveSubscriptionComponent/alternateSub";
+ 
  
 // import moment from "moment";
 
@@ -24,8 +24,8 @@ const editCar = (onecar) => {
 }
 function UserProfile() {
   const user = useSelector((state) => state.user.customer);
-  const cars = useSelector((state) => state.user.cars);
-  const orders = useSelector((state) => state.user.orders);
+  const cars = useSelector((state) => state.user.customer.cars);
+ 
   const dispatch = useDispatch();
  
 
@@ -91,51 +91,18 @@ function UserProfile() {
           <Link to="/edituser">
             <img style={{marginTop:'1rem'}} src={edit} alt="icon"></img>
           </Link>
-
-          {/* <button
-            className="signoutbutton"
-            onClick={() =>
-              confirmAlert({
-                customUI: ({ onClose }) => {
-                  return (
-                    <div className="custom-ui">
-                      <h3 style={{ textAlign: "center", marginTop: "3%" }}>
-                        Are you sure to Logout?
-                      </h3>
-                      <div className="promptbuttoncontainer">
-                        <button className="promptbuttonNo" onClick={onClose}>
-                          No
-                        </button>
-                        <button
-                          className="promptbuttonYes"
-                          onClick={() => {
-                            dispatch(isLoggedout());
-                            onClose();
-                          }}
-                        >
-                          Yes
-                        </button>
-                      </div>
-                    </div>
-                  );
-                },
-              })
-            }
-          >
-            signout
-          </button> */}
         </section>
       </div>
  
       <h1  style={{textAlign:'center'}}>Car Details</h1>
       <div className="personaldeatils">
-        {cars.length === 0 ? (
+        {user.cars.length === 0 ? (
           <Link to="/addcar">Add A Car</Link>
         ) : (
-          cars.map((onecar) => (
+          user.cars.map((onecar) => (
             <div key={onecar.details} className="cars">
               <div className="carImage">
-                <img src={emptycart}></img>
+                <img src={emptycart} alt={emptycart}></img>
               </div>
               <div className="carname" style={{ marginTop: "1rem" }}>
                 <h2> {onecar.details}</h2>

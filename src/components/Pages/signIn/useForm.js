@@ -1,15 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import  { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
 import {
   isLogged,
-  addCar,
-  addOrder,
- addSchedules
+ 
 } from "../../../Redux/UserRedux/UserActions";
 import { setMyError } from "../../../Redux/Error/errorActions";
 
 const useForm = (callback, Validate) => {
-    const orders = useSelector((state) => state.user.orders); 
+ 
   const [Item, setItem] = useState({
     phone: "",
     password: "",
@@ -44,23 +42,7 @@ const useForm = (callback, Validate) => {
 
       console.log(responseData);
 
-      if (responseData.customer.cars.length) {
-        responseData.customer.cars.map((carId) =>
-          fetch(`http://localhost:5000/api/cars/${carId}`)
-            .then((response) => response.json())
-            .then((onecar) => dispatch(addCar(onecar.car)))
-            .then((onecar) => {
-              onecar.payload.orders
-                .map((oneOrder) => {
-                  console.log(oneOrder)
-                  dispatch(addOrder(oneOrder));
-                   
-                })
-                
-            })
-           
-        );
-      }
+       
 
       responseData.customer.id
         ? dispatch(isLogged(responseData.customer))

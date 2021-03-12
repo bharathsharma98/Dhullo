@@ -35,7 +35,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
 
-        cars: addcarfunc(state.cars, action.payload),
+        cars: addcarfunc(state.customer, action.payload),
       };
 
     case "RETAIN":
@@ -45,8 +45,8 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case "REMOVE_CAR":
       return {
         ...state,
-        UserSignedIn: true,
-        cars: removecarfunc(state.cars, action.payload),
+      
+        cars: removecarfunc(state.customer, action.payload),
       };
     case "UPDATE_CAR":
       return {

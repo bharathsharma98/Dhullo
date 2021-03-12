@@ -8,61 +8,82 @@ import selectservice from "../../../../Image/selectservice.png";
 const HowItWorks = () => {
   return (
     <div>
-      <h1 style={{marginBottom:'5%'}}>HOW IT WORKS</h1>
+      <div className="hrndots">
+        <hr></hr>
+      </div>
+      <h1 style={{ marginBottom: "5%" }}>HOW IT WORKS</h1>
       <div className="howitworks-container">
         <div className="howItWorks1">
           <div className="top left">
-            <img src={selectservice}></img>
+            <img src={selectservice} alt={selectservice}></img>
           </div>
 
           <div className="middle">
-        
+            <li></li>
           </div>
 
           <div className="bottom right">
             <p>SELECT A SERVICE</p>
+            <label>
+              Select a service out of provided services such as
+              -WASHING,SANITIATION.
+            </label>
           </div>
         </div>
-        <hr id="vertical horizontal"></hr>
+
         <div className="howItWorks2">
           <div className="top left">
-            <img src={bookservice}></img>
+            <img src={bookservice} alt={bookservice}></img>
           </div>
           <div className="middle">
-      
+            {" "}
+            <li></li>
           </div>
           <div className="bottom right">
             {" "}
             <p>BOOK A SERVICE</p>
+            <label>
+              Select a service out of provided services such as
+              -WASHING,SANITIATION.
+            </label>
           </div>
         </div>
-        <hr id="vertical horizontal"></hr>
+
         <div className="howItWorks3">
           {" "}
           <div className="top left">
-            <img src={agent}></img>
+            <img src={agent} alt={relax}></img>
           </div>
           <div className="middle">
-        
+            {" "}
+            <li></li>
           </div>
           <div className="bottom right">
             {" "}
             <p>WAIT FOR AGENT</p>
+            <label>
+              Select a service out of provided services such as
+              -WASHING,SANITIATION.
+            </label>
           </div>
         </div>
-        <hr id="vertical horizontal"></hr>
+
         <div className="howItWorks4">
           {" "}
           <div className="top left">
             {" "}
-            <img src={relax}></img>
+            <img src={relax} alt={relax}></img>
           </div>
           <div className="middle">
-        
+            {" "}
+            <li></li>
           </div>
           <div className="bottom right">
-            {" "}
             <p>RELAX</p>
+            <label>
+              Select a service out of provided services such as
+              -WASHING,SANITIATION.
+            </label>
           </div>
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import TextComp from "../content/TextComponents/TextComponent";
 import BoxComponent from "../content/BoxComponent/BoxComp";
@@ -14,9 +14,13 @@ import Washing from "../../../Image/washing.png";
 import sanitization from "../../../Image/sanitization.png";
 import detailing from "../../../Image/detailing.png";
 const Servicepage = () => {
+
+   useEffect(() => {
+     document.body.scrollTop = 0;
+   }, []);
   const width = { matches: window.matchMedia("(min-width: 768px)").matches };
   console.log(width);
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.customer);
   const [toggleState, setToggle] = useState({
     onetimeToggle: 0,
     silverToggle: 0,
@@ -79,15 +83,15 @@ const Servicepage = () => {
           }}
         >
           <ServiceCard fontColor="black">
-            <img src={Washing}></img>
+            <img src={Washing} alt= {Washing}></img>
             <a href="#washingcontainer">WASHING</a>
           </ServiceCard>
           <ServiceCard fontColor="black">
-            <img src={sanitization}></img>
+            <img src={sanitization} alt ={sanitization}></img>
             <a href="#sanitizationcontainer">SANITIZATION</a>
           </ServiceCard>
           <ServiceCard fontColor="black">
-            <img src={detailing}></img>
+            <img src={detailing} alt ={detailing}></img>
             <a href="#detailingcontainer">DETAILING</a>
           </ServiceCard>
         </div>

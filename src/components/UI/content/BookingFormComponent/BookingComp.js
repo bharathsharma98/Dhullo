@@ -16,7 +16,7 @@ const BookingForm = (props) => {
   let duration = ["MONTHLY", "QUARTERLY", "HALFYEARLY", "YEARLY"];
   const dispatch = useDispatch();
 
-  const user = useSelector((state) => state.user);
+  const user = useSelector((state) => state.user.customer);
 
   const [item, setItem] = useState({
     id: itemId,
@@ -68,32 +68,36 @@ const BookingForm = (props) => {
     <div className="bookingform">
       <div className="bookingform-left">
         <h2>{props.category}</h2>
-        <div
-          className={
-            user.cars.length !== 0
-              ? "carbox-container"
-              : "carbox-container_null"
-          }
-        >
-          {user.cars.map((onecar) => (
-            <CarBox key={onecar.id} selected={item.mycars.length}>
-              <div className="checkBox">
-                <input
-                  type="checkbox"
-                  name={onecar.details}
-                  value={onecar.details}
-                  onChange={handleChange}
-                />
-              </div>
+        { 
+          user.cars !== undefined ?
+          
+          <div
+            className={
+              user.cars.length !== 0
+                ? "carbox-container"
+                : "carbox-container_null"
+            }
+          >
+            {user.cars.map((onecar) => (
+              <CarBox key={onecar.id} selected={item.mycars.length}>
+                <div className="checkBox">
+                  <input
+                    type="checkbox"
+                    name={onecar.details}
+                    value={onecar.details}
+                    onChange={handleChange}
+                  />
+                </div>
 
-              <div  >
-                <p>{onecar.details}</p>
-                <small>{onecar.streetName}</small>
-              </div>
-             
-            </CarBox>
-          ))}
-        </div>
+                <div>
+                  <p>{onecar.details}</p>
+                  <small>{onecar.streetName}</small>
+                </div>
+              </CarBox>
+            ))}
+          </div> : null
+        }
+
         <div>
           <Link path to="/addcar">
             ADD NEW CAR
@@ -131,7 +135,6 @@ const BookingForm = (props) => {
             style={{ marginBottom: "1rem" }}
             name="duration"
             onChange={handleChange}
- 
             className={item.mycars.length === 0 ? "disabled" : "enabled"}
           >
             {duration.map((oneduration) => (
@@ -160,8 +163,6 @@ const BookingForm = (props) => {
           </button>
         </div>
       </div>
-
-       
     </div>
   );
 };

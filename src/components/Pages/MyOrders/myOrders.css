@@ -1,74 +1,67 @@
-.myOrderMainContainer{
-   margin: 1rem;
-    height: 100%;
-}
-.ActiveOrdersContainer{
-height:auto;
+ .myOrderMainContainer{
+     min-height: 100vh;
+    
+ }
  
+ .oneOrderBox{
+  width: 96vw;
+      display: flex;
+     flex-direction: column;
+ margin-left: 2%;
+ margin-right: 2%;
  
+ }
+ .orderCard{
+     padding: 0.5%;
+     display: flex;
+ border:  2px solid grey;
+     height: 100%;
+     margin-top: 2%;
+     margin-bottom: 1%;
+ }
+ .ActiveOrdersContainer{
+     display: flex;
+     flex-direction: row;
+     flex-wrap: wrap;
+      height: 100%;
+      
+ }
+ .leftOrder{
  
-}
-.oneOrderBox{
-    margin-bottom: 2%;
-    width: 100%;
-  
-   box-shadow:  0 0px 9px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.19);;
-   display: flex;
-   flex-direction: row;
-   flex-wrap: wrap;
- border: 2px solid rgb(145, 141, 141);
-   justify-content: space-around;
-}
-.cardetailsinActive{
-display: flex;
-justify-content:space-evenly;
-width: 100%;
+ }
+ .rightOrder{
+     display: flex;
+     flex-direction: column;
+     justify-content:center;
+ 
 
- padding: auto;
-text-align: center;
-justify-items: center;
+ }
+ @media(max-width:769px){
+     .orderCard{
+     padding: 0.5%;
+     display: flex;
+ border:  2px solid grey;
+ border-radius: 5px;
+     height: 100%;
+     margin-top: 2%;
+     margin-bottom: 1%;
+ }
+      .oneOrderBox{
+  width: 96vw;
+      display: flex;
+     flex-direction: column;
  
  
-border-radius: 5px;
-margin: auto;
- padding-bottom: 4%;
-height: 1rem;
-}
-.h4{
-font-size:  large;
-}
-.PastOrderContainer{
- 
-}
-.rightOrder{
-    width: 40%;
-    background-color: #e9e3e3;
-    text-align: center;
-display: flex;
-flex-direction: column;
-justify-content: center;
-left: auto;
-}
-.rightOrder p{
-    text-align: center;
-}
-.subbar{
-    width: 60%;
- 
-}
+ }
+  .leftOrder{
+ margin: auto;
+ }
+ .rightOrder{
+     display: flex;
+     flex-direction: row;
+     justify-content:center;
+     width: 100%;
+ background-color: pink;
 
-@media(max-width:769px){
-    .rightOrder{
-        display: flex;
-        flex-direction: row;
-        width: 100%;
-        background-color: rgb(177, 177, 236);
-  
-    }
-    .rightOrder p{
-        color: rgb(33, 34, 36);
-    }
-    .subbar{
-    width: 100%;
-}
-}
+ }
+ }

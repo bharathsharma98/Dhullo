@@ -2,13 +2,13 @@ import i1b from '../../../Image/Group 93@2x.png'
 import i1 from "../../../Image/Group 89@2x.png";
 // import i2 from '../../../Image/car shine.jpg'
 import i2b from "../../../Image/Group 90@2x.png";
-import i2 from "../../../Image/Group 90@2x.png";
+import i2 from "../../../Image/Group 97@2x.png";
 //import i3 from '../../../Image/interior.jpg'
 import i3b from "../../../Image/Group 92@2x.png";
-import i3 from "../../../Image/Group 92@2x.png";
+import i3 from "../../../Image/Group 96@2x.png";
 //import i4 from '../../../Image/water_waste.jpg'
 import i4b from "../../../Image/Group 91@2x.png";
-import i4 from "../../../Image/Group 91@2x.png";
+import i4 from "../../../Image/Group 88@2x.png";
 const width = { matches: window.matchMedia("(min-width: 768px)").matches };
 const sliderArr = [
   {

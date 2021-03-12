@@ -3,7 +3,7 @@ import DrawerToggleButton from "../SideDrawer/DrawerToggleButton";
 import { Link } from "react-router-dom";
 import "./Toolbar.css";
 import { confirmAlert } from "react-confirm-alert"; // Import
-import { Userpopup,SmallPopupRound } from "../../../globaStyles/styleElements";
+import { Userpopup  } from "../../../globaStyles/styleElements";
 import { useSelector, useDispatch } from "react-redux";
 import { isLoggedout } from "../../../Redux/UserRedux/UserActions";
 import logo from "../../../Image/logo.png";
@@ -11,9 +11,9 @@ import user from "../../../Image/user.svg";
 import cart from "../../../Image/shopping_cart.svg";
 
 export default function Toolbar(props) {
-  const [darkMode, setDarkMode] = useState(false);
+ 
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
-  const customer = useSelector((state) => state.user.customer);
+ 
   const cartItems = useSelector((state) => state.cart.CartItems);
   console.log(cartItems);
   const dispatch = useDispatch();

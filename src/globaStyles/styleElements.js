@@ -1,13 +1,6 @@
-//  ${(props) =>
-//     props.isToday &&
-//     css`
-//       border: 1px solid gray;
-//       border-radius: 3px;
-//     `}
+
 import Styled, { css } from "styled-components";
-import Washing from "../Image/washing.png";
-import sanitization from "../Image/sanitization.png";
-import detailing from "../Image/detailing.png";
+ 
 export const SmallPopupRound = Styled.div`
 height:2.5rem;
 max-width:fit-content;
@@ -138,3 +131,5 @@ img{
   position:relative;
 }
 `;
+
+ 

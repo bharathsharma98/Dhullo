@@ -17,7 +17,7 @@ import CheckoutPage from "./components/Pages/Checkout/Checkoutpage";
 import AddCar from "./components/Pages/AddCar/AddCar";
 import Test from "./components/Pages/testing";
 import EditUser from "./components/Pages/edituser/editUser";
-import ScrollToTop from "./history/scrollToTop";
+ 
 import Footer from "./components/UI/content/footer/footer";
 function App() {
   const [state, setState] = useState({
@@ -46,7 +46,7 @@ function App() {
 
         <SideDrawer show={state.sideDrawerOpen} click={backdropClickHandler} />
         {backDrop}
-        <ScrollToTop>
+        
           <switch>
             <Route path="/about" component={About} />
             <Route path="/services" component={Services} />
@@ -80,7 +80,7 @@ function App() {
 
             <Footer />
           </switch>
-        </ScrollToTop>
+       
       </div>
     </Router>
   );

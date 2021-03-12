@@ -22,7 +22,7 @@ const filteredItems= CartItems.filter(item=>(item.id!==RemoveItem.id ))
 export const updateFromCart = (CartItems, UpdateItem) => {
   const newCartItems = []
   for (let i = 0; i < CartItems.length; i++){
-    if (CartItems[i].id == UpdateItem.id) {
+    if (CartItems[i].id === UpdateItem.id) {
       newCartItems.push(UpdateItem)
     } else {
       newCartItems.push(CartItems[i])

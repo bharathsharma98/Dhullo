@@ -2,7 +2,7 @@ const INITIAL_STATE = {
   errorMessage:''
 };
 const setErrorMessage = (message) => {
- const   newMessage =''
+ 
     if (message.message.includes("Unexpected token < in JSON at position 0"))
       return  "INVALID CREDENTIALS";
 }

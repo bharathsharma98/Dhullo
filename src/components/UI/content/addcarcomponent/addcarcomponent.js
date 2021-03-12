@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./addcarcomponent.css";
 import { CarTypes} from '../../../vehiclesData';
 import Loader from "react-loader-spinner";
-import GoogleMapReact from "google-map-react";
+// import GoogleMapReact from "google-map-react";
 import { useSelector, useDispatch } from "react-redux";
 import { addCar } from "../../../../Redux/UserRedux/UserActions";
 import history from "../../../../history/history";
@@ -54,13 +54,13 @@ const AddCarComponent = (props) => {
         : history.location.state.carmodel,
   });
 
-  const defaultProps = {
-    center: {
-      lat: 59.95,
-      lng: 30.33,
-    },
-    zoom: 11,
-  };
+  // const defaultProps = {
+  //   center: {
+  //     lat: 59.95,
+  //     lng: 30.33,
+  //   },
+  //   zoom: 11,
+  // };
 
   useEffect(() => {
     if ("geolocation" in navigator) {
@@ -69,15 +69,15 @@ const AddCarComponent = (props) => {
       console.log("Not Available");
     }
   });
-  const getloc = () => {
-    navigator.geolocation.getCurrentPosition(function (position) {
-      setCarDetails({
-        ...CarDetails,
-        lat: position.coords.latitude,
-        long: position.coords.longitude,
-      });
-    });
-  };
+  // const getloc = () => {
+  //   navigator.geolocation.getCurrentPosition(function (position) {
+  //     setCarDetails({
+  //       ...CarDetails,
+  //       lat: position.coords.latitude,
+  //       long: position.coords.longitude,
+  //     });
+  //   });
+  // };
 
   const inputsHandler = (e) => {
     setCarDetails({ ...CarDetails, [e.target.name]: e.target.value });

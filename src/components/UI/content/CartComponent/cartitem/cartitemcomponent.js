@@ -4,17 +4,16 @@ import "../cartitem/cartitem.css";
 import DatePicker from "react-datepicker";
 import washing from "../../../../../Image/servicewashing.png";
 import { confirmAlert } from "react-confirm-alert"; // Import
-import ONETIME from "../../../../../Image/servicesanitization.png";
-// import INTERIOR from "../../../../../Image/interior.jpg";
-// import exterior from "../../../../../Image/car shine.jpg";
+ 
+ 
 import emptycart from "../../../../../Image/emptycart.png";
 import { RemoveFromCart,UpdateFromCart } from "../../../../../Redux/cart/CartActions";
-// import CheckoutPage from '../../../../Pages/Checkout/Checkoutpage'
+ 
 import { Link } from "react-router-dom";
 function CartItem() {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.CartItems);
-  const [tempCart, updateTempCart] = useState({
+  const [tempCart] = useState({
     newDate: '',
     newTime: '',
     newDuration:''
