@@ -33,7 +33,11 @@ const HowItWorks = () => {
 
         <div className="howItWorks2">
           <div className="top left">
-            <img src={bookservice} alt={bookservice}></img>
+            <p>BOOK A SERVICE</p>
+            <label>
+              Select a service out of provided services such as
+              -WASHING,SANITIATION.
+            </label>
           </div>
           <div className="middle">
             {" "}
@@ -41,11 +45,7 @@ const HowItWorks = () => {
           </div>
           <div className="bottom right">
             {" "}
-            <p>BOOK A SERVICE</p>
-            <label>
-              Select a service out of provided services such as
-              -WASHING,SANITIATION.
-            </label>
+            <img src={bookservice} alt={bookservice}></img>
           </div>
         </div>
 
@@ -55,7 +55,6 @@ const HowItWorks = () => {
             <img src={agent} alt={relax}></img>
           </div>
           <div className="middle">
-            {" "}
             <li></li>
           </div>
           <div className="bottom right">
@@ -71,19 +70,20 @@ const HowItWorks = () => {
         <div className="howItWorks4">
           {" "}
           <div className="top left">
-            {" "}
-            <img src={relax} alt={relax}></img>
+ 
+            <p>RELAX</p>
+            <label>
+              Select a service out of provided services such as
+              -WASHING,SANITIATION.
+            </label>
           </div>
           <div className="middle">
             {" "}
             <li></li>
           </div>
           <div className="bottom right">
-            <p>RELAX</p>
-            <label>
-              Select a service out of provided services such as
-              -WASHING,SANITIATION.
-            </label>
+            {" "}
+            <img src={relax} alt={relax}></img>
           </div>
         </div>
       </div>
