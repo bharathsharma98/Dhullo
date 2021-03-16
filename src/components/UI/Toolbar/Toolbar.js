@@ -8,16 +8,23 @@ import { useSelector, useDispatch } from "react-redux";
 import { isLoggedout } from "../../../Redux/UserRedux/UserActions";
 import logo from "../../../Image/logo.png";
 import user from "../../../Image/user.svg";
+import history from "../../../history/history";
 import cart from "../../../Image/shopping_cart.svg";
+import SignInUPComponent from "../../Pages/signIn/signIn";
+import SignUp from "../../Pages/SignUp/SignUp";
+
 
 export default function Toolbar(props) {
- 
+
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
  
   const cartItems = useSelector((state) => state.cart.CartItems);
-  console.log(cartItems);
+ 
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
+  const [signinToggle,setSignInTogggle] = useState(false)
+ 
+ 
   return (
     <div>
       <header className="toolbar">
@@ -55,7 +62,7 @@ export default function Toolbar(props) {
                   CONTACT US
                 </Link>
               </li>
-               
+
               <li className="cart_list">
                 <Link path to="/cart">
                   <img
@@ -63,7 +70,7 @@ export default function Toolbar(props) {
                     alt=""
                     style={{ width: 100, height: 38, marginHorizontal: 2 }}
                   />
-                 { cartItems.length ?<small>{cartItems.length}</small>:null}
+                  {cartItems.length ? <small>{cartItems.length}</small> : null}
                 </Link>
               </li>
               <li onClick={() => setToggle(!toggle)}>
@@ -120,12 +127,10 @@ export default function Toolbar(props) {
                     </Userpopup>
                   ) : (
                     <Userpopup>
-                      <Link path to="/signin" id="popuplist">
-                        <p>SignIn</p>
-                      </Link>
-                      <Link path to="/signup" id="popuplist">
-                        <p>Signup</p>
-                      </Link>
+                      <button onClick={() => setSignInTogggle(!signinToggle)}>
+                        Login
+                      </button>
+                     
                     </Userpopup>
                   )
                 ) : //</li><Link path to="/UserProfile">
@@ -144,6 +149,12 @@ export default function Toolbar(props) {
           </div>
         </nav>
       </header>
+     
+      {signinToggle ? (
+        <SignInUPComponent
+          togglepress={()=>{setSignInTogggle(false)}}
+        />
+      ) : null}
     </div>
   );
 }

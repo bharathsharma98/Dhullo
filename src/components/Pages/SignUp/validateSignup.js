@@ -1,4 +1,4 @@
-export default function Validate(Item) {
+export default function ValidateSignUp(Item) {
   let errors = {};
   if (!Item.email) {
     errors.email = "Email is Required";
@@ -15,13 +15,12 @@ export default function Validate(Item) {
   } else if (Item.name.length < 3) {
     errors.name = "name needs to be more than 3 characters";
   }
-   
+
   if (!Item.phone) {
     errors.phone = "Phone number is required";
-  } else if (Item.phone.length !== 10 ) {
+  } else if (Item.phone.length !== 10) {
     errors.phone = "Phone number needs to be 10 numbers";
   }
-  
 
   return errors;
 }

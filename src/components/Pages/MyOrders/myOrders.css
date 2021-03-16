@@ -61,7 +61,11 @@
      flex-direction: row;
      justify-content:center;
      width: 100%;
- background-color: pink;
 
+ background-color:#f28e55;
+
+ }
+ .rightOrder p{
+     color: #000000;
  }
  }

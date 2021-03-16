@@ -32,7 +32,7 @@ text-align:center;
 export const Userpopup = Styled.div`
 height:fit-content;
 width:clamp(10rem,15rem,20rem);
-z-index:3000;
+z-index:1000;
 background-color:white;
 display:flex;
 flex-direction:column;
