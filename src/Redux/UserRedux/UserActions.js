@@ -9,10 +9,22 @@ export const isLoggedout = (customer) => {
     type: "LOGGED_OUT",
   };
 };
+export const editUser = (customer) => {
+  return {
+    type: "EDIT_USER",
+    payload:customer
+  };
+};
 export const addCar = (carArray) => {
   return {
     type: "ADD_CAR",
     payload: carArray,
+  };
+};
+export const editCar = (carObject) => {
+  return {
+    type: "EDIT_CAR",
+    payload: carObject,
   };
 };
 export const removeCar = (carobj) => {

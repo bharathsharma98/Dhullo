@@ -1,3 +1,5 @@
+import { editCar } from "./UserActions";
+
  
 
 export const addcarfunc = (customer, newcar) => {
@@ -29,8 +31,7 @@ export const addSchedulesFunc = (prevSchedules, newId) => {
  
 };
 export const updateOrderFunc = (prevOrders, newEvents) => {
-  console.log(prevOrders)
-  console.log(newEvents)
+ 
   for (let i = 0; i < prevOrders.length; i++){
     for (let j = 0; j <newEvents.length; j++) {
       if (prevOrders[i].carId === newEvents[j].carId) {
@@ -41,7 +42,13 @@ export const updateOrderFunc = (prevOrders, newEvents) => {
     
  
 };
-
+export const editcarfunc = (prevCustomer, editedCar) => {
+const updatedCars = prevCustomer.cars.map((onecar) =>
+  onecar.id === editedCar.id ? editedCar : onecar
+);
+  prevCustomer.cars = [];
+  updatedCars.map(car=>prevCustomer.cars.push(car))
+}
  
 // export const removeaddressfunc = (prevaddress, addresstoberemoved) => {
 //   const items = prevaddress.filter((item) => item.id !== addresstoberemoved);

@@ -40,6 +40,10 @@ const [signState,setSignState] =useState('SIGNIN')
         <div>
           {signState === "SIGNIN" ? (
             <div className="signupcontainer">
+              <div className="closeNback">
+                <label onClick={() => props.togglepress()}> {"X"} </label>
+              </div>
+              <hr></hr>
               <div className="signinForm">
                 <div id="right-side">
                   <form noValidate onSubmit={handleSubmit}>
@@ -94,9 +98,11 @@ const [signState,setSignState] =useState('SIGNIN')
           ) : (
             //SIGNUP CONTAIBER STARTS HERE
             <div className="signupcontainer">
-              <div>
-                <label onClick={() => setSignState("SIGNIN")}>back </label>
+              <div className="closeNback">
+                <label onClick={() => setSignState("SIGNIN")}> {"<"} </label>
+                <label onClick={() => props.togglepress()}> {"X"} </label>
               </div>
+              <hr></hr>
               <div id="right-sideSp">
                 <form noValidate onSubmit={handleSubmitUp} id="signup">
                   <p className="Login-login">Sign-Up</p>

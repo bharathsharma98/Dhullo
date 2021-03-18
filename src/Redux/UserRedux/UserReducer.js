@@ -2,6 +2,7 @@ import {
   addcarfunc,
   removecarfunc,
   addSchedulesFunc,
+  editcarfunc,
 } from "./userConditions.js";
 
 const INITIAL_STATE = {
@@ -31,11 +32,24 @@ const userReducer = (state = INITIAL_STATE, action) => {
         schedules: [],
         temp: "",
       };
+    case "EDIT_USER":
+      return {
+        ...state,
+        customer: [],
+        customer:action.payload
+      };
     case "ADD_CAR":
       return {
         ...state,
 
         cars: addcarfunc(state.customer, action.payload),
+      };
+
+    case "EDIT_CAR":
+      return {
+        ...state,
+
+        cars: editcarfunc(state.customer, action.payload),
       };
 
     case "RETAIN":
@@ -45,7 +59,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case "REMOVE_CAR":
       return {
         ...state,
-      
+
         cars: removecarfunc(state.customer, action.payload),
       };
     case "UPDATE_CAR":

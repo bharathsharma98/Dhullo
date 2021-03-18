@@ -105,7 +105,7 @@ const BookingForm = (props) => {
         </div>
 
         <DatePicker
-          disabled={item.mycars.length === 0 ? true : false}
+          // disabled={item.mycars.length === 0 ? true : false}
           className={item.mycars.length === 0 ? "disabled" : "enabled"}
           selected={item.cardate}
           onChange={(cardate) => setItem({ ...item, cardate })}
@@ -118,7 +118,7 @@ const BookingForm = (props) => {
         props.category === "ONETIME" ? (
           <div>
             <DatePicker
-              disabled={item.mycars.length === 0 ? true : false}
+              // disabled={item.mycars.length === 0 ? true : false}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}
               selected={item.mytime}
               onChange={(mytime) => setItem({ ...item, mytime })}

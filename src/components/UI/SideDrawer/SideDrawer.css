@@ -7,7 +7,7 @@
   left: 0;
   width: 70%;
   max-width: 400px;
-  z-index: 200; /* so that it is above backdrop */
+  z-index: 3001; /* so that it is above backdrop */
   transform: translateX(-100%); /* so that slider move back inside */
   transition: transform 0.3s ease-out;
 }
@@ -83,6 +83,7 @@ margin-left: 2rem;
     /*when device is of laptop dont display side drawer*/
     display: none;
   }
+ 
 }
  
 .logoutSidebar button{

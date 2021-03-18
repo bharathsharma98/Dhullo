@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './contact.css';
-import contactTop from "../../../Image/contactTop.png";
+import contactTop from "../../../Image/contactus.png";
 import call from "../../../Image/call.svg";
 import mailbox from "../../../Image/mailbox.svg";
  
@@ -9,7 +9,7 @@ class contact extends Component {
     return (
       <div className="contactcontainer">
         <div className="upperContact">
-          <p>WE ARE HERE TO HELP YOU</p>
+          <p>CONTACT US</p>
           <img src={contactTop} alt={contactTop}></img>
         </div>
         <div className="lowerContact">
