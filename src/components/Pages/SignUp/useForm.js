@@ -38,7 +38,7 @@ const useFormSignup = (callback, ValidateSignUp) => {
 
       const responseData = await response.json();
       console.log(responseData);
-      await dispatch(isLogged(responseData));
+      await dispatch(isLogged(responseData.customer));
       alert("Signed in");
       //dispatch item and push to add car page
     } catch (err) {

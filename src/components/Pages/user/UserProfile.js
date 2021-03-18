@@ -39,10 +39,10 @@ function UserProfile() {
       customUI: ({ onClose }) => {
         return (
           <div className="custom-ui">
-            <h3 style={{ textAlign: 'center',marginTop:'3%' }}>Delete this car?</h3>
+            <p style={{ textAlign: 'center',marginTop:'3%' }}>Delete this car?</p>
             <div className="promptbuttoncontainer">
             <button className="promptbuttonNo" onClick={onClose}>
-            <h3>No</h3>
+            <small>No</small>
             </button>
             <button
               className="promptbuttonYes"
@@ -67,7 +67,7 @@ function UserProfile() {
                 onClose();
               }}
             >
-              <h3>Yes</h3>
+              <small>Yes</small>
               
             </button>
             </div>
@@ -155,49 +155,7 @@ function UserProfile() {
         />
       </div>
       
-      {/* <div className="activesub">
-        <h1 className="h3">Active Subscription</h1>
-        {/* {activemerge.map((merge) => (
-          <div key={merge.id}>
-            <div className="sunscriptionliststatus">
-              <div className="cardetailsinActive">
-                <h4 className="h4">{merge.details}</h4>
-                <h4 className="h4">{merge.order.service}</h4>
-                <h4 className="h4">{merge.order.package}</h4>
-              </div>
-
-              <section className="subbar">
-                <AlternateSub
-                  package={merge.order.package}
-                  duration={merge.order.packageDuration}
-                  startDate={merge.order.orderDate}
-                  events={merge.order.dailyStatus}
-                />
-              </section>
-            </div>
-          </div>
-        ))} */}
-      {/* <hr className="line"></hr>
-      </div> */}
-
-      {/* <div className="pastordercomponent">
-        <div className="pastorderheader">
-          <h1 className="h3">Past orders</h1>
-        </div>
-
-        {pastmerge.map((merge) => {
-          return (
-            <div className="onepastorderbox" key={merge.id}>
-              <h3 className="h3">{merge.details}</h3>
-              <h4 className="h4">{merge.order.service}</h4>
-              <h4 className="h4">{merge.order.package}</h4>
-              <section className="pastbuttoncontainer">
-                <button className="addorderbutton">Add to Cart</button>
-              </section>
-            </div>
-          );
-        })}
-      </div> */}
+       
     </div>
   );
 }

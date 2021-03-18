@@ -33,7 +33,12 @@ function CartItem() {
         </div>
       ) : (
         <div className="fullcart" style={{ height: "100%" }}>
-          <h1 className="headingcart">MY CART</h1>
+          <h1
+            className="headingcart"
+            style={{ textAlign: "center", color: "#0488D8" }}
+          >
+            MY CART
+          </h1>
 
           <div className="cartbody">
             <div className="cart1">
@@ -95,32 +100,38 @@ function CartItem() {
                   <p className="cartprice">Price : Rs. {item.price}</p>
                   <button
                     className="cartremovebtn"
-                    onClick={()=> confirmAlert({
-      customUI: ({ onClose }) => {
-        return (
-          <div className="custom-ui">
-            <h3 style={{ textAlign: 'center',marginTop:'3%' }}>Delete this car?</h3>
-            <div className="promptbuttoncontainer">
-            <button className="promptbuttonNo" onClick={onClose}>
-            <h3>No</h3>
-            </button>
-            <button
-              className="promptbuttonYes"
-              onClick={() => {
-                 
-                dispatch(RemoveFromCart(item))
-                onClose();
-              }}
-            >
-              <h3>Yes</h3>
-              
-            </button>
-            </div>
-           
-          </div>
-        );
-      },
-    })}
+                    onClick={() =>
+                      confirmAlert({
+                        customUI: ({ onClose }) => {
+                          return (
+                            <div className="custom-ui">
+                              <p
+                                style={{ textAlign: "center", marginTop: "3%" }}
+                              >
+                                Delete this car?
+                              </p>
+                              <div className="promptbuttoncontainer">
+                                <button
+                                  className="promptbuttonNo"
+                                  onClick={onClose}
+                                >
+                                  <small>No</small>
+                                </button>
+                                <button
+                                  className="promptbuttonYes"
+                                  onClick={() => {
+                                    dispatch(RemoveFromCart(item));
+                                    onClose();
+                                  }}
+                                >
+                                  <small>Yes</small>
+                                </button>
+                              </div>
+                            </div>
+                          );
+                        },
+                      })
+                    }
                   >
                     REMOVE ITEM
                   </button>

@@ -172,7 +172,7 @@
     flex-direction: column;
     margin: auto;
     align-items: center;
-    margin-top: 21%;
+    margin-top: 26%;
   }
   .howItWorks1 {
     
@@ -314,7 +314,8 @@ margin-top: -.1rem;
     border-radius: 3px;
     transform: rotateZ(90deg);
     position: absolute;
-    top: 58vh;
+   
     left: -25vw;
+    margin-top: 5rem;
   }
 }

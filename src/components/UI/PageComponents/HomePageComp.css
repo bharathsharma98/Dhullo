@@ -43,3 +43,32 @@
   .circcontainer{height: fit-content;}
   .custsatcontainer{height: fit-content;}
 }
+.react-confirm-alert {
+  height: fit-content;
+  width: 25vw;
+  border-radius: 5px;
+  border: 2px solid rgb(145, 5, 5);
+ 
+  
+}
+.promptbuttoncontainer{
+  padding-bottom: 5%;
+  text-align: center;
+   
+}
+@media(max-width:769px){
+ .react-confirm-alert {
+  height: fit-content;
+  padding-bottom: -10%;
+  width: 25vw;
+  border-radius: 5px;
+  border: 21px solid rgb(145, 5, 5);
+ 
+  
+}
+.custom-ui{
+  height: 0%;
+  background-color: firebrick;
+}
+}
+ 
