@@ -40,17 +40,17 @@ const HowItWorks = () => {
             </label>
           </div>
           <div className="middle">
-            {" "}
+      
             <li></li>
           </div>
           <div className="bottom right">
-            {" "}
+        
             <img src={bookservice} alt={bookservice}></img>
           </div>
         </div>
 
         <div className="howItWorks3">
-          {" "}
+       
           <div className="top left">
             <img src={agent} alt={relax}></img>
           </div>
