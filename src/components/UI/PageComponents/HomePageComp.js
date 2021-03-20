@@ -20,11 +20,11 @@ const Homepage = () => {
   };
   return (
     <div className="main">
-   
       <h1>WE SWEAR BY</h1>
 
       <div className="parent">
         <div className="swearbycontainer">
+   
           <MainImage type={carinhandimage} />
           <TextComp />
         </div>

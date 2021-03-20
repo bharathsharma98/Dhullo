@@ -97,19 +97,25 @@ font-size: large;
 
 }
  @media(max-width:769px){
-   .contactcontainer{
+
+.upperContact{
+  margin-bottom: 15%;
+}
+ 
+.contactcontainer{
      width: 100vw;
      margin: 0%;
    }
    .upperContact img{
   height: 27vh;
-  width: 60%;
+  width: 100%;
 }
 .upperContact p{
  position: absolute;
- top: 50%;
- left: 60%;
- 
+ top: 100%;
+ left: 23%;
+ font-size: 8vw;
+ margin-top: 3%;
  }
  .messagenEmail{
  display: flex;

@@ -1,16 +1,20 @@
-import React, { Component } from 'react';
-import './contact.css';
+import React, { Component } from "react";
+import "./contact.css";
 import contactTop from "../../../Image/contactus.png";
 import call from "../../../Image/call.svg";
 import mailbox from "../../../Image/mailbox.svg";
- 
+
 class contact extends Component {
   render() {
     return (
       <div className="contactcontainer">
         <div className="upperContact">
-          <p>CONTACT US</p>
-          <img src={contactTop} alt={contactTop}></img>
+          <div>
+            <p>CONTACT US</p>
+          </div>
+          <div>
+            <img src={contactTop} alt={contactTop}></img>
+          </div>
         </div>
         <div className="lowerContact">
           <div className="contactEmail">
