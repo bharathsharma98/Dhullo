@@ -300,8 +300,8 @@ margin-top: -.1rem;
     color: #396dcf;
     position: absolute;
  
- bottom: 10vh;
- margin-left: -10.5vw;
+ bottom: 11vh;
+ margin-left: -15.5vw;
     /* margin-bottom: 100vh; or whatever */
   
   }
@@ -313,13 +313,13 @@ margin-top: -.1rem;
   }
   .hrndots hr {
     border: 1px  dashed rgb(134, 140, 216);
-    width: 65vh;
+    width: 60vh;
     /* margin: auto; */
     border-radius: 3px;
     transform: rotateZ(90deg);
     position: absolute;
    
-    left: -9vw;
-    margin-top: 7rem;
+    left: -15vw;
+    margin-top: 4rem;
   }
 }
