@@ -247,6 +247,7 @@ padding-top: 2rem;
   .howItWorks3 p {
     text-align: left;
 padding-left: 2rem;
+ 
     font-size: small;
   }
   .howItWorks4 {
@@ -289,33 +290,36 @@ margin-top: -.1rem;
 
   .howitworks-container li {
     list-style: none;
-    position: absolute;
+    position: relative;
   }
 
   .howitworks-container li:before {
-    transform: rotateZ(180deg);
+    transform: rotateZ(90deg);
     content: "•";
     font-size: 500%;
-    color: #34639b;
+    color: #396dcf;
     position: absolute;
-    visibility: hidden;
+ 
+ bottom: 10vh;
+ margin-left: -10.5vw;
     /* margin-bottom: 100vh; or whatever */
-    /* padding-right: 5px; */
+  
   }
   .hrndots {
     display: flex;
     flex-direction: row;
     position: relative;
+ 
   }
   .hrndots hr {
-    border: 2px dashed rgb(35, 101, 224);
-    width: 150vw;
+    border: 1px  dashed rgb(134, 140, 216);
+    width: 65vh;
     /* margin: auto; */
     border-radius: 3px;
     transform: rotateZ(90deg);
     position: absolute;
    
-    left: -25vw;
-    margin-top: 5rem;
+    left: -9vw;
+    margin-top: 7rem;
   }
 }
