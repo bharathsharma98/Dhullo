@@ -12,7 +12,7 @@ import exterior_detailing from "../../../Image/Exterior_big.png";
 import ServiceSanitizationImg from "../../../Image/servicesanitization.png";
 import CarWashingImg from "../../../Image/servicewashing.png";
 import MainImage from "../content/ImageComponents/ImgComp";
-import Washing from "../../../Image/Washing.png";
+import Washing from "../../../Image/Washing_big.png";
 import sanitization from "../../../Image/sanitization.png";
 import detailing from "../../../Image/detailing.png";
 const Servicepage = () => {
