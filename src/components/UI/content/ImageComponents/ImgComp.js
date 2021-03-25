@@ -7,15 +7,17 @@ const MainImage =(props)=> {
     console.log(props.type);
     return (
       <div className="imgcontainer">
+       
         <img
           className="img"
           src={props.type}
           alt={props.type}
           style={{
-            height: !width.matches ? '15rem' : props.height,
-            width: !width.matches ? '100%' : props.width,
-            minWidth: !width.matches ? '100%' : props.minWidth,
-            minHeight: !width.matches ? '5rem' : props.minHeight,
+            height: !width.matches ? "20rem" : props.height,
+            width: !width.matches ? "100%" : props.width,
+            width: props.width ? props.width : '100%',
+            minWidth: !width.matches ? "70vw" : props.minWidth,
+            minHeight: !width.matches ? "5rem" : props.minHeight,
           }}
         ></img>
       </div>

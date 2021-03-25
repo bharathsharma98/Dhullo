@@ -27,8 +27,8 @@ const Homepage = () => {
    
           <MainImage type={carinhandimage}
             height='35vh'
-            width='13vw'
-            minWidth='23vw'
+            width='35vw'
+       
             minHeight='40vh'/>
           <TextComp />
         </div>
