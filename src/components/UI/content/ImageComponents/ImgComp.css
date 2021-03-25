@@ -8,6 +8,11 @@
   min-height: 41vh;
   
 }
+.img_mobile{
+    width: 60%;
+   min-height: 5rem;
+    height: 25rem;
+}
 .slidertext {
   width: 40vw;
 
@@ -15,7 +20,7 @@
 }
 @media (max-width: 769px) {
   .img {
-    height: 15rem;
+    height: 16rem;
     min-height: 10rem;
     width: 100%;
     
@@ -23,6 +28,11 @@
  
   min-height: 5rem;
   }
+  .img_mobile{
+    width: 90%;
+   min-height: 5rem;
+    height: 25rem;
+}
   .slidertext {
     width: 20vw;
     padding-top: 7%;

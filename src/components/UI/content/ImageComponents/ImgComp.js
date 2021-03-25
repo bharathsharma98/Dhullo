@@ -9,16 +9,16 @@ const MainImage =(props)=> {
       <div className="imgcontainer">
        
         <img
-          className="img"
+          className={props.minHeight? "img_mobile" : "img"}
           src={props.type}
           alt={props.type}
-          style={{
-            height: !width.matches ? "20rem" : props.height,
-            width: !width.matches ? "100%" : props.width,
-            width: props.width ? props.width : '100%',
-            minWidth: !width.matches ? "70vw" : props.minWidth,
-            minHeight: !width.matches ? "5rem" : props.minHeight,
-          }}
+          // style={{
+          //   height: !width.matches ? "20rem" : props.height,
+          //   width: !width.matches ? "100%" : props.width,
+          //   width: props.width ? props.width : '100%',
+          //   minWidth: !width.matches ? "70vw" : props.minWidth,
+          //   minHeight: !width.matches ? "5rem" : props.minHeight,
+          // }}
         ></img>
       </div>
     );
