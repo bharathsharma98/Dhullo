@@ -15,8 +15,8 @@
 }
 @media (max-width: 769px) {
   .img {
-    height: 17rem;
-    min-height: 15rem;
+    height: 15rem;
+    min-height: 10rem;
     width: 100%;
     
  

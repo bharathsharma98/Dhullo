@@ -176,105 +176,87 @@
     margin-bottom: 20%;
   }
   .howItWorks1 {
-        font-size: small;
-    height:  10rem;
+    font-size: small;
+    height: 10rem;
     width: 98vw;
- 
+
     display: flex;
- 
+
     flex-direction: row;
     justify-content: center;
   }
   .howItWorks1 img {
-    width:  30vw;
-    height:30vw;
+    width: 30vw;
+    height: 30vw;
     border-radius: 5px;
- 
   }
-  .howItWorks1  .bottom {
+  .howItWorks1 .bottom {
     text-align: left;
-margin-top: -20%;
- 
+    margin-top: -20%;
   }
 
   .howItWorks2 {
-   font-size: small;
-     height:  10rem;
+    font-size: small;
+    height: 10rem;
     width: 98vw;
- 
+
     display: flex;
- 
+
     flex-direction: row;
     justify-content: center;
   }
   .howItWorks2 img {
-    width:  30vw;
-    height:30vw;
+    width: 30vw;
+    height: 30vw;
     border-radius: 5px;
- margin: auto;
-  
+    margin: auto;
   }
-  .howItWorks2  .top  {
+  .howItWorks2 .top {
     text-align: left;
- 
-
- 
-   
-
- 
   }
   .howItWorks3 {
-    height:  10rem;
+    height: 10rem;
     width: 98vw;
- font-size: small;
+    font-size: small;
     display: flex;
- 
+
     flex-direction: row;
     justify-content: center;
   }
   .howItWorks3 img {
-    width:  30vw;
-    height:30vw;
+    width: 30vw;
+    height: 30vw;
     border-radius: 5px;
- 
- 
   }
-  .howItWorks3 .bottom
-  {
-text-align: left;
-margin-top: -20%;
-  
+  .howItWorks3 .bottom {
+    text-align: left;
+    margin-top: -20%;
   }
   .howItWorks4 {
-    height:  10rem;
+    height: 10rem;
     width: 98vw;
- 
+
     display: flex;
- font-size: small;
+    font-size: small;
     flex-direction: row;
     justify-content: center;
   }
   .howItWorks4 img {
-    width:  30vw;
-    height:30vw;
- 
+    width: 30vw;
+    height: 30vw;
   }
-  .howItWorks4 .top  {
-text-align: left;
-margin-top: 10%;
-
+  .howItWorks4 .top {
+    text-align: left;
+    margin-top: 10%;
   }
- .left{
-   width: 45%;
- 
- }
- .right{
-   margin-top: -0%;
-   margin-right: 0%;
-   width: 45%;
- 
- }
-  
+  .left {
+    width: 45%;
+  }
+  .right {
+    margin-top: -0%;
+    margin-right: 0%;
+    width: 45%;
+  }
 
   .howitworks-container li {
     list-style: none;
@@ -287,27 +269,28 @@ margin-top: 10%;
     font-size: 500%;
     color: #396dcf;
     position: absolute;
- 
- bottom: 11vh;
-left: auto;
+
+    bottom: 11vh;
+    left: auto;
     /* margin-bottom: 100vh; or whatever */
-  
   }
   .hrndots {
     display: flex;
     flex-direction: row;
     position: relative;
- visibility: hidden;
- 
+    justify-content: center;
+    align-items: center;
+    align-self: center;
+   
   }
   .hrndots hr {
-    border: 1px  dashed rgb(134, 140, 216);
-    width: 640px;
+    border: 1px dashed rgb(134, 140, 216);
+    width: 480px;
     /* margin: auto; */
     border-radius: 3px;
     transform: rotateZ(90deg);
     position: absolute;
- 
-    margin-top: 4rem;
+    left:-10.5vw;
+    margin-top: 5rem;
   }
 }

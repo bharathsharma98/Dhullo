@@ -25,7 +25,11 @@ const Homepage = () => {
       <div className="parent">
         <div className="swearbycontainer">
    
-          <MainImage type={carinhandimage} />
+          <MainImage type={carinhandimage}
+            height='35vh'
+            width='13vw'
+            minWidth='23vw'
+            minHeight='40vh'/>
           <TextComp />
         </div>
         <div className="circcontainer">
