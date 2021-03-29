@@ -35,16 +35,16 @@ font-family: 'Dancing Script', cursive;
 
 @media(max-width:769px){
     .imagefield {
-        width: 95vw;
+        width: 100vw;
         height: 100%;
     
          
       }
       .imagecontainer {
-        width: 95%;
-        height: 30vh;
-      
-         
+        width: 100%;
+        height: 38vh;
+       margin-top: 0%;
+           margin-left:0%;
    
        
        justify-content:baseline ;
