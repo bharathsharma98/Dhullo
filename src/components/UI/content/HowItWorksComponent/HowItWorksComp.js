@@ -8,9 +8,6 @@ import selectservice from "../../../../Image/selectservice.png";
 const HowItWorks = () => {
   return (
     <div>
-      <div className="hrndots">
-        <hr></hr>
-      </div>
       <h1 style={{ marginBottom: "5%" }}>HOW IT WORKS</h1>
       <div className="howitworks-container">
         <div className="howItWorks1">
@@ -40,21 +37,28 @@ const HowItWorks = () => {
             </label>
           </div>
           <div className="middle">
-            {" "}
-            <li></li>
+            <div>
+              <li></li>
+            </div>
+
+            <div className="dots">
+              <hr></hr>
+            </div>
           </div>
           <div className="bottom right">
-            {" "}
             <img src={bookservice} alt={bookservice}></img>
           </div>
         </div>
 
         <div className="howItWorks3">
-          {" "}
+ 
           <div className="top left">
             <img src={agent} alt={relax}></img>
           </div>
           <div className="middle">
+            <div className="dots">
+              <hr></hr>
+            </div>
             <li></li>
           </div>
           <div className="bottom right">
@@ -70,7 +74,6 @@ const HowItWorks = () => {
         <div className="howItWorks4">
           {" "}
           <div className="top left">
- 
             <p>RELAX</p>
             <label>
               Select a service out of provided services such as
@@ -80,6 +83,9 @@ const HowItWorks = () => {
           <div className="middle">
             {" "}
             <li></li>
+            <div className="dots">
+              <hr></hr>
+            </div>
           </div>
           <div className="bottom right">
             {" "}
