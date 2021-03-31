@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import useForm from "./useForm";
-import Validate from './validateSignup'
+import Validate from "./validateSignup";
 import carSignIn1 from "../../../Image/carSignIn1.png";
 import Logo from "../../../Image/logo.png";
-import '../signIn/signin.css';
- import { SmallPopupRound } from "../../../globaStyles/styleElements";
-const SignUp = () => {
-  const { Item, handleChange, handleSubmit,error } = useForm(submit,Validate);
-
+import "../signIn/signin.css";
+import { SmallPopupRound } from "../../../globaStyles/styleElements";
+const SignUp = (props) => {
+  const { Item, handleChange, handleSubmit, error } = useForm(submit, Validate);
+  useEffect(() => {
+    document.body.scrollTop = 0;
+    props.click();
+  }, []);
   function submit() {
     console.log("success");
   }
@@ -16,7 +19,11 @@ const SignUp = () => {
       <div className="signinForm">
         <div id="left-sideSp">
           <div id="left-side">
-            <img src={Logo} alt={Logo} style={{ height: "10%",marginBottom:'5%' }}></img>
+            <img
+              src={Logo}
+              alt={Logo}
+              style={{ height: "10%", marginBottom: "5%" }}
+            ></img>
             <img
               src={carSignIn1}
               alt={carSignIn1}

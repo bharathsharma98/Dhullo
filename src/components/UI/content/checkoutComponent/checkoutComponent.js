@@ -1,12 +1,12 @@
 import React from "react";
 import { useSelector } from "react-redux";
- 
+import './checkoutcomp.css'
 function CheckoutComponent() {
   const cartitems = useSelector((state) => state.cart.CartItems);
   console.log(cartitems);
 
   return (
-    <div>
+    <div className="checkout-container">
       
       {cartitems.map((item) => (
         <div key={item.id}>

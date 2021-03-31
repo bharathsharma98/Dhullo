@@ -15,9 +15,10 @@ import MainImage from "../content/ImageComponents/ImgComp";
 import Washing from "../../../Image/washing.png";
 import sanitization from "../../../Image/sanitization.png";
 import detailing from "../../../Image/detailing.png";
-const Servicepage = () => {
+const Servicepage = (props) => {
   useEffect(() => {
     document.body.scrollTop = 0;
+    props.click();
   }, []);
   const width = { matches: window.matchMedia("(min-width: 768px)").matches };
   console.log(width);

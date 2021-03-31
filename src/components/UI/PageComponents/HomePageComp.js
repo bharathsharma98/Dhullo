@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import TextComp from "../content/TextComponents/TextComponent";
 import MainImage from "../content/ImageComponents/ImgComp";
 import "./HomePageComp.css";
@@ -7,13 +7,17 @@ import CircularTextComp from "../content/CircularRingComponent/CircRingComp";
 import thumbsupimg from "../../../Image/customer_satisfaction.png";
 import carinhandimage from "../../../Image/carinhand.png";
 import umbrella from "../../../Image/Group 103.svg";
-import water from '../../../Image/Group 102@2x.png';
- 
-const Homepage = () => {
+import water from "../../../Image/Group 102@2x.png";
+
+const Homepage = (props) => {
+  useEffect(() => {
+    document.body.scrollTop = 0;
+    props.click();
+  }, []);
   const redstyles = {
     backgroundColor: "#F37A7D",
-    color:'white'
-  }
+    color: "white",
+  };
   const bluestyles = {
     backgroundColor: "#94D9EF",
     color: "black",
@@ -24,12 +28,12 @@ const Homepage = () => {
 
       <div className="parent">
         <div className="swearbycontainer">
-   
-          <MainImage type={carinhandimage}
-            height='35vh'
-            width='35vw'
-       
-            minHeight='40vh'/>
+          <MainImage
+            type={carinhandimage}
+            height="35vh"
+            width="35vw"
+            minHeight="40vh"
+          />
           <TextComp />
         </div>
         <div className="circcontainer">

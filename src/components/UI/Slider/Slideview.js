@@ -1,12 +1,15 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import "../../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../../node_modules/slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import ImgComponent from "./ImgComponent";
 import ImageData from "./ImageData";
 
-export default class Slideview extends Component {
-  render() {
+const   Slideview =(props)=>   {
+    useEffect(() => {
+      document.body.scrollTop = 0;
+      props.click();
+    }, []);
     var settings = {
       dots: true,
     infinite: true,
@@ -25,5 +28,6 @@ export default class Slideview extends Component {
         <Slider {...settings} styles={{Width:"100vw"}}>{imgData}</Slider>
       </div>
     );
-  }
+ 
 }
+export default Slideview;

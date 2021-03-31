@@ -1,26 +1,31 @@
-import React,{useState} from "react";
+import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import "../cartitem/cartitem.css";
 import DatePicker from "react-datepicker";
 import washing from "../../../../../Image/servicewashing.png";
 import { confirmAlert } from "react-confirm-alert"; // Import
- 
- 
+
 import emptycart from "../../../../../Image/emptycart.png";
-import { RemoveFromCart,UpdateFromCart } from "../../../../../Redux/cart/CartActions";
- 
+import {
+  RemoveFromCart,
+  UpdateFromCart,
+} from "../../../../../Redux/cart/CartActions";
+
 import { Link } from "react-router-dom";
-function CartItem() {
+function CartItem(props) {
   const dispatch = useDispatch();
   const cart = useSelector((state) => state.cart.CartItems);
   const [tempCart] = useState({
-    newDate: '',
-    newTime: '',
-    newDuration:''
-})
+    newDate: "",
+    newTime: "",
+    newDuration: "",
+  });
   console.log(tempCart);
- 
- 
+  useEffect(() => {
+    document.body.scrollTop = 0;
+    props.click();
+  }, []);
+
   return (
     <div>
       {cart.length === 0 ? (

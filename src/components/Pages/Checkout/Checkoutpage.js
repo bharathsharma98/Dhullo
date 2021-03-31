@@ -11,8 +11,7 @@ function CheckoutPage() {
             isSignedIn ?
                     (<CheckoutComponent/>) :
                     <div>
-                        <SignIn />
-                        <hr></hr>
+                      
                       <CheckoutComponent />
                     </div>
                  

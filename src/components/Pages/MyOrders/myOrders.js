@@ -1,9 +1,13 @@
-import React  from "react";
+import React, { useEffect } from "react";
 import {   useSelector } from "react-redux";
 
 import AlternateSub from "../../UI/content/ActiveSubscriptionComponent/alternateSub";
 import "./myOrders.css";
-const MyOrders = () => {
+const MyOrders = (props) => {
+          useEffect(() => {
+            document.body.scrollTop = 0;
+            props.click();
+          }, []);
   const user = useSelector((state) => state.user.customer);
   return (
     <div className="myOrderMainContainer">

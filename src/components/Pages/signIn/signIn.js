@@ -10,6 +10,10 @@ import { useSelector } from "react-redux";
  
  
 const SignInUPComponent = (props) => {
+     useEffect(() => {
+       document.body.scrollTop = 0;
+       props.click();
+     }, []);
 const [signState,setSignState] =useState('SIGNIN')
 
   console.log(props)
