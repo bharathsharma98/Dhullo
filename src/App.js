@@ -49,26 +49,32 @@ function App() {
 
         <switch>
           <Route
+            exact
             path="/about"
             render={(props) => <About click={backdropClickHandler} />}
           />
           <Route
+            exact
             path="/services"
             render={(props) => <Services click={backdropClickHandler} />}
           />
           <Route
+            exact
             path="/contact"
             render={(props) => <Contact click={backdropClickHandler} />}
           />
           <Route
+            exact
             path="/"
             render={(props) => <Home click={backdropClickHandler} />}
           />
           <Route
+            exact
             path="/signUp"
             render={(props) => <SignUp click={backdropClickHandler} />}
           />
           <Route
+            exact
             path="/cart"
             render={(props) => <CartItem click={backdropClickHandler} />}
           />
@@ -77,6 +83,7 @@ function App() {
 
           <Route path="/edituser" exact component={EditUser} />
           <Route
+            exact
             path="/myorders"
             exact
             render={() =>
@@ -109,7 +116,7 @@ function App() {
               )
             }
           />
-          <Route path="/checkout" exact component={CheckoutPage} />
+          <Route   path="/checkout" exact component={CheckoutPage} />
           <Route path="/addcar" exact component={AddCar} />
 
           <Footer />

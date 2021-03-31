@@ -3,11 +3,13 @@ import {   useSelector } from "react-redux";
 
 import AlternateSub from "../../UI/content/ActiveSubscriptionComponent/alternateSub";
 import "./myOrders.css";
+
+  const width = { matches: window.matchMedia("(min-width: 768px)").matches };
 const MyOrders = (props) => {
-          useEffect(() => {
-            document.body.scrollTop = 0;
-            props.click();
-          }, []);
+    useEffect(() => {
+      document.body.scrollTop = 0;
+      !width.matches ? props.click() : (document.body.scrollTop = 0);
+    }, []);
   const user = useSelector((state) => state.user.customer);
   return (
     <div className="myOrderMainContainer">

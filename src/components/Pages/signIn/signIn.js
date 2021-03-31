@@ -7,12 +7,14 @@ import ValidateSignUp from "../SignUp/validateSignup";
 import ValidateSignIn from "./validateLogin";
 import { SmallPopupRound } from "../../../globaStyles/styleElements";
 import { useSelector } from "react-redux";
- 
+   const width = { matches: window.matchMedia("(min-width: 768px)").matches };
  
 const SignInUPComponent = (props) => {
      useEffect(() => {
-       document.body.scrollTop = 0;
-       props.click();
+      document.body.scrollTop = 0;
+       !width.matches ?
+      
+       props.click() :  document.body.scrollTop = 0
      }, []);
 const [signState,setSignState] =useState('SIGNIN')
 

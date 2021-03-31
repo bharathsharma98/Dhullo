@@ -5,12 +5,13 @@ import carSignIn1 from "../../../Image/carSignIn1.png";
 import Logo from "../../../Image/logo.png";
 import "../signIn/signin.css";
 import { SmallPopupRound } from "../../../globaStyles/styleElements";
+  const width = { matches: window.matchMedia("(min-width: 768px)").matches };
 const SignUp = (props) => {
   const { Item, handleChange, handleSubmit, error } = useForm(submit, Validate);
-  useEffect(() => {
-    document.body.scrollTop = 0;
-    props.click();
-  }, []);
+    useEffect(() => {
+      document.body.scrollTop = 0;
+      !width.matches ? props.click() : (document.body.scrollTop = 0);
+    }, []);
   function submit() {
     console.log("success");
   }
