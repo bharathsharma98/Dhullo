@@ -97,9 +97,10 @@ function CheckoutComponent() {
         image:
           "https://img1.wsimg.com/isteam/ip/0ec77b4c-f729-45ff-9e1c-af04b767b0e4/logo.png/:/rs=h:194/ll",
         handler: function (response) {
+          console.log(response)
           alert(response.razorpay_payment_id);
-          alert(response.razorpay_order_id);
-          alert(response.razorpay_signature);
+          // alert(response.razorpay_order_id);
+          // alert(response.razorpay_signature);
         },
         prefill: {
           name: userEvent.name,
@@ -107,12 +108,9 @@ function CheckoutComponent() {
           phone_number: "9899999999",
         },
         theme: {
-      color: "#F04C06",
-      hide_topbar: false,
-    
-      
-  },
-       
+          color: "#024A5A",
+          hide_topbar: false,
+        },
       };
       const paymentObject = new window.Razorpay(options);
       paymentObject.open();

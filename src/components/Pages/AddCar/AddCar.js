@@ -4,10 +4,11 @@ import SignIn from "../signIn/signIn";
 import SignInUPComponent from "../../Pages/signIn/signIn";
 // import ServicePageComp from '../../UI/PageComponents/ServicePageComp'
 import AddCarComponent from "../../UI/content/addcarcomponent/addcarcomponent";
- 
-function AddCar() {
+ const width = { matches: window.matchMedia("(min-width: 768px)").matches };
+function AddCar(props) {
    useEffect(() => {
-     document.body.scrollTop = 0;
+    document.body.scrollTop = 0;
+    !width.matches ? props.click() : (document.body.scrollTop = 0);
    }, []);
     const [signinToggle, setSignInTogggle] = useState(true);
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
@@ -15,18 +16,17 @@ function AddCar() {
   return (
     <div>
       {isSignedIn ? (
-        <AddCarComponent />
+        <AddCarComponent click={props.location.click} />
       ) : (
-          <div>
-            {
-              signinToggle ?
-                <SignInUPComponent
-            togglepress={() => {
-              setSignInTogggle(false);
-            }}
-          /> : null
-            }
-          
+        <div>
+          {signinToggle ? (
+            <SignInUPComponent
+              click={props.location.click}
+              togglepress={() => {
+                setSignInTogggle(false);
+              }}
+            />
+          ) : null}
         </div>
       )}
     </div>

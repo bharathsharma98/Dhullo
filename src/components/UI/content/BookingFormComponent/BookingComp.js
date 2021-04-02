@@ -103,7 +103,11 @@ const BookingForm = (props) => {
         }
 
         <div>
-          <Link path to="/addcar">
+          <Link to={{
+            pathname: '/addcar',
+            click :props.click
+          }
+          }>
             ADD NEW CAR
           </Link>
         </div>

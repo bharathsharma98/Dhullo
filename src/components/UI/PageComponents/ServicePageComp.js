@@ -5,7 +5,7 @@ import BoxComponent from "../content/BoxComponent/BoxComp";
 import { useSelector } from "react-redux";
 import "./ServicePageComp.css";
 import { ServiceCard } from "../../../globaStyles/styleElements";
-import BookingForm from "../content/BookingFormComponent/BookingComp";
+import BookingForm  from "../content/BookingFormComponent/BookingComp";
 import detailingTop from "../../../Image/detailingTop.png";
 import interior_detailing from "../../../Image/Interior_big.png";
 import exterior_detailing from "../../../Image/Exterior_big.png";
@@ -171,28 +171,33 @@ const Servicepage = (props) => {
             togglePress={handleToggle}
           />
           {toggleState.platinumToggle ? (
-            <BookingForm
+            <BookingForm 
+            click={props.click}
               category="PLATINUM"
               cars={user.cars}
               togglePress={handleToggle}
             />
           ) : null}
           {toggleState.onetimeToggle ? (
-            <BookingForm
+            <BookingForm 
+            click={props.click}
               category="ONETIME"
               cars={user.cars}
               togglePress={handleToggle}
             />
           ) : null}
           {toggleState.goldToggle ? (
-            <BookingForm
+            <BookingForm 
+            click={props.click}
               category="GOLD"
               cars={user.cars}
               togglePress={handleToggle}
             />
           ) : null}
           {toggleState.silverToggle ? (
-            <BookingForm
+            <BookingForm 
+            click={props.click}
+              
               category="SILVER"
               cars={user.cars}
               togglePress={handleToggle}
@@ -235,7 +240,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.onetimeToggle ? (
-                <BookingForm
+                <BookingForm 
+                click={props.click}
                   category="ONETIME"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -261,7 +267,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.silverToggle ? (
-                <BookingForm
+                <BookingForm 
+                click={props.click}
                   category="SILVER"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -287,7 +294,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.goldToggle ? (
-                <BookingForm
+                <BookingForm 
+                click={props.click}
                   category="GOLD"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -313,7 +321,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.platinumToggle ? (
-                <BookingForm
+                <BookingForm 
+                click={props.click}
                   category="PLATINUM"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -342,7 +351,8 @@ const Servicepage = (props) => {
           </button>
         </div>
         {toggleState.sanitizationToggle ? (
-          <BookingForm
+          <BookingForm 
+          click={props.click}
             category="SANITIZATION"
             cars={user.cars}
             togglePress={handleToggle}
@@ -384,7 +394,8 @@ const Servicepage = (props) => {
           </button>
         </div>
         {toggleState.interiorToggle ? (
-          <BookingForm
+          <BookingForm 
+          click={props.click}
             category="INTERIOR"
             cars={user.cars}
             togglePress={handleToggle}
@@ -409,7 +420,8 @@ const Servicepage = (props) => {
           </button>
         </div>
         {toggleState.exteriorToggle ? (
-          <BookingForm
+          <BookingForm 
+          click={props.click}
             category="EXTERIOR"
             cars={user.cars}
             togglePress={handleToggle}
