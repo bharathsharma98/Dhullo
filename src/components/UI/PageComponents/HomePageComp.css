@@ -11,6 +11,9 @@
   min-height: 25rem;
   
 }
+.swearbycontainer  img{
+  width: 20vw;
+}
 .circcontainer {
   display: flex;
   flex-wrap: wrap;
@@ -69,6 +72,9 @@
 .custom-ui{
   height: 0%;
   background-color: firebrick;
+}
+.swearbycontainer  img{
+  width: 50vw;
 }
 }
  

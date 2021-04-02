@@ -27,6 +27,9 @@ padding: 0.5rem;
 .addresscar{
   display: flex;
   flex-direction: column;
+   
+   width: 20rem;
+   height: 100%;
 }
 .carbuttonsremove {
   margin-right: 1rem;
@@ -65,15 +68,16 @@ padding: 0.5rem;
   height: fit-content;
   padding-bottom: 3%;
 }
-.mobile {
-  margin: 1rem;
+.mobileUserProfile {
+  margin-top: -2rem;
+  margin-right: -4rem;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
- 
+ margin-bottom: 1rem;
   justify-content: center;
 }
-.mobile h4{
+.mobileUserProfile h4{
  padding-right: 2rem;
 }
 .cars {
@@ -160,6 +164,7 @@ height: auto;
     margin-bottom: 1%;
   }
   .addresscar {
+   
     padding-top: 1%;
     text-align: left;
   }

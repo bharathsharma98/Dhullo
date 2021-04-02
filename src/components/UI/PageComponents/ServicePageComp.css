@@ -1,4 +1,6 @@
-
+.embbededVideoInterior{
+  margin: auto;
+}
   
 .washingcontainer {
   display: flex;

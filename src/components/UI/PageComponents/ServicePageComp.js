@@ -366,6 +366,14 @@ const Servicepage = (props) => {
           <MainImage type={interior_detailing} />
           <TextComp />
         </div>
+        <div className="embbededVideoInterior">
+          <video width="400" height="240" controls autoPlay muted>
+            <source
+              src="https://youtu.be/nGZbqT4lb_g"
+              type="video/mp4"
+            ></source>
+          </video>
+        </div>
         <div className="sanitbtncontainer">
           <button
             onClick={() => {

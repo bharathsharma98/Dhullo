@@ -11,3 +11,12 @@
     text-align: center;
     margin-left: 10%;
 }
+.editpage-container label{
+margin-left: 10%;
+font-weight: 600;
+color: grey;
+}
+.noEdit{
+    opacity: 10%;
+   cursor: none;
+}

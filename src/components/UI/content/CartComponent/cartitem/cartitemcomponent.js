@@ -180,9 +180,12 @@ function CartItem(props) {
               </div>
             </div>
           </div>
-          <Link path to="/checkout">
-            <button className="placeorderbtn">PLACE ORDER</button>
-          </Link>
+           
+              <div className="checkoutbutton">
+                 <Link path to="/checkout"> <button className="placeorderbtn">PLACE ORDER</button></Link>
+              </div>
+           
+          
         </div>
       )}
     </div>

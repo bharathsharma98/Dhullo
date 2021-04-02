@@ -1,3 +1,66 @@
 .checkout-container{
     height: 100vh;
+ 
+}
+.checkout-heading{
+    text-align: center;
+       color: #304a6b;
+}
+.orderBoxCheckout{
+    margin-left: 3%;
+  
+    height: auto;
+    width: 80%;
+}
+.CheckoutTotal{
+  margin-left: 3%;
+  display: flex;
+}
+ 
+.checkoutButonContainer{
+  margin-left: 3%;
+  margin-top: 2%;
+ 
+}
+.checkoutButonContainer button{
+ background-color: #21B24D;
+ color: rgb(255, 254, 254);
+}
+ 
+
+@media (max-width: 768px) {
+
+.checkout-container hr{
+width: 94vw;
+}
+    .checkout-heading{
+    text-align: center;
+}
+.orderBoxCheckout{
+    margin-left: 3%;
+  
+    height: auto;
+    width: 80%;
+}
+ 
+ 
+.CheckoutTotal{
+  margin-left: 3%;
+  display: flex;
+}
+ 
+.checkoutButonContainer{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+ 
+  margin-top: 20%;
+
+ 
+}
+.checkoutButonContainer button{
+ background-color: #21B24D;
+ color: rgb(255, 254, 254);
+ margin: auto;
+}
 }

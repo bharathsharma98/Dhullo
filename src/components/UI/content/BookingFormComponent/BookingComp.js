@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import { ServicePrice, CarTypePrice } from "../../../price";
 import "./OtherBookingComp.css";
 import { Link } from "react-router-dom";
@@ -10,7 +10,11 @@ import {  CarBox } from '../../../../globaStyles/styleElements';
 import { useId } from "react-id-generator";
 
 const BookingForm = (props) => {
-  const [itemId] = useId();
+  useEffect(() => {
+    
+  }, [ ])
+ 
+   const [itemId] = useId();
  
   let tempcars = [];
   let duration = ["MONTHLY", "QUARTERLY", "HALFYEARLY", "YEARLY"];

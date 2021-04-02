@@ -53,7 +53,35 @@ const AddCarComponent = (props) => {
         ? ""
         : history.location.state.carmodel,
   });
-
+const [TempCarDetails] = useState({
+  carId: history.location.state === undefined ? "" : history.location.state.id,
+  carname:
+    history.location.state === undefined ? "" : history.location.state.details,
+  house_no:
+    history.location.state === undefined
+      ? ""
+      : history.location.state.houseName,
+  street:
+    history.location.state === undefined
+      ? ""
+      : history.location.state.streetName,
+  pincode:
+    history.location.state === undefined ? "" : history.location.state.pincode,
+  landmark:
+    history.location.state === undefined ? "" : history.location.state.society,
+  cartypes: CarTypes,
+  detectaddress: "",
+  lat: "",
+  long: "",
+  cartype:
+    history.location.state === undefined ? "" : history.location.state.carType,
+  vehicleno:
+    history.location.state === undefined
+      ? ""
+      : history.location.state.vehicleno,
+  carmodel:
+    history.location.state === undefined ? "" : history.location.state.carmodel,
+});
   // const defaultProps = {
   //   center: {
   //     lat: 59.95,
@@ -240,7 +268,24 @@ const AddCarComponent = (props) => {
             <br></br>Longitude: {CarDetails.long}
           </p> */}
         {/* </div> */}
-        <button className="addcarbtn" onClick={SubmitHandler}>
+        <button
+          className="addcarbtn"
+          className={
+            CarDetails.carId === TempCarDetails.carId &&
+            CarDetails.carname === TempCarDetails.carname &&
+            CarDetails.house_no === TempCarDetails.house_no &&
+            CarDetails.pincode === TempCarDetails.pincode &&
+            CarDetails.landmark === TempCarDetails.landmark &&
+            CarDetails.cartypes === TempCarDetails.cartypes &&
+            CarDetails.cartype === TempCarDetails.cartype &&
+            CarDetails.vehicleno === TempCarDetails.vehicleno &&
+            CarDetails.carmodel === TempCarDetails.carmodel 
+           
+              ? "noEdit"
+              : "Edit"
+          }
+          onClick={SubmitHandler}
+        >
           ADD A CAR
         </button>
         <div style={{ marginTop: "3%" }}>

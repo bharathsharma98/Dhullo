@@ -42,3 +42,7 @@
   padding: 0.2rem;
   border: 2px solid #03588C;
  }
+ .noEdit{
+    opacity: 10%;
+   cursor: none;
+}

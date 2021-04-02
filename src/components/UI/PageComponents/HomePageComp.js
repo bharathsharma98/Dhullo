@@ -30,8 +30,7 @@ const Homepage = (props) => {
         <div className="swearbycontainer">
           <MainImage
             type={carinhandimage}
-            height="35vh"
-            width="35vw"
+            squareImage = {true}
             minHeight="40vh"
           />
           <TextComp />

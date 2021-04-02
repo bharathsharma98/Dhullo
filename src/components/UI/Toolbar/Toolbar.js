@@ -152,6 +152,7 @@ export default function Toolbar(props) {
      
       {signinToggle ? (
         <SignInUPComponent
+          click={props.click}
           togglepress={()=>{setSignInTogggle(false)}}
         />
       ) : null}

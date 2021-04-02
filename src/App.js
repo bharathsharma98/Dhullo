@@ -42,7 +42,10 @@ function App() {
   return (
     <Router>
       <div style={{ height: "100%" }}>
-        <Toolbar drawerClickHandler={drawerToggleClickHandler} />
+        <Toolbar
+          drawerClickHandler={drawerToggleClickHandler}
+          click={backdropClickHandler}
+        />
 
         <SideDrawer show={state.sideDrawerOpen} click={backdropClickHandler} />
         {backDrop}
@@ -85,7 +88,7 @@ function App() {
           <Route
             exact
             path="/myorders"
-            exact
+            
             render={() =>
               userSignedIn ? (
                 <MyOrders click={backdropClickHandler} />
@@ -116,7 +119,7 @@ function App() {
               )
             }
           />
-          <Route   path="/checkout" exact component={CheckoutPage} />
+          <Route path="/checkout" exact component={CheckoutPage} />
           <Route path="/addcar" exact component={AddCar} />
 
           <Footer />

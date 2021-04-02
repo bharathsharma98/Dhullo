@@ -59,7 +59,7 @@ background-color: #f4f8fc;
  
 @media (min-width: 769px) {
   .placeorderbtn {
-    margin-left: 1%;
+    margin-left: 1.5%;
     margin-top:2%;
     margin-bottom:2%;
     background-color: #fafdff;
@@ -147,16 +147,20 @@ background-color: #dfe3e6;
   margin-left: 0%;
     font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-   
+ 
   }
-  .placeorderbtn {
-    margin-bottom: 10%;
-    margin-top: 10%;
-    background-color: #fafdff;
-    color: rgb(18, 17, 19);
-    border: 2px solid #03588c;
-    border-radius: 5px;
-    margin-left: 10%;
+  .cart2 p{
+    font-size: 4.5vw;
+  }
+  .checkoutbutton {
+ 
+display: flex;
+justify-content: center;
+align-items: center;
+margin: 10%;
+  }
+  .checkoutbutton button{
+    background-color: #0488D8;
   }
   .placeorderbtn:hover {
     background-color: white;

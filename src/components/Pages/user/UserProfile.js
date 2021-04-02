@@ -85,16 +85,17 @@ function UserProfile() {
     <div className="userprofilecomponent">
       <div className="profiledetailscontainer">
         <img className="profileimg" src={profile} alt="profileimage"></img>
+
         <h2>{`Hi ${user.name}`}</h2>
-        <section className="mobile">
+        <section className="mobileUserProfile">
           <h4>{`${user.mobileNo}`}</h4>
           <Link to="/edituser">
-            <img style={{marginTop:'1rem'}} src={edit} alt="icon"></img>
+            <img style={{ marginTop: "1rem" }} src={edit} alt="icon"></img>
           </Link>
         </section>
       </div>
- 
-      <h1  style={{textAlign:'center'}}>Car Details</h1>
+
+      <h1 style={{ textAlign: "center" }}>Car Details</h1>
       <div className="personaldeatils">
         {user.cars.length === 0 ? (
           <Link to="/addcar">Add A Car</Link>
@@ -104,18 +105,17 @@ function UserProfile() {
               <div className="carImage">
                 <img src={emptycart} alt={emptycart}></img>
               </div>
-              <div className="carname" style={{ marginTop: "1rem" }}>
+              <div className="carname" style={{ marginTop: "" }}>
                 <h2> {onecar.details}</h2>
               </div>
 
-              <div className="addresscar" style={{ marginTop: "2rem" }}>
-                <label> {onecar.houseName}</label>
-
-                <label> {onecar.streetName}</label>
-                <label> {onecar.pincode}</label>
+              <div className="addresscar" style={{ marginTop: "" }}>
+                <p>
+                  {onecar.houseName}, {onecar.streetName},{onecar.pincode}
+                </p>
               </div>
 
-              <div className="editicon">
+              <div className="editicon" style={{ marginTop: "" }}>
                 <Link path to="/addcar">
                   <img
                     style={{ marginTop: "2rem" }}
@@ -128,7 +128,7 @@ function UserProfile() {
 
               <div className="carbuttoncontainer">
                 <button
-                  style={{ marginTop: "2rem" }}
+                  style={{ marginTop: "1rem" }}
                   className="carbuttonsremove"
                   onClick={() => deletecar(onecar.id)}
                 >
@@ -154,8 +154,6 @@ function UserProfile() {
           }}
         />
       </div>
-      
-       
     </div>
   );
 }
