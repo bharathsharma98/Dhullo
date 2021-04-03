@@ -80,10 +80,9 @@ function CheckoutComponent() {
         return;
       }
 
-      // const data = await fetch("https://checkout.razorpay.com/v1/checkout.js", {
-      //   method: "POST",
-      // }).then((t) => t.json());
-      const data = 200;
+      const data = await fetch('http://localhost:5000/api/razorpay/createOrder', { method: 'POST' }).then((t) =>
+			t.json()
+		)
       console.log(data);
 
       const options = {
@@ -92,8 +91,8 @@ function CheckoutComponent() {
         // amount: data.amount.toString(),
         amount: data.toString(),
         order_id: data.id,
-        name: "Donation",
-        description: "TWashing",
+        name: "Dhullo Car Care",
+        description: "Washing Silver Package",
         image:
           "https://img1.wsimg.com/isteam/ip/0ec77b4c-f729-45ff-9e1c-af04b767b0e4/logo.png/:/rs=h:194/ll",
         handler: function (response) {
