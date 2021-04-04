@@ -5,7 +5,14 @@ import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import { addDays } from "date-fns";
 import { AddToCart } from "../../../../Redux/cart/CartActions";
-
+import {
+ 
+  setHours,
+  getHours,
+  getMinutes,
+  setMinutes,
+  getDay,
+} from "date-fns";
 import { CarBox } from "../../../../globaStyles/styleElements";
 import { useId } from "react-id-generator";
 import { useSelector, useDispatch } from "react-redux";
@@ -56,7 +63,7 @@ const BookingForm = (props) => {
     finaltempcars.push({});
   }
   for (let i = 0; i < item.mycars.length; i++) {
-    finaltempcars[i].id = item.id + i;
+    finaltempcars[i].id =  Math.floor(Math.random() * 100);  ;
     finaltempcars[i].customerId = user.id;
     finaltempcars[i].orderDate = new Date();
 
@@ -153,8 +160,22 @@ const BookingForm = (props) => {
             <DatePicker
               // disabled={item.mycars.length === 0 ? true : false}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}
-              selected={item.mytime}
-              onChange={(mytime) => setItem({ ...item, mytime })}
+               selected={item.mytime}
+              onChange={(mytime) => {
+                console.log(mytime);
+                var hours = getHours(mytime);
+                var mins = getMinutes(mytime);
+                console.log(hours, mins);
+                console.log(item.serviceStartDate)
+                var hoursDate = setHours(item.cardate, hours);
+                var MinutesDate = setMinutes(hoursDate, mins);
+                console.log(MinutesDate);
+                setItem({
+                  ...item,
+                   mytime: MinutesDate,
+                });
+                console.log(item);
+              }}
               showTimeSelect
               showTimeSelectOnly
               timeIntervals={60}

@@ -48,7 +48,7 @@ const [signState,setSignState] =useState('SIGNIN')
           {signState === "SIGNIN" ? (
             <div className="signupcontainer">
               <div className="closeNback">
-                <label onClick={() => dispatch(loginOpen())}> {"X"} </label>
+                <label onClick={() => dispatch(loginOpen())}> {"<"} </label>
               </div>
               <hr></hr>
               <div className="signinForm">
@@ -106,7 +106,7 @@ const [signState,setSignState] =useState('SIGNIN')
             //SIGNUP CONTAIBER STARTS HERE
             <div className="signupcontainer">
               <div className="closeNback">
-                <label onClick={() => setSignState("SIGNIN")}> {"<"} </label>
+                <strong onClick={() => setSignState("SIGNIN")}> {"<"} </strong>
                 <label onClick={() => dispatch(loginOpen())}> {"X"} </label>
               </div>
               <hr></hr>

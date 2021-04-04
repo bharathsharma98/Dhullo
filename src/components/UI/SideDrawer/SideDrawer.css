@@ -86,12 +86,13 @@ margin-left: 2rem;
 }
  
 .logoutSidebar button{
- 
+ position: fixed;
+ margin-left: -11vw;
   background: #4C5153;
-margin-left: -16%;
-margin-top: 10%;
+ 
+ 
 text-align: center;
- width: 116%;
+ width: 100%;
  border: none;
  height: 2.5rem;
  border-radius: 0px;
@@ -112,6 +113,8 @@ text-align: center;
   background-color: #fa923f;
 }
 .tc-container{
-  margin-top: clamp(10%,50%,55%);
+ 
+  margin-top:10vh;
+ 
   
 }

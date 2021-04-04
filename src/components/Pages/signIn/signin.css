@@ -1,6 +1,6 @@
  
 .signupcontainer{
-  height:100vh;
+  height:100%;
   width: 50vh ;
   z-index:  1;
  position: fixed;
@@ -87,7 +87,7 @@ font-size: clamp(1vw,4vw,20vw);
 top:9vh;
 left: 0;
 width: 100vw;
-height: 100%;
+height: 100vh;
 z-index: 1;
 
 }
@@ -98,7 +98,7 @@ z-index: 1;
   margin: 0;
 }
 .closeNback{
-visibility: hidden;
+ 
  
 }
 }
@@ -108,12 +108,16 @@ visibility: hidden;
  
 }
 .closeNback label{
+width: 0%;
+visibility: hidden;
+ 
+} 
+.closeNback strong{
 cursor: pointer;
 padding-left: 0.4rem;
 padding-right: 0.4rem;
 font-weight: bolder;
-border: 2px solid #013759;
-margin: 3%;
-border-radius: 100%;
+border: 1px sloid #252A40;
+border-radius: 100px;
  
 } 

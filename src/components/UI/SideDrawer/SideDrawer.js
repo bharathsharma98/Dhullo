@@ -121,32 +121,74 @@ function SideDrawer(props) {
           </div>
           <ul>
             <li>
-              <Link to="/">Home</Link>
+              <Link
+                to="/"
+                onClick={
+                  LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
+                }
+              >
+                Home
+              </Link>
             </li>
 
             <li>
-              <Link to="/services">Services</Link>
+              <Link
+                to="/services"
+                onClick={
+                  LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
+                }
+              >
+                Services
+              </Link>
             </li>
 
             <li>
-              <Link to="/about">About</Link>
+              <Link
+                to="/about"
+                onClick={
+                  LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
+                }
+              >
+                About
+              </Link>
             </li>
 
             <li>
-              <Link to="/contact">Contact Us</Link>
+              <Link
+                to="/contact"
+                onClick={
+                  LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
+                }
+              >
+                Contact Us
+              </Link>
             </li>
 
-            <li>
+            {/* <li>
               <Link path to="#" onClick={() => dispatch(loginOpen())}>
                 Sign In
               </Link>
-            </li>
+            </li> */}
             <div className="tc-container">
               <li>
-                <Link to="/contact">Terms And Conditions</Link>
+                <Link
+                  to="/contact"
+                  onClick={
+                    LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
+                  }
+                >
+                  Terms And Conditions
+                </Link>
               </li>
               <li>
-                <Link to="/contact">Privacy policy</Link>
+                <Link
+                  to="/contact"
+                  onClick={
+                    LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
+                  }
+                >
+                  Privacy policy
+                </Link>
               </li>
             </div>
           </ul>

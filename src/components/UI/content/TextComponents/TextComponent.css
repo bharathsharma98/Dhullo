@@ -9,7 +9,7 @@ p {
 .textcontainer {
   height: auto;
   width: 40%;
-  
+  margin-top: -2%;
   text-align: left;
 }
 @media(max-width:769px){

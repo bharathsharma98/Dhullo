@@ -171,33 +171,32 @@ const Servicepage = (props) => {
             togglePress={handleToggle}
           />
           {toggleState.platinumToggle ? (
-            <BookingForm 
-            click={props.click}
+            <BookingForm
+              click={props.click}
               category="PLATINUM"
               cars={user.cars}
               togglePress={handleToggle}
             />
           ) : null}
           {toggleState.onetimeToggle ? (
-            <BookingForm 
-            click={props.click}
+            <BookingForm
+              click={props.click}
               category="ONETIME"
               cars={user.cars}
               togglePress={handleToggle}
             />
           ) : null}
           {toggleState.goldToggle ? (
-            <BookingForm 
-            click={props.click}
+            <BookingForm
+              click={props.click}
               category="GOLD"
               cars={user.cars}
               togglePress={handleToggle}
             />
           ) : null}
           {toggleState.silverToggle ? (
-            <BookingForm 
-            click={props.click}
-              
+            <BookingForm
+              click={props.click}
               category="SILVER"
               cars={user.cars}
               togglePress={handleToggle}
@@ -240,8 +239,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.onetimeToggle ? (
-                <BookingForm 
-                click={props.click}
+                <BookingForm
+                  click={props.click}
                   category="ONETIME"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -267,8 +266,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.silverToggle ? (
-                <BookingForm 
-                click={props.click}
+                <BookingForm
+                  click={props.click}
                   category="SILVER"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -294,8 +293,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.goldToggle ? (
-                <BookingForm 
-                click={props.click}
+                <BookingForm
+                  click={props.click}
                   category="GOLD"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -321,8 +320,8 @@ const Servicepage = (props) => {
                 togglePress={handleToggle}
               />
               {toggleState.platinumToggle ? (
-                <BookingForm 
-                click={props.click}
+                <BookingForm
+                  click={props.click}
                   category="PLATINUM"
                   cars={user.cars}
                   togglePress={handleToggle}
@@ -351,8 +350,8 @@ const Servicepage = (props) => {
           </button>
         </div>
         {toggleState.sanitizationToggle ? (
-          <BookingForm 
-          click={props.click}
+          <BookingForm
+            click={props.click}
             category="SANITIZATION"
             cars={user.cars}
             togglePress={handleToggle}
@@ -372,18 +371,19 @@ const Servicepage = (props) => {
         <div>
           <h1 className="serviceHeader">INTERIOR DETAILING</h1>
         </div>
-        <div className="sanitizationcontainer">
-          <MainImage type={interior_detailing} />
-          <TextComp />
-        </div>
-        <div className="embbededVideoInterior">
+        {/* <div className="embbededVideoInterior">
           <video width="400" height="240" controls autoPlay muted>
             <source
               src="https://youtu.be/nGZbqT4lb_g"
               type="video/mp4"
             ></source>
           </video>
+        </div> */}
+        <div className="sanitizationcontainer">
+          <MainImage type={interior_detailing} />
+          <TextComp />
         </div>
+
         <div className="sanitbtncontainer">
           <button
             onClick={() => {
@@ -393,9 +393,10 @@ const Servicepage = (props) => {
             BOOK
           </button>
         </div>
+
         {toggleState.interiorToggle ? (
-          <BookingForm 
-          click={props.click}
+          <BookingForm
+            click={props.click}
             category="INTERIOR"
             cars={user.cars}
             togglePress={handleToggle}
@@ -420,8 +421,8 @@ const Servicepage = (props) => {
           </button>
         </div>
         {toggleState.exteriorToggle ? (
-          <BookingForm 
-          click={props.click}
+          <BookingForm
+            click={props.click}
             category="EXTERIOR"
             cars={user.cars}
             togglePress={handleToggle}

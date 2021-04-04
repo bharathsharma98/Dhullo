@@ -109,7 +109,7 @@ export default function Toolbar(props) {
                                       className="promptbuttonYes"
                                       onClick={() => {
                                         dispatch(isLoggedout())
-                                        dispatch(loginOpen())
+                                         dispatch(loginOpen())
                                         onClose();
                                       }}
                                     >
