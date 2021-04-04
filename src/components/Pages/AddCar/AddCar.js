@@ -1,16 +1,22 @@
 import React,{useEffect,useState} from "react";
-import { useSelector } from "react-redux";
-import SignIn from "../signIn/signIn";
+ 
+import { useSelector, useDispatch } from "react-redux";
+import { loginOpen } from "../../../Redux/LoginToggle/LoginActions";
+   
 import SignInUPComponent from "../../Pages/signIn/signIn";
 // import ServicePageComp from '../../UI/PageComponents/ServicePageComp'
 import AddCarComponent from "../../UI/content/addcarcomponent/addcarcomponent";
- const width = { matches: window.matchMedia("(min-width: 768px)").matches };
+const width = { matches: window.matchMedia("(min-width: 768px)").matches };
+ 
+
+
 function AddCar(props) {
-   useEffect(() => {
+  const LoginToggle = useSelector((state) => state.loginToggle.Toggle);
+  const dispatch = useDispatch();
+  useEffect(() => {
     document.body.scrollTop = 0;
-    !width.matches ? props.click() : (document.body.scrollTop = 0);
-   }, []);
-    const [signinToggle, setSignInTogggle] = useState(true);
+    
+  }, [])
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
   // const cars = useSelector((state) => state.user.cars);
   return (
@@ -19,12 +25,10 @@ function AddCar(props) {
         <AddCarComponent click={props.location.click} />
       ) : (
         <div>
-          {signinToggle ? (
+          {LoginToggle ? (
             <SignInUPComponent
-              click={props.location.click}
-              togglepress={() => {
-                setSignInTogggle(false);
-              }}
+              
+              
             />
           ) : null}
         </div>

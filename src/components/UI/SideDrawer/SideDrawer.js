@@ -5,15 +5,17 @@ import { useSelector, useDispatch } from "react-redux";
 import { confirmAlert } from "react-confirm-alert";
 import profile from "../../../Image/profilepic.svg";
 import{ isLoggedout} from '../../../Redux/UserRedux/UserActions';
+import { loginOpen } from '../../../Redux/LoginToggle/LoginActions';
 function SideDrawer(props) {
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user.customer);
+  const LoginToggle = useSelector((state) => state.loginToggle);
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
   let drawerClasses = "side-drawer";
   if (props.show) {
     drawerClasses = "side-drawer open";
   }
-  console.log(user);
+  console.log(LoginToggle);
   return (
     <div>
       {isSignedIn ? (
@@ -39,19 +41,19 @@ function SideDrawer(props) {
             <li>
               <Link to="/myorders">My Orders</Link>
             </li>
-             
+
             <li>
               <Link to="/services">Services</Link>
             </li>
-            
+
             <li>
               <Link to="/about">About</Link>
             </li>
-            
+
             <li>
               <Link to="/contact">Contact Us</Link>
             </li>
-            
+
             <div className="tc-container">
               <li>
                 <Link to="/contact">Terms And Conditions</Link>
@@ -82,6 +84,7 @@ function SideDrawer(props) {
                                 className="promptbuttonYes"
                                 onClick={() => {
                                   dispatch(isLoggedout());
+                                  dispatch(loginOpen());
                                   onClose();
                                 }}
                               >
@@ -94,7 +97,7 @@ function SideDrawer(props) {
                     })
                   }
                 >
-                  Logout
+                  <p>Logout</p>
                 </button>
               </div>
             </div>
@@ -120,22 +123,21 @@ function SideDrawer(props) {
             <li>
               <Link to="/">Home</Link>
             </li>
-            
+
             <li>
               <Link to="/services">Services</Link>
             </li>
-            
+
             <li>
               <Link to="/about">About</Link>
             </li>
-            
+
             <li>
               <Link to="/contact">Contact Us</Link>
             </li>
-            
 
             <li>
-              <Link path to="/signin">
+              <Link path to="#" onClick={() => dispatch(loginOpen())}>
                 Sign In
               </Link>
             </li>

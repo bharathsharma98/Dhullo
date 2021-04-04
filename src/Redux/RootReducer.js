@@ -7,11 +7,11 @@ import userReducer from "./UserRedux/UserReducer";
  import errorReducer from "./Error/errorReducer";
 import CartReducer from './cart/CartReducer';
 import calenderReducer from './calender/calenderReducer';
- 
+import LoginReducer from './LoginToggle/LoginReducer'
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cart",  "user","calender", "error"], //remove from whitelist to remove persist
+  whitelist: ["cart", "user", "calender", "error",], //remove from whitelist to remove persist
 };
 
 const RootReducer = combineReducers({
@@ -19,6 +19,7 @@ const RootReducer = combineReducers({
   error:errorReducer,
   cart: CartReducer,
   calender: calenderReducer,
+  loginToggle:LoginReducer
    
 });
 

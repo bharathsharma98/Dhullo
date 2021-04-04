@@ -1,10 +1,9 @@
 export const addItemsToCart = (CartItems, CartItemToAdd) => {
   const existingCartItem = CartItems.find(
     (CartItem) =>
-      ( 
-        CartItem.mycar === CartItemToAdd.mycar) &&
-      ( 
-        CartItem.category === CartItemToAdd.category)
+      CartItem.mycar === CartItemToAdd.mycar &&
+      CartItem.service === CartItemToAdd.service &&
+      CartItem.date === CartItemToAdd.date
   );
 
   if (existingCartItem) {

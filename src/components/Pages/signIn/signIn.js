@@ -1,23 +1,24 @@
 import React, {  useEffect,useState } from "react";
 import "./signin.css";
+import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import useForm from "./useForm";
+import { loginOpen } from "../../../Redux/LoginToggle/LoginActions";
 import useFormSignup from '../SignUp/useForm'
 import ValidateSignUp from "../SignUp/validateSignup";
 import ValidateSignIn from "./validateLogin";
 import { SmallPopupRound } from "../../../globaStyles/styleElements";
-import { useSelector } from "react-redux";
+ 
    const width = { matches: window.matchMedia("(min-width: 768px)").matches };
  
 const SignInUPComponent = (props) => {
+    const dispatch = useDispatch();
      useEffect(() => {
       document.body.scrollTop = 0;
-       !width.matches ?
-      
-       props.click() :  document.body.scrollTop = 0
+        
      }, []);
 const [signState,setSignState] =useState('SIGNIN')
-
+  const LoginToggle = useSelector((state) => state.loginToggle);
   console.log(props)
   useEffect(() => {
     document.body.scrollTop = 0;
@@ -42,12 +43,12 @@ const [signState,setSignState] =useState('SIGNIN')
 
   return (
     <div>
-      {!isSignedIn ? (
+      {!isSignedIn? (
         <div>
           {signState === "SIGNIN" ? (
             <div className="signupcontainer">
               <div className="closeNback">
-                <label onClick={() => props.togglepress()}> {"X"} </label>
+                <label onClick={() => dispatch(loginOpen())}> {"X"} </label>
               </div>
               <hr></hr>
               <div className="signinForm">
@@ -106,7 +107,7 @@ const [signState,setSignState] =useState('SIGNIN')
             <div className="signupcontainer">
               <div className="closeNback">
                 <label onClick={() => setSignState("SIGNIN")}> {"<"} </label>
-                <label onClick={() => props.togglepress()}> {"X"} </label>
+                <label onClick={() => dispatch(loginOpen())}> {"X"} </label>
               </div>
               <hr></hr>
               <div id="right-sideSp">

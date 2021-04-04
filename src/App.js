@@ -1,8 +1,12 @@
 import React, { useState } from "react";
-import { useSelector } from "react-redux";
+ 
 import Toolbar from "./components/UI/Toolbar/Toolbar";
 import SideDrawer from "./components/UI/SideDrawer/SideDrawer";
-import Backdrop from "./components/UI/Backdrop/Backdrop";
+import{ Backdrop} from "./components/UI/Backdrop/Backdrop";
+import {LoginBackdrop} from "./components/UI/Backdrop/Backdrop";
+
+
+import {loginOpen} from './Redux/LoginToggle/LoginActions'
 import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
 import About from "./components/Pages/About/about";
 import Home from "./components/Pages/Home/Home";
@@ -16,15 +20,17 @@ import CartItem from "../src/components/UI/content/CartComponent/cartitem/cartit
 import CheckoutPage from "./components/Pages/Checkout/Checkoutpage";
 import AddCar from "./components/Pages/AddCar/AddCar";
 import Test from "./components/Pages/testing";
+import { useSelector, useDispatch } from "react-redux";
 import EditUser from "./components/Pages/edituser/editUser";
-
+ 
 import Footer from "./components/UI/content/footer/footer";
 function App() {
+    const LoginToggle = useSelector((state) => state.loginToggle);
   const [state, setState] = useState({
     sideDrawerOpen: false,
   });
   const userSignedIn = useSelector((state) => state.user.UserSignedIn);
-
+const dispacth =useDispatch()
   const drawerToggleClickHandler = () => {
     setState({ sideDrawerOpen: !state.sideDrawerOpen });
   };
@@ -34,9 +40,17 @@ function App() {
   };
 
   let backDrop;
+  const LoginbackdropClickHandler = () => {
+  dispacth(loginOpen());
+  };
 
+ 
+  let loginBackDrop;
   if (state.sideDrawerOpen) {
     backDrop = <Backdrop click={backdropClickHandler} />;
+  }
+  if (LoginToggle.Toggle) {
+    backDrop = <LoginBackdrop click={LoginbackdropClickHandler} />;
   }
 
   return (

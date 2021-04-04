@@ -12,10 +12,10 @@ import history from "../../../history/history";
 import cart from "../../../Image/shopping_cart.svg";
 import SignInUPComponent from "../../Pages/signIn/signIn";
 import SignUp from "../../Pages/SignUp/SignUp";
-
+import { loginOpen } from "../../../Redux/LoginToggle/LoginActions";
 
 export default function Toolbar(props) {
-
+  const LoginToggle = useSelector((state) => state.loginToggle.Toggle);
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
  
   const cartItems = useSelector((state) => state.cart.CartItems);
@@ -24,7 +24,7 @@ export default function Toolbar(props) {
   const [toggle, setToggle] = useState(false);
   const [signinToggle,setSignInTogggle] = useState(false)
  
- 
+ const openSignin =() =>setSignInTogggle(!signinToggle)
   return (
     <div>
       <header className="toolbar">
@@ -108,7 +108,8 @@ export default function Toolbar(props) {
                                     <button
                                       className="promptbuttonYes"
                                       onClick={() => {
-                                        dispatch(isLoggedout());
+                                        dispatch(isLoggedout())
+                                        dispatch(loginOpen())
                                         onClose();
                                       }}
                                     >
@@ -127,10 +128,9 @@ export default function Toolbar(props) {
                     </Userpopup>
                   ) : (
                     <Userpopup>
-                      <button onClick={() => setSignInTogggle(!signinToggle)}>
+                      <button onClick={() => dispatch(loginOpen())}>
                         Login
                       </button>
-                     
                     </Userpopup>
                   )
                 ) : //</li><Link path to="/UserProfile">
@@ -149,11 +149,13 @@ export default function Toolbar(props) {
           </div>
         </nav>
       </header>
-     
-      {signinToggle ? (
+
+      {LoginToggle && !isSignedIn? (
         <SignInUPComponent
-          click={props.click}
-          togglepress={()=>{setSignInTogggle(false)}}
+         
+          togglepress={ ()=>
+            dispatch(loginOpen())
+          }
         />
       ) : null}
     </div>
