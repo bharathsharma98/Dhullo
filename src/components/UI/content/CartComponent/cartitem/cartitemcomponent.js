@@ -61,7 +61,7 @@ function CartItem(props) {
                   <p className="caraddress">{item.housename}</p>
 
                   <DatePicker
-                    selected={Date.parse(item.serviceStartDate)}
+                    selected={Date.parse(item.serviceStartDate ?item.serviceStartDate :item.date )}
                     onChange={(cardate) =>
                       dispatch(
                         UpdateFromCart({
