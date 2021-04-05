@@ -13,6 +13,7 @@
 }
 .swearbycontainer  img{
   width: 20vw;
+  height: 20vw;
 }
 .circcontainer {
   display: flex;

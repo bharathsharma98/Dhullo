@@ -61,7 +61,7 @@ function CartItem(props) {
                   <p className="caraddress">{item.housename}</p>
 
                   <DatePicker
-                    selected={Date.parse(item.date)}
+                    selected={Date.parse(item.serviceStartDate)}
                     onChange={(cardate) =>
                       dispatch(
                         UpdateFromCart({
@@ -180,12 +180,13 @@ function CartItem(props) {
               </div>
             </div>
           </div>
-           
-              <div className="checkoutbutton">
-                 <Link path to="/checkout"> <button className="placeorderbtn">PLACE ORDER</button></Link>
-              </div>
-           
-          
+
+          <div className="checkoutbutton">
+            <Link path to="/checkout">
+              {" "}
+              <button className="placeorderbtn">PLACE ORDER</button>
+            </Link>
+          </div>
         </div>
       )}
     </div>

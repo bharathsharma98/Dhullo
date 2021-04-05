@@ -13,13 +13,14 @@ const About = (props) => {
   }, []);
 
   const pinkStyle = {
-    background: "linear-gradient(to left, #FBAB7E , #FBAB7E , #97D9E1 )",
+    background: "  linear-gradient(to left, #95E0F1 0%, #FFFFFF 100%)",
   };
   const blueStyle = {
-    background: "linear-gradient(to left, #D9AFD9 0%, #97D9E1 100%)",
+    background:
+      "linear-gradient(to left, #FFDEFE 0%, #FFFFFF 100%)",
   };
   const yellowStyle = {
-    background: "linear-gradient(to left, #FBAB7E 0%, #F7CE68 100%)",
+    background: "transparent linear-gradient(to left, #F8FAB3 0%, #FFFFFF 100%)",
   };
   return (
     <div className="aboutcontainer">
