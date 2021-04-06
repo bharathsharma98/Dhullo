@@ -78,12 +78,28 @@
   border-radius: 100%;
   font-size: small;
 }
+.toolbarscrolled{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: lightblue;
+  
+} 
 @media (max-width: 768px) {
   .toolbar__navigation-items {
     /*when device is of mobile dont display menu items on toolbar*/
     display: none;
   }
-
+.toolbarscrolled{
+  z-index: 3000;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: linear-gradient(to right, #042440, #007174);
+  
+}
   .cart-contain img {
     height: 100%;
     width: 100%;
@@ -118,4 +134,11 @@ width: 22%;/*when device is of laptop move logo to left*/
 .cart {
   margin-left: 30%;
   height: 2rem;
+}
+.scrolled{
+  background: red;
+  width: 100%;
+  height: 30%;
+  position: relative;
+  top: 0;
 }

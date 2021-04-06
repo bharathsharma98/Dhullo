@@ -65,7 +65,7 @@ Our staff members abide by all the required environmental guidelines and
 also make sure that the quality of service is not affected."
           />
         </div>
-        <div className="custsatcontainer">
+        <div  className="custsatcontainer">
           <TextComp header="Customer Satisfaction" />
           <MainImage type={thumbsupimg} />
         </div>

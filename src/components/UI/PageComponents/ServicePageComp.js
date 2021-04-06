@@ -36,6 +36,7 @@ const Servicepage = (props) => {
     toggle: "ONETIME",
   });
   const handleToggle = (toggle) => {
+       console.log(toggle);
     switch (toggle) {
       case "ONETIME": {
         setToggle({ onetimeToggle: !toggleState.onetimeToggle });

@@ -208,8 +208,9 @@ const BookingForm = (props) => {
                 : finaltempcars.map((onecar) => {
                     dispatch(AddToCart(onecar));
 
-                    alert(onecar.service + " Added to " + onecar.mycar);
-                    props.togglePress(onecar.category);
+                  alert(onecar.service + " Added to " + onecar.mycar);
+                  console.log(onecar)
+                    props.togglePress(onecar.package || onecar.service);
                   });
             }}
           >

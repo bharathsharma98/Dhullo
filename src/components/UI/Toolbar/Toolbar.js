@@ -22,12 +22,17 @@ export default function Toolbar(props) {
  
   const dispatch = useDispatch();
   const [toggle, setToggle] = useState(false);
-  const [signinToggle,setSignInTogggle] = useState(false)
- 
+  const [signinToggle, setSignInTogggle] = useState(false)
+  const [scrolled,setScroll]=useState(false)
+  const scrollHandler = () => {
+  window.scrollY > 0 ? setScroll(true) :setScroll(false)
+  };
+  React.useEffect(()=>{ window.addEventListener("scroll", scrollHandler)})
+   
  const openSignin =() =>setSignInTogggle(!signinToggle)
   return (
-    <div>
-      <header className="toolbar">
+    <div onScroll={() => alert("hi")}>
+      <header className={scrolled ? "toolbarscrolled" : "toolbar"}>
         <nav className="toolbar__navigation">
           <div className="toolbar__toggle-button">
             <DrawerToggleButton click={props.drawerClickHandler} />

@@ -11,7 +11,12 @@ const About = (props) => {
     document.body.scrollTop = 0;
     props.click();
   }, []);
-
+  const setScroll = () => {
+    console.log(window.screenX);
+  };
+  React.useEffect(() => {
+    window.addEventListener('scrollY', setScroll);
+  });
   const pinkStyle = {
     background: "  linear-gradient(to bottom, #95E0F1 0%, #FFFFFF 100%)",
     borderColor: "  #97E1F1",
