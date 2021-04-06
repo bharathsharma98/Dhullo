@@ -1,37 +1,35 @@
-import React, {  useState } from "react";
+import React, { useState } from "react";
 import profile from "../../../Image/profilepic.svg";
 import edit from "../../../Image/edit.svg";
 import Loader from "react-loader-spinner";
 import emptycart from "../../../Image/emptycart.png";
 import { useDispatch, useSelector } from "react-redux";
- 
+import SUV from "../../../Image/Suv.png";
+import PREMIUM from "../../../Image/Premium.png";
+import SEDAN from "../../../Image/Sedan.png";
+import HATCHBACK from "../../../Image/Hatchback.png";
 import { removeCar } from "../../../Redux/UserRedux/UserActions";
 import "./UserProfile.css";
-import history from '../../../history/history'
+import history from "../../../history/history";
 import { Link } from "react-router-dom";
 import { confirmAlert } from "react-confirm-alert"; // Import
 import "react-confirm-alert/src/react-confirm-alert.css"; // Import css
- 
- 
- 
+
 // import moment from "moment";
 
 // var myDate = moment().toDate();
 // var today = moment(myDate.date, "YYYY-MM-DD HH:mm:ss");
 //let tommorow = moment("2020-12-02T00:00:00.000Z");
 const editCar = (onecar) => {
-  history.push('/addcar',onecar)
-}
+  history.push("/addcar", onecar);
+};
 function UserProfile() {
   const user = useSelector((state) => state.user.customer);
   const cars = useSelector((state) => state.user.customer.cars);
- 
+
   const dispatch = useDispatch();
- 
 
- 
   const [Loading, setLoading] = useState(false);
-
 
   function deletecar(carId) {
     console.log(carId, "should be deleted");
@@ -39,47 +37,48 @@ function UserProfile() {
       customUI: ({ onClose }) => {
         return (
           <div className="custom-ui">
-            <p style={{ textAlign: 'center',marginTop:'3%' }}>Delete this car?</p>
+            <p style={{ textAlign: "center", marginTop: "3%" }}>
+              Delete this car?
+            </p>
             <div className="promptbuttoncontainer">
-            <button className="promptbuttonNo" onClick={onClose}>
-            <small>No</small>
-            </button>
-            <button
-              className="promptbuttonYes"
-              onClick={() => {
-                setLoading(true);
-                fetch(`http://localhost:5000/api/cars/${carId}`, {
-                  method: "DELETE",
-                  headers: {
-                    "Content-Type": "application/json",
-                  },
-                  body: JSON.stringify({
-                    id: carId,
-                  }),
-                })
-                  .then((res) => {
-                    dispatch(removeCar(carId));
-                    console.log(cars);
-                    setLoading(false);
+              <button className="promptbuttonNo" onClick={onClose}>
+                <small>No</small>
+              </button>
+              <button
+                className="promptbuttonYes"
+                onClick={() => {
+                  setLoading(true);
+                  fetch(`http://localhost:5000/api/cars/${carId}`, {
+                    method: "DELETE",
+                    headers: {
+                      "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({
+                      id: carId,
+                    }),
                   })
+                    .then((res) => {
+                      dispatch(removeCar(carId));
+                      console.log(cars);
+                      setLoading(false);
+                    })
 
-                  .catch((err) => console.log(err));
-                onClose();
-              }}
-            >
-              <small>Yes</small>
-              
-            </button>
+                    .catch((err) => console.log(err));
+                  onClose();
+                }}
+              >
+                <small>Yes</small>
+              </button>
             </div>
-           
           </div>
         );
       },
     });
     setLoading(false);
- 
   }
- 
+  const [imageurl] = useState({
+    SUV: SUV,
+  });
 
   return (
     <div className="userprofilecomponent">
@@ -90,7 +89,7 @@ function UserProfile() {
         <section className="mobileUserProfile">
           <h4>{`${user.mobileNo}`}</h4>
           <Link to="/edituser">
-            <img style={{ marginTop: "1rem" }} src={edit} alt="icon"></img>
+            <img style={{ marginTop: "1rem",marginLeft:'-2rem' }} src={edit} alt="icon"></img>
           </Link>
         </section>
       </div>
@@ -103,19 +102,30 @@ function UserProfile() {
           user.cars.map((onecar) => (
             <div key={onecar.details} className="cars">
               <div className="carImage">
-                <img src={emptycart} alt={emptycart}></img>
-              </div>
-              <div className="carname" style={{ marginTop: "" }}>
-                <h2> {onecar.details}</h2>
+                <img
+                  src={
+                    onecar.carType === "SUV"
+                      ? SUV
+                      : null || onecar.carType === "SEDAN"
+                      ? SEDAN
+                      : null || onecar.carType === "HATCHBACK"
+                      ? HATCHBACK
+                      : null || onecar.carType === "PREMIUM"
+                      ? PREMIUM
+                      : null
+                  }
+                  alt={emptycart}
+                ></img>
               </div>
 
               <div className="addresscar" style={{ marginTop: "" }}>
-                <p>
-                  {onecar.houseName}, {onecar.streetName},{onecar.pincode}
-                </p>
+                <h2> {onecar.details}</h2>
+                <p>{onecar.houseName} </p>
+                <p>{onecar.streetName} </p>
+                <p>{onecar.pincode}</p>
               </div>
 
-              <div className="editicon" style={{ marginTop: "" }}>
+              <div className="editicon">
                 <Link path to="/addcar">
                   <img
                     style={{ marginTop: "2rem" }}
@@ -126,13 +136,12 @@ function UserProfile() {
                 </Link>
               </div>
 
-              <div className="carbuttoncontainer">
+              <div className="carbuttonsremove">
                 <button
                   style={{ marginTop: "1rem" }}
-                  className="carbuttonsremove"
                   onClick={() => deletecar(onecar.id)}
                 >
-                  remove
+                  REMOVE
                 </button>
               </div>
             </div>

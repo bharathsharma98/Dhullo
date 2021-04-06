@@ -39,11 +39,11 @@ const Footer = () => {
             </a>
           </li>
           <div className="nonSocials">
-            <li>
+            {/* <li>
               <Link path to="/about">
                 About Us
               </Link>
-            </li>
+            </li> */}
             <li>
               <Link path to="/privacy">
                 Privacy Policy
@@ -54,7 +54,7 @@ const Footer = () => {
                 Terms and Conditions
               </Link>
             </li>
-            <li>
+            <li className="tccontainer">
               <Link path to="#" style={{fontSize:'smaller', position:'absolute',left:'80%'}}>
                 © Dhullo Carcare Private Ltd.
               </Link>

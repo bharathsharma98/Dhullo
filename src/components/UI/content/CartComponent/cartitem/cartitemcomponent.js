@@ -61,7 +61,9 @@ function CartItem(props) {
                   <p className="caraddress">{item.housename}</p>
 
                   <DatePicker
-                    selected={Date.parse(item.serviceStartDate ?item.serviceStartDate :item.date )}
+                    selected={Date.parse(
+                      item.serviceStartDate ? item.serviceStartDate : item.date
+                    )}
                     onChange={(cardate) =>
                       dispatch(
                         UpdateFromCart({
@@ -71,7 +73,7 @@ function CartItem(props) {
                           price: item.price,
                           serviceprice: item.serviceprice,
                           time: item.time,
-                          category: item.category,
+                          service: item.service,
                           categoryprice: item.categoryprice,
                         })
                       )
@@ -92,7 +94,7 @@ function CartItem(props) {
                             price: item.price,
                             serviceprice: item.serviceprice,
                             time: cartime,
-                            category: item.category,
+                            service: item.service,
                             categoryprice: item.categoryprice,
                           })
                         )
@@ -146,38 +148,52 @@ function CartItem(props) {
 
             <div className="cart2">
               <div className="pricebox">
-                {cart.map((each) => (
-                  <div key={each.mytime} className="totalpriceitems">
-                    <p>{`${each.mycar}-`}</p>
-                    <p>{each.category}:</p>
-                    <div style={{ marginLeft: "auto" }}>
-                      <p style={{ color: "orangered" }}>Rs.{each.price}/-</p>
-                    </div>
-                  </div>
-                ))}
+                <table>
+                  <thead>
+                    <tr>
+                      <th>
+                        <p>Service</p>
+                      </th>
+                      <th>
+                        <p>Price</p>
+                      </th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {cart.map((each) => (
+                      <tr key={each.mytime} className="totalpriceitems">
+                        {/* <td>{`${each.mycar}-`}</td> */}
+                        <td>
+                          <p>{each.service}:</p>
+                        </td>
+                        <td>
+                          <p>Rs.{each.price}/- </p>
+                        </td>
+                      </tr>
+                    ))}
+                    <tr>
+                      <td>
+                        <p>Total :</p>
+                      </td>
+                      <td>
+                        
+                      
+                          <p style={{ color: "#36adf7" }}>
+                            Rs.
+                            {cart.reduce(function (tot, arr) {
+                              return tot + arr.price;
+                            }, 0)}
+                            /-
+                          </p>
+                      
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
               </div>
               <hr></hr>
 
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  padding: "2%",
-                }}
-              >
-                <div>
-                  <p>Total :</p>
-                </div>
-                <div>
-                  <p style={{ color: "#36adf7" }}>
-                    Rs.
-                    {cart.reduce(function (tot, arr) {
-                      return tot + arr.price;
-                    }, 0)}
-                    /-
-                  </p>
-                </div>
-              </div>
+ 
             </div>
           </div>
 

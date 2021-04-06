@@ -3,7 +3,7 @@ import TextComp from "../content/TextComponents/TextComponent";
 import MainImage from "../content/ImageComponents/ImgComp";
 import "./HomePageComp.css";
 import HowItWorks3 from "../content/HowItWorksComponent/HowItWorksComp";
-import CircularTextComp from "../content/CircularRingComponent/CircRingComp";
+import {CircularTextComp} from "../content/CircularRingComponent/CircRingComp";
 import thumbsupimg from "../../../Image/customer_satisfaction.png";
 import carinhandimage from "../../../Image/carinhand.png";
 import umbrella from "../../../Image/Group 103.svg";
@@ -21,6 +21,8 @@ const Homepage = (props) => {
   const bluestyles = {
     backgroundColor: "#94D9EF",
     color: "black",
+   
+   
   };
   return (
     <div className="main">
@@ -30,31 +32,41 @@ const Homepage = (props) => {
         <div className="swearbycontainer">
           <MainImage
             type={carinhandimage}
-            squareImage = {true}
+            squareImage={true}
             minHeight="40vh"
           />
-          <TextComp />
+          <TextComp
+            header="Car Care"
+            paragraph="Dhullo car care is a destination for car wash and detailing service
+located in Bangalore. We strive to provide the highest level of quality and
+consistency so that your car comes out appearing as new every single time.
+Our dedication to excellence sets the standard of convenience and
+consistency for our car care service."
+          />
         </div>
         <div className="circcontainer">
           <CircularTextComp
             imgUrl={umbrella}
             heading={"Reliability"}
-            paragraph={
-              "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that t has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors"
-            }
+            paragraph="For any service to be deemed reliable, it is important to value
+          each and every customer. We not only aspire to gain our customers trust,
+but also provide a seamless experience throughout. For it is through
+reliability we endeavor to move forward"
             styles={redstyles}
           />
           <CircularTextComp
             imgUrl={water}
             heading={"Save Water"}
-            paragraph={
-              "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that t has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors"
-            }
             styles={bluestyles}
+            paragraph="Water is one of the most important resource on Earth. And
+that is why environmentally responsible services are something we are
+proud to promote. Saving water is a necessary measure for any car service.
+Our staff members abide by all the required environmental guidelines and
+also make sure that the quality of service is not affected."
           />
         </div>
         <div className="custsatcontainer">
-          <TextComp />
+          <TextComp header="Customer Satisfaction" />
           <MainImage type={thumbsupimg} />
         </div>
       </div>

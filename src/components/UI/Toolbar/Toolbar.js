@@ -63,21 +63,25 @@ export default function Toolbar(props) {
                 </Link>
               </li>
 
-              <li className="cart_list">
-                <Link path to="/cart">
-                  <img
-                    src={cart}
-                    alt=""
-                    style={{ width: 100, height: 38, marginHorizontal: 2 }}
-                  />
-                  {cartItems.length ? <small>{cartItems.length}</small> : null}
-                </Link>
+              <li>
+                <div className="cart_list">
+                  <Link path to="/cart">
+                    <img
+                      src={cart}
+                      alt=""
+                      style={{ width: 100, height: 38, marginHorizontal: 2 }}
+                    />
+                    {cartItems.length ? (
+                      <small>{cartItems.length}</small>
+                    ) : null}
+                  </Link>
+                </div>
               </li>
               <li onClick={() => setToggle(!toggle)}>
                 <img src={user} alt="" />
                 {toggle ? (
                   isSignedIn ? (
-                    <Userpopup>
+                    <Userpopup onMouseLeave={() => setToggle(!toggle)}>
                       <Link path to="/userprofile" id="popuplist">
                         <p>User Profile</p>
                       </Link>
@@ -108,8 +112,8 @@ export default function Toolbar(props) {
                                     <button
                                       className="promptbuttonYes"
                                       onClick={() => {
-                                        dispatch(isLoggedout())
-                                         dispatch(loginOpen())
+                                        dispatch(isLoggedout());
+                                        dispatch(loginOpen());
                                         onClose();
                                       }}
                                     >
@@ -127,7 +131,7 @@ export default function Toolbar(props) {
                       </button>
                     </Userpopup>
                   ) : (
-                    <Userpopup>
+                    <Userpopup onMouseLeave={() => setToggle(!toggle)}>
                       <button onClick={() => dispatch(loginOpen())}>
                         Login
                       </button>
@@ -150,13 +154,8 @@ export default function Toolbar(props) {
         </nav>
       </header>
 
-      {LoginToggle && !isSignedIn? (
-        <SignInUPComponent
-         
-          togglepress={ ()=>
-            dispatch(loginOpen())
-          }
-        />
+      {LoginToggle && !isSignedIn ? (
+        <SignInUPComponent togglepress={() => dispatch(loginOpen())} />
       ) : null}
     </div>
   );

@@ -1,5 +1,5 @@
 .checkout-container{
-    height: 100vh;
+    min-height: 100%;
  
 }
 .checkout-heading{
@@ -25,6 +25,7 @@
 .checkoutButonContainer button{
  background-color: #21B24D;
  color: rgb(255, 254, 254);
+ margin-bottom: 3%;
 }
  
 

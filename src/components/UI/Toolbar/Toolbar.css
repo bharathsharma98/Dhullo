@@ -24,7 +24,9 @@
 }
 
 .toolbar__logo {
-  margin-left: 1%; /*to set margin for Logo on left*/
+  margin-left: 1%;
+ 
+ 
 }
 
 .toolbar__navigation-items ul {
@@ -33,6 +35,7 @@
   padding: 0;
   margin: 0;
   width: fit-content;
+ 
 }
  
 .toolbar__navigation-items li {
@@ -57,6 +60,9 @@
 .toolbar__navigation-items a:hover,
 .toolbar__navigation-items a:active {
   color: #F29005; /*so when there is cursor on that color changes*/
+}
+..cart_list{
+  position: absolute;
 }
 .cart_list small{
   position: relative;

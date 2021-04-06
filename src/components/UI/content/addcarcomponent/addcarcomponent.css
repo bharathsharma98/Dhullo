@@ -8,11 +8,22 @@
     margin: auto;
   width: 50%;
 }
+.addcarcontainer1 input{
+  width: 80%;
+  border-radius: 0;
+}
+.carAddress input{
+  width: 80%;
+  border-radius: 0;
+}
 .addcarcontainer1  label{
  
   font-weight: 400;
-  color: gray;
-  margin: auto;
+  color: rgb(0, 0, 0);
+  display: flex;
+  justify-content:left;
+  margin-left: 9%;
+ margin-bottom: -2%;
 }
 .carname{
     display: flex;
@@ -28,7 +39,13 @@
   flex-wrap: wrap;
 
   align-items: center;
-  margin: 1rem;
+ 
+}
+.carAddress label{
+  display: flex;
+  justify-content: left;
+    margin-left: -72%;
+ margin-bottom: -2%;
 }
 .selectrow1{
   display: flex;
@@ -37,8 +54,16 @@
   align-items: center;
   margin-bottom: 2%;
 }
+.selectrow1 label{
+ 
+ margin-bottom: 2%;
+ display: flex;
+ margin-left: -35vw;
+
+
+}
  select{
-  width: 30vh;
+  width: 80%;
   padding: 0.2rem;
   border: 2px solid #03588C;
  }

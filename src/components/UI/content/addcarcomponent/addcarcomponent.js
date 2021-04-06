@@ -160,10 +160,10 @@ const [TempCarDetails] = useState({
 
   return (
     <div className="addcarcontainer1">
-      <h1>ADD CAR DETAILS</h1>
+      <h1>  CAR DETAILS</h1>
 
       <div className="selectrow1">
-        <label style={{ color: "black" }}>Select vehicle type</label>
+        <label> Vehicle Type</label>
         <select className="select" name="cartype" onChange={inputsHandler}>
           {CarDetails.cartypes.map((car) => (
             <option value={car.model} key={car}>
@@ -172,22 +172,23 @@ const [TempCarDetails] = useState({
           ))}
         </select>
       </div>
-      <label>CarName</label>
+      <label>Car Name</label>
       <div className="carname">
+    
         <input
           required={true}
-          placeholder="CarName"
+          placeholder="eg: Swift"
           type="text"
           value={CarDetails.carname}
           name="carname"
           onChange={inputsHandler}
         ></input>
       </div>
-      <label>CarModel</label>
+      <label>Car Make</label>
       <div className="carmodel">
         <input
           required={true}
-          placeholder="eg - Maruti Suzuki Swift"
+          placeholder="eg:Maruti,Honda"
           type="text"
           value={CarDetails.carmodel}
           name="carmodel"
@@ -198,7 +199,7 @@ const [TempCarDetails] = useState({
       <div className="vehicleno">
         <input
           required={true}
-          placeholder="KA-01-AB-1111"
+          placeholder="eg:KA-01-AB-1111"
           type="text"
           value={CarDetails.vehicleno}
           name="vehicleno"
@@ -206,21 +207,21 @@ const [TempCarDetails] = useState({
           onChange={inputsHandler}
         ></input>
       </div>
-      <label style={{ color: "black" }}>Address</label>
+ 
       <div className="carAddress">
         <br></br>
         <label>House.No</label>
         <input
-          placeholder="House.No"
+          placeholder="eg:#12"
           type="text"
           value={CarDetails.house_no}
           name="house_no"
           onChange={inputsHandler}
         ></input>
-        <label>Street</label>
+        <label style={{marginLeft:'-75%'}}>Street</label>
         <input
           required
-          placeholder="Street"
+          placeholder="eg:4th,main"
           type="text"
           value={CarDetails.street}
           name="street"
@@ -228,7 +229,7 @@ const [TempCarDetails] = useState({
         ></input>
         <label>Pincode</label>
         <input
-          placeholder="Pincode"
+          placeholder="eg:560097"
           type="tel"
           required="yes"
           pattern="[0-9]{6}"
@@ -238,7 +239,7 @@ const [TempCarDetails] = useState({
         ></input>
         <label>Landmark</label>
         <input
-          placeholder="Landmark"
+          placeholder="eg: Near PizzaHut"
           type="text"
           required="yes"
           value={CarDetails.landmark}
@@ -280,8 +281,7 @@ const [TempCarDetails] = useState({
             CarDetails.cartypes === TempCarDetails.cartypes &&
             CarDetails.cartype === TempCarDetails.cartype &&
             CarDetails.vehicleno === TempCarDetails.vehicleno &&
-            CarDetails.carmodel === TempCarDetails.carmodel 
-           
+            CarDetails.carmodel === TempCarDetails.carmodel
               ? "noEdit"
               : "Edit"
           }

@@ -4,7 +4,7 @@ import MainImage from "../../UI/content/ImageComponents/ImgComp";
 import MissionImage from "../../../Image/mission image@2x.png";
 import OurStoryImg from "../../../Image/our story image@2x.png";
 
-import CircularTextComp from "../../../components/UI/content/CircularRingComponent/CircRingComp";
+import {CircularTextCompGradient} from "../../../components/UI/content/CircularRingComponent/CircRingComp";
 import "./about.css";
 const About = (props) => {
   useEffect(() => {
@@ -13,14 +13,17 @@ const About = (props) => {
   }, []);
 
   const pinkStyle = {
-    background: "  linear-gradient(to left, #95E0F1 0%, #FFFFFF 100%)",
+    background: "  linear-gradient(to bottom, #95E0F1 0%, #FFFFFF 100%)",
+    borderColor: "  #97E1F1",
   };
   const blueStyle = {
-    background:
-      "linear-gradient(to left, #FFDEFE 0%, #FFFFFF 100%)",
+    background: "linear-gradient(to bottom, #FFDEFE 0%, #FFFFFF 100%)",
+    borderColor: "  #FFDFFE",
   };
   const yellowStyle = {
-    background: "transparent linear-gradient(to left, #F8FAB3 0%, #FFFFFF 100%)",
+    background:
+      "transparent linear-gradient(to bottom, #F8FAB3 0%, #FFFFFF 100%)",
+    borderColor: "  #F8FAB4",
   };
   return (
     <div className="aboutcontainer">
@@ -84,23 +87,23 @@ const About = (props) => {
         Our Values
       </h1>
       <div className="textcontainer1" style={{ marginBottom: "4rem" }}>
-        <CircularTextComp
+        <CircularTextCompGradient
           styles={pinkStyle}
-          heading={"Reliability"}
+          heading={"Transperency"}
           paragraph={
             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
           }
         />
-        <CircularTextComp
+        <CircularTextCompGradient
           styles={blueStyle}
-          heading={"Reliability"}
+          heading={"Commitment"}
           paragraph={
             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
           }
         />
-        <CircularTextComp
+        <CircularTextCompGradient
           styles={yellowStyle}
-          heading={"Reliability"}
+          heading={"Improvement"}
           paragraph={
             "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
           }

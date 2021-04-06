@@ -27,7 +27,7 @@ const EditUser = (props) => {
     return (
       <div className="editpage-container">
         <form>
-          <p>Edit {user.name ?? user.name}</p>
+          <h1>Personal Details</h1>
           <div className="edit-form">
             <label>Name:</label>
             <input
@@ -55,20 +55,27 @@ const EditUser = (props) => {
               onChange={handleChange}
               placeholder={user.email}
             />
-
-            <button
-              onClick={handleSubmit}
-               
-              className={
-                userInfo.name === user.name &&
-                userInfo.mobileNo === user.mobile &&
-                userInfo.email === user.email
-                  ? 'noEdit'
-                  : 'Edit'
-              }
-            >
-              Edit
-            </button>
+            <div className="buttonContainer">
+              <button
+                onClick={handleSubmit}
+                // disabled={
+                //   userInfo.name === user.name &&
+                //   userInfo.mobileNo === user.mobile &&
+                //   userInfo.email === user.email
+                //     ? true
+                //     : false
+                // }
+                className={
+                  userInfo.name === user.name &&
+                  userInfo.mobileNo === user.mobile &&
+                  userInfo.email === user.email
+                    ? "noEdit"
+                    : "Edit"
+                }
+              >
+                OK
+              </button>
+            </div>
           </div>
         </form>
       </div>

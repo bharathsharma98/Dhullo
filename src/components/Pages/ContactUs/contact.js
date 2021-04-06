@@ -32,12 +32,18 @@ const Contact = (props) => {
         <div className="contactField">
           <p>Drop in a message</p>
           <div className="messagenEmail">
-            <input style={{ margin: "3%" }} placeholder="name"></input>
-
-            <input style={{ margin: "3%" }} placeholder="email"></input>
+            <div className="NameContact">
+              <label>Name</label>
+              <input></input>
+            </div>
+            <div className="EmailContact">
+              <label>Email</label>
+              <input></input>
+            </div>
           </div>
           <div className="messagenMessage">
-            <input type="textarea" placeholder="message"></input>
+            <label>Message</label>
+            <input type="textarea"></input>
           </div>
         </div>
         <button>SEND</button>

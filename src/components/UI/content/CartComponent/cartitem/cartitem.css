@@ -24,10 +24,13 @@
   
   flex-wrap: wrap;
   min-width: 40%;
-   border: 2px solid #03588c;
+ 
   
-    box-shadow: 0 4px 8px 0 rgba(214, 205, 205, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-background-color: #f4f8fc;
+  display: flex;
+  flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ 
   height: fit-content;
   align-content:  left;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
@@ -123,8 +126,11 @@ background-color: #f4f8fc;
 .totalpriceitems {
   display: flex;
   justify-content: left;
-  margin: 1rem;
+ 
   
+}
+.totalpriceitems p{
+padding: -1rem;
 }
 
 @media (max-width: 768px) {
@@ -181,4 +187,21 @@ margin: 10%;
     margin: auto;
   }
  }
+ .cart2 table{
  
+ }
+.cart2 thead{
+ display: flex;
+ justify-content: space-around;
+ 
+}
+ 
+.cart2 tbody{
+   display: flex;
+ flex-direction: column;
+
+}
+.cart2 tr{
+    justify-content: space-around;
+
+}

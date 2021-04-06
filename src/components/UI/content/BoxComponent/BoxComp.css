@@ -1,6 +1,6 @@
 .boxwithbutton {
   height: clamp(30%, 40%, 50%);
-  width: clamp(18%, 20%, 25%);
+  width: clamp(18%, 21%, 25%);
   border: 1px solid;
   border-color: black;
   opacity: 1;
@@ -18,13 +18,7 @@
 .btnContainer {
   text-align: center;
 }
-.servicebookbutton {
-  background-color: white;
-  color: rgb(23, 24, 26);
-  border: 2px solid rgb(105, 105, 109);
-
-  margin-bottom: 5%;
-}
+ 
 @media (max-width: 769px) {
   .boxwithbutton {
     height: auto;
@@ -39,11 +33,5 @@
 
     box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.2), 0 6px 40px 0 rgba(0, 0, 0, 0.19);
   }
-  .servicebookbutton {
-    background-color: white;
-    color: rgb(23, 24, 26);
-    border: 2px solid rgb(105, 105, 109);
-
-    margin-bottom: 5%;
-  }
+ 
 }

@@ -1,14 +1,41 @@
  .circularcompwithtext {
   width: 30vw;
-  height: auto;
+  min-height: 30vw;
   border: 1px solid rgb(218, 213, 213);
   
 background-color: #faf5f5;
   border-radius: 2rem;
  margin: auto;
 }
-.header {
-  margin-top: 3%;
+.circularcompwithgradient{
+   width: 30vw;
+   
+   border: 1px solid rgb(218, 213, 213);
+  
+background-color: #faf5f5;
+ height: 300px;
+ width: 300px;
+ margin: auto;
+ color: black;
+ border-radius: 100%;
+ margin-bottom: 2%;
+border: 1px solid rgb(151, 147, 147);
+}
+.contentAboutUs{
+  margin-top: 10%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+
+}
+
+.paragraph p {
+  background: none;
+}
+ 
+.header  {
+  margin-top: -10%;
   text-align: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
