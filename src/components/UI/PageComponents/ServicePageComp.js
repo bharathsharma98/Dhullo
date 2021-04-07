@@ -97,10 +97,9 @@ const Servicepage = (props) => {
           </ServiceCard>
         </div>
       )}
-
-      <h1 className="serviceHeader" id="washingcontainer">
-        WASHING
-      </h1>
+      <div className="serviceHeaderH2  ">
+        <h1 id="washingcontainer">WASHING</h1>
+      </div>
 
       <div className="washingcontainer">
         <TextComp />
@@ -334,8 +333,8 @@ const Servicepage = (props) => {
       )}
 
       <div className="sanitRow" id="sanitizationcontainer">
-        <div>
-          <h1 className="serviceHeader">SANITIZATION</h1>
+        <div className="serviceHeaderH3">
+          <h1> SANITIZATION</h1>
         </div>
         <div className="sanitizationcontainer">
           <MainImage type={ServiceSanitizationImg} />
@@ -359,18 +358,25 @@ const Servicepage = (props) => {
           />
         ) : null}
       </div>
-
-      <h1 className="serviceHeader" id="detailingcontainer">
-        DETAILING
-      </h1>
-
-      <div className="washingcontainer">
-        <TextComp />
-        <MainImage type={detailingTop} />
+      <div className="sanitrow">
+        <div className="serviceHeaderH4">
+          <h1 id="detailingcontainer">DETAILING</h1>
+        </div>
+        <div className="washingcontainer">
+          <TextComp
+            paragraph="Our car detailing services are focused on removing the invisible
+dirt that sticks on to your car&#39;s body. Thus, ensuring a brand-new glossy
+finish, also called as showroom finish. This work does not end here; our car
+care service delivers shiny exteriors, crystal clean windows, and maintains
+the car's hygiene."
+          />
+          <MainImage type={detailingTop} />
+        </div>
       </div>
-      <div className="sanitRow">
-        <div>
-          <h1 className="serviceHeader">INTERIOR DETAILING</h1>
+
+      <div className="sanitRow InteriorDEt">
+        <div className="serviceHeaderH5">
+          <h1>INTERIOR DETAILING</h1>
         </div>
         {/* <div className="embbededVideoInterior">
           <video width="400" height="240" controls autoPlay muted>
@@ -405,14 +411,19 @@ const Servicepage = (props) => {
         ) : null}
       </div>
       <div className="sanitRow">
-        <div>
-          <h1 className="serviceHeader">EXTERIOR DETAILING</h1>
+        <div className="serviceHeaderH5">
+          <h1>EXTERIOR DETAILING</h1>
         </div>
         <div className="sanitizationcontainer">
           <MainImage type={exterior_detailing} />
-          <TextComp />
+          <TextComp
+            paragraph="Exterior detailing involves cleaning, and either restoring
+or exceeding the original condition of the surface of the car&#39;s finish (usually
+a paint with a glossy finish), chrome trim, windows, wheels, and tires, as
+well as other visible components on a vehicle's exterior."
+          />
         </div>
-        <div className="sanitbtncontainer">
+        <div className="sanitbtncontainer ">
           <button
             onClick={() => {
               handleToggle("EXTERIOR");

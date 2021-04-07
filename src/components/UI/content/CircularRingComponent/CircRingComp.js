@@ -32,6 +32,7 @@ export const CircularTextCompGradient = (props) => {
       style={{
         background: props.styles.background,
         border: `1px solid ${props.styles.borderColor}`,
+        textAlign: 'center',
       }}
     >
       <div className="homeimagecontainer">
@@ -42,7 +43,7 @@ export const CircularTextCompGradient = (props) => {
           <h1>{props.heading}</h1>
         </div>
         <div className="paragraph">
-          <p>{props.paragraph}</p>
+          <p style={{textAlign:'center'}}>{props.paragraph}</p>
         </div>
       </div>
     </div>

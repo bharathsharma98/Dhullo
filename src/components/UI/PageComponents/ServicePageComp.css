@@ -44,12 +44,17 @@
   flex-wrap: wrap;
   justify-content: space-around;
   flex-direction: row;
-  margin-top: 1rem;
-  margin-bottom: 2rem;
+ margin-bottom: -1%;
+ 
 }
 .sanitRow {
   display: flex;
   flex-direction: column;
+   
+  margin-bottom: -2%;
+}
+.InteriorDEt{
+  margin-top: 2%;
 }
 @media(min-width:769px){
 .sanitbtncontainer button{
@@ -73,7 +78,7 @@
   flex-direction: row;
   margin: 1rem;
 }
-.serviceHeader {
+.serviceHeader{
   margin-top: 5%;
   margin-bottom: 5%;
  
@@ -86,11 +91,29 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
+@media(min-width:769px){
+  .serviceHeaderH2,.serviceHeaderH4{
+  
+   margin-left: 2%;
+ 
+   margin-bottom: 0%;
+  }
+  .serviceHeaderH3,.serviceHeaderH5{
+  
+   margin-left: 60%;
+ 
+   margin-bottom: 0%;
+  }
+    
+}
+
+
 @media (max-width: 769px) {
   .Servicepage-Container  h1 {
     font-size: clamp(1rem,10vw,3rem);
     margin-top: 5%;
     text-align: center;
+   
      
   }
  .mobileToggle-Buttons{

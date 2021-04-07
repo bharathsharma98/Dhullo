@@ -180,7 +180,7 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                                       marginTop: "3%",
                                     }}
                                   >
-                                    Delete this car?
+                                    Delete Item?
                                   </p>
                                   <div className="promptbuttoncontainer">
                                     <button

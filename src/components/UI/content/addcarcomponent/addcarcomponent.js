@@ -9,7 +9,10 @@ import history from "../../../../history/history";
 import { confirmAlert } from "react-confirm-alert";
 const AddCarComponent = (props) => {
   const user = useSelector((state) => state.user);
-
+  useEffect(() => {
+    document.body.scrollTop = 0;
+   
+  }, []);
   const dispatch = useDispatch();
   console.log(props);
   const [Loading, setLoading] = useState(false);

@@ -65,8 +65,13 @@ Our staff members abide by all the required environmental guidelines and
 also make sure that the quality of service is not affected."
           />
         </div>
-        <div  className="custsatcontainer">
-          <TextComp header="Customer Satisfaction" />
+        <div className="custsatcontainer">
+          <TextComp
+            header="Customer Satisfaction"
+            paragraph="Customer satisfaction is our most important goal.
+And in order to achieve that we have a dedicated team of professionals
+who ensure a steady balance between efficiency and effectiveness."
+          />
           <MainImage type={thumbsupimg} />
         </div>
       </div>

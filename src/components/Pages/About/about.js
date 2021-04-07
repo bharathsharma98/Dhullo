@@ -20,15 +20,18 @@ const About = (props) => {
   const pinkStyle = {
     background: "  linear-gradient(to bottom, #95E0F1 0%, #FFFFFF 100%)",
     borderColor: "  #97E1F1",
+    textAlign:'center'
   };
   const blueStyle = {
     background: "linear-gradient(to bottom, #FFDEFE 0%, #FFFFFF 100%)",
     borderColor: "  #FFDFFE",
+    textAlign: "center",
   };
   const yellowStyle = {
     background:
       "transparent linear-gradient(to bottom, #F8FAB3 0%, #FFFFFF 100%)",
     borderColor: "  #F8FAB4",
+    textAlign: "center",
   };
   return (
     <div className="aboutcontainer">
@@ -44,7 +47,11 @@ const About = (props) => {
         We make car feel good
       </h1>
       <div className="mixcontainer1" style={{ marginBottom: "1rem" }}>
-        <TextComp />
+        <TextComp
+          header="Our Mission"
+          paragraph="Our primary aim is to provide hassle free, door to door car care services.We want to ensure our customers feel valued and provide a seamless experience
+when it comes to taking care of their vehicles."
+        />
         <MainImage type={MissionImage} />
       </div>
       <h1
@@ -95,22 +102,21 @@ const About = (props) => {
         <CircularTextCompGradient
           styles={pinkStyle}
           heading={"Transperency"}
-          paragraph={
-            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout."
-          }
+          paragraph="The trust that we build with our customers is invaluable.
+Transparency is the key to building that trust."
         />
         <CircularTextCompGradient
           styles={blueStyle}
           heading={"Commitment"}
           paragraph={
-            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
+            "We are fully committed to fulfill our customers’ needs and requirements. "
           }
         />
         <CircularTextCompGradient
           styles={yellowStyle}
           heading={"Improvement"}
           paragraph={
-            "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. "
+            "We intend to constantly improve on our levels of service. Improvement paves the way for innovation. "
           }
         />
       </div>

@@ -22,6 +22,9 @@ const BookingForm = (props) => {
     console.log(props.category);
   }, []);
 
+  var totalPriceArray = [];
+
+  
   const LoginToggle = useSelector((state) => state.loginToggle);
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
   const [itemId] = useId();
@@ -39,8 +42,12 @@ const BookingForm = (props) => {
 
     cardate: "",
   });
-
+  var sumTotal = 0;
+  const [sumtotal, setSumTotal] = useState({ Total :0});
   const handleChange = (e) => {
+ 
+  
+    console.log(sumtotal)
     const { name, value, checked, type } = e.target;
     if (type === "checkbox") {
       if (checked === true) {
@@ -92,6 +99,7 @@ const BookingForm = (props) => {
     finaltempcars[i].categoryprice = CarTypePrice(user.cars[i].carType);
     finaltempcars[i].price =
       finaltempcars[i].serviceprice + finaltempcars[i].categoryprice;
+  
   }
 
   console.log(finaltempcars);
@@ -160,19 +168,19 @@ const BookingForm = (props) => {
             <DatePicker
               // disabled={item.mycars.length === 0 ? true : false}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}
-               selected={item.mytime}
+              selected={item.mytime}
               onChange={(mytime) => {
                 console.log(mytime);
                 var hours = getHours(mytime);
                 var mins = getMinutes(mytime);
                 console.log(hours, mins);
-                console.log(item.serviceStartDate)
+                console.log(item.serviceStartDate);
                 var hoursDate = setHours(item.cardate, hours);
                 var MinutesDate = setMinutes(hoursDate, mins);
                 console.log(MinutesDate);
                 setItem({
                   ...item,
-                   mytime: MinutesDate,
+                  mytime: MinutesDate,
                 });
                 console.log(item);
               }}
@@ -208,8 +216,8 @@ const BookingForm = (props) => {
                 : finaltempcars.map((onecar) => {
                     dispatch(AddToCart(onecar));
 
-                  alert(onecar.service + " Added to " + onecar.mycar);
-                  console.log(onecar)
+                    alert(onecar.service + " Added to " + onecar.mycar);
+                    console.log(onecar);
                     props.togglePress(onecar.package || onecar.service);
                   });
             }}
@@ -217,6 +225,10 @@ const BookingForm = (props) => {
             ADD TO CART
           </button>
         </div>
+      </div>
+      <div>
+        <label>Price : </label>
+        <p>{finaltempcars.length > 0 ? sumTotal : 0}</p>
       </div>
     </div>
   );
