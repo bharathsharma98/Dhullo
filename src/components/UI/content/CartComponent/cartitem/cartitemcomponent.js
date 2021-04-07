@@ -12,6 +12,7 @@ import {
 } from "../../../../../Redux/cart/CartActions";
 
 import { Link } from "react-router-dom";
+import { TotalPrice } from "./TotalpriceComponent";
 function CartItem(props) {
    const width = { matches: window.matchMedia("(min-width: 768px)").matches };
   const dispatch = useDispatch();
@@ -27,7 +28,10 @@ function CartItem(props) {
     document.body.scrollTop = 0;
     props.click();
   }, []);
+var totalPriceArray = [];
+cart.map((oneItem) => totalPriceArray.push(oneItem.price));
 
+var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
   return (
     <div>
       {cart.length === 0 ? (
@@ -49,7 +53,7 @@ function CartItem(props) {
 
           <div className="cartbody">
             <div className="cart1">
-              {cart.map((item) => (
+              {cart.map((item, index) => (
                 <div className="cartcomponent" key={item.time}>
                   <div className="leftCart">
                     <img
@@ -205,77 +209,20 @@ function CartItem(props) {
                       </button>
                     </div>
                   </div>
-                  <hr></hr>
+                  {index !== cart.length - 1 ? <hr></hr> : null}
                 </div>
               ))}
             </div>
 
             <div className="cart2">
-              <div className="pricebox">
-                <table>
-                  <thead>
-                    <tr className="totalpriceCart">
-                      <th>
-                        <p style={{ fontWeight: "bold", color: "black" }}>
-                          PRICE DETAILS
-                        </p>
-                      </th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr className="totalpriceitems">
-                      {/* <td>{`${each.mycar}-`}</td> */}
-                      <td>
-                        <p
-                          style={{ marginLeft: width.matches ? "-0.8vw" : "0" }}
-                        >
-                          {`Sub Total`} :{" "}
-                        </p>
-                      </td>
-                      <td>
-                        <p style={{ marginLeft: width.matches ? "-6vw" : "0" }}>
-                          Rs
-                          {cart.reduce(function (tot, arr) {
-                            return tot + arr.price;
-                          }, 0)}
-                        </p>
-                      </td>
-                    </tr>
-                    <tr className="totalpriceitemsGST">
-                      <td>
-                        <p style={{ marginLeft: width.matches ? "1.8vw" : "0" }}>
-                          Gst (18%) :{" "}
-                        </p>
-                      </td>
-                      <td>
-                        <p style={{ marginLeft: width.matches ? "0vw" : "0" }}>Rs 200</p>
-                      </td>
-                    </tr>
-                    <hr style={{ marginTop: "-0%" }}></hr>
-                    <tr className="totalpriceitemsTotal">
-                      <td>
-                        <p style={{ marginLeft: "4.9vw" }}>Total : </p>
-                      </td>
-                      <td>
-                        <p style={{ marginLeft: "-0vw" }}>
-                          Rs
-                          {cart.reduce(function (tot, arr) {
-                            return tot + arr.price;
-                          }, 0)}
-                        </p>
-                      </td>
-                    </tr>
-                  </tbody>
-                </table>
-              </div>
+              <TotalPrice total={sumTotal} GST={sumTotal * 0.18} />
               <div className="checkoutbutton">
                 <Link path to="/checkout">
-                  <button>
-                    PLACE ORDER
-                  </button>
+                  <button>PLACE ORDER</button>
                 </Link>
               </div>
             </div>
+            {/*   */}
           </div>
         </div>
       )}

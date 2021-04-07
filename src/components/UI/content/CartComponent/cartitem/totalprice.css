@@ -1,0 +1,90 @@
+.totalPriceContainer{
+ 
+    width: 35vw;
+    height: fit-content;
+}
+.totalPriceContainer table{
+    font-size: 2vw;
+}
+.headerTable{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.totalPriceContainer tr{
+  
+    width: 20rem;
+    height: 2rem;
+    font-size: 1rem;
+    margin: 0.5%;
+}
+.totalPriceContainer tbody{
+ 
+}
+.SubtotalTable{
+    display: flex;
+    justify-content: left;
+    align-items: left;
+}
+ 
+.gstTbale{
+     display: flex;
+     justify-content: left;
+     align-items: left;
+}
+.gstTbale h3{
+    margin-bottom: 1%;
+}
+ 
+.totalTable {
+     display: flex;
+     justify-content: left;
+     align-items: left;
+ 
+     
+}
+.totalTable h3{
+ margin-top: -2%;
+    
+}
+ 
+#td1{
+  
+    width: 6rem;
+    text-align: left;
+ 
+    margin-right: -10%;
+}
+#td2{
+    width: 1rem;
+ 
+    text-align: center;
+     margin-right: -10%;
+}
+#td3{
+    width: 6rem;
+  
+    text-align: left;
+}
+@media(max-width:769px){
+    .totalPriceContainer {
+        width: 95vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 2%;
+        margin-top: -2%;
+       
+    }
+ 
+    .totalPriceContainer hr{
+        width: 100%;
+        margin-top: 2%;
+        margin-bottom: 2%;
+    }
+    .totalPriceContainer tr{
+        padding: 3%;
+    }
+
+}

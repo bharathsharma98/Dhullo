@@ -181,9 +181,11 @@ padding: -1rem;
 }
 .checkoutbutton{
   display: flex;
- 
   justify-content: center;
   align-items: center;
+  margin: auto;
+  margin-bottom:3%;
+  margin-left: 15%;
 }
 .checkoutbutton button{
 height: 2.5rem;
@@ -194,7 +196,7 @@ padding-right: 1rem;
 
 width: auto;
 font-size:large;
-text-align: center;
+ 
 
 }
 .checkoutbutton p {
@@ -202,7 +204,7 @@ color: white;
 margin: auto;
 
 }
-@media (max-width: 768px) {
+@media (max-width:768px) {
  
   .cart1 {
  
@@ -243,13 +245,7 @@ margin-left: 3rem;
 .durationContainerCart label{
 margin-left: 0.1rem;
 }
-  .cart2 {
-
- 
-  width: 97%;
-  margin-top: -6%;
-
-  }
+  
   .pricebox table{
     width: 90vw;
     display: flex;
@@ -279,13 +275,26 @@ margin-left: 0.1rem;
  .totalpriceitemsTotal p{
    margin-left:0%;
  }
- .checkoutbutton{
-   display: flex;
-   flex-direction: row;
-   justify-content: center;
-   align-items: center;
-   margin-bottom: 5%;
- }
+.checkoutbutton{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  margin-bottom:3%;
+  margin-left: 35%;
+}
+.checkoutbutton button{
+ 
+padding-top: 1rem;
+padding-bottom: 2rem;
+padding-left: 1rem;
+padding-right: 1rem;
+
+width: auto;
+font-size:large;
+ 
+
+}
   .emptycartimg{
     width: 50%;
     height: 40%;
@@ -314,6 +323,11 @@ height: 25vh;
  
   
 }
+.cart2{
+  margin-left: 0%;
+  
+  width: 97%;
+}
  }
  .cart2 hr{
  transform: rotateZ(0deg);
@@ -326,11 +340,7 @@ height: 25vh;
  width: 100%;
  border: 1px solid orangered;
  }
-.cart2 thead{
- display: flex;
- justify-content: center;
  
-}
 //DESKTOP
 @media(min-width:769px){
  .totalpriceitemsGST p,{
@@ -354,6 +364,7 @@ font-weight: bold;
    margin-top: -5%;
   margin-left: -10%;
  }
+
 }
 
 
