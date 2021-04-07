@@ -4,7 +4,7 @@ p {
   margin: 1rem;
  font-size: clamp(1.4rem,1.5vw,4rem);
  font-family: 'Josefin Sans', sans-serif;
- color: #707070;
+ color: #000000;
 }
  
 .textcontainer {

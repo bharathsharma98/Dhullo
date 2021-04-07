@@ -13,17 +13,18 @@
  margin-top: auto;
 }
 .cart1 {
-
+ 
   margin-right: 3rem;
-  width: 50%;
+  width: 60vw;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
   "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
  
-}
+} 
+ 
 .cart2 {
   
   flex-wrap: wrap;
-  min-width: 40%;
+  min-width: 30vw;
  
   
   display: flex;
@@ -42,13 +43,53 @@
  
 .cartcomponent {
  
-  flex-direction: column;
+ display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  max-width: 70vh;
-
+ margin: 1rem;
   margin-left: 0;
-  align-content: flex-start;
+ justify-content: left;
   border-radius: 5px;
+  margin-bottom: 3rem;
+}
+.cartcomponent img{
+width: 360px;
+height: 434px;
+  
+}
+.leftcart{
+ 
+ 
+}
+.dateContainerCart input{
+ margin-left: 11%;
+}
+.timeContainerCart {
+  margin-top: -4%;
+}
+.durationContainerCart label{
+margin-left: -11%;
+}
+@media(min-width:769px){
+.rightCart{
+  
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 60vh;
+  margin-left: 10%;
+}
+ 
+}
+
+.rightCart input{
+height: 2rem;
+margin-right: auto;
+}
+.rightCart select{
+  height: 2rem;
+  margin-left: 1rem;
+  width: 10.2rem;
 }
 .cartheading{
   text-align: left;
@@ -56,19 +97,25 @@
   color: #3b403c;
 }
 .cartcar{
-  color: #0a7dc5;
+  color: black;
   
 }
- 
+ .priceContainerCart h3{
+margin-left: -18%;
+margin-top: 25%;
+ }
+ .removeButtonContainerCart button{
+margin-left: 33%;
+ }
 @media (min-width: 769px) {
   .placeorderbtn {
     margin-left: 1.5%;
     margin-top:2%;
     margin-bottom:2%;
-    background-color: #fafdff;
-    color: rgb(18, 17, 19);
-    border: 2px solid #03588c;
-    border-radius: 5px;
+    background-color: #03588c
+   
+ 
+   
   }
   .placeorderbtn:hover {
     background-color: white;
@@ -84,7 +131,13 @@
     margin: auto;
   }
 }
-
+.cartCarName h4{
+  margin-left: 0%;
+  
+}
+.cartpackageName h3{
+margin-left: 0%;
+}
 .headingcart {
   
   font-size: 3rem;
@@ -94,8 +147,8 @@
   margin: 1rem;
 }
 .cartremovebtn {
-  background-color: whitesmoke;
-  color: red;
+  background-color:#03588c;
+  color: White;
   margin: 1rem;
   /* border: 2px solid black;
   border-radius: 5px; */
@@ -115,13 +168,7 @@
   text-align: left;
   margin: 1rem;
 }
-.cartimagecomponent {
-  height: 50%;
-  width: 100%;
-  margin: 1rem;
-  border-radius: 7px;
-  
-}
+
 
 .totalpriceitems {
   display: flex;
@@ -132,47 +179,113 @@
 .totalpriceitems p{
 padding: -1rem;
 }
+.checkoutbutton{
+  display: flex;
+ 
+  justify-content: center;
+  align-items: center;
+}
+.checkoutbutton button{
+height: 2.5rem;
+padding-top: 1rem;
+padding-bottom: 2rem;
+padding-left: 1rem;
+padding-right: 1rem;
 
+width: auto;
+font-size:large;
+text-align: center;
+
+}
+.checkoutbutton p {
+color: white;
+margin: auto;
+
+}
 @media (max-width: 768px) {
  
   .cart1 {
-
+ 
     width: 100%;
     
       font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
       "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
      
     }
+
+.rightCart{
+ 
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+   
+  align-items: left;
+}
+.totalpriceitems p{
+
+}
+.timeContainerCart input{
+margin-left: 2.8rem;
+}
+.dateContainerCart input{
+margin-left: 3rem;
+}
+.priceContainerCart h3{
+  margin-left: 0rem;
+  margin-top: 2rem;
+}
+.removeButtonContainerCart button{
+  margin-left: 5.5rem;
+}
+.leftCart img{
+  height: 20vh;
+}
+.durationContainerCart label{
+margin-left: 0.1rem;
+}
   .cart2 {
-    border: 2px solid #03588c;
-    border-radius: 5px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-background-color: #dfe3e6;
-  margin-top: 20%;
-  width: 96%;
-  margin-left: 0%;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+
  
+  width: 97%;
+  margin-top: -6%;
+
   }
-  .cart2 p{
-    font-size: 4.5vw;
+  .pricebox table{
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .checkoutbutton {
- 
-display: flex;
-justify-content: center;
-align-items: center;
-margin: 10%;
+  .totalpriceitems{
+        align-items: center;
+   margin: auto; 
+   
   }
-  .checkoutbutton button{
-    background-color: #0488D8;
+  .totalpriceCart{
+    margin-top: -8%;
+       margin-top: -5%;
   }
-  .placeorderbtn:hover {
-    background-color: white;
-    color: #03588c;
+  .totalpriceitemsGST {
+    align-items: center;
+   margin: auto;
+    margin-top: -5%;
   }
- 
+ .totalpriceitemsTotal {
+     align-items: center;
+   margin: auto; 
+   margin-top: -8%;
+   margin-left: 27%;
+ }
+ .totalpriceitemsTotal p{
+   margin-left:0%;
+ }
+ .checkoutbutton{
+   display: flex;
+   flex-direction: row;
+   justify-content: center;
+   align-items: center;
+   margin-bottom: 5%;
+ }
   .emptycartimg{
     width: 50%;
     height: 40%;
@@ -186,19 +299,69 @@ margin: 10%;
       
     margin: auto;
   }
- }
- .cart2 table{
+    .cartcomponent {
+      display: flex;
+      justify-content: center;
+      align-items: left;
+    
+    }
+    .rightCart{
+      margin-left: 0%;
+    }
+  .cartcomponent img{
+width: 94vw;
+height: 25vh;
  
+  
+}
+ }
+ .cart2 hr{
+ transform: rotateZ(0deg);
+ width: 100%;
+ border: 2px solid orangered;
+ }
+ .cart1 hr{
+   margin-top: 6.5%;
+ transform: rotateZ(0deg);
+ width: 100%;
+ border: 1px solid orangered;
  }
 .cart2 thead{
  display: flex;
- justify-content: space-around;
+ justify-content: center;
  
 }
+//DESKTOP
+@media(min-width:769px){
+ .totalpriceitemsGST p,{
+margin-top:-0%;
+font-weight: normal;
+font-size: 1.3vw;
+
+ }
+ .totalpriceitems p{
+margin-top:-0%;
+font-weight: normal;
+font-size: 1.3vw;
+ }
+  .totalpriceitemsTotal p{
+margin-top:-0%;
+font-weight: bold;
+
+ }
+ .totalpriceitemsTotal {
  
+   margin-top: -5%;
+  margin-left: -10%;
+ }
+}
+
+
 .cart2 tbody{
    display: flex;
  flex-direction: column;
+ justify-content: center;
+ 
 
 }
 .cart2 tr{

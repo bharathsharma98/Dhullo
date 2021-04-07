@@ -144,4 +144,27 @@ height: auto;
   width: 10%;
   margin-top: 3%;
 }
+ .messagenEmail{
+ 
+ 
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items:center;
+ 
+ 
+ }
+ .NameContact input{
+    min-width: 85vw;
+ }
+ .EmailContact input{
+    min-width: 85vw;
+ }
+ .messagenMessage input{
+    min-width: 85vw;
+ }
+ .messagenMessage label{
+    margin-left: -100vw;
+ }
+ 
  }

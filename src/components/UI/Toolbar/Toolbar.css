@@ -5,7 +5,7 @@
   width: 100%;
   height: 30%;
  
-  background: linear-gradient(to right, #042440, #007174);
+ background: linear-gradient(to right, #042440, #007174);
  
 }
  
@@ -83,7 +83,7 @@
   top: 0;
   left: 0;
   width: 100%;
-  background-color: lightblue;
+background: linear-gradient(to right, #042440, #007174);
   
 } 
 @media (max-width: 768px) {
