@@ -4,7 +4,7 @@ import {
   isLogged,
  
 } from "../../../Redux/UserRedux/UserActions";
-import { setMyError } from "../../../Redux/Error/errorActions";
+import { setMyError,resetMyError } from "../../../Redux/Error/errorActions";
 
 const useForm = (callback, Validate) => {
  
@@ -45,11 +45,17 @@ const useForm = (callback, Validate) => {
        
 
       responseData.customer.id
-        ? dispatch(isLogged(responseData.customer))
-        : console.log("not logged in");
+        ?
+        dispatch(isLogged(responseData.customer))&& alert("Logged In")
+        
+         
+        : console.log("not logged in Successfully");
     } catch (err) {
       console.log(err);
       dispatch(setMyError(err));
+      setTimeout(() => {
+        dispatch(resetMyError())
+      },200)
     }
   }
   //dispatch prevebent with recieved array from backend

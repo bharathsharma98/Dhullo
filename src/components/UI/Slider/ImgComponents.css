@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300&display=swap');
+
 .imagecontainer {
   width: 100%;
   height: 50vh;
@@ -22,17 +24,25 @@ height: 100%;
     
 .slidertext{
   
-font-family: 'Dancing Script', cursive;
+font-family: 'Exo', sans-serif;
     display: flex;
     flex-wrap: wrap;
-    font-size:  clamp(200%,300%,350%);
+    font-size:  clamp(200%,350%,400%);
     position: absolute;
   top: 15%;
-  right: 5%;
+  left: 57%;
   max-width: 30vw;
   color: rgb(218, 99, 30);
+  letter-spacing: 10px;
+  font-weight: bold;
 }
-
+.sliderSubText {
+  position: absolute;
+  top: 12rem;
+  color: rgb(218, 99, 30);
+  left: 47%;
+  font-size:  clamp(100%,180%,200%);
+}
 @media(max-width:769px){
     .imagefield {
         width: 100vw;
@@ -54,14 +64,26 @@ font-family: 'Dancing Script', cursive;
         
       }
       .slidertext{
-        font-family: 'Dancing Script', cursive;
-        display: flex;
-        flex-wrap: wrap;
-        font-size:x-large;
-        position: absolute;
-      margin: auto;
-    
-      color: rgb(218, 99, 30);
-    }
+  
+font-family: 'Exo', sans-serif;
+    display: flex;
+    flex-wrap: wrap;
+    font-size:  clamp(150%,150%,250%);
+    position: absolute;
+  top:22%;
+  left: 56%;
+  max-width: 40vw;
+  color: rgb(218, 99, 30);
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+.sliderSubText {
+  position: absolute;
+  top: 8rem;
+  color: rgb(218, 99, 30);
+  left: 44%;
+  font-size:  clamp(50%,80%,100%);
+ 
+}
         
 }

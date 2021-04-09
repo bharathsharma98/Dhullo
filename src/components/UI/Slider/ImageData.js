@@ -1,39 +1,48 @@
-import i1b from '../../../Image/Group 93@2x.png'
-import i1 from "../../../Image/Group 89@2x.png";
+import i1b from "../../../Image/offersMobile.png";
+import i1 from "../../../Image/offersDesktop.png";
 // import i2 from '../../../Image/car shine.jpg'
-import i2b from "../../../Image/Group 90@2x.png";
-import i2 from "../../../Image/Group 97@2x.png";
+import i2b from "../../../Image/detailingMobile.png";
+import i2 from "../../../Image/detailingDesktop.png";
 //import i3 from '../../../Image/interior.jpg'
-import i3b from "../../../Image/Group 92@2x.png";
-import i3 from "../../../Image/Group 96@2x.png";
+import i3 from "../../../Image/washingDesktop.png";
+import i3b from "../../../Image/washingMobile.png";
 //import i4 from '../../../Image/water_waste.jpg'
-import i4b from "../../../Image/Group 91@2x.png";
-import i4 from "../../../Image/Group 88@2x.png";
+import i4b from "../../../Image/sanitizationMobile.png";
+import i4 from "../../../Image/sanitizationDesktop.png";
 const width = { matches: window.matchMedia("(min-width: 768px)").matches };
 const sliderArr = [
   {
+    id: 3,
+    imgSrc: width.matches ? i3 : i3b,
+    description: "WASHING",
+    details: "Check our interior detail packages at your service.",
+    color: "#FF070A",
+    subColor: "#FA4448",
+  },
+  {
     id: 1,
-    imgSrc: width.matches ? i1 : i1b,
-    description: "Step towards protecting valuable resource",
-    details: "Check our Car Sanitization Packages available at your service.",
+    imgSrc: width.matches ? i4 : i4b,
+    description: "SANITIZATION",
+    details: "Why waste tons of water when it can be done with 200ml.",
+    color: "#09736A ",
+    subColor: "#0E5159",
   },
   {
     id: 2,
-    imgSrc: width.matches ? i4 : i4b,
-    description: "Step towards protecting valuable resource",
-    details: "Why waste tons of water when it can be done with 200ml.",
-  },
-  {
-    id: 3,
     imgSrc: width.matches ? i2 : i2b,
-    description: "Make your car shine as new.",
-    details: "Check our detailing packages to shine your car.",
+    description: "DETAILING",
+    details: "Why waste tons of water when it can be done with 200ml.",
+    color: "#F2E205",
+    subColor: "#F2CB05",
   },
+
   {
     id: 4,
-    imgSrc: width.matches ? i3 : i3b,
-    description: "Beauty lies within.",
-    details: "Check our interior detail packages at your service.",
+    imgSrc: width.matches ? i1 : i1b,
+    description: "OFFERS",
+    details: "Check our Car  available at your service.",
+    color: "#FF920F",
+    subColor: "#CC740C",
   },
 ];
 

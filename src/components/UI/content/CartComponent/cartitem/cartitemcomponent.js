@@ -54,7 +54,7 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
           <div className="cartbody">
             <div className="cart1">
               {cart.map((item, index) => (
-                <div className="cartcomponent" key={item.time}>
+                <div className="cartcomponent" key={item.id}>
                   <div className="leftCart">
                     <img
                       className="cartimagecomponent"
@@ -108,7 +108,7 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                       />
                     </div>
                     <div className="timeContainerCart">
-                      <labell>Time</labell>
+                      <label>Time</label>
                       {item.time ? (
                         <DatePicker
                           selected={Date.parse(item.time)}

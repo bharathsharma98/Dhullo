@@ -96,7 +96,7 @@ const [TempCarDetails] = useState({
   useEffect(() => {
     
     if ("geolocation" in navigator) {
-      console.log("Location Available", history);
+      console.log("Location Available", props);
     } else {
       console.log("Not Available");
     }
@@ -211,8 +211,8 @@ const [TempCarDetails] = useState({
         ></input>
       </div>
  
-      <div className="carAddress">
-        <br></br>
+      <div >
+         
         <label>House.No</label>
         <input
           placeholder="eg:#12"
@@ -221,7 +221,7 @@ const [TempCarDetails] = useState({
           name="house_no"
           onChange={inputsHandler}
         ></input>
-        <label style={{marginLeft:'-75%'}}>Street</label>
+        <label >Street</label>
         <input
           required
           placeholder="eg:4th,main"
@@ -290,7 +290,7 @@ const [TempCarDetails] = useState({
           }
           onClick={SubmitHandler}
         >
-          ADD A CAR
+        SAVE
         </button>
         <div style={{ marginTop: "3%" }}>
           <Loader

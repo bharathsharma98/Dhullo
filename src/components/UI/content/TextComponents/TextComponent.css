@@ -2,21 +2,26 @@
 p {
  line-height:   120%;
   margin: 1rem;
+
+  
  font-size: clamp(1.4rem,1.5vw,4rem);
  font-family: 'Josefin Sans', sans-serif;
  color: #000000;
 }
+.Servicetextcontainer p {
+    margin-top: -3rem;
+}
  
-.textcontainer {
+.textcontainer,.Servicetextcontainer {
   height: auto;
   width: 40%;
-  margin-top: -2%;
+ 
   text-align: left;
 }
 @media(max-width:769px){
   
   
-  .textcontainer {
+  .textcontainer,.Servicetextcontainer  {
     height: auto;
     width: 100vw;
     margin: 0rem;
@@ -25,5 +30,8 @@ p {
   margin: 1rem;
  font-size: clamp(1.3rem,1vw,4rem);
  letter-spacing: 0.5px;
+}
+.Servicetextcontainer p {
+    margin-top: 0rem;
 }
 }

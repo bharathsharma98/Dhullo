@@ -7,11 +7,12 @@
 .disabled{
 border:2px solid grey;
 opacity: 60%;
+background-color: gray;
 }
 .bookingform{
     height: auto;
     justify-content:   space-between;
-    
+
     border: 2px solid #013759;
  background-color: #faf7f7;
    display:flex ;
@@ -25,8 +26,9 @@ opacity: 60%;
  .carbox-container{
      display: flex;
      flex-direction: row;
-     
-  
+ 
+  justify-content: left;
+  align-items: center;
      width: auto;
      height: 10rem;
        
@@ -40,6 +42,31 @@ opacity: 60%;
      width: auto;
      height: auto;
        
+ }
+ .bookingform{
+     display: flex;
+     flex-direction: column;
+ }
+ .bookingform-left{
+      
+     display: flex;
+     flex-direction: column;
+    background-color: yelow;
+ }
+ .bookingform-right{
+     margin-top: 10%;
+  
+      
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+ .buttonrow{
+   display: flex;
+    
+   justify-content: center;
+   align-items: center;
  }
  }
   .carbox-container_null{
@@ -57,9 +84,91 @@ margin-left: 0%;
      font-family: 'Josefin Sans', sans-serif;
  }
  .bookingform-left{
+     width: 60%;
      display: flex;
      flex-direction: column;
-
- }
-  
  
+ }
+ .bookingform-right{
+     margin-top: 15%;
+   
+      width: 40%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+ }
+  .buttonrow button{
+ position: relative;
+ left: 2.7vw;
+ top: -20px;
+  }
+ 
+ .addnewCarButton img{
+     margin-top: 10%;
+     height: 3vw;
+     width: 3vw;
+     border: 2px solid black;
+     padding: 20%;
+     border-radius: 100%;
+ }
+  .addNewCarButtonContainer strong{
+      position: relative;   
+    top: 3px;
+    left: 5px;
+      letter-spacing: 2px;
+      font-weight: normal;
+  }
+ .bookingform select{
+     width: 31%;
+ }
+ @media(max-width:769px){
+.bookingform select{
+     width: 72%;
+     margin-left: 2%;
+ } 
+ .bookingform input{
+      margin-left: 2%;
+      width: 50vw;
+ }
+  .addnewCarButton img{
+     height: 8vw;
+     width: 8vw;
+     position: relative;
+     left: -16vw;
+ }
+  .addNewCarButtonContainer strong{
+     position: relative;
+      font-weight: normal;
+      letter-spacing: 2px;
+     left: -16.5vw;
+  }
+  .buttonrow  {
+ 
+      width: 47vw;
+      display:flex;
+justify-content: center;
+align-items: center;
+ margin-bottom: -30%;
+  }
+ 
+ .carbox-container{
+  
+     
+     width: 80vw;
+     margin-left: -2%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     
+ }
+ .bookingform label{
+     position: relative;
+     margin-left: 2%;
+ }
+ }
+ .priceRowService p {
+ 
+     margin-left: 0%;
+     margin-top: 0%;
+ }

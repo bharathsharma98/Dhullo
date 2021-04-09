@@ -74,7 +74,7 @@ export default function Toolbar(props) {
                     <img
                       src={cart}
                       alt=""
-                      style={{ width: 100, height: 38, marginHorizontal: 2 }}
+                      style={{ width: 100, height: 38, marginTop: "0.8rem" }}
                     />
                     {cartItems.length ? (
                       <small>{cartItems.length}</small>
@@ -82,7 +82,10 @@ export default function Toolbar(props) {
                   </Link>
                 </div>
               </li>
-              <li onClick={() => setToggle(!toggle)}>
+              <li
+                style={{ marginTop:'-0.5rem' }}
+                onClick={() => setToggle(!toggle)}
+              >
                 <img src={user} alt="" />
                 {toggle ? (
                   isSignedIn ? (

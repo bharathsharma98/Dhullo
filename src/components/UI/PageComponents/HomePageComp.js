@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import TextComp from "../content/TextComponents/TextComponent";
+import {TextComp} from "../content/TextComponents/TextComponent";
 import MainImage from "../content/ImageComponents/ImgComp";
 import "./HomePageComp.css";
 import HowItWorks3 from "../content/HowItWorksComponent/HowItWorksComp";

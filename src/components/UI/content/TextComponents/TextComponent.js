@@ -1,6 +1,6 @@
 import React from "react";
 import "./TextComponent.css";
-let TextComp = (props) => {
+export const TextComp = (props) => {
   return (
     <div className="textcontainer">
       <h1>{props.header}</h1>
@@ -8,4 +8,12 @@ let TextComp = (props) => {
     </div>
   );
 };
-export default TextComp;
+export const ServiceTextComp = (props) => {
+  return (
+    <div className="Servicetextcontainer">
+      <h1>{props.header}</h1>
+      <p>{props.paragraph}</p>
+    </div>
+  );
+};
+ 

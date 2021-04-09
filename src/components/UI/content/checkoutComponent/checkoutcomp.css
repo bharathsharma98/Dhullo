@@ -1,5 +1,5 @@
 .checkout-container{
-    min-height: 100%;
+    height: 100%;
  
 }
 .checkout-heading{
@@ -20,6 +20,7 @@
 .checkoutButonContainer{
   margin-left: 3%;
   margin-top: 2%;
+  margin-bottom: 2%;
  
 }
 .checkoutButonContainer button{
@@ -55,7 +56,7 @@ width: 94vw;
     justify-content: center; 
     align-items: center;
  
-  margin-top: 20%;
+  
 
  
 }

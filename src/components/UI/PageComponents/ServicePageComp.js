@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
-import TextComp from "../content/TextComponents/TextComponent";
+import { ServiceTextComp } from "../content/TextComponents/TextComponent";
 import BoxComponent from "../content/BoxComponent/BoxComp";
 import { useSelector } from "react-redux";
 import "./ServicePageComp.css";
@@ -38,7 +38,7 @@ const Servicepage = (props) => {
   const handleToggle = (toggle) => {
        console.log(toggle);
     switch (toggle) {
-      case "ONETIME": {
+      case "ONE TIME": {
         setToggle({ onetimeToggle: !toggleState.onetimeToggle });
         break;
       }
@@ -102,13 +102,13 @@ const Servicepage = (props) => {
       </div>
 
       <div className="washingcontainer">
-        <TextComp />
+        <ServiceTextComp />
         <MainImage type={CarWashingImg} />
       </div>
       {width.matches ? (
         <div className="serviceboxcontainer desktop">
           <BoxComponent
-            category={"ONETIME"}
+            category={"ONE TIME"}
             text="It is a long established
          fact that a reader will be
          distracted by the readable 
@@ -181,7 +181,7 @@ const Servicepage = (props) => {
           {toggleState.onetimeToggle ? (
             <BookingForm
               click={props.click}
-              category="ONETIME"
+              category="ONE TIME"
               cars={user.cars}
               togglePress={handleToggle}
             />
@@ -207,7 +207,7 @@ const Servicepage = (props) => {
         <div className="serviceboxcontainer mobile">
           <hr></hr>
           <div className="mobileToggle-Buttons">
-            <button onClick={() => setMobileToggle({ toggle: "ONETIME" })}>
+            <button onClick={() => setMobileToggle({ toggle: "ONE TIME" })}>
               ONETIME
             </button>
             <button onClick={() => setMobileToggle({ toggle: "SILVER" })}>
@@ -221,10 +221,10 @@ const Servicepage = (props) => {
             </button>
           </div>
           <hr></hr>
-          {mobileToggle.toggle === "ONETIME" ? (
+          {mobileToggle.toggle === "ONE TIME" ? (
             <div>
               <BoxComponent
-                category={"ONETIME"}
+                category={"ONE TIME"}
                 text="It is a long established
          fact that a reader will be
          distracted by the readable 
@@ -241,7 +241,7 @@ const Servicepage = (props) => {
               {toggleState.onetimeToggle ? (
                 <BookingForm
                   click={props.click}
-                  category="ONETIME"
+                  category="ONE TIME"
                   cars={user.cars}
                   togglePress={handleToggle}
                 />
@@ -338,7 +338,7 @@ const Servicepage = (props) => {
         </div>
         <div className="sanitizationcontainer">
           <MainImage type={ServiceSanitizationImg} />
-          <TextComp />
+          <ServiceTextComp />
         </div>
         <div className="sanitbtncontainer">
           <button
@@ -363,7 +363,7 @@ const Servicepage = (props) => {
           <h1 id="detailingcontainer">DETAILING</h1>
         </div>
         <div className="washingcontainer">
-          <TextComp
+          <ServiceTextComp
             paragraph="Our car detailing services are focused on removing the invisible
 dirt that sticks on to your car&#39;s body. Thus, ensuring a brand-new glossy
 finish, also called as showroom finish. This work does not end here; our car
@@ -388,10 +388,16 @@ the car's hygiene."
         </div> */}
         <div className="sanitizationcontainer">
           <MainImage type={interior_detailing} />
-          <TextComp />
+          <ServiceTextComp
+            paragraph="Interior detailing includes cleaning
+of all carpeting and seating surfaces. Stain removal, disinfected and keeping
+allergies at bay are one of many advantages of interior detailing. Plus, a
+proper detailing of the interior goes a long way in retaining the value of the
+Vehicle."
+          />
         </div>
 
-        <div className="sanitbtncontainer">
+        <div className="sanitbtncontainer interiorContainer">
           <button
             onClick={() => {
               handleToggle("INTERIOR");
@@ -411,19 +417,19 @@ the car's hygiene."
         ) : null}
       </div>
       <div className="sanitRow">
-        <div className="serviceHeaderH5">
+        <div className="serviceHeaderH6">
           <h1>EXTERIOR DETAILING</h1>
         </div>
-        <div className="sanitizationcontainer">
+        <div className="  exteriorContainer">
           <MainImage type={exterior_detailing} />
-          <TextComp
+          <ServiceTextComp
             paragraph="Exterior detailing involves cleaning, and either restoring
 or exceeding the original condition of the surface of the car&#39;s finish (usually
 a paint with a glossy finish), chrome trim, windows, wheels, and tires, as
 well as other visible components on a vehicle's exterior."
           />
         </div>
-        <div className="sanitbtncontainer ">
+        <div className="sanitbtncontainer  exteriorbtncontainer ">
           <button
             onClick={() => {
               handleToggle("EXTERIOR");

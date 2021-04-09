@@ -1,5 +1,6 @@
 import userEvent from "@testing-library/user-event";
 import React, { useEffect } from "react";
+import history from "../../../../history/history";
 import { useSelector } from "react-redux";
 import "./checkoutcomp.css";
 
@@ -90,7 +91,7 @@ function CheckoutComponent() {
       }),
     }).then((t) => t.json());
     console.log(data);
-
+    
     const options = {
       key: __DEV__ ? "rzp_test_FnsOYqvR14n5AI" : "PRODUCTION_KEY",
       currency: data.currency,
@@ -103,6 +104,7 @@ function CheckoutComponent() {
         "https://img1.wsimg.com/isteam/ip/0ec77b4c-f729-45ff-9e1c-af04b767b0e4/logo.png/:/rs=h:194/ll",
       handler: function (response) {
         console.log(response);
+       
         alert(response.razorpay_payment_id);
         // alert(response.razorpay_order_id);
         // alert(response.razorpay_signature);

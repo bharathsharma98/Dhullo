@@ -106,7 +106,7 @@ function SideDrawer(props) {
       ) : (
         <nav className={drawerClasses} onClick={props.click}>
           <div className="userprofilecomp">
-            <Link to="/userprofile">
+            <Link onClick={()=>dispatch(loginOpen())}  to= {isSignedIn ? "/userprofile" : "#"}>
               <div className="userimagecomp">
                 <img
                   className="userimage"

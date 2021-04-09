@@ -26,7 +26,23 @@
   font-size: clamp(2rem,2.3vw,4rem);
  
 }
- 
+@media(min-width:769px){
+.Servicepage-Container img {
+  position: relative;
+  top: -30%;
+}
+.exteriorContainer{
+    display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  flex-direction: row;
+ margin-bottom: -1%;
+  
+  flex-direction: row-reverse;
+}
+
+}
+
 .serviceboxcontainer {
   display: flex;
   flex-direction: row;
@@ -37,7 +53,7 @@
 }
  
  
-
+ 
 
 .sanitizationcontainer {
   display: flex;
@@ -56,12 +72,7 @@
 .InteriorDEt{
   margin-top: 2%;
 }
-@media(min-width:769px){
-.sanitbtncontainer button{
-  margin-left: 45%;
-  margin-top: -5%;
-}
-}
+ 
 
 .detailingcontainer {
   display: flex;
@@ -91,22 +102,6 @@
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
 }
-@media(min-width:769px){
-  .serviceHeaderH2,.serviceHeaderH4{
-  
-   margin-left: 2%;
- 
-   margin-bottom: 0%;
-  }
-  .serviceHeaderH3,.serviceHeaderH5{
-  
-   margin-left: 60%;
- 
-   margin-bottom: 0%;
-  }
-    
-}
-
 
 @media (max-width: 769px) {
   .Servicepage-Container  h1 {
@@ -172,4 +167,35 @@
 
   box-shadow: 0 0px 9px 0 rgba(0, 0, 0, 0), 0 0px 10px 0 rgba(0, 0, 0, 0.19);
 }
+
+@media(min-width:769px){
+  .sanitbtncontainer button{
+  margin-left: 45%;
+  margin-top: -8%;
+}
+  .serviceHeaderH2,.serviceHeaderH4{
+  
+position: relative;
  
+left: 12vw;
+ 
+ 
+  }
+  .serviceHeaderH3,.serviceHeaderH5{
+  
+  position: relative;
+  left: 50%;
+  }
+   .serviceHeaderH6{
+      
+position: relative;
+ 
+left: 4vw;
+   } 
+.exteriorbtncontainer  button{
+    position: relative;
+    left: -48vw;
+     margin-top: -8%;
+   }
+}
+

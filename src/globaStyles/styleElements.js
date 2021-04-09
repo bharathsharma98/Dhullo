@@ -42,35 +42,45 @@ left:85%;
 margin-right:1rem;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   button{
-  color:red;
+  color:black;
   background:none;
   font-size:clamp(0.5rem,2.3rem,1.5rem);
   font-family: 'Josefin Sans', sans-serif;
-  
+  text-align:left;
+  padding-left:6%;
   }
 `;
+
 export const CarBox = Styled.div`
- height:clamp(4rem,5rem,10rem);
+
+ @media (max-width: 768px) {
+ margin-left:-30%;
+    min-width: 50vw;
+    min-height: 10vh;
+  }
+ position:relative;
+  min-width: 15vw;
+    min-height: 15vh;
  margin-bottom:0.5rem;
- margin-right:0.5rem;
-    min-width: 15rem;
+ margin-right:2rem;
+  
     max-width:fit-content;
-   border-radius:5px;
-   
-    border:2px solid #bab3b3;
-      background-color:#ebe4e4;
-text - align: center;
-// margin-bootom:1rem;
-display:flex;
  
+  
+    border:2px solid black;
+     
+text - align: center;
+  
+display:flex;
+  height:fit-content;
+  width:fit-content; 
 flex-direction:row;
 input{
-     align-items:center;
+  margin-left:20%;
      height:20px;
      width:20px;
-   text-align:center;
     cursor:pointer;
-  margin:1rem;
+   outline: 2px solid black;
     background-color:blue;
  } 
  label{
@@ -81,14 +91,23 @@ font-size:small;
  
  }
  small{
+       position:absolute;
    font-size:medium;
   font-family: 'Josefin Sans', sans-serif;
  
     color:gray;
-    width:100%;
+     left:26%;
+     top:48%;
  }
  p{
+    position:absolute;
      font-size:large;
+     left:20%;
+ }
+ img{
+  position:absolute;
+  top:15%;
+  left:88%;
  }
  
 `;

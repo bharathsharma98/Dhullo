@@ -1,5 +1,5 @@
 const INITIAL_STATE = {
-  errorMessage:''
+  errorMessage:null
 };
 const setErrorMessage = (message) => {
  

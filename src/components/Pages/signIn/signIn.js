@@ -3,6 +3,7 @@ import "./signin.css";
 import { useSelector, useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
 import useForm from "./useForm";
+import back from '../../../Image/back.svg'
 import { loginOpen } from "../../../Redux/LoginToggle/LoginActions";
 import useFormSignup from '../SignUp/useForm'
 import ValidateSignUp from "../SignUp/validateSignup";
@@ -43,21 +44,21 @@ const [signState,setSignState] =useState('SIGNIN')
 
   return (
     <div>
-      {!isSignedIn? (
+      {!isSignedIn ? (
         <div>
           {signState === "SIGNIN" ? (
             <div className="signupcontainer">
               <div className="closeNback">
                 <label onClick={() => dispatch(loginOpen())}> {"<"} </label>
               </div>
-              <hr></hr>
+
               <div className="signinForm">
                 <div id="right-side">
                   <form noValidate onSubmit={handleSubmit}>
                     <div>
-                      <p className="Login-login">Login</p>
+                      <p className="Login-login">LOGIN</p>
 
-                      <div>
+                      <div className="phoneContainerLogin">
                         <input
                           name="phone"
                           type="text"
@@ -69,8 +70,9 @@ const [signState,setSignState] =useState('SIGNIN')
                       </div>
                     </div>
                     <div>
-                      <div>
+                      <div className="paswwordContainerLogin">
                         <input
+                          placeholder=" Enter Password"
                           name="password"
                           type="password"
                           value={Item.password}
@@ -83,18 +85,21 @@ const [signState,setSignState] =useState('SIGNIN')
                       type="submit"
                       style={{ marginTop: "1rem", marginBottom: "1rem" }}
                     >
-                      Login
+                      LOGIN
                     </button>
 
-                    {error ? (
+                    {myerror ? (
                       <SmallPopupRound message="error">
                         <p>{myerror}</p>
                       </SmallPopupRound>
                     ) : null}
                     <div className="signupContainer">
                       <Link onClick={() => setSignState("SIGNUP")}>
-                        <small>
-                          Not Registered <strong>Signup Here</strong>
+                        <small style={{ color: "black" }}>
+                          Not Registered ?{" "}
+                          <strong style={{ color: "orangered" }}>
+                            SIGNUP{" "}
+                          </strong>
                         </small>
                       </Link>
                     </div>
@@ -106,17 +111,20 @@ const [signState,setSignState] =useState('SIGNIN')
             //SIGNUP CONTAIBER STARTS HERE
             <div className="signupcontainer">
               <div className="closeNback">
-                <strong onClick={() => setSignState("SIGNIN")}> {"<"} </strong>
+                <strong onClick={() => setSignState("SIGNIN")}>
+                  {" "}
+                  <img src={back}></img>{" "}
+                </strong>
                 <label onClick={() => dispatch(loginOpen())}> {"X"} </label>
               </div>
-              <hr></hr>
-              <div id="right-sideSp">
+
+              <div id="right-side" id="right-sideSP">
                 <form noValidate onSubmit={handleSubmitUp} id="signup">
-                  <p className="Login-login">Sign-Up</p>
+                  <p className="Login-login">SIGN UP</p>
                   <div>
-                    <label>FirstName</label>
                     <div>
                       <input
+                        placeholder="Name"
                         name="name"
                         type="text"
                         value={ItemSingUp.name}
@@ -126,9 +134,9 @@ const [signState,setSignState] =useState('SIGNIN')
                     </div>
                   </div>
                   <div>
-                    <label>email</label>
                     <div>
                       <input
+                        placeholder="Email"
                         name="email"
                         type="email"
                         value={ItemSingUp.email}
@@ -138,9 +146,9 @@ const [signState,setSignState] =useState('SIGNIN')
                     </div>
                   </div>
                   <div>
-                    <label>Phone.No</label>
                     <div>
                       <input
+                        placeholder="Phone No"
                         name="phone"
                         type="text"
                         value={ItemSingUp.phone}
@@ -150,9 +158,9 @@ const [signState,setSignState] =useState('SIGNIN')
                     </div>
                   </div>
                   <div>
-                    <label>password</label>
                     <div>
                       <input
+                        placeholder="Password"
                         name="password"
                         type="password"
                         value={ItemSingUp.password}
@@ -161,7 +169,9 @@ const [signState,setSignState] =useState('SIGNIN')
                       {errorSignUp.password && <p>{errorSignUp.password}</p>}
                     </div>
                   </div>
-                  <button type="submit">Signup</button>
+
+                  <button type="submit">SIGN UP</button>
+
                   {errorSignUp ? (
                     <SmallPopupRound message="error">
                       <p>Unable to Signup</p>

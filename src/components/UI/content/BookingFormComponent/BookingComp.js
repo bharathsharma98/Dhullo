@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { ServicePrice, CarTypePrice } from "../../../price";
 import "./OtherBookingComp.css";
+import history from "../../../../history/history";
 import { Link } from "react-router-dom";
 import DatePicker from "react-datepicker";
 import { addDays } from "date-fns";
 import { AddToCart } from "../../../../Redux/cart/CartActions";
+import edit from "../../../../Image/edit.svg";
+import plus from '../../../../Image/plus.svg'
 import {
  
   setHours,
@@ -23,7 +26,9 @@ const BookingForm = (props) => {
   }, []);
 
   var totalPriceArray = [];
-
+const editCar = (onecar) => {
+  history.push("/addcar", onecar);
+};
   
   const LoginToggle = useSelector((state) => state.loginToggle);
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
@@ -69,6 +74,10 @@ const BookingForm = (props) => {
   for (let i = 0; i < item.mycars.length; i++) {
     finaltempcars.push({});
   }
+  const carTypeHanler = (carToCheck) => {
+    var car = user.cars.filter((onecar) => onecar.details == carToCheck.mycar);
+    return car[0].carType
+  };
   for (let i = 0; i < item.mycars.length; i++) {
     finaltempcars[i].id =  Math.floor(Math.random() * 100);  ;
     finaltempcars[i].customerId = user.id;
@@ -80,7 +89,7 @@ const BookingForm = (props) => {
     finaltempcars[i].packageDuration =
       item.duration !== undefined ? item.duration : "Monthly";
     // console.log(user.cars[i].carType);
-    finaltempcars[i].carType = user.cars[i].carType;
+    finaltempcars[i].carType = carTypeHanler(finaltempcars[i])
     finaltempcars[i].carId = user.cars[i].id;
 
     if ((props.category === "ONETIME") ||
@@ -101,7 +110,7 @@ const BookingForm = (props) => {
       finaltempcars[i].serviceprice + finaltempcars[i].categoryprice;
   
   }
-
+  
   console.log(finaltempcars);
   return (
     <div className="bookingform">
@@ -130,45 +139,75 @@ const BookingForm = (props) => {
                   <p>{onecar.details}</p>
                   <small>{onecar.streetName}</small>
                 </div>
+                <div>
+                  <Link
+                    to={{
+                      pathname: "/addcar",
+                    }}
+                  >
+                    <img onClick={() => editCar(onecar)} src={edit}></img>
+                  </Link>
+                </div>
               </CarBox>
             ))}
+            <div className="addNewCarButtonContainer">
+              {isSignedIn ? (
+                <div className="addnewCarButton">
+                  <Link
+                     
+                    to={{
+                      pathname: "/addcar",
+                      click: props.click,
+                    }}
+                  >
+                    <img src={plus}></img>
+                  </Link>
+                </div>
+              ) : null}
+              <strong>Add Car</strong>
+            </div>
           </div>
-        ) : null}
+        ) : (
+          <Link
+            style={{ marginBottom: "1rem  " }}
+            to="#"
+            onClick={() => dispatch(loginOpen())}
+          >
+            Login
+          </Link>
+        )}
 
-        <div>
+        <div className="priceRowService">
           {isSignedIn ? (
-            <Link
-              to={{
-                pathname: "/addcar",
-                click: props.click,
-              }}
-            >
-              ADD NEW CAR
-            </Link>
-          ) : (
-            <Link to="#" onClick={() => dispatch(loginOpen())}>
-              Login
-            </Link>
-          )}
+            <div style={{ display: "flex", alignItems: "center" }}>
+              <p>Price : </p>
+              <p>
+                {finaltempcars.reduce(function (tot, arr) {
+                  return tot + arr.price;
+                }, 0)}
+              </p>
+            </div>
+          ) : null}
         </div>
 
+        <label style={{ marginBottom: "-0.8rem" }}>Select Date</label>
         <DatePicker
           // disabled={item.mycars.length === 0 ? true : false}
           className={item.mycars.length === 0 ? "disabled" : "enabled"}
-          selected={item.cardate}
+          selected={item.cardate || new Date()}
           onChange={(cardate) => setItem({ ...item, cardate })}
           minDate={addDays(new Date(), 1)}
-          placeholderText="Select Date"
         />
         {props.category === "SANITIZATION" ||
         props.category === "EXTERIOR" ||
         props.category === "INTERIOR" ||
-        props.category === "ONETIME" ? (
-          <div>
+        props.category === "ONE TIME" ? (
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label style={{ marginBottom: "-0.8rem" }}>Select Time</label>
             <DatePicker
               // disabled={item.mycars.length === 0 ? true : false}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}
-              selected={item.mytime}
+              selected={item.mytime || new Date()}
               onChange={(mytime) => {
                 console.log(mytime);
                 var hours = getHours(mytime);
@@ -189,24 +228,26 @@ const BookingForm = (props) => {
               timeIntervals={60}
               timeCaption="Time"
               dateFormat="h:mm aa"
-              placeholderText="Select Time"
             />
           </div>
         ) : (
-          <select
-            style={{ marginBottom: "1rem" }}
-            name="duration"
-            onChange={handleChange}
-            className={item.mycars.length === 0 ? "disabled" : "enabled"}
-          >
-            {duration.map((oneduration) => (
-              <option value={oneduration} key={oneduration}>
-                {oneduration}
-              </option>
-            ))}
-          </select>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label style={{ marginBottom: "-0.1rem" }}>Select Duration</label>
+            <select
+              style={{ marginBottom: "1rem" }}
+              name="duration"
+              onChange={handleChange}
+              className={item.mycars.length === 0 ? "disabled" : "enabled"}
+            >
+              {duration.map((oneduration) => (
+                <option value={oneduration} key={oneduration}>
+                  {oneduration}
+                </option>
+              ))}
+            </select>
+          </div>
         )}
-        <div className="buttonrow">
+        <div className="buttonrow" style={{ marginTop: "2rem" }}>
           <button
             disabled={item.mycars.length === 0 ? true : false}
             className={item.mycars.length === 0 ? "disabled" : "enabled"}
@@ -226,9 +267,9 @@ const BookingForm = (props) => {
           </button>
         </div>
       </div>
-      <div>
-        <label>Price : </label>
-        <p>{finaltempcars.length > 0 ? sumTotal : 0}</p>
+
+      <div className="bookingform-right">
+        
       </div>
     </div>
   );

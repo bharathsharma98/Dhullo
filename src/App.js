@@ -18,6 +18,7 @@ import UserProfile from "./components/Pages/user/UserProfile";
 import MyOrders from "./components/Pages/MyOrders/myOrders";
 import CartItem from "../src/components/UI/content/CartComponent/cartitem/cartitemcomponent";
 import CheckoutPage from "./components/Pages/Checkout/Checkoutpage";
+import {Confirmationpage} from "./components/UI/content/checkoutComponent/Confirmation";
 import AddCar from "./components/Pages/AddCar/AddCar";
 import Test from "./components/Pages/testing";
 import { useSelector, useDispatch } from "react-redux";
@@ -134,6 +135,7 @@ const dispacth =useDispatch()
             }
           />
           <Route path="/checkout" exact component={CheckoutPage} />
+          <Route path="/confirmation" exact component={Confirmationpage} />
           <Route path="/addcar" exact component={AddCar} />
 
           <Footer />

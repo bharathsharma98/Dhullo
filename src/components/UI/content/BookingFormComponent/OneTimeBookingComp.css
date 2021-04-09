@@ -12,6 +12,7 @@
   width: 100vw;
 }
 .selectrow {
+ 
   display: flex;
   margin: 2rem;
   flex-wrap: wrap;

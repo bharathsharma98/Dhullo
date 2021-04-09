@@ -12,9 +12,13 @@ function ImgComponent(props) {
           alt="slide-img"
         ></img>
       </Link>
-      
-      <h3 className="slidertext" >{props.imgComponent.description}</h3>
-      {/* <p style={{fontSize:'1rem',marginTop:'15rem'}}>{props.imgComponent.details}</p> */}
+
+      <h3 style={{ color: props.imgComponent.color }} className="slidertext">
+        {props.imgComponent.description}
+      </h3>
+      <p style={{ color: props.imgComponent.subColor }} className="sliderSubText">
+        {props.imgComponent.details}
+      </p>
     </div>
   );
 }

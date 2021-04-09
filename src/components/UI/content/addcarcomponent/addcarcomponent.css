@@ -22,7 +22,7 @@
   color: rgb(0, 0, 0);
   display: flex;
   justify-content:left;
-  margin-left: 9%;
+  margin-left: 9.4%;
  margin-bottom: -2%;
 }
 .carname{
@@ -41,12 +41,7 @@
   align-items: center;
  
 }
-.carAddress label{
-  display: flex;
-  justify-content: left;
-    margin-left: -72%;
- margin-bottom: -2%;
-}
+ 
 .selectrow1{
   display: flex;
   flex-direction: column;
@@ -63,9 +58,11 @@
 
 }
  select{
-  width: 80%;
+   height: 3rem;
+  width: 81%;
   padding: 0.2rem;
-  border: 2px solid #03588C;
+  border: 2px solid black;
+  margin-top: -2%;
  }
  .noEdit{
     opacity: 10%;
