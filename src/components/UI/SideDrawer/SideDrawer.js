@@ -55,10 +55,10 @@ function SideDrawer(props) {
             </li>
 
             <div className="tc-container">
-              <li>
+              <li id="termsLi">
                 <Link to="/contact">Terms And Conditions</Link>
               </li>
-              <li>
+              <li id ="privacyLi">
                 <Link to="/contact">Privacy policy</Link>
               </li>
               <div className="logoutSidebar">
@@ -106,7 +106,7 @@ function SideDrawer(props) {
       ) : (
         <nav className={drawerClasses} onClick={props.click}>
           <div className="userprofilecomp">
-            <Link onClick={()=>dispatch(loginOpen())}  to= {isSignedIn ? "/userprofile" : "#"}>
+            <Link onClick={()=>dispatch(loginOpen())}  to= {isSignedIn ? "/userprofile" : "/signin"}>
               <div className="userimagecomp">
                 <img
                   className="userimage"

@@ -1,9 +1,8 @@
 import userEvent from "@testing-library/user-event";
 import React, { useEffect } from "react";
-import history from "../../../../history/history";
 import { useSelector } from "react-redux";
 import "./checkoutcomp.css";
-
+import history from "../../../../history/history";
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -91,7 +90,21 @@ function CheckoutComponent() {
       }),
     }).then((t) => t.json());
     console.log(data);
-    
+
+  //  const confrimedOrders =  await fetch(
+  //     "http://localhost:5000/api/razorpay/paymentConfirmation",
+  //     {
+  //       method: "POST",
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //       body: JSON.stringify({
+  //         paymentId: response.razorpay_payment_id,
+  //         orderId: response.razorpay_order_id,
+  //       }),
+  //     }
+  //   ).then((t) => t.json());
+  //   console.log(data);
     const options = {
       key: __DEV__ ? "rzp_test_FnsOYqvR14n5AI" : "PRODUCTION_KEY",
       currency: data.currency,
@@ -102,10 +115,36 @@ function CheckoutComponent() {
       description: "Washing Silver Package",
       image:
         "https://img1.wsimg.com/isteam/ip/0ec77b4c-f729-45ff-9e1c-af04b767b0e4/logo.png/:/rs=h:194/ll",
-      handler: function (response) {
-        console.log(response);
-       
+       handler: async function (response) {
+         console.log(response);
+         
         alert(response.razorpay_payment_id);
+
+        const Confimed = await fetch(
+          "http://localhost:5000/api/razorpay/paymentConfirmation",
+          {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify({
+              razorPayId: response.razorpay_order_id,
+              paymentId: response.razorpay_payment_id,
+            }),
+          }
+        ).then((t) => t.json());
+         console.log(Confimed);
+         Confimed.existingOrders.length > 0
+           ? history.push({
+               pathname: "/confirmation",
+               orders: Confimed.existingOrders,
+               status: "success",
+             })
+           : history.push({
+               pathname: "/confirmation",
+               orders: Confimed.existingOrders,
+               status: "failure",
+             });
         // alert(response.razorpay_order_id);
         // alert(response.razorpay_signature);
       },
@@ -133,7 +172,11 @@ function CheckoutComponent() {
             <p> {item.mycar}</p>
             <p>{item.service}</p>
             <p>{item.package}</p>
-            <p>{item.serviceStartDate.toString()}</p>
+            <p>{new Date(item.serviceStartDate).toDateString()}</p>
+            {
+              item.time?  <p>{new Date(item.time).toTimeString().toString().substr(0,5)}</p> :null
+            }
+           
 
             <p style={{ fontSize: "4vh", color: "#419ED4" }}>{item.price}</p>
             <hr></hr>

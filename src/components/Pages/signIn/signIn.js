@@ -49,8 +49,7 @@ const [signState,setSignState] =useState('SIGNIN')
           {signState === "SIGNIN" ? (
             <div className="signupcontainer">
               <div className="closeNback">
-                <label onClick={() => dispatch(loginOpen())}> {"<"} </label>
-              </div>
+                  </div>
 
               <div className="signinForm">
                 <div id="right-side">
@@ -112,7 +111,6 @@ const [signState,setSignState] =useState('SIGNIN')
             <div className="signupcontainer">
               <div className="closeNback">
                 <strong onClick={() => setSignState("SIGNIN")}>
-                  {" "}
                   <img src={back}></img>{" "}
                 </strong>
                 <label onClick={() => dispatch(loginOpen())}> {"X"} </label>

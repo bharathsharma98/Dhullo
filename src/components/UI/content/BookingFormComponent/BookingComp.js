@@ -92,7 +92,7 @@ const editCar = (onecar) => {
     finaltempcars[i].carType = carTypeHanler(finaltempcars[i])
     finaltempcars[i].carId = user.cars[i].id;
 
-    if ((props.category === "ONETIME") ||
+    if ((props.category === "ONE TIME") ||
     (props.category === "SILVER" )||
     (props.category === "GOLD" )||
     (props.category === "PLATINUM" )
@@ -102,7 +102,7 @@ const editCar = (onecar) => {
       finaltempcars[i].package = props.category;
     } else {
       finaltempcars[i].service = props.category;
-      finaltempcars[i].package = null;
+      finaltempcars[i].package = props.category;
     }
     finaltempcars[i].serviceprice = ServicePrice(props.category);
     finaltempcars[i].categoryprice = CarTypePrice(user.cars[i].carType);

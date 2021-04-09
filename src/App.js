@@ -5,9 +5,9 @@ import SideDrawer from "./components/UI/SideDrawer/SideDrawer";
 import{ Backdrop} from "./components/UI/Backdrop/Backdrop";
 import {LoginBackdrop} from "./components/UI/Backdrop/Backdrop";
 
-
+import history from './history/history'
 import {loginOpen} from './Redux/LoginToggle/LoginActions'
-import { BrowserRouter as Router, Route, Redirect } from "react-router-dom";
+import {   Router, Route, Redirect } from "react-router-dom";
 import About from "./components/Pages/About/about";
 import Home from "./components/Pages/Home/Home";
 import Contact from "./components/Pages/ContactUs/contact";
@@ -55,7 +55,7 @@ const dispacth =useDispatch()
   }
 
   return (
-    <Router>
+    <Router history ={history}>
       <div style={{ height: "100%" }}>
         <Toolbar
           drawerClickHandler={drawerToggleClickHandler}

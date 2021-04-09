@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "react-datepicker/dist/react-datepicker.css";
 import { ServiceTextComp } from "../content/TextComponents/TextComponent";
 import BoxComponent from "../content/BoxComponent/BoxComp";
-import { useSelector } from "react-redux";
+import { useSelector,useDispatch } from "react-redux";
 import "./ServicePageComp.css";
 import { ServiceCard } from "../../../globaStyles/styleElements";
 import BookingForm  from "../content/BookingFormComponent/BookingComp";
@@ -15,10 +15,17 @@ import MainImage from "../content/ImageComponents/ImgComp";
 import Washing from "../../../Image/washing.png";
 import sanitization from "../../../Image/sanitization.png";
 import detailing from "../../../Image/detailing.png";
+import {loginOpen} from '../../../Redux/LoginToggle/LoginActions'
 const Servicepage = (props) => {
+  const isLogPopup = useSelector((state)=>state.loginToggle.Toggle)
+  const dispacth = useDispatch();
   useEffect(() => {
     document.body.scrollTop = 0;
     props.click();
+    isLogPopup ?
+      dispacth(loginOpen())
+      :console.log("popup closed")
+
   }, []);
   const width = { matches: window.matchMedia("(min-width: 768px)").matches };
   console.log(width);
@@ -33,7 +40,7 @@ const Servicepage = (props) => {
     interiorToggle: 0,
   });
   const [mobileToggle, setMobileToggle] = useState({
-    toggle: "ONETIME",
+    toggle: "ONE TIME",
   });
   const handleToggle = (toggle) => {
        console.log(toggle);
@@ -109,65 +116,25 @@ const Servicepage = (props) => {
         <div className="serviceboxcontainer desktop">
           <BoxComponent
             category={"ONE TIME"}
-            text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+            text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
             togglePress={handleToggle}
           />
 
           <BoxComponent
             category={"SILVER"}
-            text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+            text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
             togglePress={handleToggle}
           />
 
           <BoxComponent
             category={"GOLD"}
-            text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+            text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
             togglePress={handleToggle}
           />
 
           <BoxComponent
             category={"PLATINUM"}
-            text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+            text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
             togglePress={handleToggle}
           />
           {toggleState.platinumToggle ? (
@@ -225,17 +192,7 @@ const Servicepage = (props) => {
             <div>
               <BoxComponent
                 category={"ONE TIME"}
-                text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+                text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
                 togglePress={handleToggle}
               />
               {toggleState.onetimeToggle ? (
@@ -252,17 +209,7 @@ const Servicepage = (props) => {
             <div>
               <BoxComponent
                 category={"SILVER"}
-                text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+                text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
                 togglePress={handleToggle}
               />
               {toggleState.silverToggle ? (
@@ -279,17 +226,7 @@ const Servicepage = (props) => {
             <div>
               <BoxComponent
                 category={"GOLD"}
-                text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+                text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
                 togglePress={handleToggle}
               />
               {toggleState.goldToggle ? (
@@ -306,17 +243,7 @@ const Servicepage = (props) => {
             <div>
               <BoxComponent
                 category={"PLATINUM"}
-                text="It is a long established
-         fact that a reader will be
-         distracted by the readable 
-         content of a page when looking
-         at its layout. The point of using
-         Lorem Ipsum is that t has
-         a more-or-less normal distribution 
-         of letters, as opposed to using 'Content here,
-         content here', making it look like readable 
-         English. Many desktop publishing packages and
-         web page editors"
+                text="Pressure spray water Car wash of exterior body, Complete interior cleaning, Tyre Dressing, Rim Shine and Under hood cleaning, key part sanitization"
                 togglePress={handleToggle}
               />
               {toggleState.platinumToggle ? (
