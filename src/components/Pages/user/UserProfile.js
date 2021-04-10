@@ -96,7 +96,7 @@ function UserProfile() {
 
       <h1 style={{ textAlign: "center" }}>Car Details</h1>
       <div className="personaldeatils">
-        {user.cars.length === 0 ? (
+        {cars.length === 0 ? (
           <Link to="/addcar">Add A Car</Link>
         ) : (
           user.cars.map((onecar) => (

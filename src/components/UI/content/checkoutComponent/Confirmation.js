@@ -7,6 +7,7 @@ import happy from "../../../../Image/happy.svg";
 import {emptyCart} from '../../../../Redux/cart/CartActions'
 export const Confirmationpage = (props) => {
   const dispatch = useDispatch();
+  console.log(props)
   props.location.status === "success" ? dispatch(emptyCart()) : history.go(-1);
   
   return (

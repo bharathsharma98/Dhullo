@@ -4,7 +4,7 @@ import { CarTypes} from '../../../vehiclesData';
 import Loader from "react-loader-spinner";
 // import GoogleMapReact from "google-map-react";
 import { useSelector, useDispatch } from "react-redux";
-import { addCar } from "../../../../Redux/UserRedux/UserActions";
+import { addCar, editCar } from "../../../../Redux/UserRedux/UserActions";
 import history from "../../../../history/history";
 import { confirmAlert } from "react-confirm-alert";
 const AddCarComponent = (props) => {
@@ -114,7 +114,55 @@ const [TempCarDetails] = useState({
   const inputsHandler = (e) => {
     setCarDetails({ ...CarDetails, [e.target.name]: e.target.value });
   };
-
+  async function EditHandler() {
+    console.log(TempCarDetails.carId);
+   setLoading(true);
+   //fetch statement to post details to backend
+   try {
+     const response = await fetch(
+       `http://localhost:5000/api/cars/602a49d02f72e8328cde98ec`,
+       {
+         method: "PATCH",
+         headers: {
+           "Content-Type": "application/json",
+         },
+         body: JSON.stringify({
+           carType: CarDetails.cartype,
+           details: CarDetails.carname,
+           street: CarDetails.street,
+           customer: user.customer.id,
+           pincode: CarDetails.pincode,
+           houseName: CarDetails.house_no,
+         }),
+       }
+     );
+     const responseData = await response.json();
+     console.log(responseData);
+     dispatch(editCar(responseData.car));
+     setLoading(false);
+     history.goBack();
+     // history.push('/services');
+   } catch (err) {
+     setLoading(false);
+     console.log(err);
+     confirmAlert({
+       customUI: ({ onClose }) => {
+         return (
+           <div className="custom-ui">
+             <h3 style={{ textAlign: "center", marginTop: "3%" }}>
+               UNABLE TO ADD CHECK ALL DETAILS
+             </h3>
+             <div className="promptbuttoncontainer">
+               <button className="promptbuttonYes" onClick={onClose}>
+                 ok
+               </button>
+             </div>
+           </div>
+         );
+       },
+     });
+   }
+}
   async function SubmitHandler() {
     setLoading(true);
     //fetch statement to post details to backend
@@ -274,6 +322,18 @@ const [TempCarDetails] = useState({
         {/* </div> */}
         <button
           className="addcarbtn"
+          disabled={
+            CarDetails.carId === TempCarDetails.carId &&
+            CarDetails.carname === TempCarDetails.carname &&
+            CarDetails.house_no === TempCarDetails.house_no &&
+            CarDetails.pincode === TempCarDetails.pincode &&
+            CarDetails.landmark === TempCarDetails.landmark &&
+            CarDetails.cartypes === TempCarDetails.cartypes &&
+            CarDetails.cartype === TempCarDetails.cartype &&
+            CarDetails.vehicleno === TempCarDetails.vehicleno &&
+            CarDetails.carmodel === TempCarDetails.carmodel &&
+            CarDetails.street === TempCarDetails.street
+          }
           className={
             CarDetails.carId === TempCarDetails.carId &&
             CarDetails.carname === TempCarDetails.carname &&
@@ -283,13 +343,14 @@ const [TempCarDetails] = useState({
             CarDetails.cartypes === TempCarDetails.cartypes &&
             CarDetails.cartype === TempCarDetails.cartype &&
             CarDetails.vehicleno === TempCarDetails.vehicleno &&
-            CarDetails.carmodel === TempCarDetails.carmodel
+            CarDetails.carmodel === TempCarDetails.carmodel &&
+            CarDetails.street === TempCarDetails.street
               ? "noEdit"
               : "Edit"
           }
-          onClick={SubmitHandler}
+          onClick={TempCarDetails.carId ? EditHandler : SubmitHandler}
         >
-          SAVE
+          {TempCarDetails.carId ? "EDIT" : "SAVE"}
         </button>
         <div style={{ marginTop: "3%" }}>
           <Loader
