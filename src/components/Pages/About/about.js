@@ -3,13 +3,17 @@ import {TextComp} from "../../UI/content/TextComponents/TextComponent";
 import MainImage from "../../UI/content/ImageComponents/ImgComp";
 import MissionImage from "../../../Image/mission image@2x.png";
 import OurStoryImg from "../../../Image/our story image@2x.png";
-
+import { useSelector, useDispatch } from "react-redux";
+import { loginOpen } from "../../../Redux/LoginToggle/LoginActions";
 import {CircularTextCompGradient} from "../../../components/UI/content/CircularRingComponent/CircRingComp";
 import "./about.css";
 const About = (props) => {
+   const isLogPopup = useSelector((state) => state.loginToggle.Toggle);
+   const dispacth = useDispatch();
   useEffect(() => {
     document.body.scrollTop = 0;
     props.click();
+    isLogPopup ? dispacth(loginOpen()) : console.log("popup closed");
   }, []);
   const setScroll = () => {
     console.log(window.screenX);

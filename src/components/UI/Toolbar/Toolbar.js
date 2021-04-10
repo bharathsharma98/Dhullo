@@ -40,12 +40,35 @@ export default function Toolbar(props) {
 
           <div className="toolbar__logo  ">
             <Link path to="/" className="logoimg">
-              <img className="logoheader" src={logo} alt="" />
+              <img
+                className="logoheader"
+                onClick={LoginToggle ? () => dispatch(loginOpen()) : null}
+                src={logo}
+                alt=""
+              />
             </Link>
           </div>
-          <div className="cart">
-            <Link path to="/cart">
-              <img className="cart-contain" src={cart} alt="" />
+          <div  className="cart">
+            <Link style={{textDecoration:'none'}} path to="/cart">
+              {cartItems.length > 0 ? (
+                <small
+                  style={{
+                    color: "white",
+                    border: "2px solid white",
+                    paddingLeft: "10%",
+                    paddingRight: "10%",
+                    paddingTop:'3%',
+                    paddingBottom:'3%',
+                    borderRadius: '100%',
+                    position: 'relative',
+                    left: '01.8rem',
+                    top:'-0.5rem'
+                  }}
+                >
+                  {cartItems.length}
+                </small>
+              ) : null}
+              <img style={{ position:'relative',top:'-0.6rem',left:'-1.1rem'}} className="cart-contain" src={cart} alt="" />
             </Link>
           </div>
 
@@ -83,7 +106,7 @@ export default function Toolbar(props) {
                 </div>
               </li>
               <li
-                style={{ marginTop:'-0.5rem' }}
+                style={{ marginTop: "-0.5rem" }}
                 onClick={() => setToggle(!toggle)}
               >
                 <img src={user} alt="" />

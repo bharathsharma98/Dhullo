@@ -126,10 +126,12 @@ function UserProfile() {
               </div>
 
               <div className="editicon">
-                <Link path to="/addcar">
+                <Link to={{
+                  pathname: "/addcar",
+                state:onecar}}>
                   <img
                     style={{ marginTop: "2rem" }}
-                    onClick={() => editCar(onecar)}
+                    
                     src={edit}
                     alt="icon"
                   ></img>

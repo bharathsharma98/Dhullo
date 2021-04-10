@@ -36,11 +36,15 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
     <div>
       {cart.length === 0 ? (
         <div
-          style={{ margin: "auto", textAlign: "center", height: "100vh" }}
+          style={{
+            display: 'flex', flexDirection: 'column', justifyContent: 'center',
+            alignItems:'center',
+            height: "100vh"
+          }}
           className="emptycart"
         >
+          <img src={emptycart} alt="emptycart" style={{height:'35vh'}}/>
           <h1>Cart Is Empty</h1>
-          <img src={emptycart} alt="emptycart" className="emptycartimg" />
         </div>
       ) : (
         <div className="fullcart" style={{ height: "100%" }}>

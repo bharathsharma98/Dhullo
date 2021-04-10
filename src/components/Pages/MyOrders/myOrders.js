@@ -46,12 +46,13 @@ const MyOrders = (props) => {
                 </div>
               ))
             ) : (
-              <div style={{ textAlign: "center" }}>
-                <label>
-                  No orders yet for:
-                  <p style={{ color: "brown" }}>{oneCar.details}</p>{" "}
-                </label>
-              </div>
+                null
+              // <div style={{ textAlign: "center" }}>
+              //   <label>
+              //     No orders yet for:
+              //     <p style={{ color: "brown" }}>{oneCar.details}</p>{" "}
+              //   </label>
+              // </div>
             )}
           </div>
         ))}

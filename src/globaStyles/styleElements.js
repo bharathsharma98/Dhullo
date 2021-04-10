@@ -90,19 +90,48 @@ font-size:small;
 
  
  }
- small{
+ p{
        position:absolute;
    font-size:medium;
   font-family: 'Josefin Sans', sans-serif;
  
-    color:gray;
-     left:26%;
-     top:48%;
+    color:black;
+     left:16%;
+     top:0%;
+     font-family: 'Josefin Sans', sans-serif;
  }
- p{
+ h2{
+   font-weight:normal;
     position:absolute;
      font-size:large;
-     left:20%;
+     left:23%;
+     top:25%;
+     font-family: 'Josefin Sans', sans-serif;
+      color:red;
+    width: 70%;
+    height:auto;
+     white-space: wrap;
+     overflow: hidden;
+     text-overflow: ellipsis;
+    
+ }
+//  h3{
+     font-weight:normal;
+//     position:absolute;
+//      font-size:large;
+//      left:23%;
+//      top:50%;
+//      font-family: 'Josefin Sans', sans-serif;
+     
+//  }
+ h4{
+      font-weight:normal;
+    position:absolute;
+     font-size:large;
+     left:23%;
+     margin-top:2rem;
+     top:44%;
+     font-family: 'Josefin Sans', sans-serif;
  }
  img{
   position:absolute;

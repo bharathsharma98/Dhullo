@@ -58,7 +58,7 @@ function SideDrawer(props) {
               <li id="termsLi">
                 <Link to="/contact">Terms And Conditions</Link>
               </li>
-              <li id ="privacyLi">
+              <li id="privacyLi">
                 <Link to="/contact">Privacy policy</Link>
               </li>
               <div className="logoutSidebar">
@@ -106,7 +106,10 @@ function SideDrawer(props) {
       ) : (
         <nav className={drawerClasses} onClick={props.click}>
           <div className="userprofilecomp">
-            <Link onClick={()=>dispatch(loginOpen())}  to= {isSignedIn ? "/userprofile" : "/signin"}>
+            <Link
+              onClick={() => dispatch(loginOpen())}
+              to={isSignedIn ? "/userprofile" : "/signin"}
+            >
               <div className="userimagecomp">
                 <img
                   className="userimage"
@@ -170,26 +173,52 @@ function SideDrawer(props) {
               </Link>
             </li> */}
             <div className="tc-container">
-              <li>
-                <Link
-                  to="/contact"
-                  onClick={
-                    LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
+              <li id="termsLi">
+                <Link to="/contact">Terms And Conditions</Link>
+              </li>
+              <li id="privacyLi">
+                <Link to="/contact">Privacy policy</Link>
+              </li>
+              <div style={{visibility:'hidden'}} className="logoutSidebar">
+                  <button
+                    style={{color:'#'}}
+                  onClick={() =>
+                    confirmAlert({
+                      customUI: ({ onClose }) => {
+                        return (
+                          <div className="custom-ui">
+                            <h3
+                              style={{ textAlign: "center", marginTop: "3%" }}
+                            >
+                              Are you sure to Logout?
+                            </h3>
+                            <div className="promptbuttoncontainer">
+                              <button
+                                className="promptbuttonNo"
+                                onClick={onClose}
+                              >
+                                No
+                              </button>
+                              <button
+                                className="promptbuttonYes"
+                                onClick={() => {
+                                  dispatch(isLoggedout());
+                                  dispatch(loginOpen());
+                                  onClose();
+                                }}
+                              >
+                                Yes
+                              </button>
+                            </div>
+                          </div>
+                        );
+                      },
+                    })
                   }
                 >
-                  Terms And Conditions
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/contact"
-                  onClick={
-                    LoginToggle.Toggle ? () => dispatch(loginOpen()) : null
-                  }
-                >
-                  Privacy policy
-                </Link>
-              </li>
+                  <p>Logout</p>
+                </button>
+              </div>
             </div>
           </ul>
         </nav>

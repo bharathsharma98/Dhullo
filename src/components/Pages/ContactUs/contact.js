@@ -3,11 +3,15 @@ import "./contact.css";
 import contactTop from "../../../Image/contactus.png";
 import call from "../../../Image/call.svg";
 import mailbox from "../../../Image/mailbox.svg";
-
+import { useSelector, useDispatch } from "react-redux";
+import { loginOpen } from "../../../Redux/LoginToggle/LoginActions";
 const Contact = (props) => {
+   const isLogPopup = useSelector((state) => state.loginToggle.Toggle);
+   const dispacth = useDispatch();
   useEffect(() => {
     document.body.scrollTop = 0;
     props.click();
+    isLogPopup ? dispacth(loginOpen()) : console.log("popup closed");
   }, []);
 
   return (

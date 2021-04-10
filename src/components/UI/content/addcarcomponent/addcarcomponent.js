@@ -163,7 +163,7 @@ const [TempCarDetails] = useState({
 
   return (
     <div className="addcarcontainer1">
-      <h1>  CAR DETAILS</h1>
+      <h1> CAR DETAILS</h1>
 
       <div className="selectrow1">
         <label> Vehicle Type</label>
@@ -175,18 +175,7 @@ const [TempCarDetails] = useState({
           ))}
         </select>
       </div>
-      <label>Car Name</label>
-      <div className="carname">
-    
-        <input
-          required={true}
-          placeholder="eg: Swift"
-          type="text"
-          value={CarDetails.carname}
-          name="carname"
-          onChange={inputsHandler}
-        ></input>
-      </div>
+
       <label>Car Make</label>
       <div className="carmodel">
         <input
@@ -195,6 +184,17 @@ const [TempCarDetails] = useState({
           type="text"
           value={CarDetails.carmodel}
           name="carmodel"
+          onChange={inputsHandler}
+        ></input>
+      </div>
+      <label>Car Name</label>
+      <div className="carname">
+        <input
+          required={true}
+          placeholder="eg: Swift"
+          type="text"
+          value={CarDetails.carname}
+          name="carname"
           onChange={inputsHandler}
         ></input>
       </div>
@@ -210,18 +210,17 @@ const [TempCarDetails] = useState({
           onChange={inputsHandler}
         ></input>
       </div>
- 
-      <div >
-         
-        <label>House.No</label>
+
+      <div>
+        <label>House Name</label>
         <input
-          placeholder="eg:#12"
+          placeholder="eg:K201"
           type="text"
           value={CarDetails.house_no}
           name="house_no"
           onChange={inputsHandler}
         ></input>
-        <label >Street</label>
+        <label>Street</label>
         <input
           required
           placeholder="eg:4th,main"
@@ -290,7 +289,7 @@ const [TempCarDetails] = useState({
           }
           onClick={SubmitHandler}
         >
-        SAVE
+          SAVE
         </button>
         <div style={{ marginTop: "3%" }}>
           <Loader

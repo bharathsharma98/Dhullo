@@ -3,6 +3,7 @@ import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
 import "./checkoutcomp.css";
 import history from "../../../../history/history";
+import Servicepage  from "../../../UI/PageComponents/ServicePageComp";
 function loadScript(src) {
   return new Promise((resolve) => {
     const script = document.createElement("script");
@@ -15,6 +16,10 @@ function loadScript(src) {
     };
     document.body.appendChild(script);
   });
+}
+function clickhandler()
+{
+  console.log('clicked')
 }
 
 const __DEV__ = document.domain === "localhost";
@@ -118,7 +123,7 @@ function CheckoutComponent() {
        handler: async function (response) {
          console.log(response);
          
-        alert(response.razorpay_payment_id);
+        // alert(response.razorpay_payment_id);
 
         const Confimed = await fetch(
           "http://localhost:5000/api/razorpay/paymentConfirmation",
@@ -162,7 +167,10 @@ function CheckoutComponent() {
     paymentObject.open();
   }
   return (
-    <div className="checkout-container">
+    <div>
+      {
+        cartitems.length > 0 ?
+        <div className="checkout-container">
       <div className="checkout-heading">
         <h1>Order Summary</h1>
       </div>
@@ -213,7 +221,12 @@ function CheckoutComponent() {
       <div className="checkoutButonContainer">
         <button onClick={displayRazorpay}>Checkout</button>
       </div>
+    </div> :
+          <Servicepage click={clickhandler}/>
+      }
     </div>
+
+    
   );
 }
 export default CheckoutComponent;

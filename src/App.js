@@ -108,7 +108,7 @@ const dispacth =useDispatch()
               userSignedIn ? (
                 <MyOrders click={backdropClickHandler} />
               ) : (
-                <Redirect to="/signIn" />
+                <Redirect exact to="/signIn" />
               )
             }
           />

@@ -1,14 +1,17 @@
 import React, { useState ,useEffect} from 'react'
-import { useSelector } from 'react-redux';
-import './editUser.css'
+import { useSelector,useDispatch } from 'react-redux';
+import {editUser} from '../../../Redux/UserRedux/UserActions'
+import './editUser.css';
+import history from '../../../history/history'
 const EditUser = (props) => {
 
     useEffect(() => {
       document.body.scrollTop = 0;
      
     }, []);
+  const dispacth = useDispatch();
     const userInfo = useSelector((state) => state.user.customer);
-
+console.log(userInfo)
     const [user, setUser] = useState({
         name: userInfo.name,
         mobile: userInfo.mobileNo,
@@ -18,11 +21,26 @@ const EditUser = (props) => {
     const handleChange = (e) => {
         setUser({ ...user, [e.target.name]: e.target.value })  
       newUser = user
-      console.log(newUser)
-    }
-    const handleSubmit = (e) => {
+      console.log(userInfo.id)
+  }
+
+    const handleSubmit = async(e) => {
         e.preventDefault();
-        console.log(user)
+       console.log(user)
+      const updatedUser = await fetch(`http://localhost:5000/api/users/${userInfo.id}`, {
+        method: "PATCH",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name:user.name,
+          mobileNo:user.mobile,
+          email:user.email
+        }),
+      }).then((t) => t.json())
+    await dispacth(editUser(updatedUser.customer))
+    await history.goBack()
+     
     }
     return (
       <div className="editpage-container">
@@ -67,7 +85,7 @@ const EditUser = (props) => {
                 // }
                 className={
                   userInfo.name === user.name &&
-                  userInfo.mobileNo === user.mobile &&
+                  userInfo.mobileNo.toString() === user.mobile.toString() &&
                   userInfo.email === user.email
                     ? "noEdit"
                     : "Edit"

@@ -23,6 +23,12 @@ export const UpdateFromCart = (item) => {
     type: "UPDATE_FROM_CART",
     payload: item,
   };
+}
+export const emptyCart = ( ) => {
+  return {
+    type: "EMPTY_CART",
+     
+  };
 
 
 };

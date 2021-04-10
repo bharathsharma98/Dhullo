@@ -38,7 +38,7 @@ const sliderArr = [
 
   {
     id: 4,
-    imgSrc: width.matches ? i1 : i1b,
+    imgSrc: width.matches ? i1 : i1,
     description: "OFFERS",
     details: "Check our Car  available at your service.",
     color: "#FF920F",

@@ -26,9 +26,7 @@ const BookingForm = (props) => {
   }, []);
 
   var totalPriceArray = [];
-const editCar = (onecar) => {
-  history.push("/addcar", onecar);
-};
+ const width = { matches: window.matchMedia("(min-width: 768px)").matches };
   
   const LoginToggle = useSelector((state) => state.loginToggle);
   const isSignedIn = useSelector((state) => state.user.UserSignedIn);
@@ -137,15 +135,18 @@ const editCar = (onecar) => {
 
                 <div>
                   <p>{onecar.details}</p>
-                  <small>{onecar.streetName}</small>
+                  <h2>{onecar.houseName}</h2>
+                  {/* <h3>{onecar.streetName}</h3> */}
+                  <h4>{onecar.pincode}</h4>
                 </div>
                 <div>
                   <Link
                     to={{
                       pathname: "/addcar",
+                      state:onecar
                     }}
                   >
-                    <img onClick={() => editCar(onecar)} src={edit}></img>
+                    <img  src={edit}></img>
                   </Link>
                 </div>
               </CarBox>
@@ -168,9 +169,10 @@ const editCar = (onecar) => {
             </div>
           </div>
         ) : (
-          <Link
+            <Link
+            
             style={{ marginBottom: "1rem  " }}
-            to="#"
+            to= {width.matches ? "#" : '/signin' }
             onClick={() => dispatch(loginOpen())}
           >
             Login
@@ -181,7 +183,8 @@ const editCar = (onecar) => {
           {isSignedIn ? (
             <div style={{ display: "flex", alignItems: "center" }}>
               <p>Price : </p>
-              <p>
+              <p style={{letterSpacing:'2px'}}>
+                Rs 
                 {finaltempcars.reduce(function (tot, arr) {
                   return tot + arr.price;
                 }, 0)}
@@ -192,7 +195,7 @@ const editCar = (onecar) => {
 
         <label style={{ marginBottom: "-0.8rem" }}>Select Date</label>
         <DatePicker
-          // disabled={item.mycars.length === 0 ? true : false}
+          disabled={item.mycars.length === 0 ? true : false}
           className={item.mycars.length === 0 ? "disabled" : "enabled"}
           selected={item.cardate || new Date()}
           onChange={(cardate) => setItem({ ...item, cardate })}
@@ -205,7 +208,7 @@ const editCar = (onecar) => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label style={{ marginBottom: "-0.8rem" }}>Select Time</label>
             <DatePicker
-              // disabled={item.mycars.length === 0 ? true : false}
+               disabled={item.mycars.length === 0 ? true : false}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}
               selected={item.mytime || new Date()}
               onChange={(mytime) => {
@@ -232,7 +235,7 @@ const editCar = (onecar) => {
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label style={{ marginBottom: "-0.1rem" }}>Select Duration</label>
+            <label>Select Duration</label>
             <select
               style={{ marginBottom: "1rem" }}
               name="duration"

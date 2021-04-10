@@ -1,4 +1,5 @@
 import React, { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import {TextComp} from "../content/TextComponents/TextComponent";
 import MainImage from "../content/ImageComponents/ImgComp";
 import "./HomePageComp.css";
@@ -8,11 +9,14 @@ import thumbsupimg from "../../../Image/customer_satisfaction.png";
 import carinhandimage from "../../../Image/carinhand.png";
 import umbrella from "../../../Image/Group 103.svg";
 import water from "../../../Image/Group 102@2x.png";
-
+import { loginOpen } from "../../../Redux/LoginToggle/LoginActions";
 const Homepage = (props) => {
+    const isLogPopup = useSelector((state) => state.loginToggle.Toggle);
+    const dispacth = useDispatch();
   useEffect(() => {
     document.body.scrollTop = 0;
     props.click();
+    isLogPopup ? dispacth(loginOpen()) : console.log("popup closed");
   }, []);
   const redstyles = {
     backgroundColor: "#F37A7D",

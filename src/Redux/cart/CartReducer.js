@@ -30,6 +30,11 @@ const CartReducer = (state = INITIAL_STATE, action) => {
         ...state,
         CartItems: updateFromCart(state.CartItems, action.payload),
       };
+    case "EMPTY_CART":
+      return {
+        ...state,
+        CartItems: [],
+      };
     case "LOGGED_OUT":
       return {
         ...state,
