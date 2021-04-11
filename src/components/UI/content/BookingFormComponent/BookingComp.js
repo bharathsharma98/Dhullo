@@ -214,7 +214,7 @@ const BookingForm = (props) => {
           <Link
             style={{ marginBottom: "1rem  " }}
             to={width.matches ? "#" : "/signin"}
-            onClick={() => dispatch(loginOpen())}
+            onClick={width.matches ?() => dispatch(loginOpen()):null}
           >
             Login
           </Link>
