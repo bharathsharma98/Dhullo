@@ -226,7 +226,8 @@ const BookingForm = (props) => {
           }}
           minDate={addDays(new Date(), 1)}
         />
-        {props.category === "SANITIZATION" ||
+        {
+          props.category === "SANITIZATION" ||
         props.category === "EXTERIOR" ||
         props.category === "INTERIOR" ||
         props.category === "ONE TIME" ? (
@@ -261,9 +262,9 @@ const BookingForm = (props) => {
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label>Select Duration</label>
+            <label  style={{marginBottom:'1rem'}}>Select Duration</label>
             <select
-              style={{ marginBottom: "1rem" }}
+              
               name="duration"
               onChange={handleChange}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}

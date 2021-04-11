@@ -31,6 +31,7 @@
   position: relative;
   top: -30%;
 }
+ 
 .exteriorContainer{
     display: flex;
   flex-wrap: wrap;
@@ -61,13 +62,13 @@
   justify-content: space-around;
   flex-direction: row;
  margin-bottom: -1%;
- 
+ height: fit-content;
 }
 .sanitRow {
   display: flex;
   flex-direction: column;
    
-  margin-bottom: -2%;
+ 
 }
 .InteriorDEt{
   margin-top: 2%;
@@ -147,7 +148,7 @@
   margin: 1rem;
 }
 .sanitbtncontainer {
-  margin-bottom: 3rem;
+ margin-bottom: -2%;
   display: flex;
   justify-content: center;
   font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",

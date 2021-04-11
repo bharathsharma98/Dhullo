@@ -196,14 +196,14 @@ function CheckoutComponent() {
                   <p id="checkoutTitle">Order date</p>
                   <p>:</p>
                   <p id="checkoutData">
-                    {new Date(item.orderDate).toDateString()}
+                    {new Date(item.orderDate).toDateString().substr(3)}
                   </p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <p id="checkoutTitle">Service start date</p>
                   <p>:</p>
                   <p id="checkoutData">
-                    {new Date(item.serviceStartDate).toDateString()}
+                    {new Date(item.serviceStartDate).toDateString().substr(3)}
                   </p>
                 </div>
 

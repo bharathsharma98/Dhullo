@@ -131,14 +131,14 @@ export default function Toolbar(props) {
                                       marginTop: "3%",
                                     }}
                                   >
-                                    Are you sure to Logout?
+                                    <p>Are you sure to logout?</p>
                                   </h3>
                                   <div className="promptbuttoncontainer">
                                     <button
                                       className="promptbuttonNo"
                                       onClick={onClose}
                                     >
-                                      No
+                                      NO
                                     </button>
                                     <button
                                       className="promptbuttonYes"
@@ -148,7 +148,7 @@ export default function Toolbar(props) {
                                         onClose();
                                       }}
                                     >
-                                      Yes
+                                      YES
                                     </button>
                                   </div>
                                 </div>

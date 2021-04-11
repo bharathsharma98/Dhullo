@@ -115,35 +115,38 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                       />
                     </div>
                     <div className="timeContainerCart">
-                      <label>Time</label>
                       {item.time ? (
-                        <DatePicker
-                          selected={Date.parse(item.time)}
-                          showTimeSelect
-                          filterDate={(date) => getDay(date) !== 1}
-                          timeIntervals={60}
-                          onChange={(cartime) =>
-                            dispatch(
-                              UpdateFromCart({
-                                id: item.id,
-                                serviceStartDate: item.serviceStartDate,
-                                mycar: item.mycar,
-                                price: item.price,
-                                serviceprice: item.serviceprice,
-                                time: cartime,
-                                service: item.service,
-                                categoryprice: item.categoryprice,
-                              })
-                            )
-                          }
-                          dateFormat="h:mm aa"
-                          placeholderText="Select Time"
-                        />
+                        <div>
+                          <label>Time</label>
+                          <DatePicker
+                            selected={Date.parse(item.time)}
+                            showTimeSelect
+                            filterDate={(date) => getDay(date) !== 1}
+                            timeIntervals={60}
+                            onChange={(cartime) =>
+                              dispatch(
+                                UpdateFromCart({
+                                  id: item.id,
+                                  serviceStartDate: item.serviceStartDate,
+                                  mycar: item.mycar,
+                                  price: item.price,
+                                  serviceprice: item.serviceprice,
+                                  time: cartime,
+                                  service: item.service,
+                                  categoryprice: item.categoryprice,
+                                })
+                              )
+                            }
+                            dateFormat="h:mm aa"
+                            placeholderText="Select Time"
+                          />
+                        </div>
                       ) : null}
                     </div>
-                    <div className="durationContainerCart">
-                      <label>Duration</label>
-                      {item.packageDuration ? (
+
+                    {item.packageDuration !== "ONE TIME" ? (
+                      <div className="durationContainerCart">
+                        <label>Duration</label>
                         <select
                           name="packageDuration"
                           onChange={(e) =>
@@ -168,8 +171,8 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                             </option>
                           ))}
                         </select>
-                      ) : null}
-                    </div>
+                      </div>
+                    ) : null}
 
                     <div className="priceContainerCart">
                       <h3 className="cartprice">Price : Rs. {item.price}</h3>

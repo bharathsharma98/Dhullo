@@ -17,6 +17,10 @@ p {
   width: 40%;
  
   text-align: left;
+
+}
+.textcontainer{
+  margin-top: -2%;
 }
 @media(max-width:769px){
   

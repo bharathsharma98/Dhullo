@@ -39,6 +39,7 @@ export const Confirmationpage = (props) => {
  
   }
   useEffect(() => {
+     document.body.scrollTop = 0;
     props.location.status === "success" ?
       dispatch(emptyCart()) :
       alert("payment failed")

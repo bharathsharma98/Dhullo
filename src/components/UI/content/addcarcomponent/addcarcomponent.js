@@ -120,7 +120,7 @@ const [TempCarDetails] = useState({
    //fetch statement to post details to backend
    try {
      const response = await fetch(
-       `http://localhost:5000/api/cars/602a49d02f72e8328cde98ec`,
+       `http://localhost:5000/api/cars/${CarDetails.carId}`,
        {
          method: "PATCH",
          headers: {
@@ -350,7 +350,7 @@ const [TempCarDetails] = useState({
           }
           onClick={TempCarDetails.carId ? EditHandler : SubmitHandler}
         >
-          {TempCarDetails.carId ? "EDIT" : "SAVE"}
+          {TempCarDetails.carId ? "SAVE" : "SAVE"}
         </button>
         <div style={{ marginTop: "3%" }}>
           <Loader

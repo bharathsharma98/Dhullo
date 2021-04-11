@@ -107,7 +107,7 @@ font-size:small;
      left:23%;
      top:25%;
      font-family: 'Josefin Sans', sans-serif;
-      color:red;
+     
     width: 70%;
     height:auto;
      white-space: wrap;
