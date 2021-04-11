@@ -108,6 +108,8 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                               serviceprice: item.serviceprice,
                               time: item.time,
                               service: item.service,
+                              package: item.package,
+                              packageDuration:item.packageDuration,
                               categoryprice: item.categoryprice,
                             })
                           )
@@ -133,6 +135,8 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                                   serviceprice: item.serviceprice,
                                   time: cartime,
                                   service: item.service,
+                                  package: item.package,
+                                  packageDuration:item.packageDuration,
                                   categoryprice: item.categoryprice,
                                 })
                               )
@@ -159,6 +163,7 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                                 serviceprice: item.serviceprice,
                                 time: item.time,
                                 service: item.service,
+                                package: item.package,
                                 categoryprice: item.categoryprice,
                                 packageDuration: e.target.value,
                               })

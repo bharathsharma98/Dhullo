@@ -183,6 +183,11 @@ function CheckoutComponent() {
                   <p id="checkoutData">{item.mycar}</p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center" }}>
+                  <p id="checkoutTitle">Address</p>
+                  <p>:</p>
+                  <p id="checkoutData">{item.houseName}, {item.streetName},{ item.pincode}</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
                   <p id="checkoutTitle">Service</p>
                   <p>:</p>
                   <p id="checkoutData">{item.service}</p>
@@ -232,6 +237,7 @@ function CheckoutComponent() {
                   <p>:</p>
                   <p id="checkoutData">Rs {item.price}</p>
                 </div>
+                <hr style={{}}></hr>
               </div>
             ))}
           </div>

@@ -82,6 +82,24 @@ const BookingForm = (props) => {
     );
     return car[0].id
   };
+  const carStreethandler = (carToCheck) => {
+    var car = user.cars.filter(
+      (onecar) => onecar.details == carToCheck.mycar
+    );
+    return car[0].streetName
+  };
+  const carHousehandler = (carToCheck) => {
+    var car = user.cars.filter(
+      (onecar) => onecar.details == carToCheck.mycar
+    );
+    return car[0].houseName
+  };
+  const carPinCodehandler = (carToCheck) => {
+    var car = user.cars.filter(
+      (onecar) => onecar.details == carToCheck.mycar
+    );
+    return car[0].pincode
+  };
   for (let i = 0; i < item.mycars.length; i++) {
     finaltempcars[i].id =  Math.floor(Math.random() * 100); 
     finaltempcars[i].customerId = user.id;
@@ -96,6 +114,9 @@ const BookingForm = (props) => {
     // console.log(user.cars[i].carType);
     finaltempcars[i].carType = carTypeHanler(finaltempcars[i]);
     finaltempcars[i].carId = carIdhandler(finaltempcars[i]);
+    finaltempcars[i].streetName = carStreethandler(finaltempcars[i]);
+    finaltempcars[i].houseName = carHousehandler(finaltempcars[i]);
+    finaltempcars[i].pincode = carPinCodehandler(finaltempcars[i]);
 
     if ((props.category === "ONE TIME") ||
     (props.category === "SILVER" )||
@@ -103,9 +124,22 @@ const BookingForm = (props) => {
     (props.category === "PLATINUM" )
     
     ) {
-      finaltempcars[i].service = "Washing";
+      finaltempcars[i].service = "WASHING";
       finaltempcars[i].package = props.category;
-    } else {
+    }
+    else if ((props.category === "SANITIZATION")) {
+      finaltempcars[i].service = props.category;
+      finaltempcars[i].package = 'FULL';
+    }
+    else if ((props.category === "INTERIOR")) {
+      finaltempcars[i].service = 'DETAILING';
+      finaltempcars[i].package = props.category;
+    }
+    else if ((props.category === "EXTERIOR")) {
+      finaltempcars[i].service = 'DETAILING';
+      finaltempcars[i].package = props.category;
+    }
+    else {
       finaltempcars[i].service = props.category;
       finaltempcars[i].package = props.category;
     }

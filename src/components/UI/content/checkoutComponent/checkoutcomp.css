@@ -1,15 +1,18 @@
 .checkout-container{
     height: 100%;
- 
+ display: flex;
+ flex-direction: column;
 }
 .checkout-heading{
     text-align: center;
        color: #304a6b;
 }
 .orderBoxCheckout{
+   display: flex;
+ flex-direction: column;
     margin-left: 3%;
   
-    height: auto;
+    height: 100%;
     width: 80%;
 }
 .CheckoutTotal{
@@ -34,10 +37,15 @@
  
   width: 15%;
 }
-
+.orderBoxCheckout hr{
+color: orangered;
+border: 2px solid orangered;
+width: 100%;
+}
 @media (max-width: 768px) {
   .checkout-container {
-    height: 100vh;
+
+    height: 100%;
   }
 
 .checkout-container hr{
@@ -47,12 +55,13 @@ width: 94vw;
     text-align: center;
 }
 .orderBoxCheckout{
-  margin-top: 20%;
+  margin-top: 10%;
   display: flex;
   justify-content: center;
   align-items: center;
  margin-left: 0%;
     width: 100vw;
+   
 }
  
  
@@ -62,20 +71,25 @@ width: 94vw;
 }
  
 .checkoutButonContainer{
-  top: 30%;
- position: relative;
-    display: flex;
-    justify-content: center; 
-    align-items: center;
+  width: 100%;
+  margin-left: 0%;
+  margin-right: 0%;
+  text-align: center;
+
+ 
+ 
+ 
+ 
+ 
  
   
 
  
 }
 .checkoutButonContainer button{
+   left: 0;
  
- 
- background-color: #21B24D;
+ background-color: #03588C;
  color: rgb(255, 254, 254);
  margin: auto;
 }

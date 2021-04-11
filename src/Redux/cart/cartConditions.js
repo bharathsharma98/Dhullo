@@ -3,7 +3,7 @@ export const addItemsToCart = (CartItems, CartItemToAdd) => {
     (CartItem) =>
       CartItem.mycar === CartItemToAdd.mycar &&
       CartItem.service === CartItemToAdd.service &&
-      CartItem.date === CartItemToAdd.date
+      CartItem.serviceStartDate === CartItemToAdd.serviceStartDate
   );
 
   if (existingCartItem) {
