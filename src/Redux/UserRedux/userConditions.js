@@ -30,17 +30,18 @@ export const addSchedulesFunc = (prevSchedules, newId) => {
   
  
 };
-export const updateOrderFunc = (prevOrders, newEvents) => {
+export const updateWithOrder = (prevCustomer, newOrder) => {
  
-  for (let i = 0; i < prevOrders.length; i++){
-    for (let j = 0; j <newEvents.length; j++) {
-      if (prevOrders[i].carId === newEvents[j].carId) {
-         prevOrders[i].NewSchedules = newEvents[j]
-       }
-    }
-  }
+  for (let i = 0; i < prevCustomer.cars.length; i++) {
     
- 
+      if (prevCustomer.cars[i].id === newOrder.carId) {
+        prevCustomer.cars[i].orders.push(newOrder);
+      }
+
+  }
+
+  
+  
 };
 export const editcarfunc = (prevCustomer, editedCar) => {
 const updatedCars = prevCustomer.cars.map((onecar) =>

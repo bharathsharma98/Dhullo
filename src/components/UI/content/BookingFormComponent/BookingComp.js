@@ -76,19 +76,26 @@ const BookingForm = (props) => {
     var car = user.cars.filter((onecar) => onecar.details == carToCheck.mycar);
     return car[0].carType
   };
+  const carIdhandler = (carToCheck) => {
+    var car = user.cars.filter(
+      (onecar) => onecar.details == carToCheck.mycar
+    );
+    return car[0].id
+  };
   for (let i = 0; i < item.mycars.length; i++) {
-    finaltempcars[i].id =  Math.floor(Math.random() * 100);  ;
+    finaltempcars[i].id =  Math.floor(Math.random() * 100); 
     finaltempcars[i].customerId = user.id;
     finaltempcars[i].orderDate = new Date();
 
     finaltempcars[i].serviceStartDate = item.cardate;
     finaltempcars[i].time = item.mytime;
     finaltempcars[i].mycar = item.mycars[i];
+    finaltempcars[i].serviceDays = item.serviceDays;
     finaltempcars[i].packageDuration =
-      item.duration !== undefined ? item.duration : "Monthly";
+    item.duration !== undefined ? item.duration : "ONE TIME";
     // console.log(user.cars[i].carType);
-    finaltempcars[i].carType = carTypeHanler(finaltempcars[i])
-    finaltempcars[i].carId = user.cars[i].id;
+    finaltempcars[i].carType = carTypeHanler(finaltempcars[i]);
+    finaltempcars[i].carId = carIdhandler(finaltempcars[i]);
 
     if ((props.category === "ONE TIME") ||
     (props.category === "SILVER" )||
@@ -103,7 +110,8 @@ const BookingForm = (props) => {
       finaltempcars[i].package = props.category;
     }
     finaltempcars[i].serviceprice = ServicePrice(props.category);
-    finaltempcars[i].categoryprice = CarTypePrice(user.cars[i].carType);
+    finaltempcars[i].categoryprice = CarTypePrice(carTypeHanler(finaltempcars[i]));
+    console.log()
     finaltempcars[i].price =
       finaltempcars[i].serviceprice + finaltempcars[i].categoryprice;
   
@@ -143,10 +151,10 @@ const BookingForm = (props) => {
                   <Link
                     to={{
                       pathname: "/addcar",
-                      state:onecar
+                      state: onecar,
                     }}
                   >
-                    <img  src={edit}></img>
+                    <img src={edit}></img>
                   </Link>
                 </div>
               </CarBox>
@@ -155,7 +163,6 @@ const BookingForm = (props) => {
               {isSignedIn ? (
                 <div className="addnewCarButton">
                   <Link
-                     
                     to={{
                       pathname: "/addcar",
                       click: props.click,
@@ -169,10 +176,9 @@ const BookingForm = (props) => {
             </div>
           </div>
         ) : (
-            <Link
-            
+          <Link
             style={{ marginBottom: "1rem  " }}
-            to= {width.matches ? "#" : '/signin' }
+            to={width.matches ? "#" : "/signin"}
             onClick={() => dispatch(loginOpen())}
           >
             Login
@@ -183,8 +189,8 @@ const BookingForm = (props) => {
           {isSignedIn ? (
             <div style={{ display: "flex", alignItems: "center" }}>
               <p>Price : </p>
-              <p style={{letterSpacing:'2px'}}>
-                Rs 
+              <p style={{ letterSpacing: "2px" }}>
+                Rs
                 {finaltempcars.reduce(function (tot, arr) {
                   return tot + arr.price;
                 }, 0)}
@@ -195,10 +201,29 @@ const BookingForm = (props) => {
 
         <label style={{ marginBottom: "-0.8rem" }}>Select Date</label>
         <DatePicker
+          filterDate={(date) => getDay(date) !== 1}
           disabled={item.mycars.length === 0 ? true : false}
           className={item.mycars.length === 0 ? "disabled" : "enabled"}
           selected={item.cardate || new Date()}
-          onChange={(cardate) => setItem({ ...item, cardate })}
+          onChange={(cardate) => {
+            var serviceDays = [];
+            if (props.category === 'SILVER') {
+               if (
+                 getDay(cardate) === 0 ||
+                 getDay(cardate) === 3 ||
+                 getDay(cardate) === 5
+               ) {
+                 serviceDays = [0, 3, 5];
+               } else {
+                 serviceDays = [2, 4, 6];
+               }
+            }
+            else {
+              serviceDays = [0, 2, 3, 4, 5, 6];
+            }
+           
+              setItem({ ...item, cardate, serviceDays: serviceDays });
+          }}
           minDate={addDays(new Date(), 1)}
         />
         {props.category === "SANITIZATION" ||
@@ -208,7 +233,8 @@ const BookingForm = (props) => {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label style={{ marginBottom: "-0.8rem" }}>Select Time</label>
             <DatePicker
-               disabled={item.mycars.length === 0 ? true : false}
+              filterDate={(date) => getDay(date) !== 1}
+              disabled={item.mycars.length === 0 ? true : false}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}
               selected={item.mytime || new Date()}
               onChange={(mytime) => {
@@ -271,9 +297,7 @@ const BookingForm = (props) => {
         </div>
       </div>
 
-      <div className="bookingform-right">
-        
-      </div>
+      <div className="bookingform-right"></div>
     </div>
   );
 };

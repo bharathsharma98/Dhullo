@@ -48,8 +48,7 @@ const [signState,setSignState] =useState('SIGNIN')
         <div>
           {signState === "SIGNIN" ? (
             <div className="signupcontainer">
-              <div className="closeNback">
-                  </div>
+              <div className="closeNback"></div>
 
               <div className="signinForm">
                 <div id="right-side">
@@ -120,7 +119,7 @@ const [signState,setSignState] =useState('SIGNIN')
                 <form noValidate onSubmit={handleSubmitUp} id="signup">
                   <p className="Login-login">SIGN UP</p>
                   <div>
-                    <div>
+                    <div className="inputContainerSignup">
                       <input
                         placeholder="Name"
                         name="name"
@@ -132,7 +131,7 @@ const [signState,setSignState] =useState('SIGNIN')
                     </div>
                   </div>
                   <div>
-                    <div>
+                    <div className="inputContainerSignup">
                       <input
                         placeholder="Email"
                         name="email"
@@ -144,7 +143,7 @@ const [signState,setSignState] =useState('SIGNIN')
                     </div>
                   </div>
                   <div>
-                    <div>
+                    <div className="inputContainerSignup">
                       <input
                         placeholder="Phone No"
                         name="phone"
@@ -156,7 +155,7 @@ const [signState,setSignState] =useState('SIGNIN')
                     </div>
                   </div>
                   <div>
-                    <div>
+                    <div className="inputContainerSignup">
                       <input
                         placeholder="Password"
                         name="password"
@@ -170,11 +169,7 @@ const [signState,setSignState] =useState('SIGNIN')
 
                   <button type="submit">SIGN UP</button>
 
-                  {errorSignUp ? (
-                    <SmallPopupRound message="error">
-                      <p>Unable to Signup</p>
-                    </SmallPopupRound>
-                  ) : null}
+                   
                 </form>
               </div>
             </div>

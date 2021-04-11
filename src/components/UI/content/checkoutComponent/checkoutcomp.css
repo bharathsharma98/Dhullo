@@ -24,13 +24,21 @@
  
 }
 .checkoutButonContainer button{
- background-color: #21B24D;
+ background-color:#03588C;
  color: rgb(255, 254, 254);
  margin-bottom: 3%;
+ position: relative;
+ left: 8%;
 }
+#checkoutTitle{
  
+  width: 15%;
+}
 
 @media (max-width: 768px) {
+  .checkout-container {
+    height: 100vh;
+  }
 
 .checkout-container hr{
 width: 94vw;
@@ -39,19 +47,23 @@ width: 94vw;
     text-align: center;
 }
 .orderBoxCheckout{
-    margin-left: 3%;
-  
-    height: auto;
-    width: 80%;
+  margin-top: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ margin-left: 0%;
+    width: 100vw;
 }
  
  
 .CheckoutTotal{
-  margin-left: 3%;
+  
   display: flex;
 }
  
 .checkoutButonContainer{
+  top: 30%;
+ position: relative;
     display: flex;
     justify-content: center; 
     align-items: center;
@@ -61,8 +73,28 @@ width: 94vw;
  
 }
 .checkoutButonContainer button{
+ 
+ 
  background-color: #21B24D;
  color: rgb(255, 254, 254);
  margin: auto;
+}
+#checkoutTitle{
+ 
+  width: 30vw;
+ 
+  font-size:5vw;
+}
+#checkoutData{
+ 
+ 
+ 
+width: 30vw;
+ font-size:5vw;
+}
+.checkout-container p{
+  margin-top: 0%;
+  margin-bottom: 0%;
+
 }
 }

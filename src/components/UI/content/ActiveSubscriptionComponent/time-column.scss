@@ -46,6 +46,7 @@
 
   .rbc-event {
     border: 1px solid $event-border;
+    border-radius: 100%;
     display: flex;
     max-height: 100%;
     min-height: 20px;

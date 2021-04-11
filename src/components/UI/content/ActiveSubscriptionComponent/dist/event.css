@@ -1,7 +1,7 @@
 @media (min-width: 768px) {
   .rbc-event {
     border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 100%;
     box-sizing: border-box;
     box-shadow: none;
     position: relative;
@@ -20,15 +20,17 @@
   }
   .rbc-event.rbc-selected {
     background-color: #265985;
+     border-radius: 100%;
   }
   .rbc-event:focus {
     outline: 5px auto #3b99fc;
+     border-radius: 100%;
   }
 }
 @media (max-width: 768px) {
   .rbc-event {
     border: 1px solid white;
-    border-radius: 5px;
+    border-radius: 100%;
     box-sizing: border-box;
     box-shadow: none;
     position: relative;
@@ -46,9 +48,11 @@
   }
   .rbc-event.rbc-selected {
     background-color: #265985;
+     
   }
   .rbc-event:focus {
     outline: 5px auto #3b99fc;
+    border-radius: 100%;
   }
 }
 .rbc-event-overlaps {

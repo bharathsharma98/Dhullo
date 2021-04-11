@@ -3,6 +3,7 @@ import {
   removecarfunc,
   addSchedulesFunc,
   editcarfunc,
+  updateWithOrder
 } from "./userConditions.js";
 
 const INITIAL_STATE = {
@@ -70,7 +71,7 @@ const userReducer = (state = INITIAL_STATE, action) => {
     case "ADD_ORDER":
       return {
         ...state,
-        orders: [...state.orders, action.payload],
+        cars: updateWithOrder(state.customer,action.payload),
       };
     case "ADD_SCHEDULE":
       return {

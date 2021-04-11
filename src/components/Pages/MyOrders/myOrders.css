@@ -30,12 +30,46 @@
  
  }
  .rightOrder{
+     width: 35vw;
+ 
      display: flex;
      flex-direction: column;
+     flex-wrap: wrap;
      justify-content:center;
+     align-items: left;
+ 
  
 
  }
+ #myOrdersTopic{
+     width: 15vw;
+ }
+ #event-indication-container{
+     display: flex;
+    position: relative;
+ margin-top: 10%;
+     justify-content: space-evenly;
+      
+ }
+ #red-indication{
+background-color: red;
+height: 20px;
+width: 20px;
+border-radius: 100%;
+ }
+ #green-indication{
+background-color: green;
+height: 20px;
+width: 20px;
+border-radius: 100%;
+ }
+ #gray-indication{
+background-color: gray;
+height: 20px;
+width: 20px;
+border-radius: 100%;
+ }
+
  @media(max-width:769px){
      .orderCard{
      padding: 0.5%;
@@ -58,14 +92,24 @@
  }
  .rightOrder{
      display: flex;
-     flex-direction: row;
+     flex-direction: column;
      justify-content:center;
      width: 100%;
 
- background-color:#f28e55;
+ 
 
  }
  .rightOrder p{
      color: #000000;
+ }
+  #myOrdersTopic{
+     width: 25vw;
+ }
+ #event-indication-container{
+     display: flex;
+    position: relative;
+ margin-top: 0%;
+     justify-content: space-evenly;
+      
  }
  }

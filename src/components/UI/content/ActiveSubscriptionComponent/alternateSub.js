@@ -40,9 +40,9 @@ const Alternatesub = (props) => {
         longPressThreshold={10}
         eventPropGetter={(event) => {
           let newStyle = {
-            backgroundColor: "lightgrey",
+            backgroundColor: "red",
             color: "black",
-            borderRadius: "0px",
+            borderRadius: "100%",
             border: "none",
           };
 

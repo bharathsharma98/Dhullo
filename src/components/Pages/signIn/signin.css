@@ -126,6 +126,7 @@ text-align: center;
  
  
  display: flex;
+ flex-direction: column;
  justify-content: center;
  align-items: center;
 }
@@ -134,6 +135,28 @@ text-align: center;
  display: flex;
  justify-content: center;
  align-items: center;
+flex-direction: column;
+}
+.phoneContainerLogin p{
+  color: red;
+  font-size: 0.9vw;
+  text-align: center;
+  margin-left: -1%;
+  width: 100%;
+}
+.paswwordContainerLogin p{
+    color: red;
+  font-size: 0.9vw;
+  text-align: center;
+  margin-left: -1%;
+  width: 100%;
+}
+.inputContainerSignup p{
+    color: red;
+  font-size: 0.9vw;
+  text-align: center;
+  margin-left: -1%;
+  width: 100%;
 }
 .loginInputPhone{
   width: 100%;
@@ -181,6 +204,27 @@ height: 100%;
  
   height: 2vh;
    width: 100%;
+}
+.phoneContainerLogin p{
+  color: red;
+  font-size: 4vw;
+  text-align: center;
+  margin-left: -1%;
+  width: 100%;
+}
+.paswwordContainerLogin p{
+    color: red;
+  font-size: 4vw;
+  text-align: center;
+  margin-left: -1%;
+  width: 100%;
+}
+.inputContainerSignup p{
+    color: red;
+  font-size: 4vw;
+  text-align: center;
+  margin-left: -1%;
+  width: 100%;
 }
 }
 .closeNback{

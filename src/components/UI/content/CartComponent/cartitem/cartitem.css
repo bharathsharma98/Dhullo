@@ -57,13 +57,8 @@ width: 360px;
 height: 434px;
   
 }
-.leftcart{
  
- 
-}
-.dateContainerCart input{
- margin-left: 11%;
-}
+
 .timeContainerCart {
   margin-top: -4%;
 }
@@ -85,10 +80,14 @@ margin-left: -11%;
 .rightCart input{
 height: 2rem;
 margin-right: auto;
+  margin-left: 01rem;
+}
+.dateContainerCart input{
+ margin-left: 10.5%;
 }
 .rightCart select{
   height: 2rem;
-  margin-left: 1rem;
+  margin-left: 0.8rem;
   width: 10.2rem;
 }
 .cartheading{
@@ -227,7 +226,7 @@ margin: auto;
 
 }
 .timeContainerCart input{
-margin-left: 2.8rem;
+margin-left: 2.9rem;
 }
 .dateContainerCart input{
 margin-left: 3rem;
@@ -281,7 +280,7 @@ margin-left: 0.1rem;
   align-items: center;
   margin: auto;
   margin-bottom:3%;
-  margin-left: 35%;
+ 
 }
 .checkoutbutton button{
  
@@ -324,9 +323,17 @@ height: 25vh;
   
 }
 .cart2{
-  margin-left: 0%;
+  margin-left: -3%;
   
-  width: 97%;
+  width:100%;
+}
+.timeContainerCart input{
+   margin-left: 2.9rem;
+}
+.rightCart select{
+  height: 2rem;
+  margin-left: 0.95rem;
+  width: 10.4rem;
 }
  }
  .cart2 hr{

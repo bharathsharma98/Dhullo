@@ -148,7 +148,8 @@ function CheckoutComponent() {
            : history.push({
                pathname: "/confirmation",
                orders: Confimed.existingOrders,
-               status: "failure",
+             status: "failure",
+            
              });
         // alert(response.razorpay_order_id);
         // alert(response.razorpay_signature);
@@ -168,35 +169,78 @@ function CheckoutComponent() {
   }
   return (
     <div>
-      {
-        cartitems.length > 0 ?
+      {cartitems.length > 0 ? (
         <div className="checkout-container">
-      <div className="checkout-heading">
-        <h1>Order Summary</h1>
-      </div>
-      <div className="orderBoxCheckout">
-        {cartitems.map((item) => (
-          <div key={item.id}>
-            <p> {item.mycar}</p>
-            <p>{item.service}</p>
-            <p>{item.package}</p>
-            <p>{new Date(item.serviceStartDate).toDateString()}</p>
-            {
-              item.time?  <p>{new Date(item.time).toTimeString().toString().substr(0,5)}</p> :null
-            }
-           
-
-            <p style={{ fontSize: "4vh", color: "#419ED4" }}>{item.price}</p>
-            <hr></hr>
+          <div className="checkout-heading">
+            <h1>Order Summary</h1>
           </div>
-        ))}
-      </div>
+          <div className="orderBoxCheckout">
+            {cartitems.map((item) => (
+              <div key={item.id}>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <p id="checkoutTitle">Car</p>
+                  <p>:</p>
+                  <p id="checkoutData">{item.mycar}</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <p id="checkoutTitle">Service</p>
+                  <p>:</p>
+                  <p id="checkoutData">{item.service}</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <p id="checkoutTitle">Package</p>
+                  <p>:</p>
+                  <p id="checkoutData">{item.package}</p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <p id="checkoutTitle">Order date</p>
+                  <p>:</p>
+                  <p id="checkoutData">
+                    {new Date(item.orderDate).toDateString()}
+                  </p>
+                </div>
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <p id="checkoutTitle">Service start date</p>
+                  <p>:</p>
+                  <p id="checkoutData">
+                    {new Date(item.serviceStartDate).toDateString()}
+                  </p>
+                </div>
 
-      <div className="CheckoutTotal">
-        {/* <div className="CheckoutTotalHeading">
+                {item.time ? (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <p id="checkoutTitle">Service Time </p>
+                    <p>:</p>
+                    <p id="checkoutData">
+                      {new Date(item.time)
+                        .toTimeString()
+                        .toString()
+                        .substr(0, 5)}
+                    </p>
+                  </div>
+                ) : null}
+                {item.packageDuration ? (
+                  <div style={{ display: "flex", alignItems: "center" }}>
+                    <p id="checkoutTitle">Service duration</p>
+                    <p>:</p>
+                    <p id="checkoutData">{item.packageDuration}</p>
+                  </div>
+                ) : null}
+
+                <div style={{ display: "flex", alignItems: "center" }}>
+                  <p id="checkoutTitle">Total price</p>
+                  <p>:</p>
+                  <p id="checkoutData">Rs {item.price}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          {/* <div className="CheckoutTotal"> */}
+          {/* <div className="CheckoutTotalHeading">
           <h1>TOTAL PRICE</h1>
         </div> */}
-        {/* <div>
+          {/* <div>
           {cartitems.map((each) => (
             <div key={each.id} className="totalpriceitems">
               <h1>{each.category}</h1>
@@ -206,27 +250,26 @@ function CheckoutComponent() {
             </div>
           ))}
         </div> */}
-        {/* <hr></hr> */}
-        <p id="Total" style={{ color: "black", fontSize: "3vh" }}>
-          Total :
-        </p>
-        <p id="Price" style={{ color: "#43C355", fontSize: "3vh" }}>
-          Rs.
-          {cartitems.reduce(function (tot, arr) {
-            return tot + arr.price;
-          }, 0)}
-          /-
-        </p>
-      </div>
-      <div className="checkoutButonContainer">
-        <button onClick={displayRazorpay}>Checkout</button>
-      </div>
-    </div> :
-          <Servicepage click={clickhandler}/>
-      }
+          {/* <hr></hr> */}
+          {/* <p id="Total" style={{ color: "black", fontSize: "3vh" }}>
+              Total :
+            </p>
+            <p id="Price" style={{ color: "#43C355", fontSize: "3vh" }}>
+              Rs.
+              {cartitems.reduce(function (tot, arr) {
+                return tot + arr.price;
+              }, 0)}
+              /-
+            </p>
+          </div> */}
+          <div className="checkoutButonContainer">
+            <button onClick={displayRazorpay}>CHECKOUT</button>
+          </div>
+        </div>
+      ) : (
+        <Servicepage click={clickhandler} />
+      )}
     </div>
-
-    
   );
 }
 export default CheckoutComponent;

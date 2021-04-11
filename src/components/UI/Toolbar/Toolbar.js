@@ -68,7 +68,7 @@ export default function Toolbar(props) {
                   {cartItems.length}
                 </small>
               ) : null}
-              <img style={{ position:'relative',top:'-0.6rem',left:'-1.1rem'}} className="cart-contain" src={cart} alt="" />
+              <img style={{ position:'relative',top:'-0.5rem',left:'-1.1rem',width:'13vw'}} className="cart-contain" src={cart} alt="" />
             </Link>
           </div>
 

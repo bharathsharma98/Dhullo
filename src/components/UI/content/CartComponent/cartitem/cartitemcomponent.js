@@ -4,7 +4,7 @@ import "../cartitem/cartitem.css";
 import DatePicker from "react-datepicker";
 import washing from "../../../../../Image/servicewashing.png";
 import { confirmAlert } from "react-confirm-alert"; // Import
-
+import {getDay} from 'date-fns'
 import emptycart from "../../../../../Image/emptycart.png";
 import {
   RemoveFromCart,
@@ -37,13 +37,15 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
       {cart.length === 0 ? (
         <div
           style={{
-            display: 'flex', flexDirection: 'column', justifyContent: 'center',
-            alignItems:'center',
-            height: "100vh"
+            display: "flex",
+            flexDirection: "column",
+            justifyContent: "center",
+            alignItems: "center",
+            height: "100vh",
           }}
           className="emptycart"
         >
-          <img src={emptycart} alt="emptycart" style={{height:'35vh'}}/>
+          <img src={emptycart} alt="emptycart" style={{ height: "35vh" }} />
           <h1>Cart Is Empty</h1>
         </div>
       ) : (
@@ -90,6 +92,7 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                     <div className="dateContainerCart">
                       <label>Date</label>
                       <DatePicker
+                        filterDate={(date) => getDay(date) !== 1}
                         selected={Date.parse(
                           item.serviceStartDate
                             ? item.serviceStartDate
@@ -117,6 +120,7 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                         <DatePicker
                           selected={Date.parse(item.time)}
                           showTimeSelect
+                          filterDate={(date) => getDay(date) !== 1}
                           timeIntervals={60}
                           onChange={(cartime) =>
                             dispatch(

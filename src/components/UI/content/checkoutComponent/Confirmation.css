@@ -12,7 +12,7 @@
    align-items: center;
 }
 .failureContainer{
- background-color: red;
+ 
   height: 100vh;
 }
 .imagecontainerConfirm{
@@ -71,7 +71,13 @@ text-decoration: none;
    justify-content: center;
    align-items: center;
      
-}    
+}
+.failureContainer{
+       display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: bottom;
+}   
     .imagecontainerConfirm{
     display: flex;
     flex-direction: row;
