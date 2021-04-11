@@ -11,56 +11,7 @@ const MyOrders = (props) => {
       !width.matches ? props.click() : (document.body.scrollTop = 0);
     }, []);
   
-  const events = [
-    {
-      id: 0,
- 
-      start: moment({ days: 13 }).toDate(),
-      end: moment({ days: 13 }).toDate(),
-    },
-    {
-      id: 1,
-    
-      start: moment({ days: 12 }).toDate(),
-      end: moment({ days: 12 }).toDate(),
-    },
-    {
-      id: 1,
-    
-      start: moment({ days: 14 }).toDate(),
-      end: moment({ days: 14 }).toDate(),
-    },
-    {
-      id: 1,
-    
-      start: moment({ days: 15 }).toDate(),
-      end: moment({ days: 15 }).toDate(),
-    },
-    {
-      id: 1,
-    
-      start: moment({ days: 16 }).toDate(),
-      end: moment({ days: 16 }).toDate(),
-    },
-    {
-      id: 1,
-    
-      start: moment({ days: 17 }).toDate(),
-      end: moment({ days: 17 }).toDate(),
-    },
-    {
-      id: 1,
-    
-      start: moment({ days: 18 }).toDate(),
-      end: moment({ days: 18 }).toDate(),
-    },
-    {
-      id: 2,
- 
-      start: moment({ hours: 19 }).toDate(),
-      end: moment({ hours: 19 }).toDate(),
-    },
-  ];
+   
   const user = useSelector((state) => state.user.customer);
   return (
     <div className="myOrderMainContainer">
@@ -81,7 +32,7 @@ const MyOrders = (props) => {
                               package={oneOrder.package}
                               duration={oneOrder.duration}
                               startDate={oneOrder.startDate}
-                              events={events}
+                              events={oneOrder.dailySchedules}
                             />
                           </div>
 

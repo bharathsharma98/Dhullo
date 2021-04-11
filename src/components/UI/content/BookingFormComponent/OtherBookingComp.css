@@ -5,7 +5,7 @@
     justify-content: center;
 }
 .disabled{
-border:2px solid grey;
+border:1px solid grey;
 opacity: 60%;
 background-color: gray;
 }
@@ -34,6 +34,10 @@ background-color: gray;
      height: 10rem;
        
  }
+ .disabledCheckBox{
+  
+     border: 1px solid red;
+ }
  @media(max-width:769px){
       .carbox-container{
      display: flex;
@@ -47,6 +51,7 @@ background-color: gray;
  .bookingform{
      display: flex;
      flex-direction: column;
+     margin-bottom: 4%;
  }
  .bookingform-left{
       
@@ -63,12 +68,7 @@ background-color: gray;
   justify-content: center;
   align-items: center;
  }
- .buttonrow{
-   display: flex;
-    
-   justify-content: center;
-   align-items: center;
- }
+ 
  }
   .carbox-container_null{
       height: auto;
@@ -146,12 +146,18 @@ margin-left: 0%;
   }
   .buttonrow  {
  
-      width: 47vw;
+      width: 50vw;
       display:flex;
 justify-content: center;
 align-items: center;
  margin-bottom: -30%;
   }
+.buttonrow button{
+    width: 35vw;
+position: relative;
+margin-left: -25%;
+font-size: 3.5vw;
+    }
  
  .carbox-container{
   

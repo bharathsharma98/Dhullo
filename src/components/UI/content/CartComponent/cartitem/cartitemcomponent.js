@@ -102,6 +102,11 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                           dispatch(
                             UpdateFromCart({
                               id: item.id,
+                              carId: item.carId,
+                              orderDate: item.orderDate,
+                              houseName: item.houseName,
+                              streetName: item.streetName,
+                              pincode: item.pincode,
                               serviceStartDate: cardate,
                               mycar: item.mycar,
                               price: item.price,
@@ -109,7 +114,7 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                               time: item.time,
                               service: item.service,
                               package: item.package,
-                              packageDuration:item.packageDuration,
+                              packageDuration: item.packageDuration,
                               categoryprice: item.categoryprice,
                             })
                           )
@@ -129,6 +134,11 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                               dispatch(
                                 UpdateFromCart({
                                   id: item.id,
+                                  carId: item.carId,
+                                  orderDate: item.orderDate,
+                                  houseName: item.houseName,
+                                  streetName: item.streetName,
+                                  pincode: item.pincode,
                                   serviceStartDate: item.serviceStartDate,
                                   mycar: item.mycar,
                                   price: item.price,
@@ -136,7 +146,8 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                                   time: cartime,
                                   service: item.service,
                                   package: item.package,
-                                  packageDuration:item.packageDuration,
+
+                                  packageDuration: item.packageDuration,
                                   categoryprice: item.categoryprice,
                                 })
                               )
@@ -157,6 +168,11 @@ var sumTotal = totalPriceArray.reduce((a, b) => a + b, 0);
                             dispatch(
                               UpdateFromCart({
                                 id: item.id,
+                                carId: item.carId,
+                                orderDate: item.orderDate,
+                                houseName: item.houseName,
+                                streetName: item.streetName,
+                                pincode: item.pincode,
                                 serviceStartDate: item.serviceStartDate,
                                 mycar: item.mycar,
                                 price: item.price,

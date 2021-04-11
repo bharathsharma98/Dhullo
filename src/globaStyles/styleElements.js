@@ -52,11 +52,20 @@ margin-right:1rem;
 `;
 
 export const CarBox = Styled.div`
-
+ ${(props) =>
+   props.selected > 1 &&
+ ( (props.service === "ONE TIME") ||
+   (props.service === "SANITIZATION")||
+   (props.service === "INTERIOR")||
+   (props.service === "EXTERIOR"))&&
+   css`
+     background-color: lightgray;
+   `}}
  @media (max-width: 768px) {
  margin-left:-30%;
     min-width: 50vw;
-    min-height: 10vh;
+    min-height: 12vh;
+     
   }
  position:relative;
   min-width: 15vw;
@@ -129,7 +138,7 @@ font-size:small;
     position:absolute;
      font-size:large;
      left:23%;
-     margin-top:2rem;
+   
      top:44%;
      font-family: 'Josefin Sans', sans-serif;
  }

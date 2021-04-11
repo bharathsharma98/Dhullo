@@ -185,7 +185,9 @@ function CheckoutComponent() {
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <p id="checkoutTitle">Address</p>
                   <p>:</p>
-                  <p id="checkoutData">{item.houseName}, {item.streetName},{ item.pincode}</p>
+                  <p id="checkoutData">
+                    {item.houseName}, {item.streetName},{item.pincode}
+                  </p>
                 </div>
                 <div style={{ display: "flex", alignItems: "center" }}>
                   <p id="checkoutTitle">Service</p>
@@ -224,7 +226,7 @@ function CheckoutComponent() {
                     </p>
                   </div>
                 ) : null}
-                {item.packageDuration ? (
+                {item.packageDuration && item.packageDuration !== "ONE TIME" ? (
                   <div style={{ display: "flex", alignItems: "center" }}>
                     <p id="checkoutTitle">Service duration</p>
                     <p>:</p>

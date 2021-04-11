@@ -33,8 +33,11 @@ export const Confirmationpage = (props) => {
         }
       ).then((response) => response.json());
       console.log(Confimed);
-  
-    await dispatch(addOrder(Confimed.order));
+  const orderWithDailySchules = await fetch(
+    `http://localhost:5000/api/orders/dailyStatus/${Confimed.order.id}`
+    ).then((response) => response.json()).then((result)=>dispatch(addOrder(result.order)));
+ 
+ 
       await setLoading(false);
  
   }

@@ -165,13 +165,14 @@ const BookingForm = (props) => {
             }
           >
             {user.cars.map((onecar) => (
-              <CarBox key={onecar.id} selected={item.mycars.length}>
+              <CarBox key={onecar.id} selected={item.mycars.length} service={props.category}>
                 <div className="checkBox">
                   <input
                     type="checkbox"
                     name={onecar.details}
                     value={onecar.details}
                     onChange={handleChange}
+                   
                   />
                 </div>
 
@@ -218,7 +219,16 @@ const BookingForm = (props) => {
             Login
           </Link>
         )}
-
+        {
+          props.category === 'INTERIOR' ?
+            <div>
+              <input type="checkbox"></input>
+              <label>Interior</label>
+              <input type="checkbox"></input>
+              <label>Exterior</label>
+            </div>
+            :null
+ }
         <div className="priceRowService">
           {isSignedIn ? (
             <div style={{ display: "flex", alignItems: "center" }}>
@@ -241,27 +251,25 @@ const BookingForm = (props) => {
           selected={item.cardate || new Date()}
           onChange={(cardate) => {
             var serviceDays = [];
-            if (props.category === 'SILVER') {
-               if (
-                 getDay(cardate) === 0 ||
-                 getDay(cardate) === 3 ||
-                 getDay(cardate) === 5
-               ) {
-                 serviceDays = [0, 3, 5];
-               } else {
-                 serviceDays = [2, 4, 6];
-               }
-            }
-            else {
+            if (props.category === "SILVER") {
+              if (
+                getDay(cardate) === 0 ||
+                getDay(cardate) === 3 ||
+                getDay(cardate) === 5
+              ) {
+                serviceDays = [0, 3, 5];
+              } else {
+                serviceDays = [2, 4, 6];
+              }
+            } else {
               serviceDays = [0, 2, 3, 4, 5, 6];
             }
-           
-              setItem({ ...item, cardate, serviceDays: serviceDays });
+
+            setItem({ ...item, cardate, serviceDays: serviceDays });
           }}
           minDate={addDays(new Date(), 1)}
         />
-        {
-          props.category === "SANITIZATION" ||
+        {props.category === "SANITIZATION" ||
         props.category === "EXTERIOR" ||
         props.category === "INTERIOR" ||
         props.category === "ONE TIME" ? (
@@ -296,9 +304,8 @@ const BookingForm = (props) => {
           </div>
         ) : (
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label  style={{marginBottom:'1rem'}}>Select Duration</label>
+            <label style={{ marginBottom: "1rem" }}>Select Duration</label>
             <select
-              
               name="duration"
               onChange={handleChange}
               className={item.mycars.length === 0 ? "disabled" : "enabled"}
