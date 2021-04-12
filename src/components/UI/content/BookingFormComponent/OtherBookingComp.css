@@ -38,7 +38,53 @@ background-color: gray;
   
      border: 1px solid red;
  }
+ .surfaceContainer{
+ 
+     display: flex;
+     flex-direction: row;
+     flex-wrap:wrap ;
+ }
+ .surfaceContainer p{
+     margin-left: -1%;
+     right: 0%;
+     position: relative;
+ }
+ .surfaceContainer input{
+     margin-left:2%;
+     height:20px;
+     width:20px;
+    cursor:pointer;
+    margin-right: 0%;
+ 
+ 
+ }
  @media(max-width:769px){
+
+    .surfaceContainer{
+ 
+      
+  position: relative;
+     left: 0%;
+     display: flex;
+     flex-direction: row;
+     flex-wrap:wrap ;
+ }
+ .surfaceContainer p{
+  position: absolute;
+     margin-left: 30%;
+     position: relative;
+ }
+ .surfaceContainer input{
+     position: absolute;
+     left: -45%;
+     margin-left:-100%;
+     height:20px;
+     width:20px;
+    cursor:pointer;
+    
+ 
+ 
+ }
       .carbox-container{
      display: flex;
      flex-direction: column;

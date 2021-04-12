@@ -33,6 +33,7 @@ const BookingForm = (props) => {
   const [itemId] = useId();
 
   let tempcars = [];
+  let tempPackage = [];
   let duration = ["MONTHLY", "QUARTERLY", "HALFYEARLY", "YEARLY"];
   const dispatch = useDispatch();
 
@@ -42,11 +43,37 @@ const BookingForm = (props) => {
     id: itemId,
     mytime: "",
     mycars: [],
-
+    package:[],
+surfaces :['INTERIOR','EXTERIOR'],
     cardate: "",
   });
   var sumTotal = 0;
   const [sumtotal, setSumTotal] = useState({ Total :0});
+  const [packageArray, setPackageArray] = useState({
+  package:[]
+})
+  const handleSurafe = (e) => {
+
+
+    const { name, checked, value, type } = e.target;
+     if (type === "checkbox") {
+       if (checked === true) {
+         tempPackage = item.package.concat(value);
+         setItem({ ...item, package: tempPackage });
+       } else {
+         setItem({
+           ...item,
+           package: item.package.filter(function (val) {
+             return val !== value;
+           }),
+         });
+       }
+     } else setItem({ ...item, [name]: value });
+   
+    console.log(item)
+  
+}
+
   const handleChange = (e) => {
  
   
@@ -100,6 +127,16 @@ const BookingForm = (props) => {
     );
     return car[0].pincode
   };
+
+  const packageDecider = (packages) => {
+    if (packages.length > 1)
+    {
+      return "FULL"
+    }
+    else {
+      return packages[0]
+    }
+  }
   for (let i = 0; i < item.mycars.length; i++) {
     finaltempcars[i].id =  Math.floor(Math.random() * 100); 
     finaltempcars[i].customerId = user.id;
@@ -133,7 +170,7 @@ const BookingForm = (props) => {
     }
     else if ((props.category === "INTERIOR")) {
       finaltempcars[i].service = 'DETAILING';
-      finaltempcars[i].package = props.category;
+      finaltempcars[i].package = packageDecider(item.package);
     }
     else if ((props.category === "EXTERIOR")) {
       finaltempcars[i].service = 'DETAILING';
@@ -165,14 +202,17 @@ const BookingForm = (props) => {
             }
           >
             {user.cars.map((onecar) => (
-              <CarBox key={onecar.id} selected={item.mycars.length} service={props.category}>
+              <CarBox
+                key={onecar.id}
+                selected={item.mycars.length}
+                service={props.category}
+              >
                 <div className="checkBox">
                   <input
                     type="checkbox"
                     name={onecar.details}
                     value={onecar.details}
                     onChange={handleChange}
-                   
                   />
                 </div>
 
@@ -214,21 +254,26 @@ const BookingForm = (props) => {
           <Link
             style={{ marginBottom: "1rem  " }}
             to={width.matches ? "#" : "/signin"}
-            onClick={width.matches ?() => dispatch(loginOpen()):null}
+            onClick={width.matches ? () => dispatch(loginOpen()) : null}
           >
             Login
           </Link>
         )}
-        {
-          props.category === 'INTERIOR' ?
-            <div>
-              <input type="checkbox"></input>
-              <label>Interior</label>
-              <input type="checkbox"></input>
-              <label>Exterior</label>
-            </div>
-            :null
- }
+        {props.category === "INTERIOR" ? (
+          <div className="surfaceContainer">
+            {item.surfaces.map((surface) => (
+              <div className="checkBox" style={{ display: 'flex', justifyContent: 'center', margin:'1rem'   }}>
+                <input
+                  type="checkbox"
+                  name="package"
+                  value={surface}
+                  onChange={handleSurafe}
+                />
+                <p>{surface}</p>
+              </div>
+            ))}
+          </div>
+        ) : null}
         <div className="priceRowService">
           {isSignedIn ? (
             <div style={{ display: "flex", alignItems: "center" }}>
