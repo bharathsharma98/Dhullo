@@ -262,7 +262,7 @@ surfaces :['INTERIOR','EXTERIOR'],
         {props.category === "INTERIOR" ? (
           <div className="surfaceContainer">
             {item.surfaces.map((surface) => (
-              <div className="checkBox" style={{ display: 'flex', justifyContent: 'center', margin:'1rem'   }}>
+              <div className="checkBoxSurface" style={{ display: 'flex', justifyContent: 'center', margin:'1rem'   }}>
                 <input
                   type="checkbox"
                   name="package"
