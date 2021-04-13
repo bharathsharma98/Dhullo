@@ -259,7 +259,7 @@ surfaces :['INTERIOR','EXTERIOR'],
             Login
           </Link>
         )}
-        {props.category === "INTERIOR" ? (
+        {props.category === "INTERIOR" || props.category === "EXTERIOR" && isSignedIn? (
           <div className="surfaceContainer">
             {item.surfaces.map((surface) => (
               <div
