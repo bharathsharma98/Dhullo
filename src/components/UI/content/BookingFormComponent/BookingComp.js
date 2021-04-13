@@ -188,7 +188,7 @@ surfaces :['INTERIOR','EXTERIOR'],
   
   }
   
-  console.log(finaltempcars);
+ 
   return (
     <div className="bookingform">
       <div className="bookingform-left">
@@ -262,7 +262,14 @@ surfaces :['INTERIOR','EXTERIOR'],
         {props.category === "INTERIOR" ? (
           <div className="surfaceContainer">
             {item.surfaces.map((surface) => (
-              <div className="checkBoxSurface" style={{ display: 'flex', justifyContent: 'center', margin:'1rem'   }}>
+              <div
+                className="checkBoxSurface"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  margin: "1rem",
+                }}
+              >
                 <input
                   type="checkbox"
                   name="package"
@@ -273,6 +280,15 @@ surfaces :['INTERIOR','EXTERIOR'],
               </div>
             ))}
           </div>
+        ) : null}
+        {item.mycars.length > 1 &&
+        (props.category === "ONE TIME" ||
+          props.category === "SANITIZATION" ||
+          props.category === "INTERIOR" ||
+          props.category === "EXTERIOR") ? (
+          <label style={{ color: "red", marginBottom: "1rem" }}>
+            Please select only one Car
+          </label>
         ) : null}
         <div className="priceRowService">
           {isSignedIn ? (
@@ -365,7 +381,9 @@ surfaces :['INTERIOR','EXTERIOR'],
         )}
         <div className="buttonrow" style={{ marginTop: "2rem" }}>
           <button
-            disabled={item.mycars.length === 0 ? true : false}
+            disabled={
+              item.mycars.length === 0 && item.mycars.length > 1 ? true : false
+            }
             className={item.mycars.length === 0 ? "disabled" : "enabled"}
             onClick={() => {
               item.mycars.length === 0
