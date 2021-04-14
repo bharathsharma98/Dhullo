@@ -34,9 +34,15 @@ export const updateWithOrder = (prevCustomer, newOrder) => {
  
   for (let i = 0; i < prevCustomer.cars.length; i++) {
     
-      if (prevCustomer.cars[i].id === newOrder.carId) {
+    if (prevCustomer.cars[i].id === newOrder.carId) {
+      if (prevCustomer.cars[i].orders !== undefined) {
         prevCustomer.cars[i].orders.push(newOrder);
       }
+      else {
+         alert("orders is not existing") 
+      }
+        }
+      
 
   }
 

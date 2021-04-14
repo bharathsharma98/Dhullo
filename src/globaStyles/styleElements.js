@@ -59,8 +59,8 @@ export const CarBox = Styled.div`
    (props.service === "INTERIOR")||
    (props.service === "EXTERIOR"))&&
    css`
-     background-color: lightgray;
-     opacity:70%;
+     
+    
    `}}
  @media (max-width: 768px) {
  margin-left:-30%;

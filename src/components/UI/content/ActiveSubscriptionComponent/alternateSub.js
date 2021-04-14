@@ -32,7 +32,70 @@ const Alternatesub = (props) => {
     //       value < endDate && value > props.startDate ? "true" : "none",
     //   },
     // });
+const CustomToolbar = (toolbar) => {
+  const goToBack = () => {
+    toolbar.date.setMonth(toolbar.date.getMonth() - 1);
+    toolbar.onNavigate("prev");
+  };
 
+  const goToNext = () => {
+    toolbar.date.setMonth(toolbar.date.getMonth() + 1);
+    toolbar.onNavigate("next");
+  };
+
+  const goToCurrent = () => {
+    const now = new Date();
+    toolbar.date.setMonth(now.getMonth());
+    toolbar.date.setYear(now.getFullYear());
+    toolbar.onNavigate("current");
+  };
+
+  const label = () => {
+    const date = moment(toolbar.date);
+    return (
+      <span>
+        <b>{date.format("MMMM")}</b>
+        <span> {date.format("YYYY")}</span>
+      </span>
+    );
+  };
+
+  return (
+    <div>
+      <label>{label()}</label>
+
+      <div
+        style={{
+          position: "relative",
+          top: "-3rem",
+          display: "flex",
+          justifyContent: "center",
+          background: "#D6CECE",
+        }}
+        className="rbc-btn-group"
+      >
+        <button
+          style={{ background: "#D6CECE", color: "#03588C" }}
+          onClick={goToBack}
+        >
+          &#8249;
+        </button>
+        <button
+          style={{ background: "#D6CECE", color: "#03588C" }}
+          onClick={goToCurrent}
+        >
+          Today
+        </button>
+        <button
+          style={{ background: "#D6CECE", color: "#03588C" }}
+          onClick={goToNext}
+        >
+          &#8250;
+        </button>
+      </div>
+    </div>
+  );
+};
   const localizer = momentLocalizer(moment);
   return (
     <div>
@@ -67,6 +130,9 @@ const Alternatesub = (props) => {
         // components={{
         //   dateCellWrapper: ColoredDateCellWrapper,
         // }}
+        components={{
+          toolbar: CustomToolbar,
+        }}
       />
     </div>
   );

@@ -38,7 +38,11 @@ const BookingForm = (props) => {
   const dispatch = useDispatch();
 
   const user = useSelector((state) => state.user.customer);
-
+const [disables, setDisabled] = useState({
+  id: "",
+  state: true,
+});
+  console.log(disables)
   const [item, setItem] = useState({
     id: itemId,
     mytime: "",
@@ -83,13 +87,16 @@ surfaces :['INTERIOR','EXTERIOR'],
       if (checked === true) {
         tempcars = item.mycars.concat(value);
         setItem({ ...item, mycars: tempcars });
+        setDisabled({...disables,id:value,state:true})
       } else {
         setItem({
           ...item,
           mycars: item.mycars.filter(function (val) {
             return val !== value;
           }),
+          
         });
+        setDisabled({...disables,id:'',state:false})
       }
     } else setItem({ ...item, [name]: value });
   };
@@ -187,223 +194,254 @@ surfaces :['INTERIOR','EXTERIOR'],
       finaltempcars[i].serviceprice + finaltempcars[i].categoryprice;
   
   }
-  
  
-  return (
-    <div className="bookingform">
-      <div className="bookingform-left">
-        <h2>{props.category}</h2>
-        {user.cars !== undefined ? (
-          <div
-            className={
-              user.cars.length !== 0
-                ? "carbox-container"
-                : "carbox-container_null"
-            }
-          >
-            {user.cars.map((onecar) => (
-              <CarBox
-                key={onecar.id}
-                selected={item.mycars.length}
-                service={props.category}
-              >
-                <div className="checkBox">
-                  <input
-                    type="checkbox"
-                    name={onecar.details}
-                    value={onecar.details}
-                    onChange={handleChange}
-                  />
-                </div>
+   
+    
+  
 
-                <div>
-                  <p>{onecar.details}</p>
-                  <h2>{onecar.houseName}</h2>
-                  {/* <h3>{onecar.streetName}</h3> */}
-                  <h4>{onecar.pincode}</h4>
-                </div>
-                <div>
-                  <Link
-                    to={{
-                      pathname: "/addcar",
-                      state: onecar,
-                    }}
-                  >
-                    <img src={edit}></img>
-                  </Link>
-                </div>
-              </CarBox>
-            ))}
-            <div className="addNewCarButtonContainer">
-              {isSignedIn ? (
-                <div className="addnewCarButton">
-                  <Link
-                    to={{
-                      pathname: "/addcar",
-                      click: props.click,
-                    }}
-                  >
-                    <img src={plus}></img>
-                  </Link>
-                </div>
-              ) : null}
-              <strong>Add Car</strong>
-            </div>
-          </div>
-        ) : (
-          <Link
-            style={{ marginBottom: "1rem  " }}
-            to={width.matches ? "#" : "/signin"}
-            onClick={width.matches ? () => dispatch(loginOpen()) : null}
-          >
-            Login
-          </Link>
-        )}
-        {props.category === "INTERIOR" || props.category === "EXTERIOR" && isSignedIn? (
-          <div className="surfaceContainer">
-            {item.surfaces.map((surface) => (
-              <div
-                className="checkBoxSurface"
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  margin: "1rem",
-                }}
-              >
-                <input
-                  type="checkbox"
-                  name="package"
-                  value={surface}
-                  onChange={handleSurafe}
-                />
-                <p>{surface}</p>
-              </div>
-            ))}
-          </div>
-        ) : null}
-        {item.mycars.length > 1 &&
-        (props.category === "ONE TIME" ||
-          props.category === "SANITIZATION" ||
-          props.category === "INTERIOR" ||
-          props.category === "EXTERIOR") ? (
-          <label style={{ color: "red", marginBottom: "1rem" }}>
-            Please select only one Car
-          </label>
-        ) : null}
-        <div className="priceRowService">
-          {isSignedIn ? (
-            <div style={{ display: "flex", alignItems: "center" }}>
-              <p>Price : </p>
-              <p style={{ letterSpacing: "2px" }}>
-                Rs
-                {finaltempcars.reduce(function (tot, arr) {
-                  return tot + arr.price;
-                }, 0)}
-              </p>
-            </div>
-          ) : null}
-        </div>
+ 
 
-        <label style={{ marginBottom: "-0.8rem" }}>Select Date</label>
-        <DatePicker
-          filterDate={(date) => getDay(date) !== 1}
-          disabled={item.mycars.length === 0 ? true : false}
-          className={item.mycars.length === 0 ? "disabled" : "enabled"}
-          selected={item.cardate || new Date()}
-          onChange={(cardate) => {
-            var serviceDays = [];
-            if (props.category === "SILVER") {
-              if (
-                getDay(cardate) === 0 ||
-                getDay(cardate) === 3 ||
-                getDay(cardate) === 5
-              ) {
-                serviceDays = [0, 3, 5];
-              } else {
-                serviceDays = [2, 4, 6];
-              }
-            } else {
-              serviceDays = [0, 2, 3, 4, 5, 6];
-            }
+   
+  
 
-            setItem({ ...item, cardate, serviceDays: serviceDays });
-          }}
-          minDate={addDays(new Date(), 1)}
-        />
-        {props.category === "SANITIZATION" ||
-        props.category === "EXTERIOR" ||
-        props.category === "INTERIOR" ||
-        props.category === "ONE TIME" ? (
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <label style={{ marginBottom: "-0.8rem" }}>Select Time</label>
-            <DatePicker
-              filterDate={(date) => getDay(date) !== 1}
-              disabled={item.mycars.length === 0 ? true : false}
-              className={item.mycars.length === 0 ? "disabled" : "enabled"}
-              selected={item.mytime || new Date()}
-              onChange={(mytime) => {
-                console.log(mytime);
-                var hours = getHours(mytime);
-                var mins = getMinutes(mytime);
-                console.log(hours, mins);
-                console.log(item.serviceStartDate);
-                var hoursDate = setHours(item.cardate, hours);
-                var MinutesDate = setMinutes(hoursDate, mins);
-                console.log(MinutesDate);
-                setItem({
-                  ...item,
-                  mytime: MinutesDate,
-                });
-                console.log(item);
-              }}
-              showTimeSelect
-              showTimeSelectOnly
-              timeIntervals={60}
-              timeCaption="Time"
-              dateFormat="h:mm aa"
-            />
-          </div>
-        ) : (
-          <div style={{ display: "flex", flexDirection: "column" }}>
-            <label style={{ marginBottom: "1rem" }}>Select Duration</label>
-            <select
-              name="duration"
-              onChange={handleChange}
-              className={item.mycars.length === 0 ? "disabled" : "enabled"}
-            >
-              {duration.map((oneduration) => (
-                <option value={oneduration} key={oneduration}>
-                  {oneduration}
-                </option>
-              ))}
-            </select>
-          </div>
-        )}
-        <div className="buttonrow" style={{ marginTop: "2rem" }}>
-          <button
-            disabled={
-              item.mycars.length === 0 && item.mycars.length > 1 ? true : false
-            }
-            className={item.mycars.length === 0 ? "disabled" : "enabled"}
-            onClick={() => {
-              item.mycars.length === 0
-                ? alert("NO CAR HAS BEEN ADDED")
-                : finaltempcars.map((onecar) => {
-                    dispatch(AddToCart(onecar));
 
-                    alert(onecar.service + " Added to " + onecar.mycar);
-                    console.log(onecar);
-                    props.togglePress(onecar.package || onecar.service);
-                  });
-            }}
-          >
-            ADD TO CART
-          </button>
-        </div>
-      </div>
+     return (
+       <div className="bookingform">
+         <div className="bookingform-left">
+           <h2>{props.category}</h2>
+           {user.cars !== undefined ? (
+             <div
+               className={
+                 user.cars.length !== 0
+                   ? "carbox-container"
+                   : "carbox-container_null"
+               }
+             >
+               {user.cars.map((onecar) => (
+                 <CarBox
+                   key={onecar.id}
+                   selected={item.mycars.length}
+                   service={props.category}
+                   disabled={
+                     onecar.details === disables.id &&
+                     (props.category === "ONE TIME" ||
+                       props.category === "SANITIZATION" ||
+                       props.category === "INTERIOR" ||
+                       props.category === "EXTERIOR")
+                       ? true
+                       : false
+                   }
+                   
+                 >
+                   <div className="checkBox">
+                     <input
+                       disabled={
+                         onecar.details === disables.id &&
+                         (props.category === "ONE TIME" ||
+                           props.category === "SANITIZATION" ||
+                           props.category === "INTERIOR" ||
+                           props.category === "EXTERIOR")
+                           ? true
+                           : false
+                       }
+                       type="checkbox"
+                       name={onecar.details}
+                       value={onecar.details}
+                       onChange={handleChange}
+                     />
+                   </div>
 
-      <div className="bookingform-right"></div>
-    </div>
-  );
-};
+                   <div>
+                     <p>{onecar.details}</p>
+                     <h2>{onecar.houseName}</h2>
+                     {/* <h3>{onecar.streetName}</h3> */}
+                     <h4>{onecar.pincode}</h4>
+                   </div>
+                   <div>
+                     <Link
+                       to={{
+                         pathname: "/addcar",
+                         state: onecar,
+                       }}
+                     >
+                       <img src={edit}></img>
+                     </Link>
+                   </div>
+                 </CarBox>
+               ))}
+               <div className="addNewCarButtonContainer">
+                 {isSignedIn ? (
+                   <div className="addnewCarButton">
+                     <Link
+                       to={{
+                         pathname: "/addcar",
+                         click: props.click,
+                       }}
+                     >
+                       <img src={plus}></img>
+                     </Link>
+                   </div>
+                 ) : null}
+                 <strong>Add Car</strong>
+               </div>
+             </div>
+           ) : (
+             <Link
+               style={{ marginBottom: "1rem  " }}
+               to={width.matches ? "#" : "/signin"}
+               onClick={width.matches ? () => dispatch(loginOpen()) : null}
+             >
+               Login
+             </Link>
+           )}
+           {props.category === "INTERIOR" ||
+           (props.category === "EXTERIOR" && isSignedIn) ? (
+             <div className="surfaceContainer">
+               {item.surfaces.map((surface) => (
+                 <div
+                   className="checkBoxSurface"
+                   style={{
+                     display: "flex",
+                     justifyContent: "center",
+                     margin: "1rem",
+                   }}
+                 >
+                   <input
+                     type="checkbox"
+                     name="package"
+                     value={surface}
+                     onChange={handleSurafe}
+                   />
+                   <p>{surface}</p>
+                 </div>
+               ))}
+             </div>
+           ) : null}
+           {item.mycars.length > 1 &&
+           (props.category === "ONE TIME" ||
+             props.category === "SANITIZATION" ||
+             props.category === "INTERIOR" ||
+             props.category === "EXTERIOR") ? (
+             <label style={{ color: "red", marginBottom: "1rem" }}>
+               Please select only one Car
+             </label>
+           ) : null}
+           <div className="priceRowService">
+             {isSignedIn ? (
+               <div style={{ display: "flex", alignItems: "center" }}>
+                 <p>Price : </p>
+                 <p style={{ letterSpacing: "2px" }}>
+                   Rs
+                   {finaltempcars.reduce(function (tot, arr) {
+                     return tot + arr.price;
+                   }, 0)}
+                 </p>
+               </div>
+             ) : null}
+           </div>
+
+           <label style={{ marginBottom: "-0.8rem" }}>Select Date</label>
+           <DatePicker
+             filterDate={(date) => getDay(date) !== 1}
+             disabled={item.mycars.length === 0 ? true : false}
+             className={item.mycars.length === 0 ? "disabled" : "enabled"}
+             selected={item.cardate || new Date()}
+             onChange={(cardate) => {
+               var serviceDays = [];
+               if (props.category === "SILVER") {
+                 if (
+                   getDay(cardate) === 0 ||
+                   getDay(cardate) === 3 ||
+                   getDay(cardate) === 5
+                 ) {
+                   serviceDays = [0, 3, 5];
+                 } else {
+                   serviceDays = [2, 4, 6];
+                 }
+               } else {
+                 serviceDays = [0, 2, 3, 4, 5, 6];
+               }
+
+               setItem({ ...item, cardate, serviceDays: serviceDays });
+             }}
+             minDate={addDays(new Date(), 1)}
+           />
+           {props.category === "SANITIZATION" ||
+           props.category === "EXTERIOR" ||
+           props.category === "INTERIOR" ||
+           props.category === "ONE TIME" ? (
+             <div style={{ display: "flex", flexDirection: "column" }}>
+               <label style={{ marginBottom: "-0.8rem" }}>Select Time</label>
+               <DatePicker
+                 filterDate={(date) => getDay(date) !== 1}
+                 disabled={item.mycars.length === 0 ? true : false}
+                 className={item.mycars.length === 0 ? "disabled" : "enabled"}
+                 selected={item.mytime || new Date()}
+                 onChange={(mytime) => {
+                   console.log(mytime);
+                   var hours = getHours(mytime);
+                   var mins = getMinutes(mytime);
+                   console.log(hours, mins);
+                   console.log(item.serviceStartDate);
+                   var hoursDate = setHours(item.cardate, hours);
+                   var MinutesDate = setMinutes(hoursDate, mins);
+                   console.log(MinutesDate);
+                   setItem({
+                     ...item,
+                     mytime: MinutesDate,
+                   });
+                   console.log(item);
+                 }}
+                 showTimeSelect
+                 showTimeSelectOnly
+                 timeIntervals={60}
+                 timeCaption="Time"
+                 dateFormat="h:mm aa"
+               />
+             </div>
+           ) : (
+             <div style={{ display: "flex", flexDirection: "column" }}>
+               <label style={{ marginBottom: "1rem" }}>Select Duration</label>
+               <select
+                 name="duration"
+                 onChange={handleChange}
+                 className={item.mycars.length === 0 ? "disabled" : "enabled"}
+               >
+                 {duration.map((oneduration) => (
+                   <option value={oneduration} key={oneduration}>
+                     {oneduration}
+                   </option>
+                 ))}
+               </select>
+             </div>
+           )}
+           <div className="buttonrow" style={{ marginTop: "2rem" }}>
+             <button
+               disabled={
+                 item.mycars.length === 0 && item.mycars.length > 1
+                   ? true
+                   : false
+               }
+               className={item.mycars.length === 0 ? "disabled" : "enabled"}
+               onClick={() => {
+                 item.mycars.length === 0
+                   ? alert("NO CAR HAS BEEN ADDED")
+                   : finaltempcars.map((onecar) => {
+                       dispatch(AddToCart(onecar));
+
+                       alert(onecar.service + " Added to " + onecar.mycar);
+                       console.log(onecar);
+                       props.togglePress(onecar.package || onecar.service);
+                     });
+               }}
+             >
+               ADD TO CART
+             </button>
+           </div>
+         </div>
+
+         <div className="bookingform-right"></div>
+       </div>
+     );
+   };
 export default BookingForm;
