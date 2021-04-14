@@ -175,14 +175,11 @@ surfaces :['INTERIOR','EXTERIOR'],
       finaltempcars[i].service = props.category;
       finaltempcars[i].package = 'FULL';
     }
-    else if ((props.category === "INTERIOR")) {
+    else if ((props.category === "DETAILING")) {
       finaltempcars[i].service = 'DETAILING';
       finaltempcars[i].package = packageDecider(item.package);
     }
-    else if ((props.category === "EXTERIOR")) {
-      finaltempcars[i].service = 'DETAILING';
-      finaltempcars[i].package = props.category;
-    }
+ 
     else {
       finaltempcars[i].service = props.category;
       finaltempcars[i].package = props.category;
@@ -226,8 +223,8 @@ surfaces :['INTERIOR','EXTERIOR'],
                      onecar.details === disables.id &&
                      (props.category === "ONE TIME" ||
                        props.category === "SANITIZATION" ||
-                       props.category === "INTERIOR" ||
-                       props.category === "EXTERIOR")
+                       props.category === "DETAILING" 
+                      )
                        ? true
                        : false
                    }
@@ -239,8 +236,7 @@ surfaces :['INTERIOR','EXTERIOR'],
                          onecar.details === disables.id &&
                          (props.category === "ONE TIME" ||
                            props.category === "SANITIZATION" ||
-                           props.category === "INTERIOR" ||
-                           props.category === "EXTERIOR")
+                           props.category === "DETAILING")
                            ? true
                            : false
                        }
@@ -294,8 +290,7 @@ surfaces :['INTERIOR','EXTERIOR'],
                Login
              </Link>
            )}
-           {props.category === "INTERIOR" ||
-           (props.category === "EXTERIOR" && isSignedIn) ? (
+           {(props.category === "DETAILING"  && isSignedIn) ? (
              <div className="surfaceContainer">
                {item.surfaces.map((surface) => (
                  <div
@@ -320,8 +315,7 @@ surfaces :['INTERIOR','EXTERIOR'],
            {item.mycars.length > 1 &&
            (props.category === "ONE TIME" ||
              props.category === "SANITIZATION" ||
-             props.category === "INTERIOR" ||
-             props.category === "EXTERIOR") ? (
+             props.category === "DETAILING" ) ? (
              <label style={{ color: "red", marginBottom: "1rem" }}>
                Please select only one Car
              </label>
@@ -367,8 +361,7 @@ surfaces :['INTERIOR','EXTERIOR'],
              minDate={addDays(new Date(), 1)}
            />
            {props.category === "SANITIZATION" ||
-           props.category === "EXTERIOR" ||
-           props.category === "INTERIOR" ||
+           props.category === "DETAILING"  ||
            props.category === "ONE TIME" ? (
              <div style={{ display: "flex", flexDirection: "column" }}>
                <label style={{ marginBottom: "-0.8rem" }}>Select Time</label>

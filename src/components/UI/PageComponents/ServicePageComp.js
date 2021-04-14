@@ -36,8 +36,7 @@ const Servicepage = (props) => {
     goldToggle: 0,
     platinumToggle: 0,
     sanitizationToggle: 0,
-    exteriorToggle: 0,
-    interiorToggle: 0,
+detailingToggle:0
   });
   const [mobileToggle, setMobileToggle] = useState({
     toggle: "ONE TIME",
@@ -65,14 +64,11 @@ const Servicepage = (props) => {
         setToggle({ sanitizationToggle: !toggleState.sanitizationToggle });
         break;
       }
-      case "INTERIOR": {
-        setToggle({ interiorToggle: !toggleState.interiorToggle });
+      case "DETAILING": {
+        setToggle({ detailingToggle: !toggleState.detailingToggle });
         break;
       }
-      case "EXTERIOR": {
-        setToggle({ exteriorToggle: !toggleState.exteriorToggle });
-        break;
-      }
+ 
       default:
         return toggleState;
     }
@@ -324,20 +320,20 @@ Vehicle."
           />
         </div>
 
-        <div className="sanitbtncontainer interiorContainer">
+        {/* <div className="sanitbtncontainer interiorContainer">
           <button
             onClick={() => {
-              handleToggle("INTERIOR");
+              handleToggle("DETAILING");
             }}
           >
             BOOK
           </button>
-        </div>
+        </div> */}
 
         {toggleState.interiorToggle ? (
           <BookingForm
             click={props.click}
-            category="INTERIOR"
+            category="DETAILING"
             cars={user.cars}
             togglePress={handleToggle}
           />
@@ -345,7 +341,7 @@ Vehicle."
       </div>
       <div className="sanitRow">
         <div className="serviceHeaderH6">
-          <h1>EXTERIOR DETAILING</h1>
+          <h1  >EXTERIOR DETAILING</h1>
         </div>
         <div className="  exteriorContainer">
           <MainImage type={exterior_detailing} />
@@ -356,19 +352,19 @@ a paint with a glossy finish), chrome trim, windows, wheels, and tires, as
 well as other visible components on a vehicle's exterior."
           />
         </div>
-        <div className="sanitbtncontainer  exteriorbtncontainer ">
+        <div className="   detailingbtncontainer" style={{display:'flex',justifyContent:'center',alignContent:'center',margin:'1rem'}}>
           <button
             onClick={() => {
-              handleToggle("EXTERIOR");
+              handleToggle("DETAILING");
             }}
           >
             BOOK
           </button>
         </div>
-        {toggleState.exteriorToggle ? (
+        {toggleState.detailingToggle ? (
           <BookingForm
             click={props.click}
-            category="EXTERIOR"
+            category="DETAILING"
             cars={user.cars}
             togglePress={handleToggle}
           />
