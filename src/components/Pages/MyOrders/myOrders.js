@@ -5,16 +5,18 @@ import AlternateSub from "../../UI/content/ActiveSubscriptionComponent/alternate
 import "./myOrders.css";
 import sanitization from '../../../Image/sanitization.svg';
 import detailing from '../../../Image/detailing.svg';
-  const width = { matches: window.matchMedia("(min-width: 768px)").matches };
+const width = { matches: window.matchMedia("(min-width: 768px)").matches };
+  
 const MyOrders = (props) => {
     useEffect(() => {
       document.body.scrollTop = 0;
       !width.matches ? props.click() : (document.body.scrollTop = 0);
     }, []);
+    const user = useSelector((state) => state.user.customer);
   const packages = ['WASHING','DETAILING','SANITIZATION']
-  const [ myCar,setCar] = useState('MG Hector')
+  const [ myCar,setCar] = useState(user.cars[0].details)
   const [myOrder,setMyOrder] = useState('WASHING')
-  const user = useSelector((state) => state.user.customer);
+
   const filteredCars = user.cars.filter(
     (car) => car.details === myCar 
   );
@@ -33,6 +35,11 @@ console.log(filteredServices)
               onClick={() => setCar(oneCar.details)}
               id="carPicker"
               key={oneCar.id}
+              style={
+                oneCar.details === myCar
+                  ? { backgroundColor: "#91c3d9", color: "white" }
+                  : { background: "none" }
+              }
             >
               {oneCar.details}
             </div>
@@ -41,6 +48,11 @@ console.log(filteredServices)
         <div className="myOrders-service-picker">
           {packages?.map((mypackage) => (
             <div
+              style={
+                mypackage === myOrder
+                  ? { backgroundColor: "#91c3d9", color: "white" }
+                  : { background: "none" }
+              }
               id="packagePicker"
               key={mypackage}
               onClick={() => setMyOrder(mypackage)}
@@ -180,7 +192,13 @@ console.log(filteredServices)
                 </div>
               ))
             ) : (
-              <div style={{display:'flex',justifyContent:'center',alignContent:'center'}}>
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  alignContent: "center",
+                }}
+              >
                 <h1>No Orders</h1>
               </div>
             )

@@ -53,9 +53,18 @@ const CustomToolbar = (toolbar) => {
   const label = () => {
     const date = moment(toolbar.date);
     return (
-      <span>
-        <b>{date.format("MMMM")}</b>
-        <span> {date.format("YYYY")}</span>
+      <span  >
+        <p
+          style={{ fontSize: "x-large", padding: "1px", letterSpacing: "1px" }}
+        >
+          {date.format("MMMM")}
+        </p>
+        <p
+          style={{ fontSize: "x-large", padding: "1px", letterSpacing: "1px" }}
+        >
+       
+          {date.format("YYYY")}
+        </p>
       </span>
     );
   };

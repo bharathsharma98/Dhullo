@@ -1,18 +1,18 @@
 @media (min-width: 768px) {
   .rbc-event {
-    border: 1px solid white;
     border-radius: 100%;
     box-sizing: border-box;
     box-shadow: none;
     position: relative;
-    margin: 0;
-    padding: 2px 5px;
+    padding: 0px 5px;
     color: #fff;
     cursor: pointer;
-    width: 100%;
-    height: 5rem;
-    text-align: left;
-    transform: translateY(1px);
+    height: 3vh;
+    width: 3vh;
+    margin: auto;
+    margin-top: 4vh;
+    margin-left: 6vw;
+    text-align: center;
   }
   .rbc-slot-selecting .rbc-event {
     cursor: inherit;
@@ -20,11 +20,9 @@
   }
   .rbc-event.rbc-selected {
     background-color: #265985;
-     border-radius: 100%;
   }
   .rbc-event:focus {
     outline: 5px auto #3b99fc;
-     border-radius: 100%;
   }
 }
 @media (max-width: 768px) {
@@ -35,11 +33,13 @@
     box-shadow: none;
     position: relative;
     margin: 0;
-    padding: 2px 5px;
+    padding: 0px 5px;
     color: #fff;
     cursor: pointer;
-    width: 100%;
-    height: 5rem;
+    height: 3vw;
+    width: 3vw;
+    margin-top: 2vh;
+    margin-left: 55%;
     text-align: left;
   }
   .rbc-slot-selecting .rbc-event {
@@ -48,11 +48,9 @@
   }
   .rbc-event.rbc-selected {
     background-color: #265985;
-     
   }
   .rbc-event:focus {
     outline: 5px auto #3b99fc;
-    border-radius: 100%;
   }
 }
 .rbc-event-overlaps {
