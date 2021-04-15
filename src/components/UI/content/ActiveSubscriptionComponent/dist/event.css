@@ -1,17 +1,11 @@
 @media (min-width: 768px) {
   .rbc-event {
-    border-radius: 100%;
     box-sizing: border-box;
     box-shadow: none;
-    position: relative;
     padding: 0px 5px;
     color: #fff;
     cursor: pointer;
-    height: 3vh;
-    width: 3vh;
     margin: auto;
-    margin-top: 4vh;
-    margin-left: 6vw;
     text-align: center;
   }
   .rbc-slot-selecting .rbc-event {
@@ -31,15 +25,10 @@
     border-radius: 100%;
     box-sizing: border-box;
     box-shadow: none;
-    position: relative;
     margin: 0;
     padding: 0px 5px;
     color: #fff;
     cursor: pointer;
-    height: 3vw;
-    width: 3vw;
-    margin-top: 2vh;
-    margin-left: 55%;
     text-align: left;
   }
   .rbc-slot-selecting .rbc-event {

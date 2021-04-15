@@ -12,6 +12,8 @@ const MyOrders = (props) => {
       document.body.scrollTop = 0;
       !width.matches ? props.click() : (document.body.scrollTop = 0);
     }, []);
+  
+
     const user = useSelector((state) => state.user.customer);
   const packages = ['WASHING','DETAILING','SANITIZATION']
   const [ myCar,setCar] = useState(user.cars[0].details)
@@ -25,7 +27,30 @@ const MyOrders = (props) => {
   const filteredServices = filteredCars[0]?.orders.filter(
     (oneCar) => oneCar.service === myOrder
   );
-console.log(filteredServices)
+  const [rightData, setRightData] = useState({
+    service: '',
+    package:''
+  })
+  const DoubleClickHandler = (event) => {
+    console.log(event)
+    setRightData({
+ 
+      service: event.service,
+      serviceStatus: event.serviceStatus,
+      package: event.serviceType,
+    });
+     
+  }
+      const superdailyStatus = [];
+      filteredCars.map((car) =>
+        car.orders.map((order) =>
+          order.dailySchedules.map((l) => superdailyStatus.push(l))
+        )
+      );
+      console.log(superdailyStatus);
+  console.log(filteredServices)
+  
+ 
   return (
     <div className="myOrderMainContainer">
       <div className="myOrders-picker-container">
@@ -45,8 +70,8 @@ console.log(filteredServices)
             </div>
           ))}
         </div>
-        <div className="myOrders-service-picker">
-          {packages?.map((mypackage) => (
+        {/* <div className="myOrders-service-picker">
+          {myCar.orders?.map((mypackage) => (
             <div
               style={
                 mypackage === myOrder
@@ -60,52 +85,22 @@ console.log(filteredServices)
               {mypackage}
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div className="carCard">
         <div key={myCar.id} className="oneOrderBox">
-          {
-            filteredServices?.length !== 0 ? (
-              filteredServices?.map((oneOrder) => (
-                <div className="orderCard" key={oneOrder.id}>
-                  {oneOrder === undefined ? null : (
-                    <div className="ActiveOrdersContainer" key={oneOrder.id}>
+           
+                    <div className="ActiveOrdersContainer"  >
                       <div className="leftOrder">
                         <AlternateSub
-                          package={oneOrder.package}
-                          duration={oneOrder.duration}
-                          startDate={oneOrder.startDate}
-                          events={oneOrder.dailySchedules}
+                          
+                          superdailyStatus={superdailyStatus}
+                          doubleClickHandler={DoubleClickHandler}
                         />
-                      </div>
-
-                      <div className="rightOrder">
-                        <div
-                          className="orderImageContainer"
-                          style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "center",
-                            alignContent: "center",
-                          }}
-                        >
-                          {oneOrder.service === "SANITIZATION" ? (
-                            <img src={sanitization}></img>
-                          ) : null}
-                        </div>
-                        <div
-                          className="orderImageContainer"
-                          style={{
-                            display: "flex",
-                            flexDirection: "row",
-                            justifyContent: "center",
-                            alignContent: "center",
-                          }}
-                        >
-                          {oneOrder.service === "DETAILING" ? (
-                            <img src={detailing}></img>
-                          ) : null}
-                        </div>
+            </div>
+                <div className="rightOrder">
+                        
+                         
                         <div style={{ display: "flex" }}>
                           <p id="myOrdersTopic">Car Name</p>
                           <p>:</p>
@@ -114,32 +109,17 @@ console.log(filteredServices)
                         <div style={{ display: "flex" }}>
                           <p id="myOrdersTopic">Service</p>
                           <p>:</p>
-                          <p>{oneOrder.service}</p>
+                          <p>{rightData?.service}</p>
                         </div>
                         <div style={{ display: "flex" }}>
                           <p id="myOrdersTopic">Package</p>
                           <p>:</p>
-                          <p>{oneOrder.package}</p>
+                          <p>{rightData?.package}</p>
                         </div>
-                        {oneOrder.package === "ONE TIME" ? null : (
-                          <div style={{ display: "flex" }}>
-                            <p id="myOrdersTopic">Duration</p>
-                            <p>:</p>
-                            <p>{oneOrder.packageDuration}</p>
-                          </div>
-                        )}
+                         
 
-                        <div style={{ display: "flex" }}>
-                          <p id="myOrdersTopic">Service Date</p>
-                          <p>:</p>
-                          <p>
-                            {new Date(oneOrder.serviceStartDate)
-                              .toDateString()
-                              .substr(3)}
-                          </p>
-                        </div>
-
-                        {oneOrder.package === "ONE TIME" ? null : (
+                         
+                        {/* {rightData.package === "ONE TIME" ? null : (
                           <div style={{ display: "flex" }}>
                             <p id="myOrdersTopic">Days Remaining</p>
                             <p>:</p>
@@ -153,7 +133,7 @@ console.log(filteredServices)
                               )}
                             </p>
                           </div>
-                        )}
+                        )} */}
                         <div id="event-indication-container">
                           <div
                             style={{
@@ -187,28 +167,13 @@ console.log(filteredServices)
                           </div>
                         </div>
                       </div>
+
+                  
                     </div>
-                  )}
-                </div>
-              ))
-            ) : (
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "center",
-                  alignContent: "center",
-                }}
-              >
-                <h1>No Orders</h1>
-              </div>
-            )
-            // <div style={{ textAlign: "center" }}>
-            //   <label>
-            //     No orders yet for:
-            //     <p style={{ color: "brown" }}>{oneCar.details}</p>{" "}
-            //   </label>
-            // </div>
-          }
+                 
+         
+            
+   
         </div>
       </div>
     </div>

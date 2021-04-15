@@ -1,5 +1,6 @@
 import React  from "react";
-
+import SANITIZATION from '../../../../Image/sanitization.svg';
+import DETAILING from '../../../../Image/detailing.svg';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -8,6 +9,7 @@ import "./styles.scss";
 import moment from "moment";
  
 const Alternatesub = (props) => {
+ 
 //   let endDate = 0;
 // console.log(props)
 //   if (props.duration === "Monthly")
@@ -106,18 +108,74 @@ const CustomToolbar = (toolbar) => {
   );
 };
   const localizer = momentLocalizer(moment);
+
+ 
+  // const customeEvent = () => {
+     
+  //   return (
+  //     <div>
+         
+  //           <img
+  //             src={
+  //               SANITIZATION
+  //             }
+  //             style={{ zIndex: "100" }}
+  //             height="30px"
+  //             width="30px"
+  //           ></img>
+          
+  //     </div>
+  //   ); 
+  // }
   return (
     <div>
       <Calendar
+    
+       onDoubleClickEvent={(events) => props.doubleClickHandler(events)}
         longPressThreshold={10}
         eventPropGetter={(event) => {
           let newStyle = {
-            backgroundColor: "gray",
-            color: "black",
-            borderRadius: "100%",
-            border: "none",
+         
           };
 
+          if (event.service === "DETAILING") {
+          
+          
+            newStyle.backgroundColor = "orangered";
+            newStyle.position = 'absolute'
+            newStyle.marginTop = '20px'
+            newStyle.marginLeft = '0.5vw'
+     newStyle.borderRadius = "100%";
+            newStyle.height ='15px'
+            newStyle.width = '15px'
+           
+          
+            
+          }
+          if (event.service === "WASHING") {
+            newStyle.backgroundColor = "grey";
+            newStyle.borderRadius = "100%";
+
+        newStyle.position = "absolute";
+        newStyle.marginTop = "20px";
+        newStyle.marginLeft = "6vw";
+
+        newStyle.height = "15px";
+        newStyle.width = "15px";
+          
+            
+          }
+          if (event.service === "SANITIZATION") {
+            newStyle.backgroundColor = "blue";
+              
+              newStyle.position = "absolute";
+              newStyle.marginTop = "20px";
+              newStyle.marginLeft = "3vw";
+              newStyle.borderRadius = "100%";
+              newStyle.height = "15px";
+              newStyle.width = "15px";
+          }
+           
           if (event.serviceStatus === "Complete") {
             newStyle.backgroundColor = "#36c75c";
           }
@@ -132,16 +190,25 @@ const CustomToolbar = (toolbar) => {
           };
         }}
         localizer={localizer}
-        events={props.events}
+        events={props.superdailyStatus}
         views={["month"]}
         toolbar={true}
         showMultiDayTimes
+         
         // components={{
         //   dateCellWrapper: ColoredDateCellWrapper,
         // }}
-        components={{
-          toolbar: CustomToolbar,
-        }}
+
+        //
+
+        components={
+       
+        {
+                toolbar: CustomToolbar,
+                
+              }
+             
+        }
       />
     </div>
   );

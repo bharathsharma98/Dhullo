@@ -81,10 +81,13 @@ export const Confirmationpage = (props) => {
             />
           </div>
           <div className="confirmationMessage">
-            <p>
-              {" "}
+            {
+              !Loading ?<p>
+               
               Track your order in <Link to="/myorders">My Orders</Link> page
-            </p>
+            </p> : null
+            }
+            
           </div>
           <div className="exploreMore">
             <button>
