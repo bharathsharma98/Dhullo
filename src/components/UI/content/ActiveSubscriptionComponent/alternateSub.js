@@ -9,6 +9,7 @@ import "./styles.scss";
 import moment from "moment";
  
 const Alternatesub = (props) => {
+  const today = new Date();
  
 //   let endDate = 0;
 // console.log(props)
@@ -54,21 +55,21 @@ const CustomToolbar = (toolbar) => {
 
   const label = () => {
     const date = moment(toolbar.date);
-    return (
-      <span  >
-        <p
-          style={{ fontSize: "x-large", padding: "1px", letterSpacing: "1px" }}
-        >
-          {date.format("MMMM")}
-        </p>
-        <p
-          style={{ fontSize: "x-large", padding: "1px", letterSpacing: "1px" }}
-        >
+    // return (
+    //   <span  >
+    //     <p
+    //       style={{ fontSize: "x-large", padding: "1px", letterSpacing: "1px" }}
+    //     >
+    //       {date.format("MMMM")}
+    //     </p>
+    //     <p
+    //       style={{ fontSize: "x-large", padding: "1px", letterSpacing: "1px" }}
+    //     >
        
-          {date.format("YYYY")}
-        </p>
-      </span>
-    );
+    //       {date.format("YYYY-mm-dd")}
+    //     </p>
+    //   </span>
+    // );
   };
 
   return (
@@ -78,27 +79,51 @@ const CustomToolbar = (toolbar) => {
       <div
         style={{
           position: "relative",
-          top: "-3rem",
+          top: "0rem",
+          paddingTop: "3%",
+          paddingBottom: "2%",
           display: "flex",
           justifyContent: "center",
+          alignItems: "center",
           background: "#D6CECE",
         }}
         className="rbc-btn-group"
       >
         <button
-          style={{ background: "#D6CECE", color: "#03588C" }}
+          style={{
+            background: "#D6CECE",
+            color: "#03588C",
+            fontSize: "4rem",
+            marginRight: "-1.8rem",
+            width: "100px",
+            background: "none",
+            marginTop: "-3rem",
+          }}
           onClick={goToBack}
         >
           &#8249;
         </button>
         <button
-          style={{ background: "#D6CECE", color: "#03588C" }}
+          style={{
+            background: "#D6CECE",
+            color: "#03588C",
+            fontSize: "1.8rem",
+            padding: "0%",
+          }}
           onClick={goToCurrent}
         >
-          Today
+          {moment(today).format("d MMMM  YYYY")}
         </button>
         <button
-          style={{ background: "#D6CECE", color: "#03588C" }}
+          style={{
+            background: "#D6CECE",
+            color: "#03588C",
+            fontSize: "4rem",
+            marginTop: "-3rem",
+            marginLeft: "-2rem",
+            width: "100px",
+            background: "none",
+          }}
           onClick={goToNext}
         >
           &#8250;
@@ -130,7 +155,8 @@ const CustomToolbar = (toolbar) => {
   return (
     <div>
       <Calendar
-    
+      popup
+       onShowMore={false}
        onDoubleClickEvent={(events) => props.doubleClickHandler(events)}
         longPressThreshold={10}
         eventPropGetter={(event) => {
@@ -142,13 +168,17 @@ const CustomToolbar = (toolbar) => {
           
           
             newStyle.backgroundColor = "orangered";
-            newStyle.position = 'absolute'
-            newStyle.marginTop = '20px'
+            newStyle.position = 'relative'
+            newStyle.marginTop = '-50px'
             newStyle.marginLeft = '0.5vw'
-     newStyle.borderRadius = "100%";
-            newStyle.height ='15px'
-            newStyle.width = '15px'
-           
+            newStyle.borderRadius = "0%";
+            newStyle.height = '20rem';
+            newStyle.width = '20rem';
+  
+            newStyle.repeat = 'none';
+
+           newStyle.backgroundImage =
+             "url('https://media-exp1.licdn.com/dms/image/C560BAQHdAaarsO-eyA/company-logo_200_200/0/1595530301220?e=2159024400&v=beta&t=IJmg_K1W7KCh6082rXN9V7gzlrD9GMwYqk_EjCrDxGw')";
           
             
           }

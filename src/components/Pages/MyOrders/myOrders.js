@@ -62,11 +62,22 @@ const MyOrders = (props) => {
               key={oneCar.id}
               style={
                 oneCar.details === myCar
-                  ? { backgroundColor: "#91c3d9", color: "white" }
-                  : { background: "none" }
+                  ? {
+                      backgroundColor: "#03588C",
+                      color: "white",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }
+                  : {
+                      background: "none",
+                      display: "flex",
+                      justifyContent: "center",
+                      alignItems: "center",
+                    }
               }
             >
-              {oneCar.details}
+              <p>{oneCar.details}</p>
             </div>
           ))}
         </div>
@@ -89,37 +100,31 @@ const MyOrders = (props) => {
       </div>
       <div className="carCard">
         <div key={myCar.id} className="oneOrderBox">
-           
-                    <div className="ActiveOrdersContainer"  >
-                      <div className="leftOrder">
-                        <AlternateSub
-                          
-                          superdailyStatus={superdailyStatus}
-                          doubleClickHandler={DoubleClickHandler}
-                        />
+          <div className="ActiveOrdersContainer">
+            <div className="leftOrder">
+              <AlternateSub
+                superdailyStatus={superdailyStatus}
+                doubleClickHandler={DoubleClickHandler}
+              />
             </div>
-                <div className="rightOrder">
-                        
-                         
-                        <div style={{ display: "flex" }}>
-                          <p id="myOrdersTopic">Car Name</p>
-                          <p>:</p>
-                          <p>{myCar}</p>
-                        </div>
-                        <div style={{ display: "flex" }}>
-                          <p id="myOrdersTopic">Service</p>
-                          <p>:</p>
-                          <p>{rightData?.service}</p>
-                        </div>
-                        <div style={{ display: "flex" }}>
-                          <p id="myOrdersTopic">Package</p>
-                          <p>:</p>
-                          <p>{rightData?.package}</p>
-                        </div>
-                         
+            <div className="rightOrder">
+              <div style={{ display: "flex" }}>
+                <p id="myOrdersTopic">Car Name</p>
+                <p>:</p>
+                <p>{myCar}</p>
+              </div>
+              <div style={{ display: "flex" }}>
+                <p id="myOrdersTopic">Service</p>
+                <p>:</p>
+                <p>{rightData?.service}</p>
+              </div>
+              <div style={{ display: "flex" }}>
+                <p id="myOrdersTopic">Package</p>
+                <p>:</p>
+                <p>{rightData?.package}</p>
+              </div>
 
-                         
-                        {/* {rightData.package === "ONE TIME" ? null : (
+              {/* {rightData.package === "ONE TIME" ? null : (
                           <div style={{ display: "flex" }}>
                             <p id="myOrdersTopic">Days Remaining</p>
                             <p>:</p>
@@ -134,46 +139,40 @@ const MyOrders = (props) => {
                             </p>
                           </div>
                         )} */}
-                        <div id="event-indication-container">
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <div id="red-indication"></div>
-                            <p>Missed</p>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <div id="green-indication"></div>
-                            <p>Done</p>
-                          </div>
-                          <div
-                            style={{
-                              display: "flex",
-                              justifyContent: "center",
-                              alignItems: "center",
-                            }}
-                          >
-                            <div id="gray-indication"></div>
-                            <p>Pending</p>
-                          </div>
-                        </div>
-                      </div>
-
-                  
-                    </div>
-                 
-         
-            
-   
+              <div id="event-indication-container">
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <div id="red-indication"></div>
+                  <p>Missed</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <div id="green-indication"></div>
+                  <p>Done</p>
+                </div>
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <div id="gray-indication"></div>
+                  <p>Pending</p>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

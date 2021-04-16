@@ -79,7 +79,8 @@ surfaces :['INTERIOR','EXTERIOR'],
 }
 
   const handleChange = (e) => {
- 
+    
+   
   
     console.log(sumtotal)
     const { name, value, checked, type } = e.target;
@@ -87,7 +88,7 @@ surfaces :['INTERIOR','EXTERIOR'],
       if (checked === true) {
         tempcars = item.mycars.concat(value);
         setItem({ ...item, mycars: tempcars });
-        setDisabled({...disables,id:value,state:true})
+         
       } else {
         setItem({
           ...item,
@@ -96,11 +97,32 @@ surfaces :['INTERIOR','EXTERIOR'],
           }),
           
         });
-        setDisabled({...disables,id:'',state:false})
+         
       }
     } else setItem({ ...item, [name]: value });
   };
-  console.log(item);
+  const handleChangeDiffrently = (e) => {
+    console.log(sumtotal);
+    const { name, value, checked, type } = e.target;
+    if (type === "checkbox") {
+      if (checked === true) {
+         
+        setItem({  mycars: [value] });
+         
+      } else {
+        setItem({
+          ...item,
+          mycars: item.mycars.filter(function (val) {
+            return val !== value;
+          }),
+        });
+        
+      }
+    } else setItem({ ...item, [name]: value });
+  }
+ 
+  console.log(disables);
+  console.log(item.mycars[0]);
 
   let finaltempcars = [];
   for (let i = 0; i < item.mycars.length; i++) {
@@ -108,31 +130,31 @@ surfaces :['INTERIOR','EXTERIOR'],
   }
   const carTypeHanler = (carToCheck) => {
     var car = user.cars.filter((onecar) => onecar.details == carToCheck.mycar);
-    return car[0].carType
+    return car[0]?.carType
   };
   const carIdhandler = (carToCheck) => {
     var car = user.cars.filter(
       (onecar) => onecar.details == carToCheck.mycar
     );
-    return car[0].id
+    return car[0]?.id
   };
   const carStreethandler = (carToCheck) => {
     var car = user.cars.filter(
       (onecar) => onecar.details == carToCheck.mycar
     );
-    return car[0].streetName
+    return car[0]?.streetName
   };
   const carHousehandler = (carToCheck) => {
     var car = user.cars.filter(
       (onecar) => onecar.details == carToCheck.mycar
     );
-    return car[0].houseName
+    return car[0]?.houseName
   };
   const carPinCodehandler = (carToCheck) => {
     var car = user.cars.filter(
       (onecar) => onecar.details == carToCheck.mycar
     );
-    return car[0].pincode
+    return car[0]?.pincode
   };
 
   const packageDecider = (packages) => {
@@ -191,9 +213,10 @@ surfaces :['INTERIOR','EXTERIOR'],
       finaltempcars[i].serviceprice + finaltempcars[i].categoryprice;
   
   }
- 
    
-    
+  
+ 
+
   
 
  
@@ -217,34 +240,68 @@ surfaces :['INTERIOR','EXTERIOR'],
                {user.cars.map((onecar) => (
                  <CarBox
                    key={onecar.id}
-                   selected={item.mycars.length}
                    service={props.category}
                    disabled={
-                     onecar.details === disables.id &&
+                     onecar.details === disables.id[0]?.details &&
                      (props.category === "ONE TIME" ||
                        props.category === "SANITIZATION" ||
-                       props.category === "DETAILING" 
-                      )
+                       props.category === "DETAILING")
                        ? true
                        : false
                    }
-                   
                  >
                    <div className="checkBox">
-                     <input
-                       disabled={
-                         onecar.details === disables.id &&
-                         (props.category === "ONE TIME" ||
+                     {props.category === "ONE TIME" ||
+                     props.category === "SANITIZATION" ||
+                     props.category === "DETAILING" ? (
+                       <input
+                         checked={
+                           item.mycars[0] === onecar.details ? true : false
+                         }
+                         disabled={
+                           onecar.details === disables.id[0]?.details &&
+                           (props.category === "ONE TIME" ||
+                             props.category === "SANITIZATION" ||
+                             props.category === "DETAILING")
+                             ? disables.state
+                             : false
+                         }
+                         type="checkbox"
+                         name={onecar.details}
+                         value={onecar.details}
+                         onChange={
+                           props.category === "ONE TIME" ||
                            props.category === "SANITIZATION" ||
-                           props.category === "DETAILING")
-                           ? true
-                           : false
-                       }
-                       type="checkbox"
-                       name={onecar.details}
-                       value={onecar.details}
-                       onChange={handleChange}
-                     />
+                           props.category === "DETAILING"
+                             ? handleChangeDiffrently
+                             : handleChange
+                         }
+                         className="enabled"
+                       />
+                     ) : (
+                       <input
+                          
+                         disabled={
+                           onecar.details === disables.id[0]?.details &&
+                           (props.category === "ONE TIME" ||
+                             props.category === "SANITIZATION" ||
+                             props.category === "DETAILING")
+                             ? disables.state
+                             : false
+                         }
+                         type="checkbox"
+                         name={onecar.details}
+                         value={onecar.details}
+                         onChange={
+                           props.category === "ONE TIME" ||
+                           props.category === "SANITIZATION" ||
+                           props.category === "DETAILING"
+                             ? handleChangeDiffrently
+                             : handleChange
+                         }
+                         className="enabled"
+                       />
+                     )}
                    </div>
 
                    <div>
@@ -282,15 +339,20 @@ surfaces :['INTERIOR','EXTERIOR'],
                </div>
              </div>
            ) : (
-             <Link
-               style={{ marginBottom: "1rem  " }}
-               to={width.matches ? "#" : "/signin"}
-               onClick={width.matches ? () => dispatch(loginOpen()) : null}
-             >
-               Login
-             </Link>
+             <div className="addNewCarButtonContainer">
+               <div className="addnewCarButton">
+                 <Link
+                   style={{ marginBottom: "1rem  " }}
+                   to={width.matches ? "#" : "/signin"}
+                   onClick={width.matches ? () => dispatch(loginOpen()) : null}
+                 >
+                   <img src={plus}></img>
+                 </Link>
+               </div>
+               <strong>Add Car</strong>
+             </div>
            )}
-           {(props.category === "DETAILING"  && isSignedIn) ? (
+           {props.category === "DETAILING" && isSignedIn ? (
              <div className="surfaceContainer">
                {item.surfaces.map((surface) => (
                  <div
@@ -315,7 +377,7 @@ surfaces :['INTERIOR','EXTERIOR'],
            {item.mycars.length > 1 &&
            (props.category === "ONE TIME" ||
              props.category === "SANITIZATION" ||
-             props.category === "DETAILING" ) ? (
+             props.category === "DETAILING") ? (
              <label style={{ color: "red", marginBottom: "1rem" }}>
                Please select only one Car
              </label>
@@ -361,7 +423,7 @@ surfaces :['INTERIOR','EXTERIOR'],
              minDate={addDays(new Date(), 1)}
            />
            {props.category === "SANITIZATION" ||
-           props.category === "DETAILING"  ||
+           props.category === "DETAILING" ||
            props.category === "ONE TIME" ? (
              <div style={{ display: "flex", flexDirection: "column" }}>
                <label style={{ marginBottom: "-0.8rem" }}>Select Time</label>

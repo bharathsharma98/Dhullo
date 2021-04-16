@@ -22,9 +22,12 @@
 }
 
 .dots hr {
-  position: relative;
-  right: calc(var(--howitworksWidth));
-  border: 2px dashed #007872;
+  position: absolute;
+  width: 68vw;
+ z-index: -1;
+  right: calc(var(--howitworksWidth)+17vw);
+  margin-top: 0.2%;
+  border: 2px dotted #007872;
 }
 .howItWorks1 li {
   position: absolute;
@@ -33,6 +36,7 @@
   left: calc(var(--howitworksWidth));
 color: #007872;
   font-size: 300%;
+  z-index: 20;
 }
 
 .howItWorks1 {

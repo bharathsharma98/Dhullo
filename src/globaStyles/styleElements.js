@@ -52,16 +52,7 @@ margin-right:1rem;
 `;
 
 export const CarBox = Styled.div`
- ${(props) =>
-   props.selected > 1 &&
- ( (props.service === "ONE TIME") ||
-   (props.service === "SANITIZATION")||
-   (props.service === "INTERIOR")||
-   (props.service === "EXTERIOR"))&&
-   css`
-     
-    
-   `}}
+ 
  @media (max-width: 768px) {
  margin-left:-30%;
     min-width: 50vw;
@@ -90,7 +81,7 @@ input{
      height:20px;
      width:20px;
     cursor:pointer;
-   outline: 2px solid black;
+ 
     background-color:blue;
  } 
  label{

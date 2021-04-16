@@ -41,7 +41,13 @@
   
   flex-direction: row-reverse;
 }
-
+.exteriorRow{
+  margin-top: -4%;
+}
+.detailingRow{
+    margin-bottom:-8rem;
+   
+}
 }
 
 .serviceboxcontainer {
@@ -212,14 +218,26 @@ left: 4vw;
      margin-top: -8%;
    }
    .serviceHeaderH6 h1{
-  font-size: 2.5vw;
+  font-size: 2vw;
   position: relative;
+ 
   left: 3.5%;
 }
 .serviceHeaderH5 h1{
-  font-size: 2.5vw;
+  font-size: 2vw;
   position: relative;
-  left: 3.5%;
+  left: 4.5%;
+  
+}
+.interiorRow{
+ 
+  position: relative;
+  margin-top: -8rem;
+  
+}
+.exteriorRow{
+   position: relative;
+  margin-top: -7rem;
 }
 }
 

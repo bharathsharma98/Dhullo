@@ -281,7 +281,7 @@ detailingToggle:0
           />
         ) : null}
       </div>
-      <div className="sanitrow">
+      <div className="sanitrow detailingRow">
         <div className="serviceHeaderH4">
           <h1 id="detailingcontainer">DETAILING</h1>
         </div>
@@ -297,9 +297,17 @@ the car's hygiene."
         </div>
       </div>
 
-      <div className="sanitRow InteriorDEt">
+      <div className="sanitRow InteriorDEt interiorRow">
         <div className="serviceHeaderH5">
-          <h1>INTERIOR DETAILING</h1>
+          <h1
+            style={
+              width.matches
+                ? { marginBottom: "4rem", marginLeft: "8rem" }
+                : null
+            }
+          >
+            INTERIOR DETAILING
+          </h1>
         </div>
         {/* <div className="embbededVideoInterior">
           <video width="400" height="240" controls autoPlay muted>
@@ -339,9 +347,17 @@ Vehicle."
           />
         ) : null}
       </div>
-      <div className="sanitRow">
+      <div className="sanitRow exteriorRow ">
         <div className="serviceHeaderH6">
-          <h1  >EXTERIOR DETAILING</h1>
+          <h1
+            style={
+              width.matches
+                ? { marginBottom: "4rem", marginLeft: "8rem" }
+                : null
+            }
+          >
+            EXTERIOR DETAILING
+          </h1>
         </div>
         <div className="  exteriorContainer">
           <MainImage type={exterior_detailing} />
@@ -352,7 +368,16 @@ a paint with a glossy finish), chrome trim, windows, wheels, and tires, as
 well as other visible components on a vehicle's exterior."
           />
         </div>
-        <div className="   detailingbtncontainer" style={{display:'flex',justifyContent:'center',alignContent:'center',margin:'1rem'}}>
+        <div
+          className="   detailingbtncontainer"
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignContent: "center",
+            margin: "1rem",
+            marginTop:'-2rem'
+          }}
+        >
           <button
             onClick={() => {
               handleToggle("DETAILING");

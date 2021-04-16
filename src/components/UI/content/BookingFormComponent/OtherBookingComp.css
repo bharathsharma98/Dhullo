@@ -66,8 +66,22 @@ background-color: gray;
      
      left: -1.5%;
  }
+ .addNewCarButtonContainer strong{
+     position: absolute;
+     top: -0.5rem;
+     margin-left: 0.6rem;
  }
+ .priceRowService{
+ 
+     position: relative;
+     margin-top: 1%;
+ }
+ }
+.checkBox input[type="checkbox"]:checked{
+ 
+background: blue;
 
+}
  @media(max-width:769px){
 
     .surfaceContainer{
@@ -162,16 +176,18 @@ margin-left: 0%;
   }
  
  .addnewCarButton img{
-     margin-top: 10%;
-     height: 3vw;
-     width: 3vw;
+     position: relative;
+     margin-top: 2%;
+     height: 2rem;
+     width: 2rem;
      border: 2px solid black;
-     padding: 20%;
+     padding: 2rem;
      border-radius: 100%;
+     margin-bottom: 10px;
  }
   .addNewCarButtonContainer strong{
       position: relative;   
-    top: 3px;
+   
     left: 5px;
       letter-spacing: 2px;
       font-weight: normal;
