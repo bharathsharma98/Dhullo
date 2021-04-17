@@ -111,7 +111,7 @@ const [TempCarDetails] = useState({
   //     });
   //   });
   // };
-
+console.log(` ${baseUrl}cars/${CarDetails.carId}`);
   const inputsHandler = (e) => {
     setCarDetails({ ...CarDetails, [e.target.name]: e.target.value });
   };
@@ -121,7 +121,7 @@ const [TempCarDetails] = useState({
    //fetch statement to post details to backend
    try {
      const response = await fetch(
-       ` ${baseUrl}/cars/${CarDetails.carId}`,
+       ` ${baseUrl.toString()}cars/${CarDetails.carId}`,
        {
          method: "PATCH",
          headers: {
