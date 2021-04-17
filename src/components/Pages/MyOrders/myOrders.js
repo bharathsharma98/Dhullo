@@ -24,7 +24,7 @@ const MyOrders = (props) => {
   );
   console.log(filteredCars)
 
-  const filteredServices = filteredCars[0]?.orders.filter(
+  const filteredServices = filteredCars[0]?.orders?.filter(
     (oneCar) => oneCar.service === 'WASHING'
   );
   const [rightData, setRightData] = useState({
@@ -50,14 +50,15 @@ const MyOrders = (props) => {
     });
      
   }
-      const superdailyStatus = [];
+  const superdailyStatus = [];
+  if(filteredCars !== undefined){
       filteredCars.map((car) =>
-        car.orders.map((order) =>
+        car.orders?.map((order) =>
           order.dailySchedules.map((l) => superdailyStatus.push(l))
         )
       );
       console.log(superdailyStatus);
-  console.log(filteredServices)
+  console.log(filteredServices)}
   
  
   return (
