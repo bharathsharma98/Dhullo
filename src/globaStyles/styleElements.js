@@ -82,7 +82,7 @@ input{
      width:20px;
     cursor:pointer;
  
-    background-color:blue;
+    background-color:#03588C;
  } 
  label{
 font-size:small;

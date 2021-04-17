@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./addcarcomponent.css";
 import { CarTypes} from '../../../vehiclesData';
 import Loader from "react-loader-spinner";
+import {baseUrl} from '../../../../variables/variables'
 // import GoogleMapReact from "google-map-react";
 import { useSelector, useDispatch } from "react-redux";
 import { addCar, editCar } from "../../../../Redux/UserRedux/UserActions";
@@ -120,7 +121,7 @@ const [TempCarDetails] = useState({
    //fetch statement to post details to backend
    try {
      const response = await fetch(
-       `http://localhost:5000/api/cars/${CarDetails.carId}`,
+       ` ${baseUrl}/cars/${CarDetails.carId}`,
        {
          method: "PATCH",
          headers: {

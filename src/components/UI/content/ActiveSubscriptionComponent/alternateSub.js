@@ -1,6 +1,6 @@
 import React  from "react";
-import SANITIZATION from '../../../../Image/sanitization.svg';
-import DETAILING from '../../../../Image/detailing.svg';
+import SANITIZATION from '../../../../Image/sanit.png';
+import DETAILING from '../../../../Image/det.png';
 import { Calendar, momentLocalizer } from "react-big-calendar";
 
 import "react-big-calendar/lib/css/react-big-calendar.css";
@@ -9,8 +9,8 @@ import "./styles.scss";
 import moment from "moment";
  
 const Alternatesub = (props) => {
-  const today = new Date();
  
+   const width = { matches: window.matchMedia("(min-width: 768px)").matches };
 //   let endDate = 0;
 // console.log(props)
 //   if (props.duration === "Monthly")
@@ -112,7 +112,7 @@ const CustomToolbar = (toolbar) => {
           }}
           onClick={goToCurrent}
         >
-          {moment(today).format("d MMMM  YYYY")}
+          {new Date().toDateString().substr(3)}
         </button>
         <button
           style={{
@@ -152,60 +152,100 @@ const CustomToolbar = (toolbar) => {
   //     </div>
   //   ); 
   // }
+  const slothandler = (date) => {
+    console.log("date is",date)
+  }
   return (
     <div>
       <Calendar
-      popup
-       onShowMore={false}
-       onDoubleClickEvent={(events) => props.doubleClickHandler(events)}
+        popup
+        onShowMore={false}
+        onDrillDown={(date, events) => props.doubleClickHandler(date, events)}
+        // onSelectEvent={(events) => props.doubleClickHandler(events)}
         longPressThreshold={10}
         eventPropGetter={(event) => {
-          let newStyle = {
-         
-          };
-
-          if (event.service === "DETAILING") {
-          
-          
-            newStyle.backgroundColor = "orangered";
-            newStyle.position = 'relative'
-            newStyle.marginTop = '-50px'
-            newStyle.marginLeft = '0.5vw'
-            newStyle.borderRadius = "0%";
-            newStyle.height = '20rem';
-            newStyle.width = '20rem';
-  
-            newStyle.repeat = 'none';
-
-           newStyle.backgroundImage =
-             "url('https://media-exp1.licdn.com/dms/image/C560BAQHdAaarsO-eyA/company-logo_200_200/0/1595530301220?e=2159024400&v=beta&t=IJmg_K1W7KCh6082rXN9V7gzlrD9GMwYqk_EjCrDxGw')";
-          
-            
-          }
-          if (event.service === "WASHING") {
-            newStyle.backgroundColor = "grey";
-            newStyle.borderRadius = "100%";
-
-        newStyle.position = "absolute";
-        newStyle.marginTop = "20px";
-        newStyle.marginLeft = "6vw";
-
-        newStyle.height = "15px";
-        newStyle.width = "15px";
-          
-            
-          }
-          if (event.service === "SANITIZATION") {
-            newStyle.backgroundColor = "blue";
-              
+          let newStyle = {};
+          if (width.matches === true) {
+            if (event.service === "DETAILING") {
+              newStyle.backgroundColor = "white";
               newStyle.position = "absolute";
-              newStyle.marginTop = "20px";
-              newStyle.marginLeft = "3vw";
+              newStyle.marginTop = "-1.5vw";
+              newStyle.marginLeft = "0vw";
+              newStyle.borderRadius = "0%";
+              newStyle.height = "35px";
+              newStyle.width = "35px";
+
+              newStyle.repeat = "no-repeat";
+
+              newStyle.backgroundImage = `url(${DETAILING})`;
+              newStyle.backgroundRepeat = "no-repeat";
+              newStyle.backgroundSize = "100% 100%";
+            }
+            if (event.service === "WASHING") {
+              newStyle.backgroundColor = "grey";
               newStyle.borderRadius = "100%";
-              newStyle.height = "15px";
-              newStyle.width = "15px";
+
+              newStyle.position = "absolute";
+              newStyle.marginTop = "2vw";
+              newStyle.marginLeft = "7.5vw";
+
+              newStyle.height = "20px";
+              newStyle.width = "20px";
+            }
+            if (event.service === "SANITIZATION") {
+              newStyle.backgroundColor = "inherit";
+
+              newStyle.position = "absolute";
+              newStyle.marginTop = "0.3vw";
+              newStyle.marginLeft = "3.5vw";
+
+              newStyle.height = "28px";
+              newStyle.width = "28px";
+              newStyle.backgroundImage = `url(${SANITIZATION})`;
+              newStyle.backgroundRepeat = "no-repeat";
+              newStyle.backgroundSize = "100% 100%";
+            }
+          } else {
+            if (event.service === "DETAILING") {
+              newStyle.position = "relative";
+              newStyle.marginTop = "-3vw";
+              newStyle.marginLeft = "0.5vw";
+              newStyle.borderRadius = "0%";
+              newStyle.height = "20px";
+              newStyle.width = "20px";
+
+              newStyle.repeat = "no-repeat";
+              newStyle.backgroundColor = "inherit";
+              newStyle.backgroundImage = `url(${DETAILING})`;
+              newStyle.backgroundRepeat = "no-repeat";
+              newStyle.backgroundSize = "100% 100%";
+            }
+            if (event.service === "WASHING") {
+              newStyle.backgroundColor = "grey";
+              newStyle.borderRadius = "100%";
+
+              newStyle.position = "absolute";
+              newStyle.marginTop = "5vw";
+              newStyle.marginLeft = "9vw";
+
+              newStyle.height = "18px";
+              newStyle.width = "18px";
+            }
+            if (event.service === "SANITIZATION") {
+              newStyle.backgroundColor = "inherit";
+              newStyle.borderRadius = "0%";
+              newStyle.position = "absolute";
+              newStyle.marginTop = "1vw";
+              newStyle.marginLeft = "4.6vw";
+
+              newStyle.height = "16px";
+              newStyle.width = "16px";
+              newStyle.backgroundImage = `url(${SANITIZATION})`;
+              newStyle.backgroundRepeat = "no-repeat";
+              newStyle.backgroundSize = "100% 100%";
+            }
           }
-           
+
           if (event.serviceStatus === "Complete") {
             newStyle.backgroundColor = "#36c75c";
           }
@@ -224,21 +264,15 @@ const CustomToolbar = (toolbar) => {
         views={["month"]}
         toolbar={true}
         showMultiDayTimes
-         
         // components={{
         //   dateCellWrapper: ColoredDateCellWrapper,
         // }}
 
         //
 
-        components={
-       
-        {
-                toolbar: CustomToolbar,
-                
-              }
-             
-        }
+        components={{
+          toolbar: CustomToolbar,
+        }}
       />
     </div>
   );

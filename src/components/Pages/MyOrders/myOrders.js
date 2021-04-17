@@ -25,19 +25,28 @@ const MyOrders = (props) => {
   console.log(filteredCars)
 
   const filteredServices = filteredCars[0]?.orders.filter(
-    (oneCar) => oneCar.service === myOrder
+    (oneCar) => oneCar.service === 'WASHING'
   );
   const [rightData, setRightData] = useState({
-    service: '',
-    package:''
-  })
-  const DoubleClickHandler = (event) => {
-    console.log(event)
+    service: "",
+    package: "",
+    filteredOrders:[]
+  });
+  const DoubleClickHandler = (day,event) => {
+ 
+    const filteredOrders = superdailyStatus.filter(
+      (dailyjob) =>
+        moment(dailyjob.start).format("YYYY-MM-DD") ===
+        moment(day).format("YYYY-MM-DD")
+    );
+    
+    console.log(filteredOrders)
     setRightData({
  
       service: event.service,
       serviceStatus: event.serviceStatus,
       package: event.serviceType,
+      filteredOrders :filteredOrders,
     });
      
   }
@@ -113,16 +122,40 @@ const MyOrders = (props) => {
                 <p>:</p>
                 <p>{myCar}</p>
               </div>
-              <div style={{ display: "flex" }}>
-                <p id="myOrdersTopic">Service</p>
-                <p>:</p>
-                <p>{rightData?.service}</p>
-              </div>
-              <div style={{ display: "flex" }}>
-                <p id="myOrdersTopic">Package</p>
-                <p>:</p>
-                <p>{rightData?.package}</p>
-              </div>
+              {rightData.filteredOrders.length === 0 ? (
+                <div
+                  style={{
+                    display: "flex",
+                    justifyContent: "center",
+                    alignItems: "center",
+                  }}
+                >
+                  <h2>NO ORDERS THIS DAY</h2>
+                </div>
+              ) : (
+                <div>
+                  {rightData.filteredOrders.map((oneOrder) => (
+                    <div>
+                      <div style={{ display: "flex" }}>
+                        <p id="myOrdersTopic">Service</p>
+                        <p>:</p>
+                        <p>{oneOrder?.service}</p>
+                      </div>
+
+                      <div style={{ display: "flex" }}>
+                        <p id="myOrdersTopic">Package</p>
+                        <p>:</p>
+                        <p>{oneOrder?.serviceType === "One Time" ? 'ONE TIME' : filteredServices[1].package}</p>
+                      </div>
+                      <div style={{ display: "flex" }}>
+                        <p id="myOrdersTopic">Date</p>
+                        <p>:</p>
+                        <p>{moment(oneOrder?.start).toString().substr(0,11)}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              )}
 
               {/* {rightData.package === "ONE TIME" ? null : (
                           <div style={{ display: "flex" }}>

@@ -69,18 +69,22 @@
   padding-right: 5px;
   text-align: right;
 
+ 
   &.rbc-now {
     font-weight: bold;
   }
-
+ 
   > a {
     &, &:active, &:visited {
       color: inherit;
-      text-decoration: none;
+      
     }
   }
 }
-
+.rbc-date-cell a:focus {
+ 
+color: rgb(0, 4, 255);
+font-size: large}
 .rbc-row-bg {
   @extend .rbc-abs-full;
   display: flex;

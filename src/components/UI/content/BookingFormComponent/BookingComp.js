@@ -36,7 +36,7 @@ const BookingForm = (props) => {
   let tempPackage = [];
   let duration = ["MONTHLY", "QUARTERLY", "HALFYEARLY", "YEARLY"];
   const dispatch = useDispatch();
-
+  const surfaces = ['INTERIOR', 'EXTERIOR'];
   const user = useSelector((state) => state.user.customer);
 const [disables, setDisabled] = useState({
   id: "",
@@ -48,7 +48,7 @@ const [disables, setDisabled] = useState({
     mytime: "",
     mycars: [],
     package:[],
-surfaces :['INTERIOR','EXTERIOR'],
+
     cardate: "",
   });
   var sumTotal = 0;
@@ -57,26 +57,24 @@ surfaces :['INTERIOR','EXTERIOR'],
   package:[]
 })
   const handleSurafe = (e) => {
-
-
     const { name, checked, value, type } = e.target;
-     if (type === "checkbox") {
-       if (checked === true) {
-         tempPackage = item.package.concat(value);
-         setItem({ ...item, package: tempPackage });
-       } else {
-         setItem({
-           ...item,
-           package: item.package.filter(function (val) {
-             return val !== value;
-           }),
-         });
-       }
-     } else setItem({ ...item, [name]: value });
-   
-    console.log(item)
-  
-}
+    if (type === "checkbox") {
+      if (checked === true) {
+
+        tempPackage = item.package.concat(value);
+        setItem({ ...item, package: tempPackage });
+      } else {
+        setItem({
+          ...item,
+          package: item.package.filter(function (val) {
+            return val !== value;
+          }),
+        });
+      }
+    } else setItem({ ...item, [name]: value });
+
+    console.log(item);
+  };
 
   const handleChange = (e) => {
     
@@ -102,12 +100,12 @@ surfaces :['INTERIOR','EXTERIOR'],
     } else setItem({ ...item, [name]: value });
   };
   const handleChangeDiffrently = (e) => {
-    console.log(sumtotal);
+   
     const { name, value, checked, type } = e.target;
     if (type === "checkbox") {
       if (checked === true) {
          
-        setItem({  mycars: [value] });
+        setItem({  mycars: [value],package:[] });
          
       } else {
         setItem({
@@ -119,9 +117,10 @@ surfaces :['INTERIOR','EXTERIOR'],
         
       }
     } else setItem({ ...item, [name]: value });
+      console.log(item);
   }
  
-  console.log(disables);
+
   console.log(item.mycars[0]);
 
   let finaltempcars = [];
@@ -354,7 +353,7 @@ surfaces :['INTERIOR','EXTERIOR'],
            )}
            {props.category === "DETAILING" && isSignedIn ? (
              <div className="surfaceContainer">
-               {item.surfaces.map((surface) => (
+               {surfaces.map((surface) => (
                  <div
                    className="checkBoxSurface"
                    style={{

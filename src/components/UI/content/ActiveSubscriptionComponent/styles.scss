@@ -6,7 +6,7 @@
     "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
     box-sizing: border-box;
     height: 73vh;
-    width: 55vw;
+    width: 65vw;
     display: flex;
     flex-direction: column;
  
@@ -50,6 +50,17 @@
     font-size: 5%;
     min-height: 0;
     border-bottom: 1px solid $cell-border;}
+     .rbc-calendar {
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+    box-sizing: border-box;
+    height: 73vh;
+    width: 90vw;
+    display: flex;
+    flex-direction: column;
+ 
+    margin-bottom: 1%;
+  }
    
 }
 

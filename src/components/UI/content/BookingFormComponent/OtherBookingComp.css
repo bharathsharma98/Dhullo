@@ -79,7 +79,7 @@ background-color: gray;
  }
 .checkBox input[type="checkbox"]:checked{
  
-background: blue;
+background: #03588C;
 
 }
  @media(max-width:769px){
