@@ -71,7 +71,7 @@ const CustomToolbar = (toolbar) => {
     //   </span>
     // );
   };
-
+ const date = moment(toolbar.date);
   return (
     <div>
       <label>{label()}</label>
@@ -86,8 +86,9 @@ const CustomToolbar = (toolbar) => {
           justifyContent: "center",
           alignItems: "center",
           background: "#D6CECE",
+          border:'none'
         }}
-        className="rbc-btn-group"
+         
       >
         <button
           style={{
@@ -98,6 +99,7 @@ const CustomToolbar = (toolbar) => {
             width: "100px",
             background: "none",
             marginTop: "-3rem",
+            
           }}
           onClick={goToBack}
         >
@@ -107,12 +109,13 @@ const CustomToolbar = (toolbar) => {
           style={{
             background: "#D6CECE",
             color: "#03588C",
-            fontSize: "1.8rem",
+            fontSize: "1.4rem",
             padding: "0%",
+            width: '15vw'
           }}
-          onClick={goToCurrent}
+          // onClick={goToCurrent}
         >
-          {new Date().toDateString().substr(3)}
+          {date.format("MMMM YYYY")}
         </button>
         <button
           style={{

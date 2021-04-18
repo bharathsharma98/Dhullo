@@ -23,18 +23,18 @@ const About = (props) => {
   });
   const pinkStyle = {
     background: "  linear-gradient(to bottom, #95E0F1 0%, #FFFFFF 100%)",
-    borderColor: "  #97E1F1",
-    textAlign:'center'
+    borderColor: "#35CEF2",
+    textAlign: "center",
   };
   const blueStyle = {
     background: "linear-gradient(to bottom, #FFDEFE 0%, #FFFFFF 100%)",
-    borderColor: "  #FFDFFE",
+    borderColor: "  #CC75C8",
     textAlign: "center",
   };
   const yellowStyle = {
     background:
       "transparent linear-gradient(to bottom, #F8FAB3 0%, #FFFFFF 100%)",
-    borderColor: "  #F8FAB4",
+    borderColor: "#F6FA83",
     textAlign: "center",
   };
   return (

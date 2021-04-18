@@ -155,6 +155,8 @@ text-align: center;
      
   
     
-  } 
- 
+  }
+ .rbc-btn-group::selection{
+   border: none;
+ }
 }

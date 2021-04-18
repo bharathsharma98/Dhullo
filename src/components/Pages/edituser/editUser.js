@@ -3,6 +3,7 @@ import { useSelector,useDispatch } from 'react-redux';
 import {editUser} from '../../../Redux/UserRedux/UserActions'
 import './editUser.css';
 import history from '../../../history/history'
+import {baseUrl} from '../../../variables/variables'
 const EditUser = (props) => {
 
     useEffect(() => {
@@ -27,17 +28,20 @@ console.log(userInfo)
     const handleSubmit = async(e) => {
         e.preventDefault();
        console.log(user)
-      const updatedUser = await fetch(`http://localhost:5000/api/users/${userInfo.id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          name:user.name,
-          mobileNo:user.mobile,
-          email:user.email
-        }),
-      }).then((t) => t.json())
+      const updatedUser = await fetch(
+        `${baseUrl.toString()}users/${userInfo.id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            name: user.name,
+            mobileNo: user.mobile,
+            email: user.email,
+          }),
+        }
+      ).then((t) => t.json());
     await dispacth(editUser(updatedUser.customer))
     await history.goBack()
      

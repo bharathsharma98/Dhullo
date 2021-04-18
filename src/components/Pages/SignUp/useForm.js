@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { isLogged } from "../../../Redux/UserRedux/UserActions";
+import {baseUrl} from '../../../variables/variables'
 const useFormSignup = (callback, ValidateSignUp) => {
   const [ItemSingUp, setItem] = useState({
     email: "",
@@ -22,7 +23,7 @@ const useFormSignup = (callback, ValidateSignUp) => {
     SetisSubmitting(true);
 
     try {
-      const response = await fetch("http://localhost:5000/api/users/signup", {
+      const response = await fetch(`${baseUrl.toString()}users/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

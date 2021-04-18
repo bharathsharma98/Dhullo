@@ -24,7 +24,12 @@ function clickhandler()
 
 const __DEV__ = document.domain === "localhost";
 function CheckoutComponent() {
+    const cartitems = useSelector((state) => state.cart.CartItems);
   useEffect(() => {
+    cartitems.length === 0 ?
+      history.goBack()
+      :
+      console.log()
     document.body.scrollTop = 0;
   }, []);
 
@@ -67,7 +72,7 @@ function CheckoutComponent() {
   //         document.body.appendChild(script);
   //     }, []);
 
-  const cartitems = useSelector((state) => state.cart.CartItems);
+
   console.log(cartitems);
   var totalPriceArray = [];
   cartitems.map((oneItem) => totalPriceArray.push(oneItem.price));

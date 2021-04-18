@@ -1,13 +1,11 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
-var _react = _interopRequireWildcard(require("react"));
+var _react = require("react");
 
 var _reactRedux = require("react-redux");
 
@@ -15,9 +13,7 @@ var _UserActions = require("../../../Redux/UserRedux/UserActions");
 
 var _errorActions = require("../../../Redux/Error/errorActions");
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
-
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+var _variables = require("../../../variables/variables");
 
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
@@ -73,7 +69,7 @@ var useForm = function useForm(callback, Validate) {
             SetisSubmitting(true);
             _context.prev = 3;
             _context.next = 6;
-            return regeneratorRuntime.awrap(fetch("http://localhost:5000/api/users/login", {
+            return regeneratorRuntime.awrap(fetch("".concat(_variables.baseUrl.toString(), "users/login"), {
               method: "POST",
               headers: {
                 "Content-Type": "application/json"
@@ -92,44 +88,25 @@ var useForm = function useForm(callback, Validate) {
           case 9:
             responseData = _context.sent;
             console.log(responseData);
-
-            if (responseData.customer.cars.length) {
-              responseData.customer.cars.map(function (carId) {
-                return fetch("http://localhost:5000/api/cars/".concat(carId)).then(function (response) {
-                  return response.json();
-                }).then(function (onecar) {
-                  return dispatch((0, _UserActions.addCar)(onecar.car));
-                }).then(function (onecar) {
-                  onecar.payload.orders.map(function (orderId) {
-                    return fetch("http://localhost:5000/api/orders/".concat(orderId)).then(function (response) {
-                      return response.json();
-                    }).then(function (order) {
-                      console.log(order);
-                      dispatch((0, _UserActions.addOrder)(order));
-                    });
-                  });
-                }).then(function (onecar) {
-                  return console.log(onecar);
-                });
-              });
-            }
-
-            responseData.customer.id ? dispatch((0, _UserActions.isLogged)(responseData.customer)) : console.log("not logged in");
+            responseData.customer.id ? dispatch((0, _UserActions.isLogged)(responseData.customer)) && alert("Logged In") : console.log("not logged in Successfully");
             _context.next = 19;
             break;
 
-          case 15:
-            _context.prev = 15;
+          case 14:
+            _context.prev = 14;
             _context.t0 = _context["catch"](3);
             console.log(_context.t0);
             dispatch((0, _errorActions.setMyError)(_context.t0));
+            setTimeout(function () {
+              dispatch((0, _errorActions.resetMyError)());
+            }, 200);
 
           case 19:
           case "end":
             return _context.stop();
         }
       }
-    }, null, null, [[3, 15]]);
+    }, null, null, [[3, 14]]);
   } //dispatch prevebent with recieved array from backend
 
 

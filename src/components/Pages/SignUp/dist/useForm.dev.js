@@ -11,6 +11,8 @@ var _reactRedux = require("react-redux");
 
 var _UserActions = require("../../../Redux/UserRedux/UserActions");
 
+var _variables = require("../../../variables/variables");
+
 function ownKeys(object, enumerableOnly) { var keys = Object.keys(object); if (Object.getOwnPropertySymbols) { var symbols = Object.getOwnPropertySymbols(object); if (enumerableOnly) symbols = symbols.filter(function (sym) { return Object.getOwnPropertyDescriptor(object, sym).enumerable; }); keys.push.apply(keys, symbols); } return keys; }
 
 function _objectSpread(target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i] != null ? arguments[i] : {}; if (i % 2) { ownKeys(source, true).forEach(function (key) { _defineProperty(target, key, source[key]); }); } else if (Object.getOwnPropertyDescriptors) { Object.defineProperties(target, Object.getOwnPropertyDescriptors(source)); } else { ownKeys(source).forEach(function (key) { Object.defineProperty(target, key, Object.getOwnPropertyDescriptor(source, key)); }); } } return target; }
@@ -25,20 +27,20 @@ function _iterableToArrayLimit(arr, i) { if (!(Symbol.iterator in Object(arr) ||
 
 function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
 
-var useForm = function useForm(callback, Validate) {
+var useFormSignup = function useFormSignup(callback, ValidateSignUp) {
   var _useState = (0, _react.useState)({
     email: "",
     password: "",
-    name: '',
-    phone: ''
+    name: "",
+    phone: ""
   }),
       _useState2 = _slicedToArray(_useState, 2),
-      Item = _useState2[0],
+      ItemSingUp = _useState2[0],
       setItem = _useState2[1];
 
   var _useState3 = (0, _react.useState)(false),
       _useState4 = _slicedToArray(_useState3, 2),
-      error = _useState4[0],
+      errorSignUp = _useState4[0],
       setError = _useState4[1];
 
   var _useState5 = (0, _react.useState)(false),
@@ -46,37 +48,37 @@ var useForm = function useForm(callback, Validate) {
       isSubmitting = _useState6[0],
       SetisSubmitting = _useState6[1];
 
-  var handleChange = function handleChange(e) {
+  var handleChangeUp = function handleChangeUp(e) {
     var _e$target = e.target,
         name = _e$target.name,
         value = _e$target.value; //destructured here
 
-    setItem(_objectSpread({}, Item, _defineProperty({}, name, value)));
+    setItem(_objectSpread({}, ItemSingUp, _defineProperty({}, name, value)));
   };
 
   var dispatch = (0, _reactRedux.useDispatch)();
 
-  var handleSubmit = function handleSubmit(e) {
+  var handleSubmitUp = function handleSubmitUp(e) {
     var response, responseData;
-    return regeneratorRuntime.async(function handleSubmit$(_context) {
+    return regeneratorRuntime.async(function handleSubmitUp$(_context) {
       while (1) {
         switch (_context.prev = _context.next) {
           case 0:
             e.preventDefault();
-            setError(Validate(Item));
+            setError(ValidateSignUp(ItemSingUp));
             SetisSubmitting(true);
             _context.prev = 3;
             _context.next = 6;
-            return regeneratorRuntime.awrap(fetch('http://localhost:5000/api/users/signup', {
-              method: 'POST',
+            return regeneratorRuntime.awrap(fetch("".concat(_variables.baseUrl.toString(), "users/signup"), {
+              method: "POST",
               headers: {
-                'Content-Type': 'application/json'
+                "Content-Type": "application/json"
               },
               body: JSON.stringify({
-                name: Item.name,
-                mobileNo: Item.phone,
-                email: Item.email,
-                password: Item.password
+                name: ItemSingUp.name,
+                mobileNo: ItemSingUp.phone,
+                email: ItemSingUp.email,
+                password: ItemSingUp.password
               })
             }));
 
@@ -89,7 +91,7 @@ var useForm = function useForm(callback, Validate) {
             responseData = _context.sent;
             console.log(responseData);
             _context.next = 13;
-            return regeneratorRuntime.awrap(dispatch((0, _UserActions.isLogged)(responseData)));
+            return regeneratorRuntime.awrap(dispatch((0, _UserActions.isLogged)(responseData.customer)));
 
           case 13:
             alert("Signed in"); //dispatch item and push to add car page
@@ -112,17 +114,17 @@ var useForm = function useForm(callback, Validate) {
   };
 
   (0, _react.useEffect)(function () {
-    if (Object.keys(error).length === 0 && isSubmitting) {
+    if (Object.keys(errorSignUp).length === 0 && isSubmitting) {
       callback();
     }
-  }, [error, callback, isSubmitting]);
+  }, [errorSignUp, callback, isSubmitting]);
   return {
-    handleChange: handleChange,
-    handleSubmit: handleSubmit,
-    Item: Item,
-    error: error
+    handleChangeUp: handleChangeUp,
+    handleSubmitUp: handleSubmitUp,
+    ItemSingUp: ItemSingUp,
+    errorSignUp: errorSignUp
   };
 };
 
-var _default = useForm;
+var _default = useFormSignup;
 exports["default"] = _default;

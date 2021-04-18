@@ -64,7 +64,7 @@ const MyOrders = (props) => {
   return (
     <div>
       {user.cars.length === 0 ? (
-        <h1 style={{height:'100vh'}}>No Cars Yet</h1>
+        <h1 style={{ height: "100vh" }}>No Cars Yet</h1>
       ) : (
         <div className="myOrderMainContainer">
           <div className="myOrders-picker-container">
@@ -146,16 +146,28 @@ const MyOrders = (props) => {
                             <p>:</p>
                             <p>{oneOrder?.service}</p>
                           </div>
-
-                          <div style={{ display: "flex" }}>
-                            <p id="myOrdersTopic">Package</p>
-                            <p>:</p>
-                            <p>
-                              {oneOrder?.serviceType === "One Time"
-                                ? "ONE TIME"
-                                : filteredServices[0].package}
-                            </p>
+                          {oneOrder?.service === "WASHING" &&
+                          oneOrder?.service !== "DETAILING" ? <div style={{ display: "flex" }}>
+                              <p id="myOrdersTopic">Package</p>
+                              <p>:</p>
+                              <p>
+                                {oneOrder?.serviceType === "One Time"
+                                  ? "ONE TIME"
+                                  : filteredServices[0].package}
+                              </p>  </div>: null
+                            
+                           
+                          }
+                          <div>
+                            {oneOrder.service === "DETAILING" ? (
+                              <div style={{ display: "flex" }}>
+                                <p id="myOrdersTopic">Package</p>
+                                <p>:</p>
+                                <p>{oneOrder.serviceSurface}</p> 
+                              </div>
+                            ) : null}
                           </div>
+
                           <div style={{ display: "flex" }}>
                             <p id="myOrdersTopic">Date</p>
                             <p>:</p>
