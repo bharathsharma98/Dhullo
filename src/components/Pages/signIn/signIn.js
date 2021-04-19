@@ -87,9 +87,7 @@ const [signState,setSignState] =useState('SIGNIN')
                     </button>
 
                     {myerror ? (
-                      <SmallPopupRound message="error">
-                        <p>{myerror}</p>
-                      </SmallPopupRound>
+                      <small style={{ margin: "1vw" }}>{myerror}</small>
                     ) : null}
                     <div className="signupContainer">
                       <Link onClick={() => setSignState("SIGNUP")}>
@@ -166,10 +164,10 @@ const [signState,setSignState] =useState('SIGNIN')
                       {errorSignUp.password && <p>{errorSignUp.password}</p>}
                     </div>
                   </div>
-
+                  {myerror ? (
+                    <small style={{ margin: "1vw" }}>{myerror}</small>
+                  ) : null}
                   <button type="submit">SIGN UP</button>
-
-                   
                 </form>
               </div>
             </div>

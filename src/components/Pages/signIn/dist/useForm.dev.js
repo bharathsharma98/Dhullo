@@ -87,26 +87,30 @@ var useForm = function useForm(callback, Validate) {
 
           case 9:
             responseData = _context.sent;
-            console.log(responseData);
-            responseData.customer.id ? dispatch((0, _UserActions.isLogged)(responseData.customer)) && alert("Logged In") : console.log("not logged in Successfully");
-            _context.next = 19;
+            console.log(responseData); // removed later
+
+            responseData.customer !== undefined ? dispatch((0, _UserActions.isLogged)(responseData.customer)) && alert("Logged In") : dispatch((0, _errorActions.setMyError)(responseData));
+            setTimeout(function () {
+              dispatch((0, _errorActions.resetMyError)());
+            }, 10000);
+            _context.next = 20;
             break;
 
-          case 14:
-            _context.prev = 14;
+          case 15:
+            _context.prev = 15;
             _context.t0 = _context["catch"](3);
             console.log(_context.t0);
             dispatch((0, _errorActions.setMyError)(_context.t0));
             setTimeout(function () {
               dispatch((0, _errorActions.resetMyError)());
-            }, 200);
+            }, 10000);
 
-          case 19:
+          case 20:
           case "end":
             return _context.stop();
         }
       }
-    }, null, null, [[3, 14]]);
+    }, null, null, [[3, 15]]);
   } //dispatch prevebent with recieved array from backend
 
 

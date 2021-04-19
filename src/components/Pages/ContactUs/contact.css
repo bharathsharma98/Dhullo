@@ -135,10 +135,12 @@ border:2px solid #03588C;
 }
 .contactcontainer button{
   margin: auto;
-width: 40vw;
+width: 10rem;
 margin-bottom: 2%;
 padding: 2%;
-height: auto;
+height: 2.5rem;
+border: none;
+border-radius: 0%;
 }
 .lowerContact  img{
   width: 10%;

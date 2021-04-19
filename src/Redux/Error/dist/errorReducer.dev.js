@@ -4,13 +4,15 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
+
+function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+
 var INITIAL_STATE = {
-  errorMessage: ''
+  errorMessage: null
 };
 
 var setErrorMessage = function setErrorMessage(message) {
-  var newMessage = '';
-  if (message.message.includes("Unexpected token < in JSON at position 0")) return "INVALID CREDENTIALS";
+  if (_typeof(message) === "object") return "No Internet Connection.";else if (message.includes("Invalid credentials")) return "INVALID CREDENTIALS";else if (message.includes("User already exists..Login instead.")) return "Customer exists already, please login instead";
 };
 
 var errorReducer = function errorReducer() {

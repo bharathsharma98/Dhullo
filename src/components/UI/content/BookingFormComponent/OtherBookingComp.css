@@ -204,17 +204,36 @@ margin-left: 0%;
       margin-left: 2%;
       width: 50vw;
  }
+  .addnewCarButtonLoggedOut img{
+     height: 8vw;
+     width: 8vw;
+     position: relative;
+     left: 0vw;
+         border: 2px solid black;
+     padding: 2rem;
+     border-radius: 100%;
+ }
+  .addNewCarButtonContainerLoggedOut strong{
+     position: relative;
+      font-weight: normal;
+      letter-spacing: 2px;
+     left: 1vw;
+  }
   .addnewCarButton img{
      height: 8vw;
      width: 8vw;
      position: relative;
      left: -16vw;
+    border: 2px solid black;
+     padding: 2rem;
+     border-radius: 100%;
  }
   .addNewCarButtonContainer strong{
      position: relative;
       font-weight: normal;
       letter-spacing: 2px;
-     left: -16.5vw;
+     left: -12vw;
+ 
   }
   .buttonrow  {
  

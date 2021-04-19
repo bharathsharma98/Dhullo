@@ -41,21 +41,20 @@ const useForm = (callback, Validate) => {
       const responseData = await response.json();
 
       console.log(responseData);
-
-       
-
-      responseData.customer.id
-        ?
-        dispatch(isLogged(responseData.customer))&& alert("Logged In")
-        
-         
-        : console.log("not logged in Successfully");
+// removed later
+ 
+      responseData.customer !== undefined
+        ? dispatch(isLogged(responseData.customer)) && alert("Logged In")
+        : dispatch(setMyError(responseData));
+      setTimeout(() => {
+        dispatch(resetMyError());
+      }, 10000);
     } catch (err) {
       console.log(err);
       dispatch(setMyError(err));
       setTimeout(() => {
         dispatch(resetMyError())
-      },200)
+      },10000)
     }
   }
   //dispatch prevebent with recieved array from backend

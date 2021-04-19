@@ -3,9 +3,7 @@
   display: flex;
   flex-direction: row;
   width: clamp(92vw, 100vw, 100vw);
-
   justify-content: space-evenly;
-
   margin-bottom: 10%;
 }
 .howitworks-container {
@@ -25,7 +23,7 @@
   position: absolute;
   width: 68vw;
  z-index: -1;
-  right: calc(var(--howitworksWidth)+17vw);
+  right: calc(var(--howitworksWidth) + 17vw);
   margin-top: 0.2%;
   border: 2px dotted #007872;
 }
@@ -295,8 +293,8 @@ color: #007872;
 .dots hr {
    transform: rotateZ(90deg);
   position: absolute;
- right: calc(var(--howitworksWidthMobile)/20);
- width: calc(var(--howitworksHeightMobile)*3);
+ right: calc(var(--howitworksWidthMobile) / 20);
+ width: calc(var(--howitworksHeightMobile) * 3);
  top:calc(60vw);
  border: 1px dashed#007872;
  
@@ -306,8 +304,8 @@ color: #007872;
  width: 15px;
  height: 15px;
  border-radius: 100%;
-    top: calc(var(--howitworksHeightMobile)/2);
-  left: calc(var(--howitworksWidthMobile)/1.93);
+    top: calc(var(--howitworksHeightMobile) / 2);
+  left: calc(var(--howitworksWidthMobile) / 1.93);
     content: ".";
     font-size: 500%;
     margin: auto;
@@ -318,8 +316,8 @@ color: #007872;
      border-radius: 100%;
  width: 15px;
  height: 15px;
-    top: calc(var(--howitworksHeightMobile)*1.5);
-    left: calc(var(--howitworksWidthMobile)/1.93);
+    top: calc(var(--howitworksHeightMobile) * 1.5);
+    left: calc(var(--howitworksWidthMobile) / 1.93);
     content: ".";
     font-size: 500%;
     margin: auto;
@@ -332,8 +330,8 @@ color: #007872;
      border-radius: 100%;
  width: 15px;
  height: 15px;
-    top: calc(var(--howitworksHeightMobile)*2.5);
-     left: calc(var(--howitworksWidthMobile)/1.93);
+    top: calc(var(--howitworksHeightMobile) * 2.5);
+     left: calc(var(--howitworksWidthMobile) / 1.93);
     content: ".";
     font-size: 500%;
     margin: auto;
@@ -344,8 +342,8 @@ color: #007872;
      border-radius: 100%;
   width: 15px;
  height: 15px;
-    top: calc(var(--howitworksHeightMobile)*3.6);
-  left: calc(var(--howitworksWidthMobile)/1.93);
+    top: calc(var(--howitworksHeightMobile) * 3.6);
+  left: calc(var(--howitworksWidthMobile) / 1.93);
     content: ".";
     font-size: 500%;
     margin: auto;

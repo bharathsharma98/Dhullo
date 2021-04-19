@@ -1,8 +1,10 @@
 import { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { setMyError, resetMyError } from "../../../Redux/Error/errorActions";
 import { isLogged } from "../../../Redux/UserRedux/UserActions";
 import {baseUrl} from '../../../variables/variables'
 const useFormSignup = (callback, ValidateSignUp) => {
+
   const [ItemSingUp, setItem] = useState({
     email: "",
     password: "",
@@ -16,6 +18,7 @@ const useFormSignup = (callback, ValidateSignUp) => {
     setItem({ ...ItemSingUp, [name]: value });
   };
   const dispatch = useDispatch();
+     
   const handleSubmitUp = async (e) => {
     e.preventDefault();
 
@@ -39,12 +42,21 @@ const useFormSignup = (callback, ValidateSignUp) => {
 
       const responseData = await response.json();
       console.log(responseData);
-      await dispatch(isLogged(responseData.customer));
-      alert("Signed in");
+      responseData.customer !== undefined ?
+        await dispatch(isLogged(responseData.customer))
+          :
+        await dispatch(setMyError(responseData));
+       setTimeout(() => {
+         dispatch(resetMyError());
+       }, 5000);
+     
       //dispatch item and push to add car page
-    } catch (err) {
-      console.log(err);
-      setError(true);
+    } catch (error) {
+      console.log(error);
+       dispatch(setMyError(error));
+       setTimeout(() => {
+         dispatch(resetMyError());
+       }, 5000);
     }
   };
 

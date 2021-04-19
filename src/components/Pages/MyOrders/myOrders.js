@@ -54,7 +54,7 @@ const MyOrders = (props) => {
   if(filteredCars !== undefined){
       filteredCars.map((car) =>
         car.orders?.map((order) =>
-          order.dailySchedules.map((l) => superdailyStatus.push(l))
+          order.dailySchedules?.map((l) => superdailyStatus.push(l))
         )
       );
       console.log(superdailyStatus);
@@ -153,7 +153,7 @@ const MyOrders = (props) => {
                               <p>
                                 {oneOrder?.serviceType === "One Time"
                                   ? "ONE TIME"
-                                  : filteredServices[0].package}
+                                  : filteredServices[0]?.package}
                               </p>  </div>: null
                             
                            

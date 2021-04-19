@@ -2,9 +2,13 @@ const INITIAL_STATE = {
   errorMessage:null
 };
 const setErrorMessage = (message) => {
+    if (typeof message === "object") return "No Internet Connection.";
+    else if (message.includes("Invalid credentials"))
+      return "INVALID CREDENTIALS";
+   else if (message.includes("User already exists..Login instead."))
+     return "Customer exists already, please login instead";
  
-    if (message.message.includes("Unexpected token < in JSON at position 0"))
-      return  "INVALID CREDENTIALS";
+  
 }
 const errorReducer = (state = INITIAL_STATE, action) => {
   switch (action.type) {

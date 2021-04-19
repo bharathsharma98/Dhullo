@@ -86,9 +86,9 @@ const SignUp = (props) => {
             </div>
             <button type="submit">Signup</button>
             {error ? (
-              <SmallPopupRound message="error">
+             
                 <p>Unable to Signup</p>
-              </SmallPopupRound>
+              
             ) : null}
           </form>
         </div>

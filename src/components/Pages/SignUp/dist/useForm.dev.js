@@ -9,6 +9,8 @@ var _react = require("react");
 
 var _reactRedux = require("react-redux");
 
+var _errorActions = require("../../../Redux/Error/errorActions");
+
 var _UserActions = require("../../../Redux/UserRedux/UserActions");
 
 var _variables = require("../../../variables/variables");
@@ -90,27 +92,46 @@ var useFormSignup = function useFormSignup(callback, ValidateSignUp) {
           case 9:
             responseData = _context.sent;
             console.log(responseData);
-            _context.next = 13;
+
+            if (!(responseData.customer !== undefined)) {
+              _context.next = 16;
+              break;
+            }
+
+            _context.next = 14;
             return regeneratorRuntime.awrap(dispatch((0, _UserActions.isLogged)(responseData.customer)));
 
-          case 13:
-            alert("Signed in"); //dispatch item and push to add car page
-
-            _context.next = 20;
+          case 14:
+            _context.next = 18;
             break;
 
           case 16:
-            _context.prev = 16;
+            _context.next = 18;
+            return regeneratorRuntime.awrap(dispatch((0, _errorActions.setMyError)(responseData)));
+
+          case 18:
+            setTimeout(function () {
+              dispatch((0, _errorActions.resetMyError)());
+            }, 5000); //dispatch item and push to add car page
+
+            _context.next = 26;
+            break;
+
+          case 21:
+            _context.prev = 21;
             _context.t0 = _context["catch"](3);
             console.log(_context.t0);
-            setError(true);
+            dispatch((0, _errorActions.setMyError)(_context.t0));
+            setTimeout(function () {
+              dispatch((0, _errorActions.resetMyError)());
+            }, 5000);
 
-          case 20:
+          case 26:
           case "end":
             return _context.stop();
         }
       }
-    }, null, null, [[3, 16]]);
+    }, null, null, [[3, 21]]);
   };
 
   (0, _react.useEffect)(function () {

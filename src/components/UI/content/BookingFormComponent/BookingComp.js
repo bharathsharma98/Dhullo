@@ -338,8 +338,8 @@ const [disables, setDisabled] = useState({
                </div>
              </div>
            ) : (
-             <div className="addNewCarButtonContainer">
-               <div className="addnewCarButton">
+             <div className="addNewCarButtonContainerLoggedOut">
+               <div className="addnewCarButtonLoggedOut">
                  <Link
                    style={{ marginBottom: "1rem  " }}
                    to={width.matches ? "#" : "/signin"}
